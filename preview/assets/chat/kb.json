@@ -8,7 +8,7 @@
       "What is his background?",
       "Tell me about Ram"
     ],
-    "answer": "Ram Prasad Vellamsetti is a Senior SRE and Platform Engineer with 20 years in software, six of them in financial services. He leads platform migrations and owns what he ships in production, from Sitecore and SAP Commerce through Azure to SageMaker and Kubernetes. He describes the thread of the work as a solo platform owner who coordinates contractors, vendors, and internal teams, production first.",
+    "answer": "Senior SRE and platform engineer with 20 years in software, 6 of them in financial services. I lead platform migrations end to end into production, from Sitecore and SAP Commerce, through a bank's content platform on Azure, to DevOps and SRE work. DevOps using Jenkins, Spinnaker, Kubernetes, and Terraform. SRE using observability stacks like Dynatrace, Splunk, and Grafana, plus SLO setup.",
     "tags": [
       "ram",
       "prasad",
