@@ -399,7 +399,7 @@ test("left menu uses inline Lucide icons hidden from assistive tech", () => {
   assert.ok(nav, "nav is missing");
   const items = [...nav[0].matchAll(/<(a|button)\b[^>]*>[\s\S]*?<\/\1>/g)].map((m) => m[0]);
   assert.equal(items.length, 10, "nav should have nine section links plus Ask Ram");
-  const labels = ["About","Skills","Experience","Work projects","Personal projects","Certifications","Training","Education","Contact","Ask Ram"];
+  const labels = ["About","Skills","Experience","Certifications","Training","Education","Work projects","Personal projects","Contact","Ask Ram"];
   for (const [item, label] of items.map((item, i) => [item, labels[i]])) {
     assert.match(item, new RegExp(`${label}<\\/(a|button)>`));
     assert.match(item, /<svg class="nav-icon"/);
