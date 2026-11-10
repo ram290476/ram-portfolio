@@ -43,4 +43,4 @@ jobs:
         run: node scripts/check-links.mjs
 
       - name: Site unit tests
-        run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs
+        run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs tests/sync-vault-kb.test.mjs
