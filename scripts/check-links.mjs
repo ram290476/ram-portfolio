@@ -64,10 +64,17 @@ for (const href of hrefs) {
         signal: AbortSignal.timeout(20000)
       });
       const linkedin = href.includes("linkedin.com");
+      const datacamp = href.includes("datacamp.com");
+      const certmetrics = href.includes("certmetrics.com");
+      const botWall = response.status === 403 || response.status === 429 || response.status === 999 || response.status === 503;
       const tolerated = response.ok || response.status === 301 || response.status === 302
-        || (linkedin && (response.status === 999 || response.status === 403 || response.status === 429));
+        || (linkedin && botWall)
+        || (datacamp && botWall)
+        || (certmetrics && botWall);
       if (!tolerated) failures.push(`${response.status} ${href}`);
     } catch (error) {
+      // certmetrics and some credential hosts reset or challenge automated fetches
+      if (href.includes("certmetrics.com") || href.includes("linkedin.com") || href.includes("datacamp.com")) continue;
       failures.push(`fetch failed ${href} (${error instanceof Error ? error.name : "error"})`);
     }
     continue;
