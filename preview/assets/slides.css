@@ -9,11 +9,19 @@
   padding: 0;
   background: #111114;
   color: #f6f1e8;
-  display: flex;
   flex-direction: column;
   font-family: var(--font-body);
   letter-spacing: 0;
   text-transform: none;
+}
+
+/* Do not set display on the base rule: it overrides the UA dialog { display: none }
+   and leaves the closed player covering the page, intercepting clicks. */
+.slides-player:not([open]) {
+  display: none;
+}
+.slides-player[open] {
+  display: flex;
 }
 
 .slides-player::backdrop {

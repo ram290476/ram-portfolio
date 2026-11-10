@@ -11,6 +11,7 @@ const page = read("preview/index.html");
 const home = read("index.html");
 const themes = read("preview/styles.css");
 const themeJS = read("preview/theme.js");
+const slidesCSS = read("preview/assets/slides.css");
 const retrieve = createRetriever(kb);
 
 test("preview page has one accessible chat widget and the coming-soon page does not", () => {
@@ -168,4 +169,13 @@ test("chat and themes follow the page tokens, motion setting, and contrast theme
   assert.match(themeJS, /localStorage\.setItem\("theme"/);
   assert.match(themeJS, /localStorage\.getItem\("theme"\)|allowed\[theme\]/);
   assert.match(page, /localStorage\.getItem\("theme"\)/);
+});
+
+test("closed slide player dialog stays hidden so the theme picker can be used", () => {
+  assert.match(page, /id="slides-player"/);
+  assert.match(slidesCSS, /\.slides-player:not\(\[open\]\)\s*\{[^}]*display:\s*none/);
+  assert.match(slidesCSS, /\.slides-player\[open\]\s*\{[^}]*display:\s*flex/);
+  const base = slidesCSS.match(/\.slides-player\s*\{[^}]*\}/);
+  assert.ok(base, "base .slides-player rule is missing");
+  assert.doesNotMatch(base[0], /display:\s*flex/);
 });
