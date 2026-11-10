@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>
+  (function () {
+    var theme = "editorial";
+    var allowed = { editorial: 1, midnight: 1, minimal: 1, gradient: 1, glass: 1, contrast: 1 };
+    try {
+      var stored = localStorage.getItem("theme");
+      if (stored && allowed[stored]) theme = stored;
+    } catch (e) {}
+    document.documentElement.setAttribute("data-theme", theme);
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("reduce");
+  })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ram Prasad Vellamsetti — Senior SRE &amp; Platform Engineer</title>
   <meta name="description" content="Portfolio of Ram Prasad Vellamsetti, Senior SRE and Platform Engineer in San Ramon, CA. Twenty years building and operating commerce, banking, and enterprise AI/ML platforms." />
   <meta name="robots" content="noindex,nofollow" />
-  <meta name="color-scheme" content="light" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#f7f3ec" />
   <link rel="canonical" href="https://ram.vellamsetti.com/preview/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -14,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,560&family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/chat/chat.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -47,6 +60,18 @@
     <a class="pdf-link" href="assets/Ram_Career_Overview_Lite.pdf" download>
       Download experience overview (PDF)
     </a>
+
+    <div class="theme-picker">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">Theme</button>
+      <div class="theme-menu" id="theme-menu" role="menu" aria-labelledby="theme-toggle" hidden>
+        <button type="button" role="menuitemradio" data-theme-value="editorial" aria-checked="true"><span class="swatch swatch-editorial" aria-hidden="true"></span>Light editorial</button>
+        <button type="button" role="menuitemradio" data-theme-value="midnight" aria-checked="false"><span class="swatch swatch-midnight" aria-hidden="true"></span>Midnight</button>
+        <button type="button" role="menuitemradio" data-theme-value="minimal" aria-checked="false"><span class="swatch swatch-minimal" aria-hidden="true"></span>Dark minimal</button>
+        <button type="button" role="menuitemradio" data-theme-value="gradient" aria-checked="false"><span class="swatch swatch-gradient" aria-hidden="true"></span>Bold gradient</button>
+        <button type="button" role="menuitemradio" data-theme-value="glass" aria-checked="false"><span class="swatch swatch-glass" aria-hidden="true"></span>Glass</button>
+        <button type="button" role="menuitemradio" data-theme-value="contrast" aria-checked="false"><span class="swatch swatch-contrast" aria-hidden="true"></span>High contrast</button>
+      </div>
+    </div>
 
     <nav class="nav" aria-label="On this page">
       <a href="#about" aria-current="true">About</a>
@@ -348,8 +373,37 @@
     </footer>
   </main>
 
+  <div class="portfolio-chat" data-portfolio-chat>
+    <button class="chat-launch" type="button" data-chat-open aria-label="Ask about Ram’s experience" aria-haspopup="dialog" aria-expanded="false" aria-controls="portfolio-chat-panel" hidden>Ask about Ram</button>
+    <dialog class="chat-panel" id="portfolio-chat-panel" aria-modal="true" aria-labelledby="portfolio-chat-title" aria-describedby="portfolio-chat-description">
+      <div class="chat-heading">
+        <div>
+          <h2 id="portfolio-chat-title">Ask about Ram</h2>
+          <p id="portfolio-chat-description">Public portfolio facts. No generative AI.</p>
+        </div>
+        <button class="chat-close" type="button" data-chat-close aria-label="Close portfolio chat">×</button>
+      </div>
+      <div class="chat-log" data-chat-log role="log" aria-label="Portfolio conversation" aria-live="polite" aria-relevant="additions text" tabindex="0"></div>
+      <div class="chat-chips" aria-label="Suggested questions">
+        <button type="button" data-chat-question>What is his background?</button>
+        <button type="button" data-chat-question>What projects has he built?</button>
+        <button type="button" data-chat-question>What skills does he use?</button>
+        <button type="button" data-chat-question>How do I book a call?</button>
+      </div>
+      <p class="chat-status" data-chat-status role="status"></p>
+      <form class="chat-form" aria-label="Ask a portfolio question">
+        <label class="sr" for="portfolio-chat-input">Your question about Ram’s experience</label>
+        <input id="portfolio-chat-input" name="question" type="text" maxlength="500" autocomplete="off" placeholder="Ask about experience or a project" required>
+        <button type="submit" data-chat-send>Send</button>
+      </form>
+      <p class="chat-note">Answers are looked up from this page. Nothing is sent off-site, and the conversation is not saved.</p>
+    </dialog>
+  </div>
+
   <script src="config.js"></script>
   <script src="main.js"></script>
   <script src="booking.js"></script>
+  <script src="theme.js"></script>
+  <script type="module" src="assets/chat/chat.js"></script>
 </body>
 </html>

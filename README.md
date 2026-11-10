@@ -6,7 +6,7 @@ The public homepage is the coming-soon page at the repository root. It stays tha
 
 ## Preview
 
-`preview/index.html` is the light-editorial page: sidebar, experience, projects, and booking. There is no build step.
+`preview/index.html` is the light-editorial page: sidebar, experience, projects, booking, a theme picker, and a static portfolio guide. There is no build step. The guide answers only from `preview/assets/chat/kb.json` in the browser. Light editorial is the default theme; the choice is stored in this browser.
 
 Until `preview/assets/photo.jpg` exists, the sidebar shows an initials monogram. Add a square JPEG at that path to replace it.
 

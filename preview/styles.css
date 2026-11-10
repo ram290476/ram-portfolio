@@ -1,14 +1,155 @@
-:root {
+html:not([data-theme]),
+html[data-theme="editorial"] {
+  color-scheme: light;
   --bg: #f7f3ec;
   --paper: #fffdf8;
   --ink: #2a2420;
   --muted: #6b635c;
   --accent: #8b3a2a;
   --navy: #1e3a5f;
+  --on-navy: #fffdf8;
   --line: #e4ddd2;
-  --sidebar: 248px;
   --focus: #1e3a5f;
+  --pill: #f3eee6;
+  --avatar: #efe8dc;
+  --input-border: #cfc6ba;
+  --radius: 4px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: Fraunces, "Playfair Display", Georgia, serif;
+  --bg-image: none;
+  --blur: none;
+  --bg2: #fffdf8;
+  --mu: #6b635c;
+  --card: #fffdf8;
+  --cy: #8b3a2a;
+  --on-cy: #ffffff;
 }
+html[data-theme="midnight"] {
+  color-scheme: dark;
+  --bg: #070b1a;
+  --paper: #10172f;
+  --ink: #e8ecff;
+  --muted: #c5cceb;
+  --accent: #5ee7ff;
+  --navy: #8b7cff;
+  --on-navy: #070b1a;
+  --line: #3a4a8c;
+  --focus: #5ee7ff;
+  --pill: #141c3a;
+  --avatar: #141c3a;
+  --input-border: #3a4a8c;
+  --radius: 16px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: Orbitron, Inter, sans-serif;
+  --bg-image: none;
+  --blur: none;
+  --bg2: #0b1230;
+  --mu: #c5cceb;
+  --card: #10172f;
+  --cy: #5ee7ff;
+  --on-cy: #04111a;
+}
+html[data-theme="minimal"] {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --paper: #161b22;
+  --ink: #e6edf3;
+  --muted: #b1bac4;
+  --accent: #3fb950;
+  --navy: #39d2c0;
+  --on-navy: #0d1117;
+  --line: #30363d;
+  --focus: #3fb950;
+  --pill: #1c2128;
+  --avatar: #1c2128;
+  --input-border: #30363d;
+  --radius: 8px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+  --bg-image: none;
+  --blur: none;
+  --bg2: #161b22;
+  --mu: #b1bac4;
+  --card: #1c2128;
+  --cy: #3fb950;
+  --on-cy: #0d1117;
+}
+html[data-theme="gradient"] {
+  color-scheme: dark;
+  --bg: #0a0f2c;
+  --paper: #14183f;
+  --ink: #f4f6ff;
+  --muted: #c5cbe8;
+  --accent: #22d3ee;
+  --navy: #a78bfa;
+  --on-navy: #0a0f2c;
+  --line: #6d5bd0;
+  --focus: #22d3ee;
+  --pill: #1a2150;
+  --avatar: #1a2150;
+  --input-border: #6d5bd0;
+  --radius: 16px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: "Space Grotesk", Inter, sans-serif;
+  --bg-image: linear-gradient(155deg, #0a0f2c 0%, #24124a 48%, #063044 100%);
+  --blur: none;
+  --bg2: #12183a;
+  --mu: #c5cbe8;
+  --card: #14183f;
+  --cy: #22d3ee;
+  --on-cy: #041016;
+}
+html[data-theme="glass"] {
+  color-scheme: dark;
+  --bg: #0b1026;
+  --paper: rgba(11, 16, 38, 0.88);
+  --ink: #f5f7ff;
+  --muted: #d5def5;
+  --accent: #9af6ea;
+  --navy: #c4b5fd;
+  --on-navy: #0b1026;
+  --line: rgba(255, 255, 255, 0.35);
+  --focus: #9af6ea;
+  --pill: rgba(18, 24, 58, 0.9);
+  --avatar: rgba(18, 24, 58, 0.9);
+  --input-border: rgba(255, 255, 255, 0.4);
+  --radius: 18px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: Manrope, Inter, sans-serif;
+  --bg-image: radial-gradient(circle at 18% 8%, rgba(59, 130, 246, 0.55), transparent 42%), radial-gradient(circle at 88% 16%, rgba(168, 85, 247, 0.5), transparent 40%), radial-gradient(circle at 62% 100%, rgba(20, 184, 166, 0.45), transparent 42%);
+  --blur: blur(16px);
+  --bg2: rgba(18, 24, 58, 0.9);
+  --mu: #d5def5;
+  --card: rgba(11, 16, 38, 0.88);
+  --cy: #9af6ea;
+  --on-cy: #06211e;
+}
+html[data-theme="contrast"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --paper: #000000;
+  --ink: #ffffff;
+  --muted: #ffffff;
+  --accent: #ffd400;
+  --navy: #ffd400;
+  --on-navy: #000000;
+  --line: #ffffff;
+  --focus: #ffd400;
+  --pill: #000000;
+  --avatar: #000000;
+  --input-border: #ffffff;
+  --radius: 0px;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-display: Inter, system-ui, sans-serif;
+  --bg-image: none;
+  --blur: none;
+  --bg2: #000000;
+  --mu: #ffffff;
+  --card: #000000;
+  --cy: #ffd400;
+  --on-cy: #000000;
+}
+:root { --sidebar: 248px; }
 
 * { box-sizing: border-box; }
 
@@ -16,8 +157,10 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: var(--bg);
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
   color: var(--ink);
   line-height: 1.5;
   min-height: 100vh;
@@ -46,6 +189,7 @@ body {
 .sidebar {
   width: var(--sidebar);
   background: var(--paper);
+  backdrop-filter: var(--blur);
   border-right: 1px solid var(--line);
   padding: 32px 22px 28px;
   display: flex;
@@ -66,7 +210,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #efe8dc;
+  background: var(--avatar);
   position: relative;
   overflow: hidden;
 }
@@ -79,14 +223,14 @@ body {
 .avatar.has-photo img { display: block; }
 .avatar.has-photo .monogram { display: none; }
 .monogram {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 24px;
   color: var(--navy);
 }
 
 .name {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.25;
@@ -114,7 +258,7 @@ body {
   padding: 8px 10px;
   line-height: 1.4;
 }
-.pdf-link:hover { background: var(--navy); color: var(--paper); }
+.pdf-link:hover { background: var(--navy); color: var(--on-navy); }
 
 .nav { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .nav a {
@@ -150,7 +294,7 @@ main {
 }
 
 h1 {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 42px);
   font-weight: 600;
   line-height: 1.15;
@@ -169,7 +313,7 @@ h1 {
 
 .thesis {
   margin: 18px 0 0;
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 18px;
   line-height: 1.4;
   color: var(--navy);
@@ -185,7 +329,7 @@ h1 {
 }
 
 .section-h {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 600;
   margin: 0;
@@ -219,8 +363,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   text-decoration: none;
   cursor: pointer;
 }
-.button:hover { background: var(--navy); color: var(--paper); }
-.button-solid { background: var(--navy); color: var(--paper); }
+.button:hover { background: var(--navy); color: var(--on-navy); }
+.button-solid { background: var(--navy); color: var(--on-navy); }
 .button-solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 .button:disabled { opacity: 0.55; cursor: not-allowed; }
 
@@ -232,7 +376,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   padding: 22px 24px 18px;
 }
 .feature-quote p {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(22px, 3vw, 28px);
   font-weight: 560;
   line-height: 1.35;
@@ -273,12 +417,13 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 }
 .skill-grid article, .card {
   background: var(--paper);
+  backdrop-filter: var(--blur);
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 16px;
 }
 .skill-grid h3, .card h3 {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 17px;
   font-weight: 600;
   margin: 0 0 8px;
@@ -297,7 +442,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   font-size: 11px;
   letter-spacing: 0.02em;
   color: var(--navy);
-  background: #f3eee6;
+  background: var(--pill);
   border: 1px solid var(--line);
   padding: 3px 7px;
 }
@@ -306,7 +451,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 .card-links a { color: var(--navy); }
 .no-link { color: var(--muted); font-size: 12px; }
 .pull {
-  font-family: Fraunces, "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 13px;
   color: var(--navy);
@@ -363,7 +508,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   font: inherit;
   font-size: 15px;
   padding: 8px 10px;
-  border: 1px solid #cfc6ba;
+  border: 1px solid var(--input-border);
   background: var(--paper);
   color: var(--ink);
   width: 100%;
@@ -457,7 +602,70 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   .js section { scroll-margin-top: 80px; }
 }
 
+.theme-picker { position: relative; }
+.theme-toggle {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.theme-toggle:hover, .theme-toggle[aria-expanded="true"] {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+.theme-menu {
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  top: calc(100% + 6px);
+  min-width: 100%;
+  margin: 0;
+  padding: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+.theme-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+}
+.theme-menu button[aria-checked="true"] { font-weight: 600; background: var(--pill); }
+.swatch { width: 12px; height: 12px; border: 1px solid var(--line); flex: 0 0 12px; }
+.swatch-editorial { background: #f7f3ec; }
+.swatch-midnight { background: #070b1a; }
+.swatch-minimal { background: #0d1117; }
+.swatch-gradient { background: linear-gradient(135deg, #24124a, #063044); }
+.swatch-glass { background: linear-gradient(135deg, #3b82f6, #14b8a6); }
+.swatch-contrast { background: #ffd400; }
+.feature-quote, .soon { background: var(--paper); backdrop-filter: var(--blur); }
+.feature-quote { border-radius: var(--radius); }
+
+@media (max-width: 860px) {
+  .js .theme-picker { position: fixed; top: 14px; right: 14px; z-index: 30; width: auto; }
+  .js .theme-toggle { width: auto; background: var(--paper); }
+  .js .theme-menu { min-width: 220px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .js .sidebar { transition: none; }
+  .js .sidebar, .theme-menu { transition: none; }
+  body { background-attachment: scroll; }
 }
