@@ -675,6 +675,2108 @@
     "link": "#contact"
   },
   {
+    "id": "note-how-do-you-reduce-llm-hallucinations-d88ec9",
+    "topic": "Notes: How do you reduce LLM hallucinations",
+    "questions": [
+      "Tell me about How do you reduce LLM hallucinations",
+      "What does the note How do you reduce LLM hallucinations say?",
+      "What about ground answers trusted documents tool results use clear?"
+    ],
+    "answer": "Notes: How do you reduce LLM hallucinations. I ground answers in trusted documents or tool results, use clear prompts and require validation and citations where appropriate. I treat generated output as a draft, verify important claims against the source, and avoid filling gaps with plausible guesses.",
+    "tags": [
+      "interview",
+      "ai",
+      "reduce",
+      "llm",
+      "hallucinations",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-an-llm-context-window-0d76cc",
+    "topic": "Notes: What is an LLM context window",
+    "questions": [
+      "Tell me about What is an LLM context window",
+      "What does the note What is an LLM context window say?",
+      "What about context window amount input conversation history model work?"
+    ],
+    "answer": "Notes: What is an LLM context window. The context window is the amount of input and conversation history a model can work with in one request. I keep the relevant source material and instructions focused, because supplying more text is not the same as supplying better context.",
+    "tags": [
+      "interview",
+      "ai",
+      "llm",
+      "context",
+      "window",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-an-llm-context-window-0d76cc-2",
+    "topic": "Notes: What is an LLM context window",
+    "questions": [
+      "Tell me about What is an LLM context window",
+      "What does the note What is an LLM context window say?",
+      "What about llm s context window context window amount input?"
+    ],
+    "answer": "Notes: What is an LLM context window. What is an LLM's context window? The context window is the amount of input and conversation history a model can work with in one request. I keep the relevant source material and instructions focused, because supplying more text is not the same as supplying better context.",
+    "tags": [
+      "interview",
+      "ai",
+      "llm",
+      "context",
+      "window",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-can-you-give-a-more-recent-example-of-pl-023851",
+    "topic": "Notes: Can you give a more recent example of platform work",
+    "questions": [
+      "Tell me about Can you give a more recent example of platform work",
+      "What does the note Can you give a more recent example of platform work say?",
+      "What about recent example re platforming production model serving infrastructure?"
+    ],
+    "answer": "Notes: Can you give a more recent example of platform work. A recent example is re-platforming production model-serving infrastructure onto a SageMaker-based framework in new AWS accounts. I standardized promotion across environments and built Python validation for regression cases, output schemas and drift monitoring. My focus was infrastructure reliability, not developing the model.",
+    "tags": [
+      "interview",
+      "aws",
+      "cloud",
+      "give",
+      "more",
+      "recent",
+      "example",
+      "platform",
+      "work",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-terraform-cbd2d3",
+    "topic": "Notes: What is the difference between Terraform modules and providers",
+    "questions": [
+      "Tell me about What is the difference between Terraform modules and providers",
+      "What does the note What is the difference between Terraform modules and providers say?",
+      "What about provider plugin terraform uses interact service api module?"
+    ],
+    "answer": "Notes: What is the difference between Terraform modules and providers. A provider is the plugin Terraform uses to interact with a service API. A module is a reusable collection of Terraform configuration that describes resources and exposes inputs and outputs. I use modules for consistent infrastructure patterns, with providers supplying the API integration.",
+    "tags": [
+      "interview",
+      "aws",
+      "cloud",
+      "difference",
+      "between",
+      "terraform",
+      "modules",
+      "providers",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-terraform-cbd2d3-2",
+    "topic": "Notes: What is the difference between Terraform modules and providers",
+    "questions": [
+      "Tell me about What is the difference between Terraform modules and providers",
+      "What does the note What is the difference between Terraform modules and providers say?",
+      "What about terraform modules vs providers provider plugin terraform uses?"
+    ],
+    "answer": "Notes: What is the difference between Terraform modules and providers. Terraform modules vs providers? A provider is the plugin Terraform uses to interact with a service API. A module is a reusable collection of Terraform configuration that describes resources and exposes inputs and outputs. I use modules for consistent infrastructure patterns, with providers supplying the API integration.",
+    "tags": [
+      "interview",
+      "aws",
+      "cloud",
+      "difference",
+      "between",
+      "terraform",
+      "modules",
+      "providers",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-your-mlops-experience-cb3fc2",
+    "topic": "Notes: What is your MLOps experience",
+    "questions": [
+      "Tell me about What is your MLOps experience",
+      "What does the note What is your MLOps experience say?",
+      "What about mlops experience infrastructure deployment reliability side ml applications?"
+    ],
+    "answer": "Notes: What is your MLOps experience. My MLOps experience is the infrastructure, deployment and reliability side of ML applications. I have worked with AWS ECS, Terraform and a SageMaker-based framework, standardized model promotion and built Python validation. I did not train the model; my responsibility was to make serving and promotion dependable.",
+    "tags": [
+      "interview",
+      "aws",
+      "cloud",
+      "mlops",
+      "experience",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-your-mlops-experience-cb3fc2-2",
+    "topic": "Notes: What is your MLOps experience",
+    "questions": [
+      "Tell me about What is your MLOps experience",
+      "What does the note What is your MLOps experience say?",
+      "What about s mlops experience mlops experience infrastructure deployment reliability?"
+    ],
+    "answer": "Notes: What is your MLOps experience. What's your MLOps experience? My MLOps experience is the infrastructure, deployment and reliability side of ML applications. I have worked with AWS ECS, Terraform and a SageMaker-based framework, standardized model promotion and built Python validation. I did not train the model; my responsibility was to make serving and promotion dependable.",
+    "tags": [
+      "interview",
+      "aws",
+      "cloud",
+      "mlops",
+      "experience",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-are-you-looking-for-hybrid-onsite-or-rem-5e32bd",
+    "topic": "Notes: Are you looking for hybrid, onsite or remote work",
+    "questions": [
+      "Tell me about Are you looking for hybrid, onsite or remote work",
+      "What does the note Are you looking for hybrid, onsite or remote work say?",
+      "What about am open bay area hybrid opportunities remote role?"
+    ],
+    "answer": "Notes: Are you looking for hybrid, onsite or remote work. I am open to Bay Area hybrid opportunities and US remote roles. I have worked in onsite and hybrid environments. I would discuss the team needs, commute and on-call expectations together rather than promise a particular schedule without understanding the role.",
+    "tags": [
+      "interview",
+      "background",
+      "looking",
+      "hybrid",
+      "onsite",
+      "remote",
+      "work",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-are-you-looking-for-hybrid-onsite-or-rem-5e32bd-2",
+    "topic": "Notes: Are you looking for hybrid, onsite or remote work",
+    "questions": [
+      "Tell me about Are you looking for hybrid, onsite or remote work",
+      "What does the note Are you looking for hybrid, onsite or remote work say?",
+      "What about kind work book looking am open bay area?"
+    ],
+    "answer": "Notes: Are you looking for hybrid, onsite or remote work. What kind of work schedule are you looking for? I am open to Bay Area hybrid opportunities and US remote roles. I have worked in onsite and hybrid environments. I would discuss the team needs, commute and on-call expectations together rather than promise a particular schedule without understanding the role.",
+    "tags": [
+      "interview",
+      "background",
+      "looking",
+      "hybrid",
+      "onsite",
+      "remote",
+      "work",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-are-you-still-hands-on-and-writing-code-3d21fd",
+    "topic": "Notes: Are you still hands-on and writing code",
+    "questions": [
+      "Tell me about Are you still hands-on and writing code",
+      "What does the note Are you still hands-on and writing code say?",
+      "What about yes recent hands work includes terraform ci cd?"
+    ],
+    "answer": "Notes: Are you still hands-on and writing code. Yes. My recent hands-on work includes Terraform, CI/CD pipelines, Kubernetes configurations, Python automation and reliability tooling. Earlier roles also involved backend and full-stack development. I am a technical contributor and platform owner, not primarily a people manager.",
+    "tags": [
+      "interview",
+      "background",
+      "still",
+      "hands",
+      "writing",
+      "code",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-do-you-need-work-authorization-sponsorsh-7a2e5d",
+    "topic": "Notes: Do you need work-authorization sponsorship",
+    "questions": [
+      "Tell me about Do you need work-authorization sponsorship",
+      "What does the note Do you need work-authorization sponsorship say?",
+      "What about am citizen not require employment sponsorship?"
+    ],
+    "answer": "Notes: Do you need work-authorization sponsorship. I am a US citizen and do not require employment sponsorship.",
+    "tags": [
+      "interview",
+      "background",
+      "need",
+      "work",
+      "authorization",
+      "sponsorship",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-have-you-supported-saas-or-customer-faci-c8ae12",
+    "topic": "Notes: Have you supported SaaS or customer-facing applications",
+    "questions": [
+      "Tell me about Have you supported SaaS or customer-facing applications",
+      "What does the note Have you supported SaaS or customer-facing applications say?",
+      "What about yes owned customer facing commerce content platforms end?"
+    ],
+    "answer": "Notes: Have you supported SaaS or customer-facing applications. Yes. I have owned customer-facing commerce and content platforms end to end, including releases, integrations, monitoring, disaster recovery and on-call support. My later platform and SRE work added reusable deployment and observability patterns for application teams.",
+    "tags": [
+      "interview",
+      "background",
+      "supported",
+      "saas",
+      "customer",
+      "facing",
+      "applications",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-tell-me-about-yourself-and-your-backgrou-e3f907",
+    "topic": "Notes: Tell me about yourself and your background",
+    "questions": [
+      "Tell me about Tell me about yourself and your background",
+      "What does the note Tell me about yourself and your background say?",
+      "What about started software engineering moved end end platform ownership?"
+    ],
+    "answer": "Notes: Tell me about yourself and your background. I started in software engineering and moved into end-to-end platform ownership, cloud delivery and site reliability. My experience spans backend development, commerce and content platforms, AWS and Azure, Terraform, CI/CD, observability and production support. I remain a hands-on technical contributor.",
+    "tags": [
+      "interview",
+      "background",
+      "yourself",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-was-your-recent-role-sre-or-devops-63c635",
+    "topic": "Notes: Was your recent role SRE or DevOps",
+    "questions": [
+      "Tell me about Was your recent role SRE or DevOps",
+      "What does the note Was your recent role SRE or DevOps say?",
+      "What about recent work combined sre devops handled production reliability?"
+    ],
+    "answer": "Notes: Was your recent role SRE or DevOps. My recent work combined SRE and DevOps. I handled production reliability and observability alongside Terraform, deployment pipelines, Kubernetes workload configuration and automation. I describe the work I owned rather than treating the title as a complete description of my responsibilities.",
+    "tags": [
+      "interview",
+      "background",
+      "recent",
+      "role",
+      "sre",
+      "devops",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-was-your-recent-role-sre-or-devops-63c635-2",
+    "topic": "Notes: Was your recent role SRE or DevOps",
+    "questions": [
+      "Tell me about Was your recent role SRE or DevOps",
+      "What does the note Was your recent role SRE or DevOps say?",
+      "What about current title sre recent work combined sre devops?"
+    ],
+    "answer": "Notes: Was your recent role SRE or DevOps. Your current title is SRE? My recent work combined SRE and DevOps. I handled production reliability and observability alongside Terraform, deployment pipelines, Kubernetes workload configuration and automation. I describe the work I owned rather than treating the title as a complete description of my responsibilities.",
+    "tags": [
+      "interview",
+      "background",
+      "recent",
+      "role",
+      "sre",
+      "devops",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-where-are-you-based-6d019c",
+    "topic": "Notes: Where are you based",
+    "questions": [
+      "Tell me about Where are you based",
+      "What does the note Where are you based say?",
+      "What about am based san ramon san francisco bay area?"
+    ],
+    "answer": "Notes: Where are you based. I am based in San Ramon in the San Francisco Bay Area. I am open to discussing local hybrid and US remote opportunities.",
+    "tags": [
+      "interview",
+      "background",
+      "based",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-trade-off-balanced-business-priorit-2b5736",
+    "topic": "Notes: What trade-off balanced business priorities and technical needs",
+    "questions": [
+      "Tell me about What trade-off balanced business priorities and technical needs",
+      "What does the note What trade-off balanced business priorities and technical needs say?",
+      "What about give example difficult decision balancing business priorities technical?"
+    ],
+    "answer": "Notes: What trade-off balanced business priorities and technical needs. Give an example of a difficult decision balancing business priorities and technical needs. One schedule trade-off was deferring some commerce capabilities, including returns work, rather than delaying the entire migration. Returns were handled manually at first. Business and technical stakeholders weighed the priorities together, and the release scope reflected that decision.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "trade",
+      "off",
+      "balanced",
+      "business",
+      "priorities",
+      "technical",
+      "needs",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-those-trade-offs-affect-the-deli-0a920a",
+    "topic": "Notes: How did those trade-offs affect the deliverable and outcome",
+    "questions": [
+      "Tell me about How did those trade-offs affect the deliverable and outcome",
+      "What does the note How did those trade-offs affect the deliverable and outcome say?",
+      "What about essential migration went live while some features validation?"
+    ],
+    "answer": "Notes: How did those trade-offs affect the deliverable and outcome. The essential migration went live, while some features and validation were completed in phases. The release was about a week after the aggressive target. I separate that target slip from the broader comparison with a typical migration timeline, and I do not invent precise savings or delivery dates for the deferred work.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "those",
+      "trade",
+      "offs",
+      "affect",
+      "deliverable",
+      "outcome",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-align-the-team-around-a-reus-76db6c",
+    "topic": "Notes: How did you align the team around a reusable approach, and what was the outcome",
+    "questions": [
+      "Tell me about How did you align the team around a reusable approach, and what was the outcome",
+      "What does the note How did you align the team around a reusable approach, and what was the outcome say?",
+      "What about demonstrated reusable approach onboarding first application each team?"
+    ],
+    "answer": "Notes: How did you align the team around a reusable approach, and what was the outcome. I demonstrated the reusable approach by onboarding the first application for each team and supplying a reference implementation and documentation. Teams then onboarded their remaining applications with limited help, and other teams adopted the pattern from the documentation.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "align",
+      "team",
+      "around",
+      "reusable",
+      "approach",
+      "outcome",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-collaborate-with-the-help-de-125819",
+    "topic": "Notes: How did you collaborate with the help desk to improve the platform",
+    "questions": [
+      "Tell me about How did you collaborate with the help desk to improve the platform",
+      "What does the note How did you collaborate with the help desk to improve the platform say?",
+      "What about worked support implementation team triage incoming issues identify?"
+    ],
+    "answer": "Notes: How did you collaborate with the help desk to improve the platform. I worked with support and the implementation team to triage incoming issues, identify the important technical fixes and release them while the platform stabilized. Support feedback was an input to prioritization, not something kept separate from engineering.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "collaborate",
+      "help",
+      "desk",
+      "improve",
+      "platform",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-handle-unexpected-feedback-f-66379f",
+    "topic": "Notes: How did you handle unexpected feedback from early users",
+    "questions": [
+      "Tell me about How did you handle unexpected feedback from early users",
+      "What does the note How did you handle unexpected feedback from early users say?",
+      "What about support team collected issues orders sales during stabilization?"
+    ],
+    "answer": "Notes: How did you handle unexpected feedback from early users. The support team collected issues with orders and sales. During stabilization, the implementation team helped triage serious inventory and checkout problems, fix them and deploy updates. My focus was getting customer-impacting issues to the right technical owner quickly.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "handle",
+      "unexpected",
+      "feedback",
+      "early",
+      "users",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-prioritize-fixes-and-feature-b4b811",
+    "topic": "Notes: How did you prioritize fixes and features after launch",
+    "questions": [
+      "Tell me about How did you prioritize fixes and features after launch",
+      "What does the note How did you prioritize fixes and features after launch say?",
+      "What about business technical stakeholders reviewed priorities together marketing sales?"
+    ],
+    "answer": "Notes: How did you prioritize fixes and features after launch. Business and technical stakeholders reviewed priorities together. Marketing, sales, operations and the implementation team weighed business impact against technical needs. I focused on serious customer-journey problems first and made the trade-offs visible to that group.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "prioritize",
+      "fixes",
+      "features",
+      "after",
+      "launch",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-tell-me-about-a-disagreement-on-a-techni-f3f106",
+    "topic": "Notes: Tell me about a disagreement on a technical decision and how you handled it",
+    "questions": [
+      "Tell me about Tell me about a disagreement on a technical decision and how you handled it",
+      "What does the note Tell me about a disagreement on a technical decision and how you handled it say?",
+      "What about one disagreement whether configure observability manually initial applications?"
+    ],
+    "answer": "Notes: Tell me about a disagreement on a technical decision and how you handled it. One disagreement was whether to configure observability manually for the initial applications or invest in a reusable pattern. I advocated reuse, but the initial framework took longer than expected. The lesson was to deliver a few working examples early, then extract and expand the common pattern.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "disagreement",
+      "technical",
+      "decision",
+      "handled",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-tell-me-about-an-important-project-under-3d0192",
+    "topic": "Notes: Tell me about an important project under a very tight deadline",
+    "questions": [
+      "Tell me about Tell me about an important project under a very tight deadline",
+      "What does the note Tell me about an important project under a very tight deadline say?",
+      "What about led content platform migration managed cloud services under?"
+    ],
+    "answer": "Notes: Tell me about an important project under a very tight deadline. I led a content-platform migration to managed cloud services under a tight schedule. I coordinated security, networking, recovery testing and cutover, while deferring nonessential scope and agreeing mitigations with stakeholders. The lesson was to identify cross-team dependencies early and make risk acceptance explicit.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "important",
+      "project",
+      "under",
+      "very",
+      "tight",
+      "deadline",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-did-you-learn-from-the-tight-deadli-61de5f",
+    "topic": "Notes: What did you learn from the tight-deadline migration",
+    "questions": [
+      "Tell me about What did you learn from the tight-deadline migration",
+      "What does the note What did you learn from the tight-deadline migration say?",
+      "What about learned identify cross team dependencies earlier give each?"
+    ],
+    "answer": "Notes: What did you learn from the tight-deadline migration. I learned to identify cross-team dependencies earlier, give each one an owner and date, and book security, architecture and networking reviews before they become release blockers. I also learned to explain each trade-off and its mitigation clearly rather than waiting for someone to draw the details out of me.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "learn",
+      "tight",
+      "deadline",
+      "migration",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-sacrifices-and-trade-offs-did-you-m-bec2bd",
+    "topic": "Notes: What sacrifices and trade-offs did you make near release",
+    "questions": [
+      "Tell me about What sacrifices and trade-offs did you make near release",
+      "What does the note What sacrifices and trade-offs did you make near release say?",
+      "What about deferred nonessential features used deployment slots integration testing?"
+    ],
+    "answer": "Notes: What sacrifices and trade-offs did you make near release. I deferred nonessential features, used deployment slots for integration testing, postponed cache-clearing tooling with a temporary content freeze, and phased recovery validation. I discussed the risks and mitigations with the relevant stakeholders rather than quietly treating unfinished work as complete.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "sacrifices",
+      "trade",
+      "offs",
+      "build",
+      "near",
+      "release",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-sre-project-are-you-most-proud-of-07a2ac",
+    "topic": "Notes: What SRE project are you most proud of",
+    "questions": [
+      "Tell me about What SRE project are you most proud of",
+      "What does the note What SRE project are you most proud of say?",
+      "What about build reusable observability pattern instead configuring every application?"
+    ],
+    "answer": "Notes: What SRE project are you most proud of. I built a reusable observability pattern instead of configuring every application separately. I created shared configuration, environment overlays, a reference implementation and onboarding documentation. I worked through the first application with each team so they could onboard the rest themselves.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "sre",
+      "project",
+      "proud",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-sre-project-are-you-most-proud-of-07a2ac-2",
+    "topic": "Notes: What SRE project are you most proud of",
+    "questions": [
+      "Tell me about What SRE project are you most proud of",
+      "What does the note What SRE project are you most proud of say?",
+      "What about share one example re proud sre perspective around?"
+    ],
+    "answer": "Notes: What SRE project are you most proud of. Share one example you're most proud of from an SRE perspective around efficiency or reliability. I built a reusable observability pattern instead of configuring every application separately. I created shared configuration, environment overlays, a reference implementation and onboarding documentation. I worked through the first application with each team so they could onboard the rest themselves.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "sre",
+      "project",
+      "proud",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-three-qualities-matter-in-technical-602b7e",
+    "topic": "Notes: What three qualities matter in technical leadership",
+    "questions": [
+      "Tell me about What three qualities matter in technical leadership",
+      "What does the note What three qualities matter in technical leadership say?",
+      "What about technical leadership combines ownership clear communication enabling others?"
+    ],
+    "answer": "Notes: What three qualities matter in technical leadership. For me, technical leadership combines ownership, clear communication and enabling others. I stay hands-on, make the risks and decisions understandable, and give teams reusable examples and documentation so they can deliver without depending on one person for every change.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "three",
+      "qualities",
+      "matter",
+      "technical",
+      "leadership",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-three-qualities-matter-in-technical-602b7e-2",
+    "topic": "Notes: What three qualities matter in technical leadership",
+    "questions": [
+      "Tell me about What three qualities matter in technical leadership",
+      "What does the note What three qualities matter in technical leadership say?",
+      "What about three things needed leadership technical leadership combines ownership?"
+    ],
+    "answer": "Notes: What three qualities matter in technical leadership. What are three things needed for leadership? For me, technical leadership combines ownership, clear communication and enabling others. I stay hands-on, make the risks and decisions understandable, and give teams reusable examples and documentation so they can deliver without depending on one person for every change.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "three",
+      "qualities",
+      "matter",
+      "technical",
+      "leadership",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-was-your-role-in-the-migration-ed627a",
+    "topic": "Notes: What was your role in the migration",
+    "questions": [
+      "Tell me about What was your role in the migration",
+      "What does the note What was your role in the migration say?",
+      "What about platform technical lead owned technical plan coordinated architecture?"
+    ],
+    "answer": "Notes: What was your role in the migration. I was the platform technical lead. I owned the technical plan and coordinated the architecture, networking, security, recovery and cutover dependencies. A program manager owned the schedule. I distinguish my technical ownership from the work other specialists and stakeholders performed.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "role",
+      "migration",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-why-was-that-migration-difficult-c451f4",
+    "topic": "Notes: Why was that migration difficult",
+    "questions": [
+      "Tell me about Why was that migration difficult",
+      "What does the note Why was that migration difficult say?",
+      "What about difficulty coordinating dependent work across security networking architecture?"
+    ],
+    "answer": "Notes: Why was that migration difficult. The difficulty was coordinating dependent work across security, networking, architecture reviews and testing while protecting availability. I learned to put external dependencies on the critical path early, with named owners and review dates, rather than treating coordination as something that would resolve near release.",
+    "tags": [
+      "interview",
+      "behavioral",
+      "migration",
+      "difficult",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-a-canary-deployment-a69084",
+    "topic": "Notes: What is a canary deployment",
+    "questions": [
+      "Tell me about What is a canary deployment",
+      "What does the note What is a canary deployment say?",
+      "What about canary sends small share production traffic new version?"
+    ],
+    "answer": "Notes: What is a canary deployment. A canary sends a small share of production traffic to a new version first. I validate errors, latency and other health signals before increasing exposure. If the signals regress, I stop or roll back rather than continuing the rollout.",
+    "tags": [
+      "interview",
+      "ci",
+      "cd",
+      "canary",
+      "deployment",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-you-find-the-minimum-vms-needed-f-1757ac",
+    "topic": "Notes: How do you find the minimum VMs needed for overlapping jobs",
+    "questions": [
+      "Tell me about How do you find the minimum VMs needed for overlapping jobs",
+      "What does the note How do you find the minimum VMs needed for overlapping jobs say?",
+      "What about answer peak concurrency sort work start time keep?"
+    ],
+    "answer": "Notes: How do you find the minimum VMs needed for overlapping jobs. The answer is peak concurrency. I sort jobs by start time and keep a min-heap of VM end times, reusing a VM when its earliest end is no later than the next start. Touching intervals can share a VM. Sorting and heap operations take O(n log n) time, with O(n) space in the worst case.",
+    "tags": [
+      "interview",
+      "coding",
+      "find",
+      "minimum",
+      "vms",
+      "needed",
+      "overlapping",
+      "work",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-you-solve-task-scheduling-with-a--bd1600",
+    "topic": "Notes: How do you solve task scheduling with a cooldown",
+    "questions": [
+      "Tell me about How do you solve task scheduling with a cooldown",
+      "What does the note How do you solve task scheduling with a cooldown say?",
+      "What about equal duration tasks let f largest frequency k?"
+    ],
+    "answer": "Notes: How do you solve task scheduling with a cooldown. For equal-duration tasks, let f be the largest frequency and k the number of task types tied at f. The minimum time is max(total tasks, (f - 1) * (cooldown + 1) + k). I check empty input and zero cooldown first. For AAABBB with cooldown 2, the answer is 8. This is a reviewed solution, not a claim that I completed it live.",
+    "tags": [
+      "interview",
+      "coding",
+      "solve",
+      "task",
+      "scheduling",
+      "cooldown",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-would-you-investigate-http-502-error-70b4e9",
+    "topic": "Notes: How would you investigate HTTP 502 errors",
+    "questions": [
+      "Tell me about How would you investigate HTTP 502 errors",
+      "What does the note How would you investigate HTTP 502 errors say?",
+      "What about 502 means gateway received invalid response upstream service?"
+    ],
+    "answer": "Notes: How would you investigate HTTP 502 errors. A 502 means a gateway received an invalid response from an upstream service. I trace the request through the proxy to the backend, check endpoint health, application crashes, connection and TLS errors, and correlate the onset with deployments or configuration changes.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "investigate",
+      "502",
+      "errors",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-would-you-investigate-http-502-error-70b4e9-2",
+    "topic": "Notes: How would you investigate HTTP 502 errors",
+    "questions": [
+      "Tell me about How would you investigate HTTP 502 errors",
+      "What does the note How would you investigate HTTP 502 errors say?",
+      "What about root cause 502 errors 502 means gateway received?"
+    ],
+    "answer": "Notes: How would you investigate HTTP 502 errors. What is the root cause of 502 errors? A 502 means a gateway received an invalid response from an upstream service. I trace the request through the proxy to the backend, check endpoint health, application crashes, connection and TLS errors, and correlate the onset with deployments or configuration changes.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "investigate",
+      "502",
+      "errors",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-http-500--100a08",
+    "topic": "Notes: What is the difference between HTTP 500 and 504",
+    "questions": [
+      "Tell me about What is the difference between HTTP 500 and 504",
+      "What does the note What is the difference between HTTP 500 and 504 say?",
+      "What about http 500 means server encountered internal error http?"
+    ],
+    "answer": "Notes: What is the difference between HTTP 500 and 504. HTTP 500 means the server encountered an internal error. HTTP 504 means a gateway did not get a timely response from an upstream service. I would correlate application and gateway logs, traces, dependency health and recent changes rather than treating both as the same failure.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "difference",
+      "between",
+      "500",
+      "504",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-http-500--100a08-2",
+    "topic": "Notes: What is the difference between HTTP 500 and 504",
+    "questions": [
+      "Tell me about What is the difference between HTTP 500 and 504",
+      "What does the note What is the difference between HTTP 500 and 504 say?",
+      "What about s difference between 500 504 http 500 means?"
+    ],
+    "answer": "Notes: What is the difference between HTTP 500 and 504. What's the difference between 500 and 504? HTTP 500 means the server encountered an internal error. HTTP 504 means a gateway did not get a timely response from an upstream service. I would correlate application and gateway logs, traces, dependency health and recent changes rather than treating both as the same failure.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "difference",
+      "between",
+      "500",
+      "504",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-http-500--100a08-3",
+    "topic": "Notes: What is the difference between HTTP 500 and 504",
+    "questions": [
+      "Tell me about What is the difference between HTTP 500 and 504",
+      "What does the note What is the difference between HTTP 500 and 504 say?",
+      "What about 500 vs 504 http 500 means server encountered?"
+    ],
+    "answer": "Notes: What is the difference between HTTP 500 and 504. 500 vs 504? HTTP 500 means the server encountered an internal error. HTTP 504 means a gateway did not get a timely response from an upstream service. I would correlate application and gateway logs, traces, dependency health and recent changes rather than treating both as the same failure.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "difference",
+      "between",
+      "500",
+      "504",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-http-status-code-for-throttl-49246d",
+    "topic": "Notes: What is the HTTP status code for throttling",
+    "questions": [
+      "Tell me about What is the HTTP status code for throttling",
+      "What does the note What is the HTTP status code for throttling say?",
+      "What about http 429 means too many requests check whether?"
+    ],
+    "answer": "Notes: What is the HTTP status code for throttling. HTTP 429 means Too Many Requests. I check whether the limit is per client or shared, respect Retry-After when supplied, and use bounded retries with backoff and jitter so clients do not make the overload worse.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "status",
+      "code",
+      "throttling",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-http-status-code-for-throttl-49246d-2",
+    "topic": "Notes: What is the HTTP status code for throttling",
+    "questions": [
+      "Tell me about What is the HTTP status code for throttling",
+      "What does the note What is the HTTP status code for throttling say?",
+      "What about s http code throttling http 429 means too?"
+    ],
+    "answer": "Notes: What is the HTTP status code for throttling. What's the HTTP code for throttling? HTTP 429 means Too Many Requests. I check whether the limit is per client or shared, respect Retry-After when supplied, and use bounded retries with backoff and jitter so clients do not make the overload worse.",
+    "tags": [
+      "interview",
+      "http",
+      "networking",
+      "status",
+      "code",
+      "throttling",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-are-you-comfortable-moving-to-the-next-i-f2e237",
+    "topic": "Notes: Are you comfortable moving to the next interview stage",
+    "questions": [
+      "Tell me about Are you comfortable moving to the next interview stage",
+      "What does the note Are you comfortable moving to the next interview stage say?",
+      "What about recorded recruiter screen confirmed interested proceeding next stage?"
+    ],
+    "answer": "Notes: Are you comfortable moving to the next interview stage. In the recorded recruiter screen I confirmed I was interested in proceeding to the next stage. This public guide cannot confirm current availability, accept an invitation or make an interview commitment on my behalf.",
+    "tags": [
+      "interview",
+      "logistics",
+      "comfortable",
+      "moving",
+      "next",
+      "stage",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-can-you-send-your-resume-as-a-pdf-0a5d30",
+    "topic": "Notes: Can you send your resume as a PDF",
+    "questions": [
+      "Tell me about Can you send your resume as a PDF",
+      "What does the note Can you send your resume as a PDF say?",
+      "What about recorded screen includes request pdf resume confirmation sent?"
+    ],
+    "answer": "Notes: Can you send your resume as a PDF. The recorded screen includes a request for a PDF resume and my confirmation that I sent it. This public guide cannot send files or messages; requests for a current resume should go through the contact section.",
+    "tags": [
+      "interview",
+      "logistics",
+      "send",
+      "resume",
+      "pdf",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-could-you-share-your-screen-for-the-codi-48b31d",
+    "topic": "Notes: Could you share your screen for the coding exercise",
+    "questions": [
+      "Tell me about Could you share your screen for the coding exercise",
+      "What does the note Could you share your screen for the coding exercise say?",
+      "What about technical interviews used shared coding environment walked through?"
+    ],
+    "answer": "Notes: Could you share your screen for the coding exercise. In technical interviews I have used a shared coding environment and walked through my reasoning. This public guide can explain the reviewed solutions, but it does not share a screen or join an interview.",
+    "tags": [
+      "interview",
+      "logistics",
+      "could",
+      "share",
+      "screen",
+      "coding",
+      "exercise",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-do-you-have-any-questions-for-the-interv-5b187d",
+    "topic": "Notes: Do you have any questions for the interviewer",
+    "questions": [
+      "Tell me about Do you have any questions for the interviewer",
+      "What does the note Do you have any questions for the interviewer say?",
+      "What about ask day day work team owns balance between?"
+    ],
+    "answer": "Notes: Do you have any questions for the interviewer. I ask about the day-to-day work, what the team owns, the balance between engineering and incident response, and what success in the role looks like. Those questions help me understand the work rather than assume a title tells the whole story.",
+    "tags": [
+      "interview",
+      "logistics",
+      "any",
+      "questions",
+      "interviewer",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-are-common-kubernetes-resiliency-pa-5d2430",
+    "topic": "Notes: What are common Kubernetes resiliency patterns",
+    "questions": [
+      "Tell me about What are common Kubernetes resiliency patterns",
+      "What does the note What are common Kubernetes resiliency patterns say?",
+      "What about use multiple replicas readiness liveness probes sensible resource?"
+    ],
+    "answer": "Notes: What are common Kubernetes resiliency patterns. I use multiple replicas, readiness and liveness probes, sensible resource requests and limits, autoscaling, topology spread, graceful shutdown and disruption budgets. The important part is testing how those controls behave during failures and releases, not just adding them to a manifest.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "common",
+      "resiliency",
+      "patterns",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-are-the-kubernetes-service-types-84bc5a",
+    "topic": "Notes: What are the Kubernetes Service types",
+    "questions": [
+      "Tell me about What are the Kubernetes Service types",
+      "What does the note What are the Kubernetes Service types say?",
+      "What about clusterip exposes service inside cluster nodeport exposes through?"
+    ],
+    "answer": "Notes: What are the Kubernetes Service types. ClusterIP exposes a service inside the cluster. NodePort exposes it through a port on each node. LoadBalancer requests an external load balancer from an integration. ExternalName provides a DNS alias. A headless service uses clusterIP: None for direct endpoint discovery rather than a virtual service IP.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "service",
+      "types",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-are-the-kubernetes-service-types-84bc5a-2",
+    "topic": "Notes: What are the Kubernetes Service types",
+    "questions": [
+      "Tell me about What are the Kubernetes Service types",
+      "What does the note What are the Kubernetes Service types say?",
+      "What about types services kubernetes clusterip exposes service inside cluster?"
+    ],
+    "answer": "Notes: What are the Kubernetes Service types. What are the types of services in Kubernetes? ClusterIP exposes a service inside the cluster. NodePort exposes it through a port on each node. LoadBalancer requests an external load balancer from an integration. ExternalName provides a DNS alias. A headless service uses clusterIP: None for direct endpoint discovery rather than a virtual service IP.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "service",
+      "types",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-can-cause-a-pod-to-be-oomkilled-a10e18",
+    "topic": "Notes: What can cause a pod to be OOMKilled",
+    "questions": [
+      "Tell me about What can cause a pod to be OOMKilled",
+      "What does the note What can cause a pod to be OOMKilled say?",
+      "What about container may exceeded its memory limit node may?"
+    ],
+    "answer": "Notes: What can cause a pod to be OOMKilled. The container may have exceeded its memory limit, or the node may be under memory pressure. I inspect pod status and events, previous logs, memory history and node conditions. Then I distinguish a leak or workload spike from poor sizing before changing resources or code.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "cause",
+      "pod",
+      "oomkilled",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-can-cause-a-pod-to-be-oomkilled-a10e18-2",
+    "topic": "Notes: What can cause a pod to be OOMKilled",
+    "questions": [
+      "Tell me about What can cause a pod to be OOMKilled",
+      "What does the note What can cause a pod to be OOMKilled say?",
+      "What about root cause oomkilled container may exceeded its memory?"
+    ],
+    "answer": "Notes: What can cause a pod to be OOMKilled. What is the root cause of OOMKilled? The container may have exceeded its memory limit, or the node may be under memory pressure. I inspect pod status and events, previous logs, memory history and node conditions. Then I distinguish a leak or workload spike from poor sizing before changing resources or code.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "cause",
+      "pod",
+      "oomkilled",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-do-you-check-before-scaling-pods-si-c96f44",
+    "topic": "Notes: What do you check before scaling pods significantly",
+    "questions": [
+      "Tell me about What do you check before scaling pods significantly",
+      "What does the note What do you check before scaling pods significantly say?",
+      "What about check node capacity resource requests limits quotas autoscaling?"
+    ],
+    "answer": "Notes: What do you check before scaling pods significantly. I check node capacity, resource requests and limits, quotas, autoscaling behavior, database connection limits and downstream capacity. More pods can move a bottleneck into a database or dependency, so I validate the entire request path before scaling.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "check",
+      "before",
+      "scaling",
+      "pods",
+      "significantly",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-a-poddisruptionbudget-61fbc5",
+    "topic": "Notes: What is a PodDisruptionBudget",
+    "questions": [
+      "Tell me about What is a PodDisruptionBudget",
+      "What does the note What is a PodDisruptionBudget say?",
+      "What about poddisruptionbudget limits many selected pods unavailable during voluntary?"
+    ],
+    "answer": "Notes: What is a PodDisruptionBudget. A PodDisruptionBudget limits how many selected pods can be unavailable during voluntary disruptions, such as a node drain. It works with replica count and application readiness; it is not a guarantee against involuntary failures or a substitute for safe rollout settings.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "poddisruptionbudget",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-a-poddisruptionbudget-61fbc5-2",
+    "topic": "Notes: What is a PodDisruptionBudget",
+    "questions": [
+      "Tell me about What is a PodDisruptionBudget",
+      "What does the note What is a PodDisruptionBudget say?",
+      "What about pod disruption budgets poddisruptionbudget limits many selected pods?"
+    ],
+    "answer": "Notes: What is a PodDisruptionBudget. What are pod disruption budgets? A PodDisruptionBudget limits how many selected pods can be unavailable during voluntary disruptions, such as a node drain. It works with replica count and application readiness; it is not a guarantee against involuntary failures or a substitute for safe rollout settings.",
+    "tags": [
+      "interview",
+      "kubernetes",
+      "poddisruptionbudget",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-are-linux-cgroups-and-namespaces-669f6b",
+    "topic": "Notes: What are Linux cgroups and namespaces",
+    "questions": [
+      "Tell me about What are Linux cgroups and namespaces",
+      "What does the note What are Linux cgroups and namespaces say?",
+      "What about namespaces isolate process see such process ids mounts?"
+    ],
+    "answer": "Notes: What are Linux cgroups and namespaces. Namespaces isolate what a process can see, such as process IDs, mounts and networking. Cgroups account for and constrain resources such as CPU and memory. Containers use both: isolation alone does not provide resource limits, and resource limits alone do not provide isolation.",
+    "tags": [
+      "interview",
+      "linux",
+      "cgroups",
+      "namespaces",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-are-you-comfortable-with-on-call-and-hig-f88221",
+    "topic": "Notes: Are you comfortable with on-call and high-visibility production incidents",
+    "questions": [
+      "Tell me about Are you comfortable with on-call and high-visibility production incidents",
+      "What does the note Are you comfortable with on-call and high-visibility production incidents say?",
+      "What about yes supported production platforms rotating call schedules focus?"
+    ],
+    "answer": "Notes: Are you comfortable with on-call and high-visibility production incidents. Yes. I have supported production platforms in rotating on-call schedules. My focus is to establish impact, stabilize the service, communicate clearly, then follow through with root-cause analysis and a runbook or engineering change that makes the next response better.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "comfortable",
+      "call",
+      "high",
+      "visibility",
+      "production",
+      "incidents",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-describe-a-specific-issue-you-investigat-5934aa",
+    "topic": "Notes: Describe a specific issue you investigated using logs or metrics",
+    "questions": [
+      "Tell me about Describe a specific issue you investigated using logs or metrics",
+      "What does the note Describe a specific issue you investigated using logs or metrics say?",
+      "What about documented commerce example inventory data not synchronizing correctly?"
+    ],
+    "answer": "Notes: Describe a specific issue you investigated using logs or metrics. A documented commerce example was inventory data not synchronizing correctly from the ERP backend. I examined the import logs to find the failed data flow and worked with the backend partner on the data-consistency issue. I distinguish that example from the migration launch, where I did not recall a major incident.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "describe",
+      "specific",
+      "issue",
+      "investigated",
+      "using",
+      "logs",
+      "metrics",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-custom-tags-improve-troubleshoot-8701f5",
+    "topic": "Notes: How did custom tags improve troubleshooting speed",
+    "questions": [
+      "Tell me about How did custom tags improve troubleshooting speed",
+      "What does the note How did custom tags improve troubleshooting speed say?",
+      "What about alert its context helped identify application cluster node?"
+    ],
+    "answer": "Notes: How did custom tags improve troubleshooting speed. The alert and its context helped identify the application, cluster or node involved. I could then filter the monitoring data and inspect the relevant logs or workload rather than search the entire estate. I do not attach a precise time saving to tagging alone without a measurement.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "custom",
+      "tags",
+      "improve",
+      "troubleshooting",
+      "speed",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-monitoring-help-you-investigate--23ef89",
+    "topic": "Notes: How did monitoring help you investigate performance during migration or cutover",
+    "questions": [
+      "Tell me about How did monitoring help you investigate performance during migration or cutover",
+      "What does the note How did monitoring help you investigate performance during migration or cutover say?",
+      "What about used application monitoring trends alerts searched logs isolate?"
+    ],
+    "answer": "Notes: How did monitoring help you investigate performance during migration or cutover. I used application monitoring for trends and alerts and searched logs to isolate integration issues. During cutover, the team watched orders and inventory alongside platform signals. For a concrete troubleshooting example, I can explain an inventory synchronization failure rather than invent a launch bottleneck.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "monitoring",
+      "help",
+      "investigate",
+      "performance",
+      "during",
+      "migration",
+      "cutover",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-standardizing-logging-improve-in-862b98",
+    "topic": "Notes: How did standardizing logging improve incident resolution",
+    "questions": [
+      "Tell me about How did standardizing logging improve incident resolution",
+      "What does the note How did standardizing logging improve incident resolution say?",
+      "What about common logging format build easier normalize recurring errors?"
+    ],
+    "answer": "Notes: How did standardizing logging improve incident resolution. A common logging format made it easier to normalize recurring errors, group them and prioritize the most frequent problems. That reduced time spent reconciling different messages across components and gave the application teams a clearer set of issues to fix.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "standardizing",
+      "logging",
+      "improve",
+      "incident",
+      "resolution",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-the-observability-initiative-aff-986554",
+    "topic": "Notes: How did the observability initiative affect reliability metrics over time",
+    "questions": [
+      "Tell me about How did the observability initiative affect reliability metrics over time",
+      "What does the note How did the observability initiative affect reliability metrics over time say?",
+      "What about monitoring normalized error reporting helped teams reduce recurring?"
+    ],
+    "answer": "Notes: How did the observability initiative affect reliability metrics over time. Monitoring and normalized error reporting helped teams reduce recurring errors and improve recovery. I also used runbooks and incident follow-up to make responses repeatable. I distinguish those broader reliability outcomes from claiming that one dashboard caused the entire improvement.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "initiative",
+      "affect",
+      "metrics",
+      "over",
+      "time",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-the-reference-implementation-hel-5ae5e0",
+    "topic": "Notes: How did the reference implementation help a team improve API reliability",
+    "questions": [
+      "Tell me about How did the reference implementation help a team improve API reliability",
+      "What does the note How did the reference implementation help a team improve API reliability say?",
+      "What about one application platform pattern build easier add logging?"
+    ],
+    "answer": "Notes: How did the reference implementation help a team improve API reliability. For one application platform, the pattern made it easier to add logging, error reporting, synthetic checks and latency alerts consistently. The team used normalized error reports to work through recurring failures, then agreed reliability targets as the service stabilized.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "reference",
+      "implementation",
+      "help",
+      "team",
+      "improve",
+      "api",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-the-runbook-help-the-team-handle-3ebc9b",
+    "topic": "Notes: How did the runbook help the team handle similar issues later",
+    "questions": [
+      "Tell me about How did the runbook help the team handle similar issues later",
+      "What does the note How did the runbook help the team handle similar issues later say?",
+      "What about runbook build integration recovery steps explicit so team?"
+    ],
+    "answer": "Notes: How did the runbook help the team handle similar issues later. The runbook made the integration and recovery steps explicit, so the team did not have to rediscover them during each incident. It helped us recover faster on later occurrences and gave the backend partner a repeatable process to follow.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "runbook",
+      "help",
+      "team",
+      "handle",
+      "similar",
+      "issues",
+      "later",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-ensure-integration-reliabili-80f089",
+    "topic": "Notes: How did you ensure integration reliability and performance under peak load",
+    "questions": [
+      "Tell me about How did you ensure integration reliability and performance under peak load",
+      "What does the note How did you ensure integration reliability and performance under peak load say?",
+      "What about combined application monitoring platform alerts integration logs performance?"
+    ],
+    "answer": "Notes: How did you ensure integration reliability and performance under peak load. I combined application monitoring, platform alerts and integration logs with performance testing and release validation. I watched customer-facing flows and backend synchronization together, because an integration can fail even while its host looks healthy.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "ensure",
+      "integration",
+      "performance",
+      "under",
+      "peak",
+      "load",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-guide-architectural-improvem-93bc6a",
+    "topic": "Notes: How did you guide architectural improvements for application teams",
+    "questions": [
+      "Tell me about How did you guide architectural improvements for application teams",
+      "What does the note How did you guide architectural improvements for application teams say?",
+      "What about build reusable observability configuration reference implementation then onboarded?"
+    ],
+    "answer": "Notes: How did you guide architectural improvements for application teams. I built a reusable observability configuration and reference implementation, then onboarded each team on its first application. The documentation and example let the teams apply the pattern to their remaining services. My contribution was enablement and reliability, not ownership of every application architecture.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "guide",
+      "architectural",
+      "improvements",
+      "application",
+      "teams",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-make-the-integration-more-re-efa1f7",
+    "topic": "Notes: How did you make the integration more reliable after manual recovery",
+    "questions": [
+      "Tell me about How did you make the integration more reliable after manual recovery",
+      "What does the note How did you make the integration more reliable after manual recovery say?",
+      "What about worked backend partner source data consistency problem documented?"
+    ],
+    "answer": "Notes: How did you make the integration more reliable after manual recovery. I worked with the backend partner on the source data-consistency problem and documented the recovery process in the runbook. That made the next response repeatable. A runbook improves recovery, but I would not describe it as proof that the upstream defect could never recur.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "build",
+      "integration",
+      "more",
+      "reliable",
+      "after",
+      "manual",
+      "recovery",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-measure-long-term-success-an-81c560",
+    "topic": "Notes: How did you measure long-term success and track error or latency improvements",
+    "questions": [
+      "Tell me about How did you measure long-term success and track error or latency improvements",
+      "What does the note How did you measure long-term success and track error or latency improvements say?",
+      "What about worked application owners slis slo targets used dashboard?"
+    ],
+    "answer": "Notes: How did you measure long-term success and track error or latency improvements. I worked with application owners on SLIs and SLO targets and used dashboards to track availability and latency over time. I also reviewed recurring errors and recovery outcomes, so success meant sustained service health rather than an initial drop in alerts.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "measure",
+      "long",
+      "term",
+      "success",
+      "track",
+      "error",
+      "latency",
+      "improvements",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-resolve-inventory-synchroniz-e124f1",
+    "topic": "Notes: How did you resolve inventory synchronization issues once you identified them",
+    "questions": [
+      "Tell me about How did you resolve inventory synchronization issues once you identified them",
+      "What does the note How did you resolve inventory synchronization issues once you identified them say?",
+      "What about small number affected records we corrected manually larger?"
+    ],
+    "answer": "Notes: How did you resolve inventory synchronization issues once you identified them. For a small number of affected records, we corrected them manually. For larger sets, the business team supplied a correction file through the supported import process. I then worked with the backend partner on the underlying data-consistency issue rather than presenting the manual correction as a permanent fix.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "resolve",
+      "inventory",
+      "synchronization",
+      "issues",
+      "once",
+      "identified",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-use-testing-and-monitoring-t-cdcf67",
+    "topic": "Notes: How did you use testing and monitoring to keep a migration stable",
+    "questions": [
+      "Tell me about How did you use testing and monitoring to keep a migration stable",
+      "What does the note How did you use testing and monitoring to keep a migration stable say?",
+      "What about used staging functional performance user acceptance testing before?"
+    ],
+    "answer": "Notes: How did you use testing and monitoring to keep a migration stable. I used staging and functional, performance and user-acceptance testing before launch. Application monitoring and platform alerts covered the customer journey and integrations during cutover. I also watched orders and inventory with the team so a healthy infrastructure dashboard was not our only evidence.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "use",
+      "testing",
+      "monitoring",
+      "keep",
+      "migration",
+      "stable",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-would-you-detect-a-machine-repeatedl-f3793e",
+    "topic": "Notes: How would you detect a machine repeatedly restarting during boot",
+    "questions": [
+      "Tell me about How would you detect a machine repeatedly restarting during boot",
+      "What does the note How would you detect a machine repeatedly restarting during boot say?",
+      "What about correlate machine identity boot time changes uptime resets?"
+    ],
+    "answer": "Notes: How would you detect a machine repeatedly restarting during boot. I would correlate machine identity with boot-time changes, uptime resets and restart counts, using metrics collected outside the failing machine when possible. Missing telemetry alone does not prove a reboot. I would confirm the pattern with boot logs or host events and distinguish application restarts from host restarts.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "detect",
+      "machine",
+      "repeatedly",
+      "restarting",
+      "during",
+      "boot",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-would-you-detect-a-machine-repeatedl-f3793e-2",
+    "topic": "Notes: How would you detect a machine repeatedly restarting during boot",
+    "questions": [
+      "Tell me about How would you detect a machine repeatedly restarting during boot",
+      "What does the note How would you detect a machine repeatedly restarting during boot say?",
+      "What about use metrics figure out if same system keeps?"
+    ],
+    "answer": "Notes: How would you detect a machine repeatedly restarting during boot. How do you use metrics to figure out if the same system keeps restarting on boot? I would correlate machine identity with boot-time changes, uptime resets and restart counts, using metrics collected outside the failing machine when possible. Missing telemetry alone does not prove a reboot. I would confirm the pattern with boot logs or host events and distinguish application restarts from host restarts.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "detect",
+      "machine",
+      "repeatedly",
+      "restarting",
+      "during",
+      "boot",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-are-the-four-golden-signals-b1b54b",
+    "topic": "Notes: What are the four golden signals",
+    "questions": [
+      "Tell me about What are the four golden signals",
+      "What does the note What are the four golden signals say?",
+      "What about four golden signals latency traffic errors saturation look?"
+    ],
+    "answer": "Notes: What are the four golden signals. The four golden signals are latency, traffic, errors and saturation. I look at them together to separate demand changes from failures and resource pressure, then connect the signals to user impact and the service objectives.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "four",
+      "golden",
+      "signals",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-do-mttd-and-mttr-stand-for-a5710b",
+    "topic": "Notes: What do MTTD and MTTR stand for",
+    "questions": [
+      "Tell me about What do MTTD and MTTR stand for",
+      "What does the note What do MTTD and MTTR stand for say?",
+      "What about mttd mean time detect mttr commonly mean time?"
+    ],
+    "answer": "Notes: What do MTTD and MTTR stand for. MTTD is mean time to detect. MTTR is commonly mean time to recovery or restoration; I agree on the exact definition before comparing measurements. Alert quality helps detection, while clear runbooks, ownership and practiced response help recovery.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "mttd",
+      "mttr",
+      "stand",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-do-mttd-and-mttr-stand-for-a5710b-2",
+    "topic": "Notes: What do MTTD and MTTR stand for",
+    "questions": [
+      "Tell me about What do MTTD and MTTR stand for",
+      "What does the note What do MTTD and MTTR stand for say?",
+      "What about s mttd vs mttr mttd mean time detect?"
+    ],
+    "answer": "Notes: What do MTTD and MTTR stand for. What's MTTD vs MTTR? MTTD is mean time to detect. MTTR is commonly mean time to recovery or restoration; I agree on the exact definition before comparing measurements. Alert quality helps detection, while clear runbooks, ownership and practiced response help recovery.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "mttd",
+      "mttr",
+      "stand",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-do-you-validate-before-a-disaster-r-7fed97",
+    "topic": "Notes: What do you validate before a disaster-recovery failover",
+    "questions": [
+      "Tell me about What do you validate before a disaster-recovery failover",
+      "What does the note What do you validate before a disaster-recovery failover say?",
+      "What about validate recovery capacity replication health database readiness dependencies?"
+    ],
+    "answer": "Notes: What do you validate before a disaster-recovery failover. I validate recovery capacity, replication health, database readiness, dependencies, routing and DNS, secrets and configuration, and monitoring. I also check the runbook, rollback path and recovery objectives before switching traffic, then verify service health after the change.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "validate",
+      "before",
+      "disaster",
+      "recovery",
+      "failover",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-a-circuit-breaker-379178",
+    "topic": "Notes: What is a circuit breaker",
+    "questions": [
+      "Tell me about What is a circuit breaker",
+      "What does the note What is a circuit breaker say?",
+      "What about circuit breaker temporarily stops calls dependency failing preventing?"
+    ],
+    "answer": "Notes: What is a circuit breaker. A circuit breaker temporarily stops calls to a dependency that is failing, preventing cascading failures and giving it time to recover. I combine it with timeouts, bounded retries and a safe fallback, and use limited trial requests before restoring normal traffic.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "circuit",
+      "breaker",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-a-retry-a-52fab4",
+    "topic": "Notes: What is the difference between a retry and a timeout",
+    "questions": [
+      "Tell me about What is the difference between a retry and a timeout",
+      "What does the note What is the difference between a retry and a timeout say?",
+      "What about timeout bounds long request wait retry makes another?"
+    ],
+    "answer": "Notes: What is the difference between a retry and a timeout. A timeout bounds how long a request can wait. A retry makes another attempt after a failure. I use an overall deadline, bounded attempts and backoff with jitter, and only retry operations that are safe to repeat.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "difference",
+      "between",
+      "retry",
+      "timeout",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-difference-between-a-retry-a-52fab4-2",
+    "topic": "Notes: What is the difference between a retry and a timeout",
+    "questions": [
+      "Tell me about What is the difference between a retry and a timeout",
+      "What does the note What is the difference between a retry and a timeout say?",
+      "What about s difference between retry timeout timeout bounds long?"
+    ],
+    "answer": "Notes: What is the difference between a retry and a timeout. What's the difference between retry and timeout? A timeout bounds how long a request can wait. A retry makes another attempt after a failure. I use an overall deadline, bounded attempts and backoff with jitter, and only retry operations that are safe to repeat.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "difference",
+      "between",
+      "retry",
+      "timeout",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-rto-vs-rpo-a0736c",
+    "topic": "Notes: RTO vs RPO",
+    "questions": [
+      "Tell me about RTO vs RPO",
+      "What does the note RTO vs RPO say?",
+      "What about s difference between rto rpo rto recovery time?"
+    ],
+    "answer": "Notes: RTO vs RPO. What's the difference between RTO and RPO? RTO is the recovery time objective, the acceptable time to restore service. RPO is the recovery point objective, the acceptable window of data loss. RTO bounds downtime; RPO bounds lost-data time. I use RTO vs RPO to choose failover, replication and backup requirements.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "rto",
+      "vs",
+      "rpo",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-was-difficult-about-maintaining-the-b75b7b",
+    "topic": "Notes: What was difficult about maintaining the observability improvements",
+    "questions": [
+      "Tell me about What was difficult about maintaining the observability improvements",
+      "What does the note What was difficult about maintaining the observability improvements say?",
+      "What about applications different monitoring needs so consistent tagging configuration?"
+    ],
+    "answer": "Notes: What was difficult about maintaining the observability improvements. Applications had different monitoring needs, so consistent tagging and configuration took work. We standardized tags for application, cluster and node context. That made it easier to filter the shared monitoring system and identify the part of the estate responsible for a problem.",
+    "tags": [
+      "interview",
+      "reliability",
+      "observability",
+      "difficult",
+      "maintaining",
+      "improvements",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-can-time-series-data-be-linked-to-relati-cb83e7",
+    "topic": "Notes: Can time-series data be linked to relational data",
+    "questions": [
+      "Tell me about Can time-series data be linked to relational data",
+      "What does the note Can time-series data be linked to relational data say?",
+      "What about yes use stable entity identifiers timestamps relate measurements?"
+    ],
+    "answer": "Notes: Can time-series data be linked to relational data. Yes. I use stable entity identifiers and timestamps to relate measurements to metadata. Time-series storage handles append-heavy measurements and time-window queries, while relational storage manages entities and relationships. I choose joins or enrichment based on consistency needs and query volume.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "time",
+      "series",
+      "data",
+      "linked",
+      "relational",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-can-time-series-data-be-linked-to-relati-cb83e7-2",
+    "topic": "Notes: Can time-series data be linked to relational data",
+    "questions": [
+      "Tell me about Can time-series data be linked to relational data",
+      "What does the note Can time-series data be linked to relational data say?",
+      "What about time series data relations linked yes use stable?"
+    ],
+    "answer": "Notes: Can time-series data be linked to relational data. Can time series data and relations be linked? Yes. I use stable entity identifiers and timestamps to relate measurements to metadata. Time-series storage handles append-heavy measurements and time-window queries, while relational storage manages entities and relationships. I choose joins or enrichment based on consistency needs and query volume.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "time",
+      "series",
+      "data",
+      "linked",
+      "relational",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-approach-the-architecture-of-07e835",
+    "topic": "Notes: How did you approach the architecture of a challenging platform migration",
+    "questions": [
+      "Tell me about How did you approach the architecture of a challenging platform migration",
+      "What does the note How did you approach the architecture of a challenging platform migration say?",
+      "What about started requirements business teams platform implementation partner selection?"
+    ],
+    "answer": "Notes: How did you approach the architecture of a challenging platform migration. I started with requirements from the business teams, platform and implementation-partner selection, then an architecture and delivery plan. For a commerce migration, that included the integrations and release scope. I made schedule-driven scope trade-offs explicit rather than implying every capability moved at once.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "approach",
+      "architecture",
+      "challenging",
+      "platform",
+      "migration",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-decompose-the-older-platform-529fc0",
+    "topic": "Notes: How did you decompose the older platform and choose architectural trade-offs",
+    "questions": [
+      "Tell me about How did you decompose the older platform and choose architectural trade-offs",
+      "What does the note How did you decompose the older platform and choose architectural trade-offs say?",
+      "What about worked through target platform integration boundaries migration plan?"
+    ],
+    "answer": "Notes: How did you decompose the older platform and choose architectural trade-offs. I worked through the target platform, integration boundaries and migration plan with business stakeholders and the implementation partner. Some functionality was deferred or handled manually at first. I would distinguish platform migration and integration work I owned from claiming that I independently rebuilt the entire platform as microservices.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "decompose",
+      "older",
+      "platform",
+      "choose",
+      "architectural",
+      "trade",
+      "offs",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-integrate-payment-and-invent-24815b",
+    "topic": "Notes: How did you integrate payment and inventory systems during a commerce migration",
+    "questions": [
+      "Tell me about How did you integrate payment and inventory systems during a commerce migration",
+      "What does the note How did you integrate payment and inventory systems during a commerce migration say?",
+      "What about worked configuring payment integrations flows connecting commerce backend?"
+    ],
+    "answer": "Notes: How did you integrate payment and inventory systems during a commerce migration. I worked on configuring payment integrations and the flows connecting commerce with backend data. My experience includes payment gateways, ERP integration and inventory synchronization. I clarify which work was configuration and coordination with the implementation partner rather than implying that I wrote every connector myself.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "integrate",
+      "payment",
+      "inventory",
+      "systems",
+      "during",
+      "commerce",
+      "migration",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-did-you-validate-architecture-decisi-2e1f3c",
+    "topic": "Notes: How did you validate architecture decisions before going live",
+    "questions": [
+      "Tell me about How did you validate architecture decisions before going live",
+      "What does the note How did you validate architecture decisions before going live say?",
+      "What about validated staging through functional performance user acceptance testing?"
+    ],
+    "answer": "Notes: How did you validate architecture decisions before going live. I validated in staging and through functional, performance and user-acceptance testing. The commerce rollout also used a limited beta with invited customers before broader exposure. I treated that feedback as evidence about the actual customer journey, not just whether infrastructure dashboards were green.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "validate",
+      "architecture",
+      "decisions",
+      "before",
+      "going",
+      "live",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-dead-letter-queues-relate-to-kafk-415000",
+    "topic": "Notes: How do dead-letter queues relate to Kafka failures",
+    "questions": [
+      "Tell me about How do dead-letter queues relate to Kafka failures",
+      "What does the note How do dead-letter queues relate to Kafka failures say?",
+      "What about separate broker availability message processing failures broker outages?"
+    ],
+    "answer": "Notes: How do dead-letter queues relate to Kafka failures. I separate broker availability from message-processing failures. Broker outages need replication, durable producer settings, retries and recovery. A dead-letter topic isolates records a consumer cannot process after bounded attempts; it does not fix a failed Kafka cluster. I preserve failure context and define safe replay.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "dead",
+      "letter",
+      "queues",
+      "relate",
+      "kafka",
+      "failures",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-dead-letter-queues-relate-to-kafk-415000-2",
+    "topic": "Notes: How do dead-letter queues relate to Kafka failures",
+    "questions": [
+      "Tell me about How do dead-letter queues relate to Kafka failures",
+      "What does the note How do dead-letter queues relate to Kafka failures say?",
+      "What about dead letter queue if kafka queue crashes separate?"
+    ],
+    "answer": "Notes: How do dead-letter queues relate to Kafka failures. What about a dead letter queue if the Kafka queue crashes? I separate broker availability from message-processing failures. Broker outages need replication, durable producer settings, retries and recovery. A dead-letter topic isolates records a consumer cannot process after bounded attempts; it does not fix a failed Kafka cluster. I preserve failure context and define safe replay.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "dead",
+      "letter",
+      "queues",
+      "relate",
+      "kafka",
+      "failures",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-you-approach-designing-an-api-fro-6376d8",
+    "topic": "Notes: How do you approach designing an API from scratch",
+    "questions": [
+      "Tell me about How do you approach designing an API from scratch",
+      "What does the note How do you approach designing an API from scratch say?",
+      "What about start problem consumers data data resides then define?"
+    ],
+    "answer": "Notes: How do you approach designing an API from scratch. I start with the problem, consumers, data and where that data resides. Then I define the contract and the security, scalability and reliability requirements. I have earlier backend API-development experience, but I distinguish that from later SRE work that improved reliability around APIs designed by other teams.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "approach",
+      "designing",
+      "api",
+      "scratch",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-you-design-a-caching-strategy-for-ba7ffe",
+    "topic": "Notes: How do you design a caching strategy for a high-throughput system",
+    "questions": [
+      "Tell me about How do you design a caching strategy for a high-throughput system",
+      "What does the note How do you design a caching strategy for a high-throughput system say?",
+      "What about start access pattern freshness requirements source truth failure?"
+    ],
+    "answer": "Notes: How do you design a caching strategy for a high-throughput system. I start with the access pattern, freshness requirements, source of truth and failure behavior. Then I choose what to cache, how to invalidate it and how to avoid a stampede. My notes also emphasize private network access and safe maintenance, but security settings alone are not a caching strategy.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "caching",
+      "strategy",
+      "high",
+      "throughput",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-how-do-you-preserve-cache-consistency-du-00510a",
+    "topic": "Notes: How do you preserve cache consistency during rolling updates",
+    "questions": [
+      "Tell me about How do you preserve cache consistency during rolling updates",
+      "What does the note How do you preserve cache consistency during rolling updates say?",
+      "What about different availability zones improve availability not consistency themselves?"
+    ],
+    "answer": "Notes: How do you preserve cache consistency during rolling updates. Different availability zones improve availability, not consistency by themselves. I would preserve the authoritative data source, maintain compatible key and serialization formats, follow the replication and failover model, and use deliberate expiry or invalidation. I would test those behaviors during maintenance.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "preserve",
+      "cache",
+      "consistency",
+      "during",
+      "rolling",
+      "updates",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-api-design-work-did-you-own-and-wha-a86974",
+    "topic": "Notes: What API design work did you own, and what challenges did you face",
+    "questions": [
+      "Tell me about What API design work did you own, and what challenges did you face",
+      "What does the note What API design work did you own, and what challenges did you face say?",
+      "What about earlier full stack work included building web frameworks?"
+    ],
+    "answer": "Notes: What API design work did you own, and what challenges did you face. My earlier full-stack work included building web frameworks, REST APIs and integration interfaces. In the later reliability role, I did not design the application APIs from scratch: I partnered with their owners on observability, monitoring and reliability. That boundary matters when I describe my contribution.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "api",
+      "work",
+      "own",
+      "challenges",
+      "face",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-implementation-factors-matter-for-a-bbd576",
+    "topic": "Notes: What implementation factors matter for a Redis caching layer",
+    "questions": [
+      "Tell me about What implementation factors matter for a Redis caching layer",
+      "What does the note What implementation factors matter for a Redis caching layer say?",
+      "What about consider network access authentication availability replication persistence requirements?"
+    ],
+    "answer": "Notes: What implementation factors matter for a Redis caching layer. I consider network access, authentication, availability, replication, persistence requirements, capacity and maintenance alongside TTL and invalidation behavior. Private access and safe rolling maintenance are important, but they do not replace decisions about freshness and the authoritative source of data.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "implementation",
+      "factors",
+      "matter",
+      "redis",
+      "caching",
+      "layer",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-is-the-strangler-pattern-421707",
+    "topic": "Notes: What is the strangler pattern",
+    "questions": [
+      "Tell me about What is the strangler pattern",
+      "What does the note What is the strangler pattern say?",
+      "What about strangler pattern replaces legacy system incrementally route bounded?"
+    ],
+    "answer": "Notes: What is the strangler pattern. The strangler pattern replaces a legacy system incrementally. I route a bounded capability to a new implementation, validate behavior and keep a rollback path, then expand the boundary over time. I would make data ownership and compatibility explicit rather than attempt a risky all-at-once rewrite.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "strangler",
+      "pattern",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
+    "id": "note-what-would-you-improve-in-that-erp-integ-d73aba",
+    "topic": "Notes: What would you improve in that ERP integration if you led it again",
+    "questions": [
+      "Tell me about What would you improve in that ERP integration if you led it again",
+      "What does the note What would you improve in that ERP integration if you led it again say?",
+      "What about involve backend partners management earlier explain observed failure?"
+    ],
+    "answer": "Notes: What would you improve in that ERP integration if you led it again. I would involve the backend partners and their management earlier, explain the observed failure with concrete evidence, and agree on a durable change to the source process. I would review opportunities to automate recovery, while preserving validation so automation does not amplify incorrect data.",
+    "tags": [
+      "interview",
+      "system",
+      "design",
+      "improve",
+      "erp",
+      "integration",
+      "if",
+      "led",
+      "again",
+      "notes"
+    ],
+    "link": "#experience",
+    "source": "vault"
+  },
+  {
     "id": "note-related-e444de-1",
     "topic": "Notes: Related",
     "questions": [
