@@ -370,3 +370,26 @@ test("every Contact link opens in a new tab with noopener noreferrer", () => {
   assert.match(contact[1], /href="https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=San\+Ramon%2C\+CA"/);
   assert.match(contact[1], /href="https:\/\/cal\.com\/ramvellamsetti\/30min"/);
 });
+
+test("homepage and preview redirect use the generated photo favicons", () => {
+  const files = [
+    "assets/favicon.ico",
+    "assets/favicon-32.png",
+    "assets/apple-touch-icon.png",
+    "assets/icon-192.png",
+    "assets/icon-512.png"
+  ];
+  for (const file of files) {
+    assert.equal(read(file).length > 0, true, file);
+  }
+  assert.match(page, /href="assets\/favicon\.ico"/);
+  assert.match(page, /href="assets\/favicon-32\.png"/);
+  assert.match(page, /rel="apple-touch-icon"[^>]*href="assets\/apple-touch-icon\.png"/);
+  assert.match(page, /href="assets\/icon-192\.png"/);
+  assert.match(page, /href="assets\/icon-512\.png"/);
+  assert.doesNotMatch(page, /favicon\.svg/);
+  const preview = read("preview/index.html");
+  assert.match(preview, /href="\/assets\/favicon\.ico"/);
+  assert.match(preview, /href="\/assets\/apple-touch-icon\.png"/);
+  assert.doesNotMatch(preview, /favicon\.svg/);
+});
