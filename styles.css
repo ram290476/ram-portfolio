@@ -844,7 +844,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 .exp-resp-list li:last-child { margin-bottom: 0; }
 .exp-skill-chips { margin: 10px 0 0; }
 .exp-skill-toggle,
-.exp-resp-toggle {
+.exp-resp-toggle,
+.exp-list-toggle {
   display: none;
   margin-top: 8px;
   padding: 0;
@@ -858,7 +859,10 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+.exp-list-toggle { grid-column: 1 / -1; justify-self: start; }
 .js .exp-skill-toggle,
-.js .exp-resp-toggle { display: inline-block; }
+.js .exp-resp-toggle,
+.js .exp-list-toggle { display: inline-block; }
 .js .exp-skill-chips:not(.is-open) .exp-skill-more { display: none; }
 .js .exp-resp-list:not(.is-open) .exp-resp-more { display: none; }
+.js .exp:not(.is-open) > .exp-more { display: none; }

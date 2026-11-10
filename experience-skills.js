@@ -21,4 +21,35 @@
 
   bindToggles(".exp-skill-toggle", "Show all", "Show fewer", true);
   bindToggles(".exp-resp-toggle", "Show more", "Show less", false);
+
+  var EXP_LIST_LIMIT = 3;
+
+  function initExpListCollapse(listId) {
+    var list = document.getElementById(listId);
+    if (!list) return;
+    var dates = Array.prototype.slice.call(list.querySelectorAll(":scope > .exp-date"));
+    var bodies = Array.prototype.slice.call(list.querySelectorAll(":scope > .exp-body"));
+    if (dates.length !== bodies.length) return;
+    if (dates.length <= EXP_LIST_LIMIT) return;
+    for (var i = EXP_LIST_LIMIT; i < dates.length; i += 1) {
+      dates[i].classList.add("exp-more");
+      bodies[i].classList.add("exp-more");
+    }
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "exp-list-toggle";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", listId);
+    button.textContent = "Show more";
+    list.appendChild(button);
+    button.addEventListener("click", function () {
+      var open = button.getAttribute("aria-expanded") !== "true";
+      list.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      button.textContent = open ? "Show less" : "Show more";
+    });
+  }
+
+  initExpListCollapse("cert-exp");
+  initExpListCollapse("training-exp");
 })();
