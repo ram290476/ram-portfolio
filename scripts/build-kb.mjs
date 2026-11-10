@@ -26,11 +26,11 @@ for (let i = 0; i < args.length; i += 1) {
 }
 
 const vaultDir = flag("--vault-dir");
-const kbPath = resolve(flag("--kb") || join(root, "preview/assets/chat/kb.json"));
+const kbPath = resolve(flag("--kb") || join(root, "assets/chat/kb.json"));
 const denylistPath = resolve(flag("--denylist") || join(root, "scripts/chat-denylist.txt"));
 
 if (!vaultDir) {
-  console.log("Usage: node scripts/build-kb.mjs --vault-dir path/to/obsidian-job-search/notes [--kb preview/assets/chat/kb.json] [--denylist scripts/chat-denylist.txt]");
+  console.log("Usage: node scripts/build-kb.mjs --vault-dir path/to/obsidian-job-search/notes [--kb assets/chat/kb.json] [--denylist scripts/chat-denylist.txt]");
   console.log("No vault directory was given. No notes added. kb.json unchanged.");
   process.exit(0);
 }

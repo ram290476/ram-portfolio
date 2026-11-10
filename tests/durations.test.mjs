@@ -8,7 +8,7 @@ import {
   monthSpan,
   parseRoles,
   sumRoleMonths
-} from "../preview/durations.js";
+} from "../durations.js";
 
 const COMPANIES = [
   {
@@ -75,7 +75,7 @@ test("a company total is the sum of role months, not the overall span", () => {
 });
 
 test("the Experience section shows one company range and a matching static total", () => {
-  const html = readFileSync(new URL("../preview/index.html", import.meta.url), "utf8");
+  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
   const experience = html.split('id="experience"')[1].split('id="work-projects"')[0];
 
   assert.doesNotMatch(experience, /Jul 2023 – Jan 2026/);

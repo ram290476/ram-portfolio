@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, basename } from "node:path";
-import { tokenize } from "../preview/assets/chat/chat.js";
+import { tokenize } from "../assets/chat/chat.js";
 
 const SAFE_LINK = /^#[a-z0-9-]+$/;
 const DEFAULT_LINK = "#about";

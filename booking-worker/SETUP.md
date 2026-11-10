@@ -73,12 +73,12 @@ Non-secret policy already lives in `wrangler.toml` (`SLOT_MINUTES`, working hour
 
 Create a widget for `ram.vellamsetti.com` (and the API host if the widget needs it).
 
-- Site key → `preview/config.js` `turnstileSiteKey` (this key is public).
+- Site key → `config.js` `turnstileSiteKey` (this key is public).
 - Secret key → `TURNSTILE_SECRET` above.
 
 Leave `bookingApi` empty until the Worker has a URL. The page then stays on “Booking opens soon.”
 
-The booking form lives on the unlisted preview (`/preview/#book`), not on the coming-soon homepage. When both values are ready:
+The booking form lives on the homepage (`/#book`). When both values are ready:
 
 ```js
 window.PORTFOLIO = {
