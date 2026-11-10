@@ -42,5 +42,5 @@ jobs:
       - name: HTML link check
         run: node scripts/check-links.mjs
 
-      - name: Preview chat and theme tests
-        run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs
+      - name: Site unit tests
+        run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs

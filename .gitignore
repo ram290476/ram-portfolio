@@ -2,6 +2,9 @@
 *.pptx
 !preview/assets/Ram_Career_Overview.pptx
 
+# Local terms for the portfolio-guide scrub. scripts/chat-denylist.txt.example is the template.
+scripts/chat-denylist.txt
+
 # Secrets and local environment. .dev.vars.example is intentionally not matched.
 .env
 .env.*
