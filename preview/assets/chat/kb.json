@@ -177,7 +177,7 @@
       "What skills did he use at the bank?",
       "What technologies did he use at First Republic?"
     ],
-    "answer": "At First Republic Bank, skills used included Azure, Sitecore, Akamai, C#, TypeScript, ASP.NET Core, React, Docker, Jenkins, and New Relic, among 49 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and cross-cutting skills such as software design and technical leadership are grouped in the Skills section.",
+    "answer": "At First Republic Bank, skills used included Azure, Sitecore, Akamai, C#, TypeScript, ASP.NET Core, React, Docker, Jenkins, and New Relic, among 46 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and cross-cutting skills such as software design and technical leadership are grouped in the Skills section.",
     "tags": [
       "first",
       "republic",
@@ -237,7 +237,7 @@
       "What technologies did he use at Corsair?",
       "What skills did he use in the commerce roles?"
     ],
-    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013–2017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 25 skills. As Commerce Architect (2017–2020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 38 skills. Cross-cutting skills are grouped in the Skills section.",
+    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013–2017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 18 skills. As Commerce Architect (2017–2020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 34 skills. Cross-cutting skills are grouped in the Skills section.",
     "tags": [
       "corsair",
       "skill",
@@ -313,7 +313,7 @@
       "What technologies did he use at ESP?",
       "What skills did he use on the .NET modernization?"
     ],
-    "answer": "At ESP, skills used included C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, SQL Server, Oracle Database, jQuery, Visual Studio, Web Services, and Front-End Development, among 15 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and software design is grouped in the Skills section.",
+    "answer": "At ESP, skills used included C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, SQL Server, Oracle Database, jQuery, Visual Studio, and Production Support, among 9 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and software design is grouped in the Skills section.",
     "tags": [
       "esp",
       "skill",
