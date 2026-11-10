@@ -42,7 +42,7 @@
   </button>
   <button class="backdrop" type="button" hidden aria-label="Close menu"></button>
 
-  <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar" aria-label="Profile and site menu">
     <div class="identity">
       <div class="avatar">
         <!-- Swap the monogram by adding assets/photo.jpg. It can be any square JPEG. -->
@@ -73,18 +73,20 @@
     </nav>
 
     <div class="theme-picker">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu"><svg class="nav-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Theme</button>
-      <div class="theme-menu" id="theme-menu" role="menu" aria-labelledby="theme-toggle" hidden>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-menu"><svg class="nav-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Theme</button>
+      <div class="theme-menu" id="theme-menu" role="dialog" aria-modal="true" aria-labelledby="theme-menu-label" hidden>
         <div class="theme-menu-head">
           <span class="theme-menu-label">Theme</span>
           <button type="button" class="theme-close" data-theme-close aria-label="Close theme menu">×</button>
         </div>
-        <button type="button" role="menuitemradio" data-theme-value="editorial" aria-checked="true"><span class="swatch swatch-editorial" aria-hidden="true"></span>Light editorial</button>
-        <button type="button" role="menuitemradio" data-theme-value="midnight" aria-checked="false"><span class="swatch swatch-midnight" aria-hidden="true"></span>Midnight</button>
-        <button type="button" role="menuitemradio" data-theme-value="minimal" aria-checked="false"><span class="swatch swatch-minimal" aria-hidden="true"></span>Dark minimal</button>
-        <button type="button" role="menuitemradio" data-theme-value="gradient" aria-checked="false"><span class="swatch swatch-gradient" aria-hidden="true"></span>Bold gradient</button>
-        <button type="button" role="menuitemradio" data-theme-value="glass" aria-checked="false"><span class="swatch swatch-glass" aria-hidden="true"></span>Glass</button>
-        <button type="button" role="menuitemradio" data-theme-value="contrast" aria-checked="false"><span class="swatch swatch-contrast" aria-hidden="true"></span>High contrast</button>
+        <div role="radiogroup" aria-labelledby="theme-menu-label">
+        <button type="button" role="radio" data-theme-value="editorial" aria-checked="true"><span class="swatch swatch-editorial" aria-hidden="true"></span>Light editorial</button>
+        <button type="button" role="radio" data-theme-value="midnight" aria-checked="false"><span class="swatch swatch-midnight" aria-hidden="true"></span>Midnight</button>
+        <button type="button" role="radio" data-theme-value="minimal" aria-checked="false"><span class="swatch swatch-minimal" aria-hidden="true"></span>Dark minimal</button>
+        <button type="button" role="radio" data-theme-value="gradient" aria-checked="false"><span class="swatch swatch-gradient" aria-hidden="true"></span>Bold gradient</button>
+        <button type="button" role="radio" data-theme-value="glass" aria-checked="false"><span class="swatch swatch-glass" aria-hidden="true"></span>Glass</button>
+        <button type="button" role="radio" data-theme-value="contrast" aria-checked="false"><span class="swatch swatch-contrast" aria-hidden="true"></span>High contrast</button>
+        </div>
       </div>
     </div>
 
@@ -102,7 +104,7 @@
     <section id="skills" aria-labelledby="skills-heading">
       <div class="section-row">
         <h2 id="skills-heading" class="section-h">Skills</h2>
-        <button type="button" class="wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
+        <button type="button" class="wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-expanded="false" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 18a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.6 4.2 4.2 0 0 1 18 18H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.5h3M8.5 15h6.5M13 12.5h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </button>
       </div>
@@ -870,7 +872,7 @@
       <button type="button" class="wc-close" aria-label="Close word cloud">×</button>
     </div>
     <p class="wc-note">Bigger words appear more often across Skills, Experience and Projects.</p>
-    <ul class="wc-cloud" id="wordcloud-list"></ul>
+    <ul class="wc-cloud" id="wordcloud-list" tabindex="0" aria-label="Keyword list"></ul>
   </dialog>
 
   <script src="config.js"></script>

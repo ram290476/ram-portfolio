@@ -54,9 +54,25 @@
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key !== "Escape" || !current) return;
-    event.preventDefault();
-    close(true);
+    if (!current) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close(true);
+      return;
+    }
+    if (event.key !== "Tab" || current.dataset.pinned !== "true") return;
+    var panel = panelFor(current);
+    var items = Array.prototype.slice.call(panel.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"));
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (document.activeElement === last || !panel.contains(document.activeElement))) {
+      event.preventDefault();
+      first.focus();
+    }
   });
   document.addEventListener("pointerdown", function (event) {
     if (!current) return;

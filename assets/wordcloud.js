@@ -49,7 +49,26 @@
     dialog.showModal();
     openBtn.setAttribute("aria-expanded", "true");
   });
+  function focusable() {
+    return Array.prototype.slice.call(dialog.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])")).filter(function (el) {
+      return !el.disabled && el.tabIndex !== -1 && !el.hidden;
+    });
+  }
   dialog.querySelector(".wc-close").addEventListener("click", function () { dialog.close(); });
   dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener("keydown", function (event) {
+    if (event.key !== "Tab") return;
+    var items = focusable();
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
   dialog.addEventListener("close", function () { openBtn.setAttribute("aria-expanded", "false"); openBtn.focus(); });
 })();

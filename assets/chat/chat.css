@@ -42,3 +42,5 @@
 @media (prefers-reduced-motion: reduce) {
   .chat-log { scroll-behavior: auto; }
 }
+html.reduce .chat-log { scroll-behavior: auto; }
+

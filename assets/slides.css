@@ -196,3 +196,8 @@
     transition: none;
   }
 }
+html.reduce .slides-player,
+html.reduce .slides-frame img {
+  transition: none;
+}
+
