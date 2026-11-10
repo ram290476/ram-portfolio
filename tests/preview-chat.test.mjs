@@ -310,6 +310,47 @@ test("each Experience role leads with LinkedIn responsibilities, then that role'
   assert.match(skillJS, /Show less/);
 });
 
+
+test("Personal project and career-overview links open in a new tab", () => {
+  const personal = page.match(/<section id="personal-projects"[\s\S]*?<\/section>/);
+  assert.ok(personal, "Personal projects section is missing");
+  const links = [...personal[0].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
+  const texts = links.map((m) => `${m[2].replace(/\s+/g, " ").trim()} ${m[1]}`);
+  const expected = [
+    'https://github.com/ram290476/investor-dashboard',
+    'https://investor.vellamsetti.com',
+    'https://github.com/ram290476/hybrid-cloud-dashboard',
+    'https://github.com/ram290476/opsKit',
+    'https://github.com/ram290476/credit-union-knowledge-system',
+    'https://github.com/ram290476/tasks-api'
+  ];
+  assert.equal(links.length, 6, "Personal projects should have six repo/live links");
+  for (const href of expected) {
+    const link = links.find((m) => m[1].includes(href));
+    assert.ok(link, `missing ${href}`);
+    assert.match(link[1], /target="_blank"/, href);
+    assert.match(link[1], /rel="[^"]*\bnoopener\b[^"]*"/, href);
+    assert.match(link[1], /rel="[^"]*\bnoreferrer\b[^"]*"/, href);
+  }
+  const work = page.match(/<section id="work-projects"[\s\S]*?<\/section>/);
+  assert.ok(work, "Work projects section is missing");
+  const workLinks = [...work[0].matchAll(/<a\b([^>]*)>/g)];
+  for (const m of workLinks) {
+    assert.match(m[1], /target="_blank"/, m[1]);
+    assert.match(m[1], /rel="[^"]*\bnoopener\b[^"]*"/, m[1]);
+    assert.match(m[1], /rel="[^"]*\bnoreferrer\b[^"]*"/, m[1]);
+  }
+  const pdf = page.match(/<a class="button" href="assets\/Ram_Career_Overview_Lite\.pdf"([^>]*)>/);
+  assert.ok(pdf, "PDF career-overview download is missing");
+  assert.match(pdf[1], /target="_blank"/);
+  assert.match(pdf[1], /rel="[^"]*\bnoopener\b[^"]*"/);
+  const pptx = page.match(/<a class="button button-icon" href="assets\/Ram_Career_Overview\.pptx"([^>]*)>/);
+  assert.ok(pptx, "PPTX career-overview download is missing");
+  assert.match(pptx[1], /\bdownload\b/);
+  assert.match(pptx[1], /target="_blank"/);
+  assert.match(pptx[1], /rel="[^"]*\bnoopener\b[^"]*"/);
+});
+
 test("every Contact link opens in a new tab with noopener noreferrer", () => {
   const contact = page.match(/<section id="contact"[^>]*>([\s\S]*?)<\/section>/);
   assert.ok(contact, "Contact section is missing");
