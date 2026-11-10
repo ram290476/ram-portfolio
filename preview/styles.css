@@ -557,7 +557,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
     position: fixed;
     top: 14px;
     left: 14px;
-    z-index: 30;
+    z-index: 120;
     background: var(--paper);
     color: var(--navy);
     border: 1px solid var(--navy);
@@ -587,7 +587,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
     width: min(300px, 88vw);
     height: 100vh;
     transform: translateX(-105%);
-    z-index: 25;
+    z-index: 115;
     transition: transform 160ms ease;
   }
   .js .sidebar.is-open { transform: none; }
@@ -597,7 +597,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
     inset: 0;
     background: rgba(42, 36, 32, 0.35);
     border: 0;
-    z-index: 20;
+    z-index: 110;
     cursor: pointer;
   }
   .js .backdrop[hidden] { display: none; }
@@ -605,7 +605,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   .js section { scroll-margin-top: 80px; }
 }
 
-.theme-picker { position: relative; }
+.theme-picker { position: relative; margin-top: auto; }
 .theme-toggle {
   width: 100%;
   text-align: left;
@@ -627,7 +627,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   position: absolute;
   z-index: 40;
   left: 0;
-  top: calc(100% + 6px);
+  top: auto;
+  bottom: calc(100% + 6px);
   min-width: 100%;
   margin: 0;
   padding: 6px;
@@ -660,12 +661,6 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 .swatch-contrast { background: #ffd400; }
 .feature-quote, .soon { background: var(--paper); backdrop-filter: var(--blur); }
 .feature-quote { border-radius: var(--radius); }
-
-@media (max-width: 860px) {
-  .js .theme-picker { position: fixed; top: 14px; right: 14px; z-index: 30; width: auto; }
-  .js .theme-toggle { width: auto; background: var(--paper); }
-  .js .theme-menu { min-width: 220px; }
-}
 
 .company { position: relative; }
 .company-btn {
