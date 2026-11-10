@@ -682,7 +682,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   position: relative;
   margin-top: auto;
   flex-shrink: 0;
-  padding-bottom: calc(16px + 34px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  margin-bottom: -28px;
 }
 .theme-toggle {
   width: 100%;
