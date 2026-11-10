@@ -44,3 +44,9 @@ jobs:
 
       - name: Site unit tests
         run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs tests/sync-vault-kb.test.mjs
+
+      - name: Accessibility checks
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          node --test tests/a11y.test.mjs

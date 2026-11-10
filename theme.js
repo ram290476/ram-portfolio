@@ -107,7 +107,26 @@
       closeMenu(true);
     });
   });
+  function menuFocusable() {
+    var list = [];
+    if (closeBtn) list.push(closeBtn);
+    items.forEach(function (btn) { list.push(btn); });
+    return list;
+  }
+
   menu.addEventListener("keydown", function (event) {
+    if (event.key === "Tab") {
+      var list = menuFocusable();
+      if (!list.length) return;
+      var index = list.indexOf(document.activeElement);
+      event.preventDefault();
+      if (event.shiftKey) {
+        list[index <= 0 ? list.length - 1 : index - 1].focus();
+      } else {
+        list[index === list.length - 1 || index < 0 ? 0 : index + 1].focus();
+      }
+      return;
+    }
     var index = items.indexOf(document.activeElement);
     var next = null;
     if (event.key === "ArrowDown") next = index < 0 ? 0 : (index + 1) % items.length;
