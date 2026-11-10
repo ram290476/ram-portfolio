@@ -32,7 +32,7 @@
       "Where has he worked?",
       "Summarize his career"
     ],
-    "answer": "Four eras: JPMorgan Chase from July 2023 to August 2026, First Republic Bank from April 2020 to July 2023, Corsair from May 2013 to February 2020, and ESP from January 2006 to February 2013. A downloadable experience overview is linked in the Experience section.",
+    "answer": "Four eras: JPMorgan Chase from July 2023 to August 2026, First Republic Bank from April 2020 to July 2023, Corsair from May 2013 to February 2020, and ESP from January 2006 to February 2013. An Experience overview button in the Experience section opens a full-screen player for a six-slide career overview.",
     "tags": ["experience", "career", "eras", "resume", "overview"],
     "link": "#experience"
   },

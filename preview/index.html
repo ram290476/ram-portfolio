@@ -27,6 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,560&family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="assets/chat/chat.css" />
+  <link rel="stylesheet" href="assets/slides.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -168,7 +169,8 @@
     <section id="experience" aria-labelledby="experience-heading">
       <div class="section-row">
         <h2 id="experience-heading" class="section-h">Experience</h2>
-        <a class="button" href="assets/Ram_Career_Overview_Lite.pdf" download>Download experience overview (PDF)</a>
+        <button type="button" class="button" id="experience-overview" data-slides-open aria-haspopup="dialog" aria-controls="slides-player" aria-expanded="false" hidden>Experience overview</button>
+        <noscript><a class="button" href="assets/Ram_Career_Overview_Lite.pdf">Experience overview (PDF)</a></noscript>
       </div>
 
       <blockquote class="feature-quote">
@@ -443,6 +445,25 @@
     </dialog>
   </div>
 
+  <dialog class="slides-player" id="slides-player" aria-modal="true" aria-labelledby="slides-player-title">
+    <div class="slides-toolbar">
+      <h2 id="slides-player-title" class="slides-title">Experience overview</h2>
+      <p class="slides-counter" data-slides-counter aria-live="polite">1 / 6</p>
+      <button type="button" class="slides-icon" data-slides-fullscreen aria-pressed="false">Full screen</button>
+      <button type="button" class="slides-icon" data-slides-close aria-label="Close experience overview">×</button>
+    </div>
+    <div class="slides-stage" data-slides-stage>
+      <button type="button" class="slides-icon slides-nav" data-slides-prev aria-label="Previous slide">Previous</button>
+      <figure class="slides-frame">
+        <picture>
+          <source type="image/webp" data-slides-webp srcset="assets/slides/slide-1.webp">
+          <img data-slides-image src="assets/slides/slide-1.jpg" width="1920" height="1081" alt="Career arc: four eras over twenty years — ESP, Corsair Gaming, First Republic, and JPMorgan Chase — with six years in financial services. The common thread is a solo platform owner who coordinates contractors, vendors, and internal teams, production first.">
+        </picture>
+      </figure>
+      <button type="button" class="slides-icon slides-nav" data-slides-next aria-label="Next slide">Next</button>
+    </div>
+  </dialog>
+
   <script src="config.js"></script>
   <script src="main.js"></script>
   <script src="booking.js"></script>
@@ -450,5 +471,6 @@
   <script type="module" src="durations.js"></script>
   <script src="company-info.js"></script>
   <script type="module" src="assets/chat/chat.js"></script>
+  <script src="assets/slides.js"></script>
 </body>
 </html>
