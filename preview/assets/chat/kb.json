@@ -223,12 +223,23 @@
     "topic": "Certifications",
     "questions": [
       "What certifications does he have?",
-      "Is he an AWS architect?",
-      "Tell me about the Copilot training"
+      "Is he an AWS architect?"
     ],
-    "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential. The same year he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme.",
-    "tags": ["certification", "aws", "architect", "copilot", "training"],
+    "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential.",
+    "tags": ["certification", "aws", "architect"],
     "link": "#certifications"
+  },
+  {
+    "id": "training",
+    "topic": "Training",
+    "questions": [
+      "What training has he completed?",
+      "Tell me about the Copilot training",
+      "Did he take GitHub Copilot training?"
+    ],
+    "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme.",
+    "tags": ["training", "copilot", "github", "microsoft"],
+    "link": "#training"
   },
   {
     "id": "education",
