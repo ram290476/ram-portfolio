@@ -1,0 +1,27 @@
+name = "ram-booking"
+main = "src/index.ts"
+compatibility_date = "2026-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Create the namespace, then replace this placeholder before any deploy:
+#   npx wrangler kv namespace create RATE_LIMIT
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "00000000000000000000000000000000"
+
+# Non-secret policy. Tokens, client secrets, and the Turnstile secret
+# are wrangler secrets. See SETUP.md. Do not put them here.
+[vars]
+CALENDAR_PROVIDER = "microsoft"
+MS_TENANT = "consumers"
+SLOT_MINUTES = "30"
+BUFFER_MINUTES = "15"
+WORK_START = "09:00"
+WORK_END = "17:00"
+WORK_DAYS = "1,2,3,4,5"
+OWNER_TZ = "America/Los_Angeles"
+HORIZON_DAYS = "14"
+CORS_ORIGINS = "https://ram.vellamsetti.com"
+MAIL_CONFIRMATION = "false"
+RATE_LIMIT_MAX = "8"
+RATE_LIMIT_WINDOW_SECONDS = "3600"

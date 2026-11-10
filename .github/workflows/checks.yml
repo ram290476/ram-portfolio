@@ -1,0 +1,43 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: booking-worker/package-lock.json
+
+      - name: Install poppler
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Worker unit tests
+        working-directory: booking-worker
+        run: npm ci && npm test
+
+      - name: Privacy scan
+        run: bash scripts/privacy-scan.sh
+
+      - name: Install gitleaks
+        run: |
+          version=8.28.0
+          curl -sSL -o /tmp/gitleaks.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_x64.tar.gz"
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          sudo mv /tmp/gitleaks /usr/local/bin/gitleaks
+
+      - name: gitleaks
+        run: gitleaks detect --source . --redact --verbose --log-opts="--all"
+
+      - name: HTML link check
+        run: node scripts/check-links.mjs
