@@ -1,5 +1,6 @@
-# Career decks stay off the public site. The scrubbed PDF in assets/ is the published copy.
+# Career decks stay off the public site, except the scrubbed overview visitors can download.
 *.pptx
+!preview/assets/Ram_Career_Overview.pptx
 
 # Secrets and local environment. .dev.vars.example is intentionally not matched.
 .env
