@@ -372,7 +372,7 @@
       "What soft skills does he have?",
       "What cross-cutting skills does he list?"
     ],
-    "answer": "Cross-cutting skills from his LinkedIn role lists are grouped in the Skills section rather than repeated on every role. Architecture and design includes Software Design and Software Architecture. Leadership and delivery includes Technical Leadership, Technical Project Leadership, and Stakeholder Management. Ways of working includes Agile Methodologies, Code Review, and SDLC. Behavioral and communication includes Communication. Role-specific tools and platforms stay under each Experience role.",
+    "answer": "Cross-cutting skills from his LinkedIn role lists are grouped in the Skills section rather than repeated on every role. Architecture and design includes Software Design, Software Architecture, Agile Methodologies, and SDLC. Leadership and delivery includes Technical Leadership, Technical Project Leadership, and Stakeholder Management. Behavioral and communication includes Communication. Role-specific tools and platforms stay under each Experience role.",
     "link": "#skills",
     "tags": [
       "leadership",
