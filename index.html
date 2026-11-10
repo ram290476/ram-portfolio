@@ -63,9 +63,8 @@
       <a href="#certifications">Certifications</a>
       <a href="#training">Training</a>
       <a href="#education">Education</a>
-      <a href="#book">Book a call</a>
       <a href="#contact">Contact</a>
-      <button class="chat-launch" type="button" data-chat-open aria-label="Ask about Ram’s experience" aria-haspopup="dialog" aria-expanded="false" aria-controls="portfolio-chat-panel" hidden>Ask about Ram</button>
+      <button class="chat-launch" type="button" data-chat-open aria-label="Ask Ram" aria-haspopup="dialog" aria-expanded="false" aria-controls="portfolio-chat-panel" hidden>Ask Ram</button>
     </nav>
 
     <div class="theme-picker">
@@ -628,46 +627,19 @@
       </div>
     </section>
 
-    <section id="book" aria-labelledby="book-heading">
-      <h2 id="book-heading" class="section-h">Book a call</h2>
-      <p class="expect" id="expect">A <span id="slot-minutes">30</span>-minute intro call to talk about Senior SRE, Platform or Cloud roles and how my experience fits your team.</p>
-
-      <div id="booking-soon" class="soon">
-        <p>Pick a time for a 30-minute Intro call on Cal Video. The scheduler opens in a new tab.</p>
-        <a class="button" href="https://cal.com/ramvellamsetti/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute Intro call</a>
-      </div>
-
-      <form id="booking-form" class="booking" hidden novalidate>
-        <p class="hours" id="booking-hours"></p>
-        <p class="tz-note" id="tz-note"></p>
-        <div id="slot-status" class="status" role="status" aria-live="polite"></div>
-        <div id="slot-days" class="slot-days" role="tablist" aria-label="Days"></div>
-        <fieldset id="slot-times" class="slot-times">
-          <legend>Open times</legend>
-          <div id="slot-time-list"></div>
-        </fieldset>
-
-        <div class="fields">
-          <label for="book-name">Name</label>
-          <input id="book-name" name="name" type="text" autocomplete="name" required maxlength="100" />
-
-          <label for="book-email">Email <span class="hint">(email or phone, at least one)</span></label>
-          <input id="book-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" />
-
-          <label for="book-phone">Phone <span class="hint">(optional if you leave an email)</span></label>
-          <input id="book-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" />
-        </div>
-
-        <div id="turnstile-slot" class="turnstile"></div>
-        <p id="booking-error" class="form-error" role="alert"></p>
-        <button class="button button-solid" type="submit" id="book-submit">Request this time</button>
-      </form>
-    </section>
 
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading" class="section-h">Contact</h2>
       <p class="hero-sub tight">For Senior SRE, Platform, or Cloud roles, email me or book a 30-minute intro call.</p>
       <ul class="contact-list">
+        <li>
+          <a href="https://cal.com/ramvellamsetti/30min" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+            </svg>
+            Book a call
+          </a>
+        </li>
         <li>
           <a href="mailto:ram.vellamsetti@gmail.com" target="_blank" rel="noopener noreferrer">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -675,14 +647,6 @@
               <path d="M22.5 6.908V6.75a2.25 2.25 0 0 0-2.25-2.25H3.75A2.25 2.25 0 0 0 1.5 6.75v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
             </svg>
             ram.vellamsetti@gmail.com
-          </a>
-        </li>
-        <li>
-          <a href="https://cal.com/ramvellamsetti/30min" target="_blank" rel="noopener noreferrer">
-            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
-            </svg>
-            Book a call
           </a>
         </li>
         <li>
@@ -710,6 +674,37 @@
           </a>
         </li>
       </ul>
+      <!-- Booking worker form: stays hidden until config.js has an API and Turnstile key. Old #book links redirect to #contact. -->
+      <div id="booking-soon" class="soon" hidden>
+        <p>Pick a time for a 30-minute Intro call on Cal Video. The scheduler opens in a new tab.</p>
+        <a class="button" href="https://cal.com/ramvellamsetti/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute Intro call</a>
+      </div>
+      <p class="expect" id="expect" hidden>A <span id="slot-minutes">30</span>-minute intro call to talk about Senior SRE, Platform or Cloud roles and how my experience fits your team.</p>
+      <form id="booking-form" class="booking" hidden novalidate>
+        <p class="hours" id="booking-hours"></p>
+        <p class="tz-note" id="tz-note"></p>
+        <div id="slot-status" class="status" role="status" aria-live="polite"></div>
+        <div id="slot-days" class="slot-days" role="tablist" aria-label="Days"></div>
+        <fieldset id="slot-times" class="slot-times">
+          <legend>Open times</legend>
+          <div id="slot-time-list"></div>
+        </fieldset>
+
+        <div class="fields">
+          <label for="book-name">Name</label>
+          <input id="book-name" name="name" type="text" autocomplete="name" required maxlength="100" />
+
+          <label for="book-email">Email <span class="hint">(email or phone, at least one)</span></label>
+          <input id="book-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" />
+
+          <label for="book-phone">Phone <span class="hint">(optional if you leave an email)</span></label>
+          <input id="book-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" />
+        </div>
+
+        <div id="turnstile-slot" class="turnstile"></div>
+        <p id="booking-error" class="form-error" role="alert"></p>
+        <button class="button button-solid" type="submit" id="book-submit">Request this time</button>
+      </form>
     </section>
 
     <footer class="colophon">
@@ -721,7 +716,7 @@
     <dialog class="chat-panel" id="portfolio-chat-panel" aria-modal="true" aria-labelledby="portfolio-chat-title" aria-describedby="portfolio-chat-description">
       <div class="chat-heading">
         <div>
-          <h2 id="portfolio-chat-title">Ask about Ram</h2>
+          <h2 id="portfolio-chat-title">Ask Ram</h2>
           <p id="portfolio-chat-description">Public portfolio facts. No generative AI.</p>
         </div>
         <button class="chat-close" type="button" data-chat-close aria-label="Close portfolio chat">×</button>

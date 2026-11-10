@@ -24,7 +24,8 @@ test("homepage has one accessible chat widget and is indexable", () => {
   assert.match(page, /rel="canonical" href="https:\/\/ram\.vellamsetti\.com\/"/);
   assert.match(previewRedirect, /noindex,\s*nofollow/);
   assert.match(previewRedirect, /location\.replace\("\/" \+ location\.hash\)/);
-  assert.match(page, /aria-label="Ask about Ram’s experience"/);
+  assert.match(page, /aria-label="Ask Ram"/);
+  assert.match(page, /<h2 id="portfolio-chat-title">Ask Ram<\/h2>/);
   assert.match(page, /<dialog[^>]+aria-modal="true"/);
   assert.match(page, /aria-live="polite"/);
   assert.match(page, /<label[^>]+for="portfolio-chat-input"/);
@@ -33,8 +34,9 @@ test("homepage has one accessible chat widget and is indexable", () => {
   assert.match(page, /data-theme-value="contrast"/);
 });
 
-test("Ask about Ram lives in the left nav immediately after Contact", () => {
-  assert.match(page, /<a href="#contact">Contact<\/a>\s*<button class="chat-launch"[^>]*data-chat-open[^>]*>Ask about Ram<\/button>/);
+test("Ask Ram lives in the left nav immediately after Contact", () => {
+  assert.doesNotMatch(page, /<nav[^>]*>[\s\S]*href="#book"/);
+  assert.match(page, /<a href="#contact">Contact<\/a>\s*<button class="chat-launch"[^>]*data-chat-open[^>]*>Ask Ram<\/button>/);
   assert.equal((page.match(/data-chat-open/g) || []).length, 1);
   assert.equal((page.match(/class="chat-launch"/g) || []).length, 1);
   const contact = page.indexOf('<a href="#contact">Contact</a>');
@@ -97,7 +99,7 @@ for (const [question, id] of [
     assert.equal(answer.kind, "answer", question);
     assert.equal(answer.id, id);
     if (id === "booking") {
-      assert.equal(answer.link, "#book");
+      assert.equal(answer.link, "#contact");
       assert.match(answer.answer, /https:\/\/cal\.com\/ramvellamsetti\/30min/);
     }
   });
@@ -244,12 +246,13 @@ test("Contact Book a call opens the Cal.com intro call in a new tab", () => {
     contact[1],
     /<a href="https:\/\/cal\.com\/ramvellamsetti\/30min"[^>]*>\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Book a call\s*<\/a>/
   );
-  const section = page.match(/<section id="book"[^>]*>([\s\S]*?)<\/section>/);
-  assert.ok(section, "Book a call section is missing");
-  const cta = section[1].match(/<a class="button" href="https:\/\/cal\.com\/ramvellamsetti\/30min"([^>]*)>/);
-  assert.ok(cta, "Book a call section is missing the Cal.com button");
-  assert.match(cta[1], /target="_blank"/);
-  assert.match(cta[1], /rel="noopener noreferrer"/);
+  assert.doesNotMatch(page, /<section id="book"/);
+  const first = contact[1].match(/<li>[\s\S]*?<a href="([^"]+)"/);
+  assert.ok(first, "Contact list is empty");
+  assert.equal(first[1], "https://cal.com/ramvellamsetti/30min", "Book a call should be first in Contact");
+  const mainJS = read("main.js");
+  assert.match(mainJS, /location\.hash !== "#book"/);
+  assert.match(mainJS, /#contact/);
 });
 test("the Experience callout quote has been removed", () => {
   const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
