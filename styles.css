@@ -576,6 +576,9 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   gap: 0.5em;
   color: var(--navy);
 }
+.contact-list a[href*="cal.com"] {
+  font-weight: 700;
+}
 .contact-icon {
   width: 1.1em;
   height: 1.1em;
