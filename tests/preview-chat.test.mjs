@@ -416,16 +416,22 @@ test("left menu uses inline Lucide icons hidden from assistive tech", () => {
   assert.doesNotMatch(page, /<script[^>]+src="https?:\/\/[^"]*lucide/);
 });
 
-test("menu icons have a gap from their labels and are centered as a unit", () => {
+test("menu icons have a gap from their labels and are vertically centered, left-aligned", () => {
   const navRule = themes.match(/\.nav a,\s*\.nav \.chat-launch\s*\{([^}]*)\}/);
   assert.ok(navRule, "nav item rule is missing");
-  assert.match(navRule[1], /display:\s*flex/);
+  assert.match(navRule[1], /display:\s*inline-flex/);
   assert.match(navRule[1], /align-items:\s*center/);
-  assert.match(navRule[1], /justify-content:\s*center/);
+  assert.doesNotMatch(navRule[1], /justify-content:\s*center/);
   assert.match(navRule[1], /gap:\s*10px/);
+  assert.match(navRule[1], /text-align:\s*left/);
+  const iconRule = themes.match(/\.nav-icon\s*\{([^}]*)\}/);
+  assert.ok(iconRule, "nav-icon rule is missing");
+  assert.match(iconRule[1], /display:\s*block/);
+  assert.match(iconRule[1], /flex-shrink:\s*0/);
   const themeRule = themes.match(/\.theme-toggle\s*\{([^}]*)\}/);
   assert.ok(themeRule, "theme toggle rule is missing");
   assert.match(themeRule[1], /align-items:\s*center/);
-  assert.match(themeRule[1], /justify-content:\s*center/);
+  assert.doesNotMatch(themeRule[1], /justify-content:\s*center/);
   assert.match(themeRule[1], /gap:\s*10px/);
+  assert.match(themeRule[1], /text-align:\s*left/);
 });
