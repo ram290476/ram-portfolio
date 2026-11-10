@@ -1,6 +1,6 @@
 # Career decks stay off the public site, except the scrubbed overview visitors can download.
 *.pptx
-!preview/assets/Ram_Career_Overview.pptx
+!assets/Ram_Career_Overview.pptx
 
 # Local terms for the portfolio-guide scrub. scripts/chat-denylist.txt.example is the template.
 scripts/chat-denylist.txt

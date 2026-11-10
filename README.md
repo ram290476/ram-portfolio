@@ -1,20 +1,20 @@
 # ram-portfolio
 
-Personal portfolio site for Ram Prasad Vellamsetti, served by GitHub Pages from `main`.
+Personal portfolio site for Ram Prasad Vellamsetti, served by GitHub Pages from `main` at https://ram.vellamsetti.com/.
 
-The public homepage is the coming-soon page at the repository root. It stays that way until launch. The full portfolio is an unlisted preview at `preview/` and is marked `noindex`. `robots.txt` disallows `/preview/`. The coming-soon page does not link to it.
+The homepage at the repository root is the full portfolio. The former unlisted preview at `preview/` now redirects to the homepage (hash fragments such as `#experience` are preserved). `robots.txt` still disallows `/preview/`.
 
-## Preview
+## Site
 
-`preview/index.html` is the light-editorial page: sidebar, experience, projects, booking, a theme picker, and a static portfolio guide. The page is static. The guide answers only from `preview/assets/chat/kb.json` in the browser. Light editorial is the default theme; the choice is stored in this browser.
+`index.html` is the light-editorial page: sidebar, experience, projects, booking, a theme picker, and a static portfolio guide. The page is static. The guide answers only from `assets/chat/kb.json` in the browser. Light editorial is the default theme; the choice is stored in this browser.
 
-Until `preview/assets/photo.jpg` exists, the sidebar shows an initials monogram. Add a square JPEG at that path to replace it.
+The sidebar uses `assets/photo.jpg`. If that file is missing, it falls back to an initials monogram. Add a square JPEG at that path to replace it.
 
-The Experience section has an **Experience overview** button that opens a full-screen player for the six-slide deck, and a **Download slides (PowerPoint)** button next to it. Slide images live in `preview/assets/slides/`, rendered from the already-public `preview/assets/Ram_Career_Overview_Lite.pdf`. The downloadable deck is `preview/assets/Ram_Career_Overview.pptx`. Other PowerPoint sources stay gitignored.
+The Experience section has an **Experience overview** button that opens a full-screen player for the six-slide deck, and a **Download slides (PowerPoint)** button next to it. Slide images live in `assets/slides/`, rendered from the already-public `assets/Ram_Career_Overview_Lite.pdf`. The downloadable deck is `assets/Ram_Career_Overview.pptx`. Other PowerPoint sources stay gitignored.
 
 ## Portfolio guide notes
 
-Hand-written entries in `preview/assets/chat/kb.json` stay in that file and rank ahead of anything the build adds. An optional command can append passages from a local checkout of the private notes repo `ram290476/obsidian-job-search`. The command does not clone that repo. GitHub Actions does not have it, so the published `kb.json` changes only when you run the build and commit the result.
+Hand-written entries in `assets/chat/kb.json` stay in that file and rank ahead of anything the build adds. An optional command can append passages from a local checkout of the private notes repo `ram290476/obsidian-job-search`. The command does not clone that repo. GitHub Actions does not have it, so the published `kb.json` changes only when you run the build and commit the result.
 
 Tag a note by putting `portfolio: public` in its front matter. Any other value, or no front matter, leaves the note out of the guide.
 
@@ -27,7 +27,7 @@ tags: [runbook, kubernetes]
 ---
 ```
 
-`title` is the source label (`Notes: <title>`). `link` is optional and must be a preview anchor such as `#experience`; it defaults to `#about`. Notes live under `notes/` in that repo.
+`title` is the source label (`Notes: <title>`). `link` is optional and must be a page anchor such as `#experience`; it defaults to `#about`. Notes live under `notes/` in that repo.
 
 ```bash
 node scripts/build-kb.mjs --vault-dir path/to/obsidian-job-search/notes
@@ -43,7 +43,7 @@ Review the `kb.json` diff before you commit it. Do not commit the vault checkout
 
 ## Booking
 
-`preview/config.js` holds the public Worker origin and the Turnstile site key. Both start empty, and **Book a call** then says booking opens soon.
+`config.js` holds the public Worker origin and the Turnstile site key. Both start empty, and **Book a call** then says booking opens soon.
 
 The Worker in `booking-worker/` is not deployed from this repository. Setup, including the Entra app, consent, Wrangler secrets, Turnstile, API DNS, and Mac Contacts, is in [booking-worker/SETUP.md](booking-worker/SETUP.md).
 

@@ -1,28 +1,29 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createRetriever, isSensitive, replyTo, validKnowledge } from "../preview/assets/chat/chat.js";
+import { createRetriever, isSensitive, replyTo, validKnowledge } from "../assets/chat/chat.js";
 
 const read = (path) => readFileSync(new URL("../" + path, import.meta.url), "utf8");
-const kb = JSON.parse(read("preview/assets/chat/kb.json"));
-const chatJS = read("preview/assets/chat/chat.js");
-const css = read("preview/assets/chat/chat.css");
-const page = read("preview/index.html");
-const home = read("index.html");
-const themes = read("preview/styles.css");
-const themeJS = read("preview/theme.js");
-const slidesCSS = read("preview/assets/slides.css");
-const slidesJS = read("preview/assets/slides.js");
+const kb = JSON.parse(read("assets/chat/kb.json"));
+const chatJS = read("assets/chat/chat.js");
+const css = read("assets/chat/chat.css");
+const page = read("index.html");
+const previewRedirect = read("preview/index.html");
+const themes = read("styles.css");
+const themeJS = read("theme.js");
+const slidesCSS = read("assets/slides.css");
+const slidesJS = read("assets/slides.js");
 const retrieve = createRetriever(kb);
 
-test("preview page has one accessible chat widget and the coming-soon page does not", () => {
-  assert.equal((home.match(/data-portfolio-chat/g) || []).length, 0);
-  assert.equal((home.match(/theme-picker/g) || []).length, 0);
-  assert.doesNotMatch(home, /\/preview\//);
+test("homepage has one accessible chat widget and is indexable", () => {
   assert.equal((page.match(/data-portfolio-chat/g) || []).length, 1);
   assert.match(page, /src="assets\/chat\/chat\.js"/);
   assert.match(page, /href="assets\/chat\/chat\.css"/);
-  assert.match(page, /noindex,\s*nofollow/);
+  assert.doesNotMatch(page, /noindex,\s*nofollow/);
+  assert.doesNotMatch(page, /\/preview\//);
+  assert.match(page, /rel="canonical" href="https:\/\/ram\.vellamsetti\.com\/"/);
+  assert.match(previewRedirect, /noindex,\s*nofollow/);
+  assert.match(previewRedirect, /location\.replace\("\/" \+ location\.hash\)/);
   assert.match(page, /aria-label="Ask about Ram’s experience"/);
   assert.match(page, /<dialog[^>]+aria-modal="true"/);
   assert.match(page, /aria-live="polite"/);
@@ -46,7 +47,6 @@ test("Ask about Ram lives in the left nav immediately after Contact", () => {
   assert.match(page, /aria-controls="portfolio-chat-panel"/);
   assert.doesNotMatch(css, /\.chat-launch\s*\{[^}]*position:\s*fixed/);
   assert.match(themes, /\.nav \.chat-launch/);
-  assert.doesNotMatch(home, /data-chat-open|chat-launch/);
 });
 
 test("knowledge base is curated, local, and free of private patterns", () => {
@@ -138,7 +138,6 @@ test("experience roles list LinkedIn skills with an accessible show-all toggle",
   assert.match(page, /src="experience-skills\.js"/);
   assert.match(page, /aria-expanded="false"/);
   assert.match(page, /aria-controls="skills-frb"/);
-  assert.doesNotMatch(home, /exp-skill-toggle/);
 });
 
 test("private questions are refused before retrieval", () => {
@@ -251,7 +250,6 @@ test("Contact Book a call opens the Cal.com intro call in a new tab", () => {
   assert.ok(cta, "Book a call section is missing the Cal.com button");
   assert.match(cta[1], /target="_blank"/);
   assert.match(cta[1], /rel="noopener noreferrer"/);
-  assert.doesNotMatch(home, /cal\.com/);
 });
 test("the Experience callout quote has been removed", () => {
   const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
@@ -306,11 +304,10 @@ test("each Experience role leads with LinkedIn responsibilities, then that role'
   }
   assert.doesNotMatch(blocks.find((block) => block.includes('id="resp-esp-list"')), /exp-resp-toggle/);
   assert.match(themes, /\.js \.exp-resp-list:not\(\.is-open\) \.exp-resp-more\s*\{\s*display:\s*none/);
-  const skillJS = read("preview/experience-skills.js");
+  const skillJS = read("experience-skills.js");
   assert.match(skillJS, /exp-resp-toggle/);
   assert.match(skillJS, /Show more/);
   assert.match(skillJS, /Show less/);
-  assert.doesNotMatch(home, /exp-resp/);
 });
 
 test("every Contact link opens in a new tab with noopener noreferrer", () => {

@@ -3,22 +3,32 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const pageDir = resolve(root, "preview");
+const pageDir = root;
 const htmlPath = resolve(pageDir, "index.html");
 const html = readFileSync(htmlPath, "utf8");
-const home = readFileSync(resolve(root, "index.html"), "utf8");
-if (!/Coming soon/i.test(home)) {
-  console.error("root index.html is no longer the coming-soon page");
+const preview = readFileSync(resolve(root, "preview/index.html"), "utf8");
+
+if (/Ram Prasad Vellamsetti — Coming soon/i.test(html)) {
+  console.error("root index.html is still the coming-soon page");
   process.exit(1);
 }
-if (/\/preview\/|preview\/index/i.test(home)) {
-  console.error("coming-soon page links to /preview/");
+if (/\/preview\//i.test(html)) {
+  console.error("homepage links to /preview/");
   process.exit(1);
 }
-if (!/noindex,\s*nofollow/i.test(html)) {
-  console.error("preview page is missing noindex");
+if (/noindex,\s*nofollow/i.test(html)) {
+  console.error("homepage should be indexable");
   process.exit(1);
 }
+if (!/noindex,\s*nofollow/i.test(preview)) {
+  console.error("preview redirect is missing noindex");
+  process.exit(1);
+}
+if (!/location\.replace/i.test(preview)) {
+  console.error("preview page does not redirect to the homepage");
+  process.exit(1);
+}
+
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
 const hrefs = [...html.matchAll(/<a\b[^>]*\shref="([^"]+)"/g)].map((match) => match[1]);
 for (const match of html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"/g)) {
@@ -70,4 +80,4 @@ if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
-console.log(`Checked ${hrefs.length} links in preview/index.html. Root page does not link to the preview.`);
+console.log(`Checked ${hrefs.length} links in index.html. Preview path redirects to the homepage.`);

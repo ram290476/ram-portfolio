@@ -6,11 +6,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildKnowledge, formatReport, scrubReasons } from "../scripts/vault-kb.mjs";
-import { createRetriever, replyTo, validKnowledge } from "../preview/assets/chat/chat.js";
+import { createRetriever, replyTo, validKnowledge } from "../assets/chat/chat.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtures = join(root, "tests/fixtures/vault-notes");
-const kbPath = join(root, "preview/assets/chat/kb.json");
+const kbPath = join(root, "assets/chat/kb.json");
 const kept = ["KEEPMIXED", "QUOTEDFIXTURE", "NESTEDFIXTURE", "Northwind Clockworks"];
 const blocked = [
   "UNTAGGED_SENTINEL_DO_NOT_PUBLISH",
