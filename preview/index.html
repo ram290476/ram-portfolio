@@ -41,7 +41,9 @@
     <div class="identity">
       <div class="avatar">
         <!-- Swap the monogram by adding preview/assets/photo.jpg. It can be any square JPEG. -->
-        <img src="assets/photo.jpg" alt="" width="72" height="72"
+        <img src="assets/photo.jpg"
+             srcset="assets/photo.jpg 1x, assets/photo@2x.jpg 2x"
+             alt="Ram Prasad Vellamsetti" width="72" height="72"
              onload="this.parentElement.classList.add('has-photo')"
              onerror="this.remove()" />
         <span class="monogram" aria-hidden="true">RV</span>
@@ -67,7 +69,8 @@
       <a href="#about" aria-current="true">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#work-projects">Work projects</a>
+      <a href="#personal-projects">Personal projects</a>
       <a href="#certifications">Certifications</a>
       <a href="#education">Education</a>
       <a href="#book">Book a call</a>
@@ -173,38 +176,92 @@
       </blockquote>
 
       <div class="exp">
-        <p class="exp-date">Jul 2023 – Aug 2026</p>
+        <div class="exp-date">
+          <p>Jul 2023 – Jan 2026 <span class="exp-len" data-start="2023-07" data-end="2026-01">2 yrs 6 mos</span></p>
+          <p>Jan 2026 – Aug 2026 <span class="exp-len" data-start="2026-01" data-end="2026-08">7 mos</span></p>
+          <p class="exp-total">JPMorgan Chase <span class="exp-len" data-start="2023-07" data-end="2026-08">3 yrs 1 mo</span></p>
+        </div>
         <div class="exp-body">
           <p class="exp-role">Site Reliability &amp; Platform Engineer, then MLOps (Associate Software Engineer III)</p>
-          <p class="exp-co">JPMorgan Chase · San Francisco, CA</p>
+          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-jpmc">JPMorgan Chase</button><span class="info-pop" id="co-jpmc" role="dialog" aria-modal="false" aria-labelledby="co-jpmc-title" hidden><span class="info-pop-head"><span id="co-jpmc-title">JPMorgan Chase</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">JPMorgan Chase is a global financial services firm and the largest U.S. bank by assets. Its headquarters is in New York. Ram worked in San Francisco, first on platform and reliability for line-of-business teams across AWS and the private cloud, then as an SRE on the enterprise AI/ML platform.</span></span></span> · San Francisco, CA</p>
           <p class="exp-desc">DevOps and SRE across several teams: an application observability stack, the internal private Kubernetes platform, and AWS applications that included an MLOps app, an anti-money-laundering app, and others. The final year moved mainly into MLOps, on the platform and infrastructure side of production AWS environments — reliability, security, and compliance. Re-platformed production ML onto a SageMaker-based framework without interrupting inference, with latency SLOs and an on-call owner on the serving path. Runbooks from that on-call work reduced mean time to resolution by 30%. Wrote the team’s observability standard and onboarded about 11 application teams; other teams adopted it from the documentation.</p>
         </div>
 
-        <p class="exp-date">Apr 2020 – Jul 2023</p>
+        <div class="exp-date">
+          <p>Apr 2020 – Jul 2023 <span class="exp-len" data-start="2020-04" data-end="2023-07">3 yrs 3 mos</span></p>
+        </div>
         <div class="exp-body">
           <p class="exp-role">Technical Lead – Platform</p>
-          <p class="exp-co">First Republic Bank (later acquired by JPMorgan Chase) · San Francisco, CA</p>
+          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-frb">First Republic Bank</button><span class="info-pop" id="co-frb" role="dialog" aria-modal="false" aria-labelledby="co-frb-title" hidden><span class="info-pop-head"><span id="co-frb-title">First Republic Bank</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">First Republic Bank was a private bank and private-wealth firm. Ram worked in San Francisco as technical lead for its Azure content platform, the platform-side person among a vendor and internal teams. JPMorgan Chase acquired First Republic in 2023.</span></span></span> · San Francisco, CA</p>
           <p class="exp-desc">Content platform for the bank’s public website, running on Azure. One platform-side person in the middle of a vendor and internal teams — architecture, networking, and others. This is where the financial-services work starts. Led the migration to Azure in 8 months against a typical 12-month timeline, through a clean go-live with no loss of availability, and the Sitecore 9.1 to 10.2 upgrade. Owned Akamai edge delivery and the production on-call rotation, including disaster-recovery tests.</p>
         </div>
 
-        <p class="exp-date">May 2013 – Feb 2020</p>
+        <div class="exp-date">
+          <p>May 2013 – Jan 2017 <span class="exp-len" data-start="2013-05" data-end="2017-01">3 yrs 8 mos</span></p>
+          <p>Jan 2017 – Feb 2020 <span class="exp-len" data-start="2017-01" data-end="2020-02">3 yrs 1 mo</span></p>
+          <p class="exp-total">Corsair <span class="exp-len" data-start="2013-05" data-end="2020-02">6 yrs 9 mos</span></p>
+        </div>
         <div class="exp-body">
           <p class="exp-role">Senior .NET Engineer, then Lead Commerce Architect</p>
-          <p class="exp-co">Corsair · Fremont, CA</p>
-          <p class="exp-desc">Live-store commerce migrations across about seven years. Several platform migrations, from Sitecore to SAP Commerce Cloud. The only on-site owner, with a remote contractor team and a marketing partner who owns the website. Led a 12-month migration off Sitecore and Magento onto SAP Hybris, then the SAP Commerce Cloud V2 upgrade in five months, including payments, fraud, tax, and single sign-on.</p>
+          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-corsair">Corsair</button><span class="info-pop" id="co-corsair" role="dialog" aria-modal="false" aria-labelledby="co-corsair-title" hidden><span class="info-pop-head"><span id="co-corsair-title">Corsair</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">Corsair designs and makes high-performance gear for gamers, content creators, and PC enthusiasts. Ram worked in Fremont as the only on-site owner of the commerce platform, with a remote contractor team and a marketing partner who owned the website.</span></span></span> · Fremont, CA</p>
+          <p class="exp-desc">Live-store commerce migrations. Several platform migrations, from Sitecore to SAP Commerce Cloud. The only on-site owner, with a remote contractor team and a marketing partner who owns the website. Led a 12-month migration off Sitecore and Magento onto SAP Hybris, then the SAP Commerce Cloud V2 upgrade in five months, including payments, fraud, tax, and single sign-on.</p>
         </div>
 
-        <p class="exp-date">Jan 2006 – Feb 2013</p>
+        <div class="exp-date">
+          <p>Jan 2006 – Feb 2013 <span class="exp-len" data-start="2006-01" data-end="2013-02">7 yrs 1 mo</span></p>
+        </div>
         <div class="exp-body">
           <p class="exp-role">Senior Software Engineer</p>
-          <p class="exp-co">ESP (later acquired by IHS Markit) · Santa Clara, CA</p>
-          <p class="exp-desc">Application modernization in .NET (C#): older desktop business apps rebuilt as modern web apps. About seven years of changing working systems safely. Designed the web framework, REST APIs, and single-page admin UI for opsInfo, an enterprise sustainability product, brought page loads under two seconds, and re-platformed the reporting engine for scale and seven languages.</p>
+          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-esp">ESP</button><span class="info-pop" id="co-esp" role="dialog" aria-modal="false" aria-labelledby="co-esp-title" hidden><span class="info-pop-head"><span id="co-esp-title">ESP</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">ESP was an environmental software company that sold sustainability tools to enterprise clients. Ram worked in Santa Clara as a senior software engineer on opsInfo, its reporting product. ESP was later acquired by IHS Markit.</span></span></span> · Santa Clara, CA</p>
+          <p class="exp-desc">Application modernization in .NET (C#): older desktop business apps rebuilt as modern web apps. Designed the web framework, REST APIs, and single-page admin UI for opsInfo, an enterprise sustainability product, brought page loads under two seconds, and re-platformed the reporting engine for scale and seven languages.</p>
         </div>
       </div>
     </section>
 
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading" class="section-h">Selected projects</h2>
+    <section id="work-projects" aria-labelledby="work-heading">
+      <h2 id="work-heading" class="section-h">Work projects</h2>
+      <div class="projects">
+        <article class="card">
+          <p class="tag">JPMorgan Chase · Jul 2023 – Jan 2026</p>
+          <h3>Kubernetes observability standard</h3>
+          <p>Wrote the Dynatrace and Splunk standard for the private Kubernetes platform — tracing, tagging, synthetics, and dashboards — as reusable assets. Onboarded about 11 application teams; other teams adopted it from the documentation.</p>
+          <ul class="pills"><li>Kubernetes</li><li>Dynatrace</li><li>Splunk</li><li>Grafana</li><li>Prometheus</li></ul>
+        </article>
+        <article class="card">
+          <p class="tag">JPMorgan Chase · Jan 2026 – Aug 2026</p>
+          <h3>MLOps on AWS</h3>
+          <p>Re-platformed production ML onto SageMaker in new AWS accounts without interrupting inference, and gated model promotion with Python checks. That AWS work sat alongside other applications, including an anti-money-laundering app.</p>
+          <ul class="pills"><li>AWS</li><li>SageMaker</li><li>Python</li><li>Terraform</li><li>Grafana</li></ul>
+        </article>
+        <article class="card">
+          <p class="tag">First Republic Bank · Apr 2020 – Jul 2023</p>
+          <h3>Azure content-platform migration</h3>
+          <p>Led the bank’s content platform onto Azure in 8 months against a typical 12-month timeline, through a clean go-live with no loss of availability.</p>
+          <ul class="pills"><li>Azure</li><li>Azure Application Gateway</li><li>Azure VNets</li><li>Sitecore</li><li>Akamai</li></ul>
+        </article>
+        <article class="card">
+          <p class="tag">Corsair · May 2013 – Jan 2017</p>
+          <h3>Sitecore content backup and migration</h3>
+          <p>Built Sitecore tooling that backed up every content item into source control for history and rollback, and converted legacy layouts into responsive layouts during the migration.</p>
+          <ul class="pills"><li>Sitecore</li><li>ASP.NET</li><li>C#</li><li>PowerShell</li></ul>
+        </article>
+        <article class="card">
+          <p class="tag">Corsair · Jan 2017 – Feb 2020</p>
+          <h3>Commerce platform migrations</h3>
+          <p>Led a 12-month move from Sitecore and Magento to SAP Hybris with four contractors, then the SAP Commerce Cloud V2 upgrade in five months.</p>
+          <ul class="pills"><li>SAP Commerce Cloud</li><li>Java</li><li>Spring</li><li>Akamai</li></ul>
+        </article>
+        <article class="card">
+          <p class="tag">ESP (later IHS Markit) · Jan 2006 – Feb 2013</p>
+          <h3>opsInfo APIs from scratch</h3>
+          <p>Built the web framework, REST APIs, and single-page admin UI for the opsInfo product essentially from scratch, and brought page loads under two seconds.</p>
+          <ul class="pills"><li>ASP.NET</li><li>C#</li><li>REST</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="personal-projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-h">Personal projects</h2>
       <div class="projects">
         <article class="card">
           <p class="tag">AWS</p>
@@ -383,6 +440,8 @@
   <script src="main.js"></script>
   <script src="booking.js"></script>
   <script src="theme.js"></script>
+  <script type="module" src="durations.js"></script>
+  <script src="company-info.js"></script>
   <script type="module" src="assets/chat/chat.js"></script>
 </body>
 </html>

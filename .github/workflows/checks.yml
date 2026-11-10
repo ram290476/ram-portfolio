@@ -43,4 +43,4 @@ jobs:
         run: node scripts/check-links.mjs
 
       - name: Preview chat and theme tests
-        run: node --test tests/preview-chat.test.mjs
+        run: node --test tests/preview-chat.test.mjs tests/durations.test.mjs
