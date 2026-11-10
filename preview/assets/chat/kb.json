@@ -103,7 +103,7 @@
       "What technologies does he know?",
       "List his cloud skills"
     ],
-    "answer": "Languages include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. He is actively building with Go, GitOps and Argo CD, OpenTelemetry, and GCP.",
+    "answer": "Languages include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure, including Azure Application Gateway and Azure VNets. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. He is actively building with Go, GitOps and Argo CD, OpenTelemetry, and GCP.",
     "tags": ["skill", "python", "typescript", "aws", "azure", "terraform", "kubernetes"],
     "link": "#skills"
   },
@@ -115,8 +115,8 @@
       "Show his projects",
       "What has he made?"
     ],
-    "answer": "Public projects are the Investor Dashboard, the Multi-Cloud Dashboard, a personal AI bot platform that uses MCP connectors, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet.",
-    "tags": ["project", "build", "dashboard", "opskit", "bot"],
+    "answer": "Public projects are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet.",
+    "tags": ["project", "build", "dashboard", "opskit"],
     "link": "#projects"
   },
   {
@@ -139,17 +139,6 @@
     ],
     "answer": "The Multi-Cloud Dashboard is one application on several clouds: the same API on Cloud Run, ECS, and Azure App Service, fronted by Cloudflare for edge delivery. The public repository is ram290476/hybrid-cloud-dashboard.",
     "tags": ["multi", "cloud", "hybrid", "cloudflare", "ecs", "azure"],
-    "link": "#projects"
-  },
-  {
-    "id": "bot",
-    "topic": "AI bot platform",
-    "questions": [
-      "Tell me about the AI bot",
-      "What is the agentic pipeline?"
-    ],
-    "answer": "The AI bot platform is a personal agentic pipeline. Multi-step orchestration with MCP connectors drives a scraping API, deduplicates and normalizes records, scores them, and generates documents. There is no public repository for it.",
-    "tags": ["bot", "agent", "mcp", "claude", "pipeline"],
     "link": "#projects"
   },
   {
