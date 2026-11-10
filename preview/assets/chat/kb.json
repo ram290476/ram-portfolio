@@ -9,7 +9,15 @@
       "Tell me about Ram"
     ],
     "answer": "Ram Prasad Vellamsetti is a Senior SRE and Platform Engineer with 20 years in software, six of them in financial services. He leads platform migrations and owns what he ships in production, from Sitecore and SAP Commerce through Azure to SageMaker and Kubernetes. He describes the thread of the work as a solo platform owner who coordinates contractors, vendors, and internal teams, production first.",
-    "tags": ["ram", "prasad", "vellamsetti", "background", "sre", "platform", "profile"],
+    "tags": [
+      "ram",
+      "prasad",
+      "vellamsetti",
+      "background",
+      "sre",
+      "platform",
+      "profile"
+    ],
     "link": "#about"
   },
   {
@@ -21,7 +29,15 @@
       "Is he open to remote work?"
     ],
     "answer": "He is based in San Ramon, CA. He is a U.S. citizen and is open to Bay Area hybrid and US remote roles.",
-    "tags": ["san", "ramon", "location", "remote", "hybrid", "citizen", "based"],
+    "tags": [
+      "san",
+      "ramon",
+      "location",
+      "remote",
+      "hybrid",
+      "citizen",
+      "based"
+    ],
     "link": "#about"
   },
   {
@@ -35,7 +51,16 @@
       "What is his total time at each company?"
     ],
     "answer": "Four eras: JPMorgan Chase from July 2023 to August 2026, a total of 3 years 1 month; First Republic Bank from April 2020 to July 2023, a total of 3 years 3 months; Corsair from May 2013 to February 2020, a total of 6 years 9 months; and ESP from January 2006 to February 2013, a total of 7 years 1 month. An Experience overview button in the Experience section opens a full-screen player for a six-slide career overview.",
-    "tags": ["experience", "career", "eras", "resume", "overview", "duration", "tenure", "total"],
+    "tags": [
+      "experience",
+      "career",
+      "eras",
+      "resume",
+      "overview",
+      "duration",
+      "tenure",
+      "total"
+    ],
     "link": "#experience"
   },
   {
@@ -49,7 +74,39 @@
       "How long did he work at JPMorgan?"
     ],
     "answer": "At JPMorgan Chase in San Francisco, from July 2023 to August 2026, a total of 3 years 1 month, he was a Site Reliability and Platform Engineer, then MLOps, with the internal title Associate Software Engineer III. The work covered an observability stack, a private Kubernetes platform, and AWS applications including an MLOps app and an anti-money-laundering app. He re-platformed production ML onto SageMaker without interrupting inference, put latency SLOs and an on-call owner on the serving path, and wrote runbooks that reduced mean time to resolution by 30 percent. He wrote an observability standard and onboarded about 11 application teams.",
-    "tags": ["jpmorgan", "chase", "sagemaker", "mlops", "kubernetes", "sre", "observability", "duration", "tenure"],
+    "tags": [
+      "jpmorgan",
+      "chase",
+      "sagemaker",
+      "mlops",
+      "kubernetes",
+      "sre",
+      "observability",
+      "duration",
+      "tenure"
+    ],
+    "link": "#experience"
+  },
+  {
+    "id": "jpmc-skills",
+    "topic": "JPMorgan Chase skills",
+    "questions": [
+      "What skills did he use at JPMorgan?",
+      "What skills did he use at JPMorgan Chase?",
+      "What technologies did he use at JPMC?"
+    ],
+    "answer": "At JPMorgan Chase he used two skill sets. In Site Reliability & Platform (2023–2026), the work centered on Kubernetes, Terraform, CloudFormation, Docker, Python, Java, Jenkins, Spinnaker, Dynatrace, and Splunk, among 46 skills. In the MLOps platform role (2026), it centered on AWS, SageMaker, Terraform, Python, Java, Docker, MLOps, Jenkins, Spinnaker, and Grafana, among 39 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "tags": [
+      "jpmorgan",
+      "chase",
+      "jpmc",
+      "skill",
+      "kubernetes",
+      "terraform",
+      "sagemaker",
+      "mlops",
+      "python"
+    ],
     "link": "#experience"
   },
   {
@@ -60,7 +117,12 @@
       "What does he say about ML systems?"
     ],
     "answer": "The featured line from the career overview is: Keeping systems reliable in production is exactly the skill ML systems need. It sits with the final year at JPMorgan Chase, as the role moved mainly into MLOps.",
-    "tags": ["quote", "ml", "reliable", "production"],
+    "tags": [
+      "quote",
+      "ml",
+      "reliable",
+      "production"
+    ],
     "link": "#experience"
   },
   {
@@ -73,7 +135,36 @@
       "How long was he at First Republic?"
     ],
     "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank’s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
-    "tags": ["first", "republic", "azure", "sitecore", "akamai", "platform", "duration", "tenure"],
+    "tags": [
+      "first",
+      "republic",
+      "azure",
+      "sitecore",
+      "akamai",
+      "platform",
+      "duration",
+      "tenure"
+    ],
+    "link": "#experience"
+  },
+  {
+    "id": "first-republic-skills",
+    "topic": "First Republic skills",
+    "questions": [
+      "What skills did he use at First Republic?",
+      "What skills did he use at the bank?",
+      "What technologies did he use at First Republic?"
+    ],
+    "answer": "At First Republic Bank, skills used included Azure, Sitecore, Akamai, C#, TypeScript, ASP.NET Core, React, Docker, Jenkins, and New Relic, among 58 skills from his LinkedIn role list. The Experience section lists all of them, including AWS, ASP.NET, Grafana, Splunk, SSO, and reliability practices.",
+    "tags": [
+      "first",
+      "republic",
+      "bank",
+      "skill",
+      "azure",
+      "sitecore",
+      "akamai"
+    ],
     "link": "#experience"
   },
   {
@@ -86,7 +177,35 @@
       "How long was he at Corsair?"
     ],
     "answer": "At Corsair in Fremont, from May 2013 to February 2020, a total of 6 years 9 months, he was a Senior .NET Engineer and then Lead Commerce Architect. He ran live-store commerce migrations from Sitecore to SAP Commerce Cloud, including a 12-month move off Sitecore and Magento onto SAP Hybris and a SAP Commerce Cloud V2 upgrade in five months. He was the only on-site owner, with a remote contractor team and a marketing partner. The work included payments, fraud, tax, and single sign-on.",
-    "tags": ["corsair", "commerce", "sap", "hybris", "sitecore", "dotnet", "duration", "tenure"],
+    "tags": [
+      "corsair",
+      "commerce",
+      "sap",
+      "hybris",
+      "sitecore",
+      "dotnet",
+      "duration",
+      "tenure"
+    ],
+    "link": "#experience"
+  },
+  {
+    "id": "corsair-skills",
+    "topic": "Corsair skills",
+    "questions": [
+      "What skills did he use at Corsair?",
+      "What technologies did he use at Corsair?",
+      "What skills did he use in the commerce roles?"
+    ],
+    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013–2017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 28 skills. As Commerce Architect (2017–2020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 45 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "tags": [
+      "corsair",
+      "skill",
+      "commerce",
+      "sitecore",
+      "sap",
+      "dotnet"
+    ],
     "link": "#experience"
   },
   {
@@ -99,7 +218,32 @@
       "How long was he at ESP?"
     ],
     "answer": "At ESP, later acquired by IHS Markit, in Santa Clara from January 2006 to February 2013, a total of 7 years 1 month, he was a Senior Software Engineer. He modernized older desktop business apps into modern web apps in .NET and C#. He designed the web framework, REST APIs, and single-page admin UI for opsInfo, brought page loads under two seconds, and re-platformed the reporting engine for scale and seven languages.",
-    "tags": ["esp", "markit", "dotnet", "opsinfo", "modernization", "duration", "tenure"],
+    "tags": [
+      "esp",
+      "markit",
+      "dotnet",
+      "opsinfo",
+      "modernization",
+      "duration",
+      "tenure"
+    ],
+    "link": "#experience"
+  },
+  {
+    "id": "esp-skills",
+    "topic": "ESP skills",
+    "questions": [
+      "What skills did he use at ESP?",
+      "What technologies did he use at ESP?",
+      "What skills did he use on the .NET modernization?"
+    ],
+    "answer": "At ESP, skills used included C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, SQL Server, Oracle Database, jQuery, Visual Studio, Web Services, and Software Design, among 16 skills from his LinkedIn role list. The Experience section lists all of them.",
+    "tags": [
+      "esp",
+      "skill",
+      "dotnet",
+      "csharp"
+    ],
     "link": "#experience"
   },
   {
@@ -108,10 +252,22 @@
     "questions": [
       "What skills does he use?",
       "What technologies does he know?",
-      "List his cloud skills"
+      "List his cloud skills",
+      "What skills does he use overall?"
     ],
-    "answer": "Languages include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure, including Azure Application Gateway and Azure VNets. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. He is actively building with Go, GitOps and Argo CD, OpenTelemetry, and GCP.",
-    "tags": ["skill", "python", "typescript", "aws", "azure", "terraform", "kubernetes"],
+    "answer": "The skills he uses include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure, including Azure Application Gateway and Azure VNets. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. He is actively building with Go, GitOps and Argo CD, OpenTelemetry, and GCP. The Experience section also lists the skills used in each role.",
+    "tags": [
+      "skill",
+      "python",
+      "typescript",
+      "aws",
+      "azure",
+      "terraform",
+      "kubernetes",
+      "use",
+      "uses",
+      "overall"
+    ],
     "link": "#skills"
   },
   {
@@ -122,7 +278,12 @@
       "Show his work accomplishments"
     ],
     "answer": "Work projects cover the Kubernetes observability standard and MLOps on AWS at JPMorgan Chase, the Azure migration at First Republic, Sitecore content backup and the commerce migrations at Corsair, and the opsInfo APIs at ESP.",
-    "tags": ["work", "accomplishment", "observability", "migration"],
+    "tags": [
+      "work",
+      "accomplishment",
+      "observability",
+      "migration"
+    ],
     "link": "#work-projects"
   },
   {
@@ -133,7 +294,12 @@
       "What was the Kubernetes observability work?"
     ],
     "answer": "At JPMorgan Chase from July 2023 to January 2026 he wrote the Dynatrace and Splunk observability standard for the private Kubernetes platform, packaged as reusable assets with environment overlays. He onboarded about 11 application teams, and other teams adopted it from the documentation.",
-    "tags": ["observability", "kubernetes", "dynatrace", "splunk"],
+    "tags": [
+      "observability",
+      "kubernetes",
+      "dynatrace",
+      "splunk"
+    ],
     "link": "#work-projects"
   },
   {
@@ -144,7 +310,13 @@
       "How did the Sitecore backup work?"
     ],
     "answer": "At Corsair, as a Senior .NET Engineer from May 2013 to January 2017, he built Sitecore tooling that backed up every content item into source control for history and rollback, and converted legacy layouts into responsive layouts during the migration.",
-    "tags": ["content", "sitecore", "backup", "corsair", "migration"],
+    "tags": [
+      "content",
+      "sitecore",
+      "backup",
+      "corsair",
+      "migration"
+    ],
     "link": "#work-projects"
   },
   {
@@ -155,7 +327,13 @@
       "Tell me about the opsInfo APIs"
     ],
     "answer": "At ESP, from January 2006 to February 2013, he built the web framework, REST APIs, and single-page admin UI for opsInfo essentially from scratch. Page loads were brought under two seconds.",
-    "tags": ["api", "opsinfo", "esp", "rest", "scratch"],
+    "tags": [
+      "api",
+      "opsinfo",
+      "esp",
+      "rest",
+      "scratch"
+    ],
     "link": "#work-projects"
   },
   {
@@ -167,7 +345,12 @@
       "What has he made?"
     ],
     "answer": "Personal projects on the site are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet. Work accomplishments are in the Work projects section.",
-    "tags": ["project", "build", "dashboard", "opskit"],
+    "tags": [
+      "project",
+      "build",
+      "dashboard",
+      "opskit"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -178,7 +361,13 @@
       "What is the investor project?"
     ],
     "answer": "The Investor Dashboard is portfolio and operations visibility for investor workflows, hosted on AWS. It uses Python collection jobs, Terraform, and a static dashboard behind CloudFront. The public repository is ram290476/investor-dashboard, and there is a live site.",
-    "tags": ["investor", "dashboard", "aws", "cloudfront", "terraform"],
+    "tags": [
+      "investor",
+      "dashboard",
+      "aws",
+      "cloudfront",
+      "terraform"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -189,7 +378,14 @@
       "What is the hybrid cloud project?"
     ],
     "answer": "The Multi-Cloud Dashboard is one application on several clouds: the same API on Cloud Run, ECS, and Azure App Service, fronted by Cloudflare for edge delivery. The public repository is ram290476/hybrid-cloud-dashboard.",
-    "tags": ["multi", "cloud", "hybrid", "cloudflare", "ecs", "azure"],
+    "tags": [
+      "multi",
+      "cloud",
+      "hybrid",
+      "cloudflare",
+      "ecs",
+      "azure"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -200,7 +396,12 @@
       "What is the Python operations library?"
     ],
     "answer": "opsKit is a set of Python libraries for cloud operations: inventory, guarded changes, Kubernetes helpers, and access-log checks. It is dry-run by default, with timeouts and structured logs. The public repository is ram290476/opsKit.",
-    "tags": ["opskit", "python", "operations", "kubernetes"],
+    "tags": [
+      "opskit",
+      "python",
+      "operations",
+      "kubernetes"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -211,7 +412,13 @@
       "What is the knowledge system project?"
     ],
     "answer": "The credit union knowledge system answers member questions from dated website snapshots, with citations, conflict resolution, and abstention when the snapshot does not say. The public repository records a practice score of 0.969 on a public 40-question eval.",
-    "tags": ["credit", "union", "knowledge", "citations", "python"],
+    "tags": [
+      "credit",
+      "union",
+      "knowledge",
+      "citations",
+      "python"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -222,7 +429,13 @@
       "What is the NestJS API?"
     ],
     "answer": "The Tasks API is a small REST API with JWT authentication, migrations, rate limits, and CI that builds and smoke-tests the container. It uses TypeScript, NestJS, and PostgreSQL. The public repository is ram290476/tasks-api.",
-    "tags": ["tasks", "api", "nestjs", "typescript", "postgres"],
+    "tags": [
+      "tasks",
+      "api",
+      "nestjs",
+      "typescript",
+      "postgres"
+    ],
     "link": "#personal-projects"
   },
   {
@@ -233,7 +446,11 @@
       "Is he an AWS architect?"
     ],
     "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential.",
-    "tags": ["certification", "aws", "architect"],
+    "tags": [
+      "certification",
+      "aws",
+      "architect"
+    ],
     "link": "#certifications"
   },
   {
@@ -245,7 +462,12 @@
       "Did he take GitHub Copilot training?"
     ],
     "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme.",
-    "tags": ["training", "copilot", "github", "microsoft"],
+    "tags": [
+      "training",
+      "copilot",
+      "github",
+      "microsoft"
+    ],
     "link": "#training"
   },
   {
@@ -257,7 +479,14 @@
       "What degree does he have?"
     ],
     "answer": "He earned a BS in Computer Science and Systems Engineering from Andhra University in Visakhapatnam, India, from 1994 to 1998.",
-    "tags": ["education", "degree", "university", "andhra", "computer", "science"],
+    "tags": [
+      "education",
+      "degree",
+      "university",
+      "andhra",
+      "computer",
+      "science"
+    ],
     "link": "#education"
   },
   {
@@ -269,7 +498,13 @@
       "What happens on an intro call?"
     ],
     "answer": "The Book a call section is a 30-minute intro call about Senior SRE, Platform, or Cloud roles and how his experience fits a team. Same-day times are not offered. Until the scheduler is open, the page says to email him and find a time.",
-    "tags": ["book", "call", "schedule", "intro", "meeting"],
+    "tags": [
+      "book",
+      "call",
+      "schedule",
+      "intro",
+      "meeting"
+    ],
     "link": "#book"
   },
   {
@@ -281,7 +516,12 @@
       "Where is his GitHub?"
     ],
     "answer": "The public email is ram.vellamsetti@gmail.com. GitHub is github.com/ram290476 and LinkedIn is linkedin.com/in/vellamsetti. He is based in San Ramon, CA.",
-    "tags": ["email", "github", "linkedin", "contact"],
+    "tags": [
+      "email",
+      "github",
+      "linkedin",
+      "contact"
+    ],
     "link": "#contact"
   }
 ]
