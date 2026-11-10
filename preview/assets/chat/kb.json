@@ -95,7 +95,7 @@
       "What skills did he use at JPMorgan Chase?",
       "What technologies did he use at JPMC?"
     ],
-    "answer": "At JPMorgan Chase he used two skill sets. In Site Reliability & Platform (2023–2026), the work centered on Kubernetes, Terraform, CloudFormation, Docker, Python, Java, Jenkins, Spinnaker, Dynatrace, and Splunk, among 46 skills. In the MLOps platform role (2026), it centered on AWS, SageMaker, Terraform, Python, Java, Docker, MLOps, Jenkins, Spinnaker, and Grafana, among 39 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "answer": "At JPMorgan Chase he used two skill sets. In Site Reliability & Platform (2023\u20132026), the work centered on Kubernetes, Terraform, CloudFormation, Docker, Python, Java, Jenkins, Spinnaker, Dynatrace, and Splunk, among 46 skills. In the MLOps platform role (2026), it centered on AWS, SageMaker, Terraform, Python, Java, Docker, MLOps, Jenkins, Spinnaker, and Grafana, among 39 skills. The Experience section lists every skill from his LinkedIn role lists.",
     "tags": [
       "jpmorgan",
       "chase",
@@ -134,7 +134,7 @@
       "Describe the Azure migration",
       "How long was he at First Republic?"
     ],
-    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank’s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
+    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank\u2019s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
     "tags": [
       "first",
       "republic",
@@ -197,7 +197,7 @@
       "What technologies did he use at Corsair?",
       "What skills did he use in the commerce roles?"
     ],
-    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013–2017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 28 skills. As Commerce Architect (2017–2020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 45 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013\u20132017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 28 skills. As Commerce Architect (2017\u20132020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 45 skills. The Experience section lists every skill from his LinkedIn role lists.",
     "tags": [
       "corsair",
       "skill",
@@ -445,7 +445,7 @@
       "What certifications does he have?",
       "Is he an AWS architect?"
     ],
-    "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential.",
+    "answer": "In 2023 he earned the AWS Certified Solutions Architect \u2013 Associate credential.",
     "tags": [
       "certification",
       "aws",
@@ -515,7 +515,7 @@
       "What is his email?",
       "Where is his GitHub?"
     ],
-    "answer": "The public email is ram.vellamsetti@gmail.com. GitHub is github.com/ram290476 and LinkedIn is linkedin.com/in/vellamsetti. He is based in San Ramon, CA.",
+    "answer": "The public email is ram.vellamsetti@gmail.com. GitHub is github.com/ram290476 and LinkedIn is linkedin.com/in/vellamsetti. He is based in San Ramon, CA. In Contact, each of those options has an icon, and San Ramon, CA opens a Google Maps search for the city in a new tab, with no street address.",
     "tags": [
       "email",
       "github",
