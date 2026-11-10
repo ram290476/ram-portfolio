@@ -59,14 +59,14 @@ The Worker in `booking-worker/` is not deployed from this repository. Setup, inc
 
 ## Checks
 
-GitHub Actions runs the Worker unit tests, a privacy scan, gitleaks, and an HTML link check.
+GitHub Actions runs the Worker unit tests, a privacy scan, a knowledge-base privacy check, gitleaks, and an HTML link check. The privacy scan covers phone numbers, street addresses, the home postal code, academic averages, named exams, household-earnings language, personal mailboxes other than the public contact address, compensation figures, family details, government-id shapes, and identity metadata on images, the PDF, and the PowerPoint deck.
 
 Before pushing, run:
 
 ```bash
 bash scripts/privacy-scan.sh
 gitleaks detect --source . --redact --log-opts="--all"
-node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs tests/sync-vault-kb.test.mjs
+node --test tests/preview-chat.test.mjs tests/durations.test.mjs tests/vault-kb.test.mjs tests/sync-vault-kb.test.mjs tests/public-surface.test.mjs
 ```
 
 Secrets, `.dev.vars`, and `.env` files stay out of git. `booking-worker/.dev.vars.example` is placeholders only.

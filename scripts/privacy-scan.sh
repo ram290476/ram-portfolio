@@ -3,6 +3,8 @@
 # a street address, a home postal code, an academic average, a named exam,
 # or household-earnings language. Banned literals are assembled at runtime
 # so this file does not store them contiguously.
+# scripts/check-public-surface.mjs adds personal mailboxes, compensation
+# figures, family details, government-id shapes, and asset identity metadata.
 set -euo pipefail
 
 cd "$(git rev-parse --show-toplevel)"
@@ -105,4 +107,11 @@ if [ "$fail" -ne 0 ]; then
   exit 1
 fi
 
-echo "Privacy scan clean (working tree, git log -p, and PDF text)."
+if ! command -v exiftool >/dev/null 2>&1; then
+  echo "exiftool is required (libimage-exiftool-perl)" >&2
+  exit 2
+fi
+
+node scripts/check-public-surface.mjs
+
+echo "Privacy scan clean (working tree, git history, documents, and asset metadata)."
