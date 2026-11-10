@@ -459,6 +459,11 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   font-weight: 600;
   margin: 0 0 8px;
 }
+.skill-subgroup + .skill-subgroup { margin-top: 10px; }
+.skill-grid .skill-subgroup .tag {
+  font-family: var(--font-body);
+  margin: 0 0 6px;
+}
 .tag {
   font-size: 10px;
   letter-spacing: 0.12em;
