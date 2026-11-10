@@ -556,13 +556,17 @@
     "topic": "Certifications",
     "questions": [
       "What certifications does he have?",
-      "Is he an AWS architect?"
+      "Is he an AWS architect?",
+      "Is his AWS certification current?",
+      "Does he have a Microsoft certification?"
     ],
-    "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential.",
+    "answer": "He holds two certifications. The AWS Certified Solution Architect - Associate, from Amazon Web Services (AWS), was issued in April 2022 and expired in April 2025. He also holds the Microsoft Certified Application Developer for .NET from Microsoft; LinkedIn does not show a date for that credential.",
     "tags": [
       "certification",
       "aws",
-      "architect"
+      "architect",
+      "microsoft",
+      "mcad"
     ],
     "link": "#certifications"
   },
@@ -572,14 +576,23 @@
     "questions": [
       "What training has he completed?",
       "Tell me about the Copilot training",
-      "Did he take GitHub Copilot training?"
+      "Did he take GitHub Copilot training?",
+      "What LinkedIn Learning courses has he completed?",
+      "Has he done Azure or Terraform training?"
     ],
-    "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme.",
+    "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. The Training section also lists LinkedIn Learning and DataCamp coursework, including Learning Go, Python Essential Training, HashiCorp Terraform Associate cert prep, DataCamp courses on large language models and machine learning, the three-part Microsoft Azure Fundamentals (AZ-900) cert prep, and courses in communication, C#, and React. Older courses with no date shown include AWS Certified Security - Specialty 2020, Introduction to Agile for teams, Oracle 9i programming with PL/SQL, and SAP Commerce Cloud Developer.",
     "tags": [
       "training",
       "copilot",
       "github",
-      "microsoft"
+      "microsoft",
+      "linkedin",
+      "datacamp",
+      "azure",
+      "terraform",
+      "python",
+      "go",
+      "communication"
     ],
     "link": "#training"
   },
