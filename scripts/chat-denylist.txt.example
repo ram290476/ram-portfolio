@@ -1,0 +1,6 @@
+# Optional extra terms for the portfolio-guide scrub.
+# Copy this file to scripts/chat-denylist.txt (that copy is gitignored).
+# Put one term per line. Lines starting with # are ignored.
+# Matching is case-insensitive. The build logs how many passages
+# were rejected, not which term matched. Use terms of at least 3 characters.
+# example-synthetic-term

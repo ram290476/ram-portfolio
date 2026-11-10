@@ -1,6 +1,9 @@
 # Career decks stay off the public site. The scrubbed PDF in assets/ is the published copy.
 *.pptx
 
+# Local terms for the portfolio-guide scrub. scripts/chat-denylist.txt.example is the template.
+scripts/chat-denylist.txt
+
 # Secrets and local environment. .dev.vars.example is intentionally not matched.
 .env
 .env.*

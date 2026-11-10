@@ -45,7 +45,7 @@ export function createRetriever(entries) {
   return (question) => {
     const words = [...new Set(tokenize(question))];
     if (!words.length) return null;
-    const ranked = docs.map((doc) => {
+    const ranked = docs.map((doc, index) => {
       let bm25 = 0;
       let matched = 0;
       for (const word of words) {
@@ -60,13 +60,24 @@ export function createRetriever(entries) {
         const overlap = words.filter((word) => tokens.has(word)).length;
         return 2 * overlap / (words.length + tokens.size || 1);
       }));
-      return { entry: doc.entry, score: bm25 + 6 * questionSimilarity, coverage: matched / words.length, questionSimilarity };
-    }).sort((a, b) => b.score - a.score);
+      return { entry: doc.entry, index, score: bm25 + 6 * questionSimilarity, coverage: matched / words.length, questionSimilarity };
+    }).sort((a, b) => b.score - a.score || a.index - b.index);
     const best = ranked[0];
-    if (best.coverage < 0.75 || best.questionSimilarity < 0.5 || best.score < 2.5) return null;
-    if (words.length > 1 && best.coverage < 1) return null;
-    return { answer: best.entry.answer, link: best.entry.link, topic: best.entry.topic, id: best.entry.id };
+    if (!clearsRetrieval(best, words.length)) return null;
+    const chosen = best.entry.source === "vault" ? preferHandWritten(best, ranked, words.length) : best;
+    return { answer: chosen.entry.answer, link: chosen.entry.link, topic: chosen.entry.topic, id: chosen.entry.id };
   };
+}
+function clearsRetrieval(item, wordCount) {
+  if (item.coverage < 0.75 || item.questionSimilarity < 0.5 || item.score < 2.5) return false;
+  if (wordCount > 1 && item.coverage < 1) return false;
+  return true;
+}
+function preferHandWritten(note, ranked, wordCount) {
+  const curated = ranked.find((item) => item.entry.source !== "vault" && clearsRetrieval(item, wordCount));
+  if (!curated) return note;
+  const noteCloser = note.questionSimilarity >= curated.questionSimilarity + 0.2 && note.score > curated.score;
+  return noteCloser ? note : curated;
 }
 export function replyTo(question, retrieve) {
   if (isSensitive(question)) return { kind: "privacy", answer: PRIVACY_REPLY };
