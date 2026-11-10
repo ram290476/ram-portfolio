@@ -263,16 +263,14 @@ body {
 .nav { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .nav a,
 .nav .chat-launch {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  align-self: stretch;
-  width: 100%;
-  box-sizing: border-box;
+  align-self: flex-start;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  line-height: 1.25;
   color: var(--muted);
   text-decoration: none;
   padding: 7px 0;
@@ -283,8 +281,7 @@ body {
   border-right: 0;
   font-family: inherit;
   font-weight: inherit;
-  line-height: inherit;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   border-radius: 0;
 }
@@ -300,6 +297,7 @@ body {
   width: 16px;
   height: 16px;
   display: block;
+  align-self: center;
 }
 
 main {
@@ -657,10 +655,9 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   width: 100%;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   box-sizing: border-box;
-  text-align: center;
+  text-align: left;
   border: 1px solid var(--navy);
   background: transparent;
   color: var(--navy);
@@ -668,6 +665,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1.25;
   padding: 8px 10px;
   cursor: pointer;
 }
