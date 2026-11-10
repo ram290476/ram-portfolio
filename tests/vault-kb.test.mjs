@@ -290,8 +290,9 @@ test("long notes stay inside the knowledge-base limits and skip symlinks", () =>
 
 test("hand-written entries keep priority and note questions still resolve", () => {
   const kb = JSON.parse(readFileSync(kbPath, "utf8"));
+  const handWritten = kb.filter((entry) => entry?.source !== "vault");
   const report = buildFixtures(kb);
-  assert.deepEqual(report.entries.slice(0, kb.length), kb);
+  assert.deepEqual(report.entries.slice(0, handWritten.length), handWritten);
   assert.ok(validKnowledge(report.entries));
   const retrieve = createRetriever(report.entries);
   for (const [question, id] of [
