@@ -12,6 +12,7 @@ const home = read("index.html");
 const themes = read("preview/styles.css");
 const themeJS = read("preview/theme.js");
 const slidesCSS = read("preview/assets/slides.css");
+const slidesJS = read("preview/assets/slides.js");
 const retrieve = createRetriever(kb);
 
 test("preview page has one accessible chat widget and the coming-soon page does not", () => {
@@ -178,4 +179,26 @@ test("closed slide player dialog stays hidden so the theme picker can be used", 
   const base = slidesCSS.match(/\.slides-player\s*\{[^}]*\}/);
   assert.ok(base, "base .slides-player rule is missing");
   assert.doesNotMatch(base[0], /display:\s*flex/);
+});
+
+test("theme picker can be closed, and the slide player has working chrome", () => {
+  assert.match(page, /data-theme-close/);
+  assert.match(page, /aria-label="Close theme menu"/);
+  assert.match(themes, /\.theme-menu\[hidden\]\s*\{\s*display:\s*none/);
+  assert.match(themeJS, /data-theme-close/);
+  assert.match(themeJS, /closeMenu\(true\)/);
+  assert.match(themeJS, /event\.key !== "Escape"/);
+  assert.match(themeJS, /pointerdown/);
+  assert.match(page, /data-slides-shell/);
+  assert.match(slidesJS, /data-slides-shell/);
+  assert.match(slidesJS, /requestFullscreen/);
+  assert.match(slidesJS, /webkitRequestFullscreen/);
+  assert.match(slidesJS, /fullscreenEnabled/);
+  assert.match(slidesCSS, /:fullscreen/);
+  assert.match(page, /aria-label="Previous slide"/);
+  assert.match(page, /aria-label="Next slide"/);
+  assert.match(page, /data-slides-prev[\s\S]*?<svg[\s\S]*?stroke="currentColor"/);
+  assert.match(page, /data-slides-next[\s\S]*?<svg[\s\S]*?stroke="currentColor"/);
+  assert.doesNotMatch(page, /data-slides-prev[^>]*>\s*Previous/);
+  assert.doesNotMatch(page, /data-slides-next[^>]*>\s*Next/);
 });

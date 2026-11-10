@@ -7,6 +7,7 @@
   var menu = picker.querySelector(".theme-menu");
   if (!toggle || !menu) return;
   var items = Array.prototype.slice.call(menu.querySelectorAll("[data-theme-value]"));
+  var closeBtn = picker.querySelector("[data-theme-close]");
   var allowed = { editorial: 1, midnight: 1, minimal: 1, gradient: 1, glass: 1, contrast: 1 };
   var fonts = {
     editorial: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,560&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap",
@@ -92,8 +93,14 @@
 
   toggle.addEventListener("click", function () {
     if (menu.hidden) openMenu();
-    else closeMenu(false);
+    else closeMenu(true);
   });
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      closeMenu(true);
+    });
+  }
   items.forEach(function (btn) {
     btn.addEventListener("click", function () {
       apply(btn.getAttribute("data-theme-value"));
@@ -124,10 +131,17 @@
   document.addEventListener("pointerdown", function (event) {
     if (menu.hidden || picker.contains(event.target)) return;
     closeMenu(false);
+    // Focus the toggle after the outside click finishes, so it isn't stolen.
+    setTimeout(function () {
+      if (menu.hidden) toggle.focus();
+    }, 0);
   });
   picker.addEventListener("focusout", function (event) {
     if (picker.contains(event.relatedTarget)) return;
-    closeMenu(false);
+    requestAnimationFrame(function () {
+      if (menu.hidden || picker.contains(document.activeElement)) return;
+      closeMenu(true);
+    });
   });
   window.addEventListener("resize", function () {
     if (!menu.hidden) place();

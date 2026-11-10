@@ -70,6 +70,10 @@
     <div class="theme-picker">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">Theme</button>
       <div class="theme-menu" id="theme-menu" role="menu" aria-labelledby="theme-toggle" hidden>
+        <div class="theme-menu-head">
+          <span class="theme-menu-label">Theme</span>
+          <button type="button" class="theme-close" data-theme-close aria-label="Close theme menu">×</button>
+        </div>
         <button type="button" role="menuitemradio" data-theme-value="editorial" aria-checked="true"><span class="swatch swatch-editorial" aria-hidden="true"></span>Light editorial</button>
         <button type="button" role="menuitemradio" data-theme-value="midnight" aria-checked="false"><span class="swatch swatch-midnight" aria-hidden="true"></span>Midnight</button>
         <button type="button" role="menuitemradio" data-theme-value="minimal" aria-checked="false"><span class="swatch swatch-minimal" aria-hidden="true"></span>Dark minimal</button>
@@ -749,6 +753,7 @@
   </div>
 
   <dialog class="slides-player" id="slides-player" aria-modal="true" aria-labelledby="slides-player-title">
+    <div class="slides-shell" data-slides-shell>
     <div class="slides-toolbar">
       <h2 id="slides-player-title" class="slides-title">Experience overview</h2>
       <p class="slides-counter" data-slides-counter aria-live="polite">1 / 6</p>
@@ -756,14 +761,15 @@
       <button type="button" class="slides-icon" data-slides-close aria-label="Close experience overview">×</button>
     </div>
     <div class="slides-stage" data-slides-stage>
-      <button type="button" class="slides-icon slides-nav" data-slides-prev aria-label="Previous slide">Previous</button>
+      <button type="button" class="slides-icon slides-nav" data-slides-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 5 7 12l8 7"/></svg></button>
       <figure class="slides-frame">
         <picture>
           <source type="image/webp" data-slides-webp srcset="assets/slides/slide-1.webp">
           <img data-slides-image src="assets/slides/slide-1.jpg" width="1920" height="1081" alt="Career arc: four eras over twenty years — ESP, Corsair Gaming, First Republic, and JPMorgan Chase — with six years in financial services. The common thread is a solo platform owner who coordinates contractors, vendors, and internal teams, production first.">
         </picture>
       </figure>
-      <button type="button" class="slides-icon slides-nav" data-slides-next aria-label="Next slide">Next</button>
+      <button type="button" class="slides-icon slides-nav" data-slides-next aria-label="Next slide"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l8 7-8 7"/></svg></button>
+    </div>
     </div>
   </dialog>
 

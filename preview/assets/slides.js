@@ -45,6 +45,7 @@
   const closeBtn = dialog.querySelector("[data-slides-close]");
   const fullBtn = dialog.querySelector("[data-slides-fullscreen]");
   const stage = dialog.querySelector("[data-slides-stage]");
+  const shell = dialog.querySelector("[data-slides-shell]") || dialog;
 
   let index = 0;
   let opener = null;
@@ -54,9 +55,19 @@
     return document.fullscreenElement || document.webkitFullscreenElement || null;
   }
 
+  function fsTarget() {
+    return shell;
+  }
+
+  function isPlayerFullscreen() {
+    const fs = fsElement();
+    const el = fsTarget();
+    return Boolean(fs && (fs === el || el.contains(fs) || (fs.contains && fs.contains(el))));
+  }
+
   function requestFs(el) {
     const fn = el.requestFullscreen || el.webkitRequestFullscreen;
-    return fn ? fn.call(el) : Promise.reject();
+    return fn ? fn.call(el) : Promise.reject(new Error("Fullscreen is not available"));
   }
 
   function exitFs() {
@@ -65,7 +76,11 @@
   }
 
   function canFullscreen() {
-    return Boolean(dialog.requestFullscreen || dialog.webkitRequestFullscreen);
+    const el = fsTarget();
+    return Boolean(
+      (document.fullscreenEnabled || document.webkitFullscreenEnabled) &&
+      (el.requestFullscreen || el.webkitRequestFullscreen)
+    );
   }
 
   function isOpen() {
@@ -111,7 +126,7 @@
 
   function updateFullscreenButton() {
     if (!fullBtn) return;
-    const on = fsElement() === dialog;
+    const on = isPlayerFullscreen();
     fullBtn.setAttribute("aria-pressed", on ? "true" : "false");
     fullBtn.textContent = on ? "Exit full screen" : "Full screen";
   }
@@ -126,7 +141,7 @@
   }
 
   function close() {
-    if (fsElement() === dialog) {
+    if (isPlayerFullscreen()) {
       Promise.resolve(exitFs()).catch(function () {});
     }
     if (dialog.open) dialog.close();
@@ -155,8 +170,8 @@
 
   if (fullBtn) {
     fullBtn.addEventListener("click", function () {
-      if (fsElement() === dialog) exitFs().catch(function () {});
-      else requestFs(dialog).catch(function () {});
+      var op = isPlayerFullscreen() ? exitFs() : requestFs(fsTarget());
+      Promise.resolve(op).then(updateFullscreenButton, updateFullscreenButton);
     });
   }
 
