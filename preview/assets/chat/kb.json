@@ -108,6 +108,50 @@
     "link": "#skills"
   },
   {
+    "id": "work-projects",
+    "topic": "Work projects",
+    "questions": [
+      "What work projects are listed?",
+      "Show his work accomplishments"
+    ],
+    "answer": "Work projects cover the Kubernetes observability standard and MLOps on AWS at JPMorgan Chase, the Azure migration at First Republic, Sitecore content backup and the commerce migrations at Corsair, and the opsInfo APIs at ESP.",
+    "tags": ["work", "accomplishment", "observability", "migration"],
+    "link": "#work-projects"
+  },
+  {
+    "id": "observability",
+    "topic": "Observability standard",
+    "questions": [
+      "Tell me about the observability standard",
+      "What was the Kubernetes observability work?"
+    ],
+    "answer": "At JPMorgan Chase from July 2023 to January 2026 he wrote the Dynatrace and Splunk observability standard for the private Kubernetes platform, packaged as reusable assets with environment overlays. He onboarded about 11 application teams, and other teams adopted it from the documentation.",
+    "tags": ["observability", "kubernetes", "dynatrace", "splunk"],
+    "link": "#work-projects"
+  },
+  {
+    "id": "content-migration",
+    "topic": "Corsair content migration",
+    "questions": [
+      "Tell me about the content migration at Corsair",
+      "How did the Sitecore backup work?"
+    ],
+    "answer": "At Corsair, as a Senior .NET Engineer from May 2013 to January 2017, he built Sitecore tooling that backed up every content item into source control for history and rollback, and converted legacy layouts into responsive layouts during the migration.",
+    "tags": ["content", "sitecore", "backup", "corsair", "migration"],
+    "link": "#work-projects"
+  },
+  {
+    "id": "opsinfo-api",
+    "topic": "opsInfo APIs",
+    "questions": [
+      "Which job built an API from scratch?",
+      "Tell me about the opsInfo APIs"
+    ],
+    "answer": "At ESP, from January 2006 to February 2013, he built the web framework, REST APIs, and single-page admin UI for opsInfo essentially from scratch. Page loads were brought under two seconds.",
+    "tags": ["api", "opsinfo", "esp", "rest", "scratch"],
+    "link": "#work-projects"
+  },
+  {
     "id": "projects",
     "topic": "Projects",
     "questions": [
@@ -115,9 +159,9 @@
       "Show his projects",
       "What has he made?"
     ],
-    "answer": "Public projects are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet.",
+    "answer": "Personal projects on the site are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet. Work accomplishments are in the Work projects section.",
     "tags": ["project", "build", "dashboard", "opskit"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "investor-dashboard",
@@ -128,7 +172,7 @@
     ],
     "answer": "The Investor Dashboard is portfolio and operations visibility for investor workflows, hosted on AWS. It uses Python collection jobs, Terraform, and a static dashboard behind CloudFront. The public repository is ram290476/investor-dashboard, and there is a live site.",
     "tags": ["investor", "dashboard", "aws", "cloudfront", "terraform"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "multi-cloud",
@@ -139,7 +183,7 @@
     ],
     "answer": "The Multi-Cloud Dashboard is one application on several clouds: the same API on Cloud Run, ECS, and Azure App Service, fronted by Cloudflare for edge delivery. The public repository is ram290476/hybrid-cloud-dashboard.",
     "tags": ["multi", "cloud", "hybrid", "cloudflare", "ecs", "azure"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "opskit",
@@ -150,7 +194,7 @@
     ],
     "answer": "opsKit is a set of Python libraries for cloud operations: inventory, guarded changes, Kubernetes helpers, and access-log checks. It is dry-run by default, with timeouts and structured logs. The public repository is ram290476/opsKit.",
     "tags": ["opskit", "python", "operations", "kubernetes"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "credit-union",
@@ -161,7 +205,7 @@
     ],
     "answer": "The credit union knowledge system answers member questions from dated website snapshots, with citations, conflict resolution, and abstention when the snapshot does not say. The public repository records a practice score of 0.969 on a public 40-question eval.",
     "tags": ["credit", "union", "knowledge", "citations", "python"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "tasks-api",
@@ -172,7 +216,7 @@
     ],
     "answer": "The Tasks API is a small REST API with JWT authentication, migrations, rate limits, and CI that builds and smoke-tests the container. It uses TypeScript, NestJS, and PostgreSQL. The public repository is ram290476/tasks-api.",
     "tags": ["tasks", "api", "nestjs", "typescript", "postgres"],
-    "link": "#projects"
+    "link": "#personal-projects"
   },
   {
     "id": "certifications",

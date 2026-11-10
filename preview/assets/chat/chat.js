@@ -120,7 +120,7 @@ function setupWidget() {
       more.textContent = "Read more";
       row.append(more);
     } else if (text === UNKNOWN_REPLY) {
-      for (const [name, href] of [["Experience", "#experience"], ["Projects", "#projects"], ["Book a call", "#book"]]) {
+      for (const [name, href] of [["Work", "#work-projects"], ["Personal", "#personal-projects"], ["Book a call", "#book"]]) {
         const more = document.createElement("a");
         more.textContent = name;
         more.href = href;

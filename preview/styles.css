@@ -206,7 +206,6 @@ body {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 1.5px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,6 +216,7 @@ body {
 .avatar img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
   display: none;
 }
@@ -393,7 +393,7 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 
 .exp {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 168px 1fr;
   gap: 8px 24px;
 }
 .exp-date {
@@ -403,6 +403,9 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   margin: 0;
   padding-top: 2px;
 }
+.exp-date p { margin: 0 0 6px; }
+.exp-len { display: block; color: var(--navy); letter-spacing: 0.02em; }
+.exp-total { margin-top: 4px; color: var(--ink); }
 .exp-body { padding-bottom: 16px; border-bottom: 1px solid var(--line); margin: 0; }
 .exp-body:last-of-type { border-bottom: none; }
 .exp-role { font-weight: 600; font-size: 14px; margin: 0; }
@@ -664,8 +667,45 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   .js .theme-menu { min-width: 220px; }
 }
 
+.company { position: relative; }
+.company-btn {
+  font: inherit;
+  color: var(--navy);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px dotted var(--navy);
+  padding: 0;
+  cursor: pointer;
+}
+.info-pop {
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  top: calc(100% + 8px);
+  width: min(320px, 78vw);
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  padding: 12px 12px 14px;
+}
+.info-pop[hidden] { display: none; }
+.info-pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; }
+.info-pop-body { display: block; margin-top: 8px; font-size: 13px; line-height: 1.45; font-weight: 400; }
+.info-close {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font: inherit;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .js .sidebar, .theme-menu { transition: none; }
+  .js .sidebar, .theme-menu, .info-pop { transition: none; }
   body { background-attachment: scroll; }
 }
