@@ -30,10 +30,12 @@
     "questions": [
       "What is his experience?",
       "Where has he worked?",
-      "Summarize his career"
+      "Summarize his career",
+      "How long was he at each company?",
+      "What is his total time at each company?"
     ],
-    "answer": "Four eras: JPMorgan Chase from July 2023 to August 2026, First Republic Bank from April 2020 to July 2023, Corsair from May 2013 to February 2020, and ESP from January 2006 to February 2013. An Experience overview button in the Experience section opens a full-screen player for a six-slide career overview.",
-    "tags": ["experience", "career", "eras", "resume", "overview"],
+    "answer": "Four eras: JPMorgan Chase from July 2023 to August 2026, a total of 3 years 1 month; First Republic Bank from April 2020 to July 2023, a total of 3 years 3 months; Corsair from May 2013 to February 2020, a total of 6 years 9 months; and ESP from January 2006 to February 2013, a total of 7 years 1 month. An Experience overview button in the Experience section opens a full-screen player for a six-slide career overview.",
+    "tags": ["experience", "career", "eras", "resume", "overview", "duration", "tenure", "total"],
     "link": "#experience"
   },
   {
@@ -42,10 +44,12 @@
     "questions": [
       "Tell me about JPMorgan Chase",
       "What did he do at JPMorgan?",
-      "Describe the MLOps work"
+      "Describe the MLOps work",
+      "How long was he at JPMorgan Chase?",
+      "How long did he work at JPMorgan?"
     ],
-    "answer": "At JPMorgan Chase in San Francisco he was a Site Reliability and Platform Engineer, then MLOps, with the internal title Associate Software Engineer III. The work covered an observability stack, a private Kubernetes platform, and AWS applications including an MLOps app and an anti-money-laundering app. The final year moved mainly into MLOps. He re-platformed production ML onto SageMaker without interrupting inference, put latency SLOs and an on-call owner on the serving path, and wrote runbooks that reduced mean time to resolution by 30 percent. He also wrote an observability standard and onboarded about 11 application teams.",
-    "tags": ["jpmorgan", "chase", "sagemaker", "mlops", "kubernetes", "sre", "observability"],
+    "answer": "At JPMorgan Chase in San Francisco, from July 2023 to August 2026, a total of 3 years 1 month, he was a Site Reliability and Platform Engineer, then MLOps, with the internal title Associate Software Engineer III. The work covered an observability stack, a private Kubernetes platform, and AWS applications including an MLOps app and an anti-money-laundering app. He re-platformed production ML onto SageMaker without interrupting inference, put latency SLOs and an on-call owner on the serving path, and wrote runbooks that reduced mean time to resolution by 30 percent. He wrote an observability standard and onboarded about 11 application teams.",
+    "tags": ["jpmorgan", "chase", "sagemaker", "mlops", "kubernetes", "sre", "observability", "duration", "tenure"],
     "link": "#experience"
   },
   {
@@ -65,10 +69,11 @@
     "questions": [
       "Tell me about First Republic",
       "What did he do at the bank?",
-      "Describe the Azure migration"
+      "Describe the Azure migration",
+      "How long was he at First Republic?"
     ],
-    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank’s public website on Azure, from April 2020 to July 2023 in San Francisco. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
-    "tags": ["first", "republic", "azure", "sitecore", "akamai", "platform"],
+    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank’s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
+    "tags": ["first", "republic", "azure", "sitecore", "akamai", "platform", "duration", "tenure"],
     "link": "#experience"
   },
   {
@@ -77,10 +82,11 @@
     "questions": [
       "Tell me about Corsair",
       "What did he do in commerce?",
-      "Describe the SAP Commerce work"
+      "Describe the SAP Commerce work",
+      "How long was he at Corsair?"
     ],
-    "answer": "At Corsair in Fremont, from May 2013 to February 2020, he was a Senior .NET Engineer and then Lead Commerce Architect. He ran live-store commerce migrations from Sitecore to SAP Commerce Cloud, including a 12-month move off Sitecore and Magento onto SAP Hybris and a SAP Commerce Cloud V2 upgrade in five months. He was the only on-site owner, with a remote contractor team and a marketing partner. The work included payments, fraud, tax, and single sign-on.",
-    "tags": ["corsair", "commerce", "sap", "hybris", "sitecore", "dotnet"],
+    "answer": "At Corsair in Fremont, from May 2013 to February 2020, a total of 6 years 9 months, he was a Senior .NET Engineer and then Lead Commerce Architect. He ran live-store commerce migrations from Sitecore to SAP Commerce Cloud, including a 12-month move off Sitecore and Magento onto SAP Hybris and a SAP Commerce Cloud V2 upgrade in five months. He was the only on-site owner, with a remote contractor team and a marketing partner. The work included payments, fraud, tax, and single sign-on.",
+    "tags": ["corsair", "commerce", "sap", "hybris", "sitecore", "dotnet", "duration", "tenure"],
     "link": "#experience"
   },
   {
@@ -89,10 +95,11 @@
     "questions": [
       "Tell me about ESP",
       "What did he do at ESP?",
-      "Describe the .NET modernization"
+      "Describe the .NET modernization",
+      "How long was he at ESP?"
     ],
-    "answer": "At ESP, later acquired by IHS Markit, in Santa Clara from January 2006 to February 2013, he was a Senior Software Engineer. He modernized older desktop business apps into modern web apps in .NET and C#. He designed the web framework, REST APIs, and single-page admin UI for opsInfo, brought page loads under two seconds, and re-platformed the reporting engine for scale and seven languages.",
-    "tags": ["esp", "markit", "dotnet", "opsinfo", "modernization"],
+    "answer": "At ESP, later acquired by IHS Markit, in Santa Clara from January 2006 to February 2013, a total of 7 years 1 month, he was a Senior Software Engineer. He modernized older desktop business apps into modern web apps in .NET and C#. He designed the web framework, REST APIs, and single-page admin UI for opsInfo, brought page loads under two seconds, and re-platformed the reporting engine for scale and seven languages.",
+    "tags": ["esp", "markit", "dotnet", "opsinfo", "modernization", "duration", "tenure"],
     "link": "#experience"
   },
   {
