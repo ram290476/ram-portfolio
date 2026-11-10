@@ -36,10 +36,10 @@ test("homepage has one accessible chat widget and is indexable", () => {
 
 test("Ask Ram lives in the left nav immediately after Contact", () => {
   assert.doesNotMatch(page, /<nav[^>]*>[\s\S]*href="#book"/);
-  assert.match(page, /<a href="#contact">Contact<\/a>\s*<button class="chat-launch"[^>]*data-chat-open[^>]*>Ask Ram<\/button>/);
+  assert.match(page, /<a href="#contact"[^>]*>[\s\S]*?Contact<\/a>\s*<button class="chat-launch"[^>]*data-chat-open[^>]*>[\s\S]*?Ask Ram<\/button>/);
   assert.equal((page.match(/data-chat-open/g) || []).length, 1);
   assert.equal((page.match(/class="chat-launch"/g) || []).length, 1);
-  const contact = page.indexOf('<a href="#contact">Contact</a>');
+  const contact = page.indexOf('href="#contact"');
   const launch = page.indexOf('data-chat-open');
   const picker = page.indexOf('class="theme-picker"');
   assert.ok(contact !== -1 && launch !== -1 && picker !== -1);
@@ -392,4 +392,26 @@ test("homepage and preview redirect use the generated photo favicons", () => {
   assert.match(preview, /href="\/assets\/favicon\.ico"/);
   assert.match(preview, /href="\/assets\/apple-touch-icon\.png"/);
   assert.doesNotMatch(preview, /favicon\.svg/);
+});
+
+test("left menu uses inline Lucide icons hidden from assistive tech", () => {
+  const nav = page.match(/<nav class="nav"[\s\S]*?<\/nav>/);
+  assert.ok(nav, "nav is missing");
+  const items = [...nav[0].matchAll(/<(a|button)\b[^>]*>[\s\S]*?<\/\1>/g)].map((m) => m[0]);
+  assert.equal(items.length, 10, "nav should have nine section links plus Ask Ram");
+  const labels = ["About","Skills","Experience","Work projects","Personal projects","Certifications","Training","Education","Contact","Ask Ram"];
+  for (const [item, label] of items.map((item, i) => [item, labels[i]])) {
+    assert.match(item, new RegExp(`${label}<\\/(a|button)>`));
+    assert.match(item, /<svg class="nav-icon"/);
+    assert.match(item, /aria-hidden="true"/);
+    assert.match(item, /stroke="currentColor"/);
+    assert.doesNotMatch(item, /lucide\.com|unpkg|jsdelivr|cdn/);
+  }
+  const theme = page.match(/<button type="button" class="theme-toggle"[^>]*>[\s\S]*?<\/button>/);
+  assert.ok(theme, "theme toggle is missing");
+  assert.match(theme[0], /<svg class="nav-icon"/);
+  assert.match(theme[0], /aria-hidden="true"/);
+  assert.match(theme[0], />Theme<\/button>/);
+  assert.match(themes, /\.nav-icon/);
+  assert.doesNotMatch(page, /<script[^>]+src="https?:\/\/[^"]*lucide/);
 });
