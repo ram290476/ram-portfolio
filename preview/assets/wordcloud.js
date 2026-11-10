@@ -36,7 +36,7 @@
       var li = document.createElement("li");
       var t = max > 1 ? (w.n - 1) / (max - 1) : 0;
       li.style.fontSize = (13 + Math.round(Math.sqrt(t) * 25)) + "px";
-      li.className = "wc-c" + (hash(w.word) % 4);
+      li.className = "wc-t" + (t >= 0.6 ? 3 : t >= 0.3 ? 2 : t > 0 ? 1 : 0);
       li.textContent = w.word;
       li.title = w.word + " appears " + w.n + (w.n === 1 ? " time" : " times");
       list.appendChild(li);
