@@ -83,7 +83,14 @@ for (const [question, id] of [
   ["What skills did he use at First Republic?", "first-republic-skills"],
   ["What skills did he use at JPMorgan?", "jpmc-skills"],
   ["What skills did he use at Corsair?", "corsair-skills"],
-  ["What skills did he use at ESP?", "esp-skills"]
+  ["What skills did he use at ESP?", "esp-skills"],
+  ["What were his SRE responsibilities at JPMorgan?", "jpmc-sre-resp"],
+  ["What were his MLOps platform responsibilities at JPMorgan?", "jpmc-mlops-resp"],
+  ["What were his responsibilities at First Republic?", "first-republic-resp"],
+  ["What were his responsibilities as a Senior .NET Engineer at Corsair?", "corsair-net-resp"],
+  ["What were his responsibilities as Commerce Architect at Corsair?", "corsair-commerce-resp"],
+  ["What were his responsibilities at ESP?", "esp-resp"],
+  ["What leadership skills does he have?", "skills-cross-cutting"]
 ]) {
   test(`grounded retrieval — ${question}`, () => {
     const answer = replyTo(question, retrieve);
@@ -119,12 +126,15 @@ test("suggested questions all retrieve a grounded answer", () => {
 });
 
 test("experience roles list LinkedIn skills with an accessible show-all toggle", () => {
-  assert.equal((page.match(/class="exp-skills"/g) || []).length, 4);
-  assert.equal((page.match(/class="exp-skill-toggle"/g) || []).length, 6);
-  assert.match(page, /Site Reliability &amp; Platform \(2023–2026\)/);
+  const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
+  assert.equal((experience.match(/class="exp-role-block"/g) || []).length, 6);
+  assert.equal((experience.match(/class="exp-skill-toggle"/g) || []).length, 6);
+  assert.doesNotMatch(experience, /class="exp-skills"/);
+  assert.doesNotMatch(experience, /Skills used/);
+  assert.match(page, /Site Reliability &amp; Platform Engineer \(2023–2026\)/);
   assert.match(page, /MLOps platform \(2026\)/);
   assert.match(page, /Senior \.NET Engineer \(2013–2017\)/);
-  assert.match(page, /Commerce Architect \(2017–2020\)/);
+  assert.match(page, /Lead Commerce Architect \(2017–2020\)/);
   assert.match(page, /src="experience-skills\.js"/);
   assert.match(page, /aria-expanded="false"/);
   assert.match(page, /aria-controls="skills-frb"/);
@@ -242,4 +252,80 @@ test("Contact Book a call opens the Cal.com intro call in a new tab", () => {
   assert.match(cta[1], /target="_blank"/);
   assert.match(cta[1], /rel="noopener noreferrer"/);
   assert.doesNotMatch(home, /cal\.com/);
+});
+test("the Experience callout quote has been removed", () => {
+  const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
+  assert.doesNotMatch(experience, /feature-quote/);
+  assert.doesNotMatch(experience, /Keeping systems reliable in production is exactly the skill/);
+  assert.doesNotMatch(themes, /feature-quote/);
+  assert.equal(replyTo("What is the featured quote?", retrieve).kind, "unknown");
+});
+
+test("each Experience role leads with LinkedIn responsibilities, then that role's skills", () => {
+  const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
+  const blocks = [...experience.matchAll(/<article class="exp-role-block"[^>]*>([\s\S]*?)<\/article>/g)].map((m) => m[1]);
+  assert.equal(blocks.length, 6);
+  const phrases = [
+    "Platform and reliability engineering for Line of Business application teams across AWS and the firm’s private cloud",
+    "Re-platformed enterprise MLOps workloads onto AWS SageMaker",
+    "Technical lead for the bank's Azure-hosted Sitecore platform",
+    "Led migration of the commerce platform to Sitecore 6 and Sitecore 8",
+    "Led the SAP Commerce Cloud V2 upgrade end to end in five months",
+    "Full-stack engineer on opsInfo, an enterprise environmental and sustainability reporting product",
+    "Managed Control-M scheduled job workflows",
+    "Championed AI-assisted development with GitHub Copilot and VS Code",
+    "Sitecore 9.1 → 10.2 upgrade",
+    "Established GDPR data privacy processes",
+    "Delivered Oracle ERP and Salesforce CRM integrations",
+    "extending the product to 7 languages"
+  ];
+  for (const phrase of phrases) assert.match(experience, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+
+  for (const block of blocks) {
+    const respIdx = block.search(/<div class="exp-resp"/);
+    const skillsIdx = block.search(/<ul class="pills exp-skill-chips"/);
+    assert.ok(respIdx >= 0, "role is missing a responsibilities block");
+    assert.ok(skillsIdx > respIdx, "responsibilities must come before the skills list");
+    const list = block.match(/<ul class="exp-resp-list" id="([^"]+)">([\s\S]*?)<\/ul>/);
+    assert.ok(list, "role is missing a responsibilities list");
+    const items = [...list[2].matchAll(/<li([^>]*)>([\s\S]*?)<\/li>/g)];
+    assert.ok(items.length >= 3, list[1]);
+    const visible = items.filter((item) => !/\bexp-resp-more\b/.test(item[1]));
+    const hidden = items.filter((item) => /\bexp-resp-more\b/.test(item[1]));
+    assert.equal(visible.length, Math.min(3, items.length), list[1]);
+    assert.equal(hidden.length, Math.max(0, items.length - 3), list[1]);
+    const toggle = block.match(/<button type="button" class="exp-resp-toggle"[^>]*>/);
+    if (items.length > 3) {
+      assert.ok(toggle, `missing show-more toggle for ${list[1]}`);
+      assert.match(toggle[0], /aria-expanded="false"/);
+      assert.match(toggle[0], new RegExp(`aria-controls="${list[1]}"`));
+      assert.match(block, /class="exp-resp-toggle"[^>]*>Show more/);
+    } else {
+      assert.equal(toggle, null, `${list[1]} should not have a toggle`);
+    }
+  }
+  assert.doesNotMatch(blocks.find((block) => block.includes('id="resp-esp-list"')), /exp-resp-toggle/);
+  assert.match(themes, /\.js \.exp-resp-list:not\(\.is-open\) \.exp-resp-more\s*\{\s*display:\s*none/);
+  const skillJS = read("preview/experience-skills.js");
+  assert.match(skillJS, /exp-resp-toggle/);
+  assert.match(skillJS, /Show more/);
+  assert.match(skillJS, /Show less/);
+  assert.doesNotMatch(home, /exp-resp/);
+});
+
+test("every Contact link opens in a new tab with noopener noreferrer", () => {
+  const contact = page.match(/<section id="contact"[^>]*>([\s\S]*?)<\/section>/);
+  assert.ok(contact, "Contact section is missing");
+  const links = [...contact[1].matchAll(/<a\b([^>]*)>/g)].map((m) => m[1]);
+  assert.ok(links.length >= 5, "Contact should list email, Book a call, GitHub, LinkedIn, and the map link");
+  for (const attrs of links) {
+    assert.match(attrs, /target="_blank"/, attrs);
+    assert.match(attrs, /rel="[^"]*\bnoopener\b[^"]*"/, attrs);
+    assert.match(attrs, /rel="[^"]*\bnoreferrer\b[^"]*"/, attrs);
+  }
+  assert.match(contact[1], /href="mailto:ram\.vellamsetti@gmail\.com"/);
+  assert.match(contact[1], /href="https:\/\/github\.com\/ram290476"/);
+  assert.match(contact[1], /href="https:\/\/www\.linkedin\.com\/in\/vellamsetti\/"/);
+  assert.match(contact[1], /href="https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=San\+Ramon%2C\+CA"/);
+  assert.match(contact[1], /href="https:\/\/cal\.com\/ramvellamsetti\/30min"/);
 });

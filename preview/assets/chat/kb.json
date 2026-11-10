@@ -95,7 +95,7 @@
       "What skills did he use at JPMorgan Chase?",
       "What technologies did he use at JPMC?"
     ],
-    "answer": "At JPMorgan Chase he used two skill sets. In Site Reliability & Platform (2023\u20132026), the work centered on Kubernetes, Terraform, CloudFormation, Docker, Python, Java, Jenkins, Spinnaker, Dynatrace, and Splunk, among 46 skills. In the MLOps platform role (2026), it centered on AWS, SageMaker, Terraform, Python, Java, Docker, MLOps, Jenkins, Spinnaker, and Grafana, among 39 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "answer": "At JPMorgan Chase he used two skill sets. In Site Reliability & Platform (2023–2026), the work centered on Kubernetes, Terraform, CloudFormation, Docker, Python, Java, Jenkins, Spinnaker, Dynatrace, and Splunk, among 40 skills. In the MLOps platform role (2026), it centered on AWS, SageMaker, Terraform, Python, Java, Docker, MLOps, Jenkins, Spinnaker, and Grafana, among 33 skills. Cross-cutting skills from those roles are grouped in the Skills section.",
     "tags": [
       "jpmorgan",
       "chase",
@@ -110,20 +110,42 @@
     "link": "#experience"
   },
   {
-    "id": "quote",
-    "topic": "Pull quote",
+    "id": "jpmc-sre-resp",
+    "topic": "JPMorgan SRE responsibilities",
     "questions": [
-      "What is the featured quote?",
-      "What does he say about ML systems?"
+      "What were his SRE responsibilities at JPMorgan?",
+      "What were his LinkedIn responsibilities as a site reliability engineer at JPMorgan Chase?"
     ],
-    "answer": "The featured line from the career overview is: Keeping systems reliable in production is exactly the skill ML systems need. It sits with the final year at JPMorgan Chase, as the role moved mainly into MLOps.",
+    "answer": "His LinkedIn responsibilities as Site Reliability Engineer at JPMorgan Chase were platform and reliability engineering for line-of-business teams across AWS and the firm's private cloud. He defined and tracked SLOs and SLIs with Grafana and Prometheus, ran on-call incident response and wrote runbooks that reduced mean time to resolution by 30%, planned capacity for private-cloud Kubernetes, maintained Terraform and CloudFormation modules, built Jenkins and Spinnaker pipelines, automated operational checks in Python, PowerShell, and Bash, configured Dynatrace and Splunk, and managed Control-M job workflows.",
+    "link": "#experience",
     "tags": [
-      "quote",
-      "ml",
-      "reliable",
-      "production"
+      "responsibilities",
+      "SRE",
+      "JPMorgan",
+      "SLO",
+      "runbooks",
+      "Terraform",
+      "Kubernetes",
+      "Dynatrace"
+    ]
+  },
+  {
+    "id": "jpmc-mlops-resp",
+    "topic": "JPMorgan MLOps responsibilities",
+    "questions": [
+      "What were his MLOps platform responsibilities at JPMorgan?",
+      "What were his LinkedIn responsibilities on the SageMaker MLOps work?"
     ],
-    "link": "#experience"
+    "answer": "His LinkedIn responsibilities on the MLOps platform at JPMorgan Chase were as an SRE for the enterprise AI/ML platform. He re-platformed MLOps workloads onto AWS SageMaker in new accounts without interrupting inference, wrote Python automation that validates model inference endpoints, standardized CI/CD model promotion across environments, and championed AI-assisted development with GitHub Copilot and VS Code.",
+    "link": "#experience",
+    "tags": [
+      "responsibilities",
+      "MLOps",
+      "SageMaker",
+      "inference",
+      "Copilot",
+      "JPMorgan"
+    ]
   },
   {
     "id": "first-republic",
@@ -134,7 +156,7 @@
       "Describe the Azure migration",
       "How long was he at First Republic?"
     ],
-    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank\u2019s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
+    "answer": "At First Republic Bank, later acquired by JPMorgan Chase, he was Technical Lead for the content platform of the bank’s public website on Azure, from April 2020 to July 2023 in San Francisco, a total of 3 years 3 months. He was the platform-side person among a vendor and internal teams. He led the move to Azure in 8 months against a typical 12-month timeline, with a clean go-live and no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. He owned Akamai edge delivery, production on-call, and disaster-recovery tests.",
     "tags": [
       "first",
       "republic",
@@ -155,7 +177,7 @@
       "What skills did he use at the bank?",
       "What technologies did he use at First Republic?"
     ],
-    "answer": "At First Republic Bank, skills used included Azure, Sitecore, Akamai, C#, TypeScript, ASP.NET Core, React, Docker, Jenkins, and New Relic, among 58 skills from his LinkedIn role list. The Experience section lists all of them, including AWS, ASP.NET, Grafana, Splunk, SSO, and reliability practices.",
+    "answer": "At First Republic Bank, skills used included Azure, Sitecore, Akamai, C#, TypeScript, ASP.NET Core, React, Docker, Jenkins, and New Relic, among 49 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and cross-cutting skills such as software design and technical leadership are grouped in the Skills section.",
     "tags": [
       "first",
       "republic",
@@ -166,6 +188,24 @@
       "akamai"
     ],
     "link": "#experience"
+  },
+  {
+    "id": "first-republic-resp",
+    "topic": "First Republic responsibilities",
+    "questions": [
+      "What were his responsibilities at First Republic?",
+      "What were his LinkedIn responsibilities as platform lead at the bank?"
+    ],
+    "answer": "His LinkedIn responsibilities as Platform Lead at First Republic were owning the bank's Azure-hosted Sitecore platform end to end. He led the Sitecore 9.1 to 10.2 upgrade, including the cutover plan and Go-Live runbook, ran architecture and information security reviews with Veracode, configured alerting in Azure Monitor, New Relic, and Splunk and served on the on-call rotation, owned Akamai Kona edge delivery and security, improved page load performance with Solr and caching, and ran disaster recovery tests.",
+    "link": "#experience",
+    "tags": [
+      "responsibilities",
+      "First Republic",
+      "Sitecore",
+      "Azure",
+      "Akamai",
+      "upgrade"
+    ]
   },
   {
     "id": "corsair",
@@ -197,7 +237,7 @@
       "What technologies did he use at Corsair?",
       "What skills did he use in the commerce roles?"
     ],
-    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013\u20132017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 28 skills. As Commerce Architect (2017\u20132020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 45 skills. The Experience section lists every skill from his LinkedIn role lists.",
+    "answer": "At Corsair, skills used fall into two periods. As Senior .NET Engineer (2013–2017): C#, ASP.NET MVC, ASP.NET Web API, Sitecore, SQL Server, jQuery, REST, PowerShell, Akamai, and New Relic, among 25 skills. As Commerce Architect (2017–2020): SAP Commerce Cloud, Azure, Java, C#, TypeScript, Sitecore, Akamai, React, ASP.NET Core, and Jenkins, among 38 skills. Cross-cutting skills are grouped in the Skills section.",
     "tags": [
       "corsair",
       "skill",
@@ -207,6 +247,42 @@
       "dotnet"
     ],
     "link": "#experience"
+  },
+  {
+    "id": "corsair-net-resp",
+    "topic": "Corsair .NET responsibilities",
+    "questions": [
+      "What were his responsibilities as a Senior .NET Engineer at Corsair?",
+      "What were his LinkedIn responsibilities in the Corsair .NET role?"
+    ],
+    "answer": "His LinkedIn responsibilities as Senior .NET Engineer at Corsair were full-stack work on the commerce platform across .NET, Sitecore, and Magento. He led migrations to Sitecore 6 and Sitecore 8 with no interruption to operations, built ASP.NET and C# tooling for content import, export, backup, and bulk operations, automated pricing and inventory sync from Magento to Sitecore through Azure Pipelines, and delivered Oracle ERP, Salesforce, analytics, affiliate feed, and Akamai integrations.",
+    "link": "#experience",
+    "tags": [
+      "responsibilities",
+      "Corsair",
+      ".NET",
+      "Sitecore",
+      "Magento",
+      "ASP.NET"
+    ]
+  },
+  {
+    "id": "corsair-commerce-resp",
+    "topic": "Corsair Commerce Architect responsibilities",
+    "questions": [
+      "What were his responsibilities as Commerce Architect at Corsair?",
+      "What were his LinkedIn responsibilities leading the SAP Commerce work?"
+    ],
+    "answer": "His LinkedIn responsibilities as Commerce Architect at Corsair were architecture and delivery leadership for a global e-commerce platform. He led the SAP Commerce Cloud V2 upgrade in five months, ran the Sitecore and Magento to SAP Hybris migration through Go-Live, integrated payments, fraud, and tax systems including PayPal, Cybersource, Zendesk, and Avalara, established GDPR processes and single sign-on with SAP Customer Data Cloud, and owned data migration, partner product feeds, and Akamai configuration.",
+    "link": "#experience",
+    "tags": [
+      "responsibilities",
+      "Corsair",
+      "SAP Commerce",
+      "Hybris",
+      "GDPR",
+      "PayPal"
+    ]
   },
   {
     "id": "esp",
@@ -237,7 +313,7 @@
       "What technologies did he use at ESP?",
       "What skills did he use on the .NET modernization?"
     ],
-    "answer": "At ESP, skills used included C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, SQL Server, Oracle Database, jQuery, Visual Studio, Web Services, and Software Design, among 16 skills from his LinkedIn role list. The Experience section lists all of them.",
+    "answer": "At ESP, skills used included C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, SQL Server, Oracle Database, jQuery, Visual Studio, Web Services, and Front-End Development, among 15 skills from his LinkedIn role list. The Experience section lists the role-specific tools, and software design is grouped in the Skills section.",
     "tags": [
       "esp",
       "skill",
@@ -245,6 +321,24 @@
       "csharp"
     ],
     "link": "#experience"
+  },
+  {
+    "id": "esp-resp",
+    "topic": "ESP responsibilities",
+    "questions": [
+      "What were his responsibilities at ESP?",
+      "What were his LinkedIn responsibilities on opsInfo?"
+    ],
+    "answer": "His LinkedIn responsibilities as Senior Software Engineer at ESP were full-stack work on opsInfo, an enterprise environmental and sustainability reporting product. He designed and built the web framework, REST APIs, and single-page admin UI, cutting page loads to under two seconds, re-platformed the reporting engine onto .NET with Unicode support in seven languages, and built integration APIs plus Windows services and diagnostics that cut client support inquiries.",
+    "link": "#experience",
+    "tags": [
+      "responsibilities",
+      "ESP",
+      "opsInfo",
+      "REST",
+      "reporting",
+      ".NET"
+    ]
   },
   {
     "id": "skills",
@@ -255,7 +349,7 @@
       "List his cloud skills",
       "What skills does he use overall?"
     ],
-    "answer": "The skills he uses include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure, including Azure Application Gateway and Azure VNets. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. He is actively building with Go, GitOps and Argo CD, OpenTelemetry, and GCP. The Experience section also lists the skills used in each role.",
+    "answer": "The skills he uses include C#, Python, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, and PL/SQL. Web and backend work includes ASP.NET, React, Spring, Sitecore, and SAP Commerce Cloud. Cloud work includes AWS and Azure, including Azure Application Gateway and Azure VNets. He also uses Terraform, CloudFormation, Kubernetes, Docker, Helm, Jenkins, Spinnaker, and observability tools such as Grafana, Prometheus, Dynatrace, Splunk, and New Relic. Cross-cutting skills such as software design, technical leadership, Agile methodologies, and communication are grouped in the Skills section.",
     "tags": [
       "skill",
       "python",
@@ -269,6 +363,25 @@
       "overall"
     ],
     "link": "#skills"
+  },
+  {
+    "id": "skills-cross-cutting",
+    "topic": "Grouped cross-cutting skills",
+    "questions": [
+      "What leadership skills does he have?",
+      "What soft skills does he have?",
+      "What cross-cutting skills does he list?"
+    ],
+    "answer": "Cross-cutting skills from his LinkedIn role lists are grouped in the Skills section rather than repeated on every role. Architecture and design includes Software Design and Software Architecture. Leadership and delivery includes Technical Leadership, Technical Project Leadership, and Stakeholder Management. Ways of working includes Agile Methodologies, Code Review, and SDLC. Behavioral and communication includes Communication. Role-specific tools and platforms stay under each Experience role.",
+    "link": "#skills",
+    "tags": [
+      "leadership",
+      "soft skills",
+      "Agile",
+      "communication",
+      "software design",
+      "cross-cutting"
+    ]
   },
   {
     "id": "work-projects",
@@ -445,7 +558,7 @@
       "What certifications does he have?",
       "Is he an AWS architect?"
     ],
-    "answer": "In 2023 he earned the AWS Certified Solutions Architect \u2013 Associate credential.",
+    "answer": "In 2023 he earned the AWS Certified Solutions Architect – Associate credential.",
     "tags": [
       "certification",
       "aws",
