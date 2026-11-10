@@ -56,6 +56,8 @@ for (const [question, id] of [
   ["What skills does he use?", "skills"],
   ["How do I book a call?", "booking"],
   ["Tell me about JPMorgan Chase", "jpmc"],
+  ["How long was he at JPMorgan Chase?", "jpmc"],
+  ["How long was he at each company?", "experience"],
   ["Where is he based?", "location"],
   ["What is his email?", "contact"]
 ]) {
@@ -66,6 +68,22 @@ for (const [question, id] of [
     if (id === "booking") assert.equal(answer.link, "#book");
   });
 }
+
+test("company total questions are answerable from the guide", () => {
+  const cases = [
+    ["How long was he at JPMorgan Chase?", "jpmc", "3 years 1 month"],
+    ["How long was he at First Republic?", "first-republic", "3 years 3 months"],
+    ["How long was he at Corsair?", "corsair", "6 years 9 months"],
+    ["How long was he at ESP?", "esp", "7 years 1 month"],
+    ["How long was he at each company?", "experience", "6 years 9 months"]
+  ];
+  for (const [question, id, phrase] of cases) {
+    const answer = replyTo(question, retrieve);
+    assert.equal(answer.kind, "answer", question);
+    assert.equal(answer.id, id, question);
+    assert.match(answer.answer, new RegExp(phrase));
+  }
+});
 
 test("suggested questions all retrieve a grounded answer", () => {
   for (const match of page.matchAll(/data-chat-question>([^<]+)<\/button>/g)) {
