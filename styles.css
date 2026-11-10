@@ -430,6 +430,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   padding-top: 2px;
 }
 .exp-date p { margin: 0; }
+.exp-date-line { display: block; }
+.exp-date-line + .exp-date-line { margin-top: 2px; }
 .exp-len { display: block; margin-top: 4px; color: var(--navy); letter-spacing: 0.02em; }
 .exp-body { padding-bottom: 16px; border-bottom: 1px solid var(--line); margin: 0; }
 .exp-body:last-of-type { border-bottom: none; }

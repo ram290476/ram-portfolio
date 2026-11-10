@@ -583,7 +583,7 @@
       "Is his AWS certification current?",
       "Does he have a Microsoft certification?"
     ],
-    "answer": "He holds two certifications. The AWS Certified Solution Architect - Associate, from Amazon Web Services (AWS), was issued in April 2022 and expired in April 2025. He also holds the Microsoft Certified Application Developer for .NET from Microsoft; LinkedIn does not show a date for that credential.",
+    "answer": "He holds two certifications. The AWS Certified Solution Architect - Associate, from Amazon Web Services (AWS), was issued in April 2022 and expired in April 2025. He also holds the Microsoft Certified Application Developer for .NET from Microsoft, issued in April 2004 and now expired; no expiry date is shown.",
     "tags": [
       "certification",
       "aws",
