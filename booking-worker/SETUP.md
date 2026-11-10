@@ -2,7 +2,7 @@
 
 The portfolio stays a static site. This Worker is the only place that talks to Microsoft Graph. Nothing here is deployed yet, and this repository must not receive a client secret, refresh token, or Turnstile secret.
 
-Calendar mailbox: `ram.vellamsetti@live.com` (personal Microsoft account).
+Calendar mailbox: the owner's personal Microsoft account. Do not write that address in this file. The privacy check allows only the public contact address below.
 Public contact on the site: `ram.vellamsetti@gmail.com`.
 Owner time zone: `America/Los_Angeles`.
 
@@ -32,7 +32,7 @@ A personal Microsoft account does not need admin consent. You consent as yoursel
 
 ## 4. One-time consent
 
-Sign in as `ram.vellamsetti@live.com`. Tenant `consumers` (or `common`). Scopes are the five above. Use `prompt=consent`.
+Sign in as that personal Microsoft account. Tenant `consumers` (or `common`). Scopes are the five above. Use `prompt=consent`.
 
 Exchange the authorization code for tokens and keep the **refresh token**. Do not paste the code or the tokens into chat, a commit, or `wrangler.toml`.
 
@@ -97,7 +97,7 @@ Add a CNAME or Worker route for the API host, for example `book.ram.vellamsetti.
 
 ## 8. Mac Contacts
 
-On the Mac: **System Settings → Internet Accounts → Add Account → Microsoft**. Sign in as `ram.vellamsetti@live.com` and turn **Contacts** on.
+On the Mac: **System Settings → Internet Accounts → Add Account → Microsoft**. Sign in as that same personal Microsoft account and turn **Contacts** on.
 
 Contacts the Worker creates with `POST /me/contacts` then sync into Contacts. The first sync can take a few minutes. Nothing is installed for the public site, and the Mac is not exposed to visitors.
 
@@ -110,7 +110,7 @@ Confirm with one test contact, then delete it if you do not want to keep it.
 - Name is required. Email and phone are each optional, and at least one is required.
 - Turnstile is checked before any Graph write. Rate limits use the KV namespace, per IP and, on booking, per email and per phone. Logs store a short hash, not the address or number.
 - `POST /book` reads busy time again and returns 409 when the slot now overlaps, including the buffer.
-- The event is created on `ram.vellamsetti@live.com` with the visitor as a required attendee when they left an email. Outlook sends that invite. Phone-only bookings have no attendee.
+- The event is created on that personal Microsoft account with the visitor as a required attendee when they left an email. Outlook sends that invite. Phone-only bookings have no attendee.
 - `MAIL_CONFIRMATION=true` also sends a short mail. Leave it `false` until you want that extra note.
 - A contact is created in the same mailbox.
 - Responses contain open slots only. Subjects, locations, and attendees from existing events are not returned.
