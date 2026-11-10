@@ -528,7 +528,18 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 
 .contact-list { list-style: none; margin: 14px 0 0; padding: 0; }
 .contact-list li { margin: 6px 0; }
-.contact-list a { color: var(--navy); }
+.contact-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--navy);
+}
+.contact-icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  fill: currentColor;
+}
 
 .colophon {
   margin-top: 48px;
