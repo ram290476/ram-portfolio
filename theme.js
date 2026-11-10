@@ -107,6 +107,26 @@
       closeMenu(true);
     });
   });
+  // Safari does not focus a button on press. A press would otherwise look
+  // like focus leaving the picker, and the focusout handler would hide the
+  // menu on the next frame — before click can apply the theme.
+  var pointerInside = false;
+  function buttonFrom(node) {
+    while (node && node !== menu) {
+      if (node.nodeType === 1 && node.tagName === "BUTTON") return node;
+      node = node.parentNode;
+    }
+    return null;
+  }
+  menu.addEventListener("pointerdown", function (event) {
+    var btn = buttonFrom(event.target);
+    if (!btn) return;
+    pointerInside = true;
+    btn.focus();
+  });
+  function releasePointer() { pointerInside = false; }
+  document.addEventListener("pointerup", releasePointer);
+  document.addEventListener("pointercancel", releasePointer);
   function menuFocusable() {
     var list = [];
     if (closeBtn) list.push(closeBtn);
@@ -156,9 +176,9 @@
     }, 0);
   });
   picker.addEventListener("focusout", function (event) {
-    if (picker.contains(event.relatedTarget)) return;
+    if (pointerInside || picker.contains(event.relatedTarget)) return;
     requestAnimationFrame(function () {
-      if (menu.hidden || picker.contains(document.activeElement)) return;
+      if (pointerInside || menu.hidden || picker.contains(document.activeElement)) return;
       closeMenu(true);
     });
   });
