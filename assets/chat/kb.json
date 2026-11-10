@@ -603,7 +603,7 @@
       "What LinkedIn Learning courses has he completed?",
       "Has he done Azure or Terraform training?"
     ],
-    "answer": "In July 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. The Training section also lists LinkedIn Learning and DataCamp coursework, including Learning Go, Python Essential Training, HashiCorp Terraform Associate cert prep, DataCamp courses on large language models and machine learning, the three-part Microsoft Azure Fundamentals (AZ-900) cert prep, and courses in communication, C#, and React. Older courses with no date shown include AWS Certified Security - Specialty 2020, Introduction to Agile for teams, Oracle 9i programming with PL/SQL, and SAP Commerce Cloud Developer.",
+    "answer": "In July 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. The Training section also lists LinkedIn Learning and DataCamp coursework, including Learning Go, Python Essential Training, HashiCorp Terraform Associate cert prep, DataCamp courses on large language models and machine learning, the three-part Microsoft Azure Fundamentals (AZ-900) cert prep, and courses in communication, C#, and React. Also: AWS Certified Security - Specialty in April 2022, Introduction to Agile for teams in March 2023, Oracle 9i programming with PL/SQL in March 2010, and SAP Commerce Cloud Developer in July 2017.",
     "tags": [
       "training",
       "copilot",
