@@ -78,7 +78,7 @@ Create a widget for `ram.vellamsetti.com` (and the API host if the widget needs 
 
 Leave `bookingApi` empty until the Worker has a URL. The page then stays on “Booking opens soon.”
 
-The booking form lives on the homepage (`/#book`). When both values are ready:
+The booking form lives on the homepage Contact section (`/#contact`). Old `/#book` links redirect there. When both values are ready:
 
 ```js
 window.PORTFOLIO = {

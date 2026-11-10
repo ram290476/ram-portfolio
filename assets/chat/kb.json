@@ -611,7 +611,7 @@
       "Can I schedule time with him?",
       "What happens on an intro call?"
     ],
-    "answer": "You can book a 30-minute Intro call with Ram at https://cal.com/ramvellamsetti/30min. It is about Senior SRE, Platform, or Cloud roles and how his experience fits a team. The same link is in Contact and in the Book a call section, and it opens in a new tab on Cal Video.",
+    "answer": "You can book a 30-minute Intro call with Ram at https://cal.com/ramvellamsetti/30min. It is about Senior SRE, Platform, or Cloud roles and how his experience fits a team. The same link is the first option in the Contact section, and it opens in a new tab on Cal Video.",
     "tags": [
       "book",
       "call",
@@ -619,7 +619,7 @@
       "intro",
       "meeting"
     ],
-    "link": "#book"
+    "link": "#contact"
   },
   {
     "id": "contact",

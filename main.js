@@ -56,3 +56,15 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 })();
+
+(function () {
+  function redirectBookHash() {
+    if (location.hash !== "#book") return;
+    if (history.replaceState) history.replaceState(null, "", "#contact");
+    else location.hash = "contact";
+    var contact = document.getElementById("contact");
+    if (contact) contact.scrollIntoView();
+  }
+  window.addEventListener("hashchange", redirectBookHash);
+  redirectBookHash();
+})();
