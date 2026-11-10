@@ -415,3 +415,17 @@ test("left menu uses inline Lucide icons hidden from assistive tech", () => {
   assert.match(themes, /\.nav-icon/);
   assert.doesNotMatch(page, /<script[^>]+src="https?:\/\/[^"]*lucide/);
 });
+
+test("menu icons have a gap from their labels and are centered as a unit", () => {
+  const navRule = themes.match(/\.nav a,\s*\.nav \.chat-launch\s*\{([^}]*)\}/);
+  assert.ok(navRule, "nav item rule is missing");
+  assert.match(navRule[1], /display:\s*flex/);
+  assert.match(navRule[1], /align-items:\s*center/);
+  assert.match(navRule[1], /justify-content:\s*center/);
+  assert.match(navRule[1], /gap:\s*10px/);
+  const themeRule = themes.match(/\.theme-toggle\s*\{([^}]*)\}/);
+  assert.ok(themeRule, "theme toggle rule is missing");
+  assert.match(themeRule[1], /align-items:\s*center/);
+  assert.match(themeRule[1], /justify-content:\s*center/);
+  assert.match(themeRule[1], /gap:\s*10px/);
+});
