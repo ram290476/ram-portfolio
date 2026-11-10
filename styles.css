@@ -263,10 +263,13 @@ body {
 .nav { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .nav a,
 .nav .chat-launch {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  align-self: flex-start;
+  justify-content: center;
+  gap: 10px;
+  align-self: stretch;
+  width: 100%;
+  box-sizing: border-box;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -281,7 +284,7 @@ body {
   font-family: inherit;
   font-weight: inherit;
   line-height: inherit;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   border-radius: 0;
 }
@@ -654,8 +657,10 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   width: 100%;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  text-align: left;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  text-align: center;
   border: 1px solid var(--navy);
   background: transparent;
   color: var(--navy);
