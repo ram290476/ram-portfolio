@@ -21,6 +21,29 @@
     "link": "#about"
   },
   {
+    "id": "headline",
+    "topic": "Title",
+    "questions": [
+      "What is his title?",
+      "What is his job title?",
+      "What is Ram's role?",
+      "What is the headline on the portfolio?",
+      "What is his current role?"
+    ],
+    "answer": "His title is Senior SRE/DevOps/Backend/Full-Stack Engineer. That is the headline on the site, including under his name in the left sidebar.",
+    "tags": [
+      "title",
+      "headline",
+      "role",
+      "sre",
+      "devops",
+      "backend",
+      "full-stack",
+      "engineer"
+    ],
+    "link": "#about"
+  },
+  {
     "id": "location",
     "topic": "Location",
     "questions": [
