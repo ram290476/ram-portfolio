@@ -1,0 +1,24 @@
+# Copy to .dev.vars for `wrangler dev`. .dev.vars is gitignored.
+# These values are placeholders. Put real values with `wrangler secret put`.
+# Never commit a refresh token, client secret, or Turnstile secret.
+
+CALENDAR_PROVIDER=microsoft
+MS_TENANT=consumers
+MS_CLIENT_ID=00000000-0000-0000-0000-000000000000
+MS_CLIENT_SECRET=placeholder-not-a-real-secret
+MS_REFRESH_TOKEN=placeholder-not-a-real-refresh-token
+GOOGLE_CLIENT_ID=placeholder-google-client-id
+GOOGLE_CLIENT_SECRET=placeholder-not-a-real-secret
+GOOGLE_REFRESH_TOKEN=placeholder-not-a-real-refresh-token
+TURNSTILE_SECRET=placeholder-not-a-real-turnstile-secret
+SLOT_MINUTES=30
+BUFFER_MINUTES=15
+WORK_START=09:00
+WORK_END=17:00
+WORK_DAYS=1,2,3,4,5
+OWNER_TZ=America/Los_Angeles
+HORIZON_DAYS=14
+CORS_ORIGINS=https://ram.vellamsetti.com
+MAIL_CONFIRMATION=false
+RATE_LIMIT_MAX=8
+RATE_LIMIT_WINDOW_SECONDS=3600
