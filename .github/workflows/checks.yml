@@ -48,5 +48,5 @@ jobs:
       - name: Accessibility checks
         run: |
           npm ci
-          npx playwright install --with-deps chromium
-          node --test tests/a11y.test.mjs
+          npx playwright install --with-deps chromium webkit
+          node --test tests/a11y.test.mjs tests/theme-picker.test.mjs
