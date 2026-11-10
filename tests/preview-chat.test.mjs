@@ -57,6 +57,7 @@ for (const [question, id] of [
   ["What projects has he built?", "projects"],
   ["What skills does he use?", "skills"],
   ["How do I book a call?", "booking"],
+  ["How do I book a call with Ram?", "booking"],
   ["Tell me about JPMorgan Chase", "jpmc"],
   ["How long was he at JPMorgan Chase?", "jpmc"],
   ["How long was he at each company?", "experience"],
@@ -71,7 +72,10 @@ for (const [question, id] of [
     const answer = replyTo(question, retrieve);
     assert.equal(answer.kind, "answer", question);
     assert.equal(answer.id, id);
-    if (id === "booking") assert.equal(answer.link, "#book");
+    if (id === "booking") {
+      assert.equal(answer.link, "#book");
+      assert.match(answer.answer, /https:\/\/cal\.com\/ramvellamsetti\/30min/);
+    }
   });
 }
 
@@ -201,4 +205,24 @@ test("theme picker can be closed, and the slide player has working chrome", () =
   assert.match(page, /data-slides-next[\s\S]*?<svg[\s\S]*?stroke="currentColor"/);
   assert.doesNotMatch(page, /data-slides-prev[^>]*>\s*Previous/);
   assert.doesNotMatch(page, /data-slides-next[^>]*>\s*Next/);
+});
+
+test("Contact Book a call opens the Cal.com intro call in a new tab", () => {
+  const contact = page.match(/<ul class="contact-list">([\s\S]*?)<\/ul>/);
+  assert.ok(contact, "contact list is missing");
+  const link = contact[1].match(/<a href="https:\/\/cal\.com\/ramvellamsetti\/30min"([^>]*)>/);
+  assert.ok(link, "Contact is missing the Cal.com Book a call link");
+  assert.match(link[1], /target="_blank"/);
+  assert.match(link[1], /rel="noopener noreferrer"/);
+  assert.match(
+    contact[1],
+    /<a href="https:\/\/cal\.com\/ramvellamsetti\/30min"[^>]*>\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Book a call\s*<\/a>/
+  );
+  const section = page.match(/<section id="book"[^>]*>([\s\S]*?)<\/section>/);
+  assert.ok(section, "Book a call section is missing");
+  const cta = section[1].match(/<a class="button" href="https:\/\/cal\.com\/ramvellamsetti\/30min"([^>]*)>/);
+  assert.ok(cta, "Book a call section is missing the Cal.com button");
+  assert.match(cta[1], /target="_blank"/);
+  assert.match(cta[1], /rel="noopener noreferrer"/);
+  assert.doesNotMatch(home, /cal\.com/);
 });
