@@ -637,5 +637,801 @@
       "contact"
     ],
     "link": "#contact"
+  },
+  {
+    "id": "note-cri-cni-and-csi-in-kubernetes-163876-1",
+    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
+    "questions": [
+      "Tell me about CRI, CNI, and CSI in Kubernetes",
+      "What does the note CRI, CNI, and CSI in Kubernetes say?",
+      "What about cri container runtime interface defines kubelet talks container?"
+    ],
+    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. CRI is the Container Runtime Interface it defines how the kubelet talks to a container runtime like containerd or CRI-O to start and stop containers. CNI is the Container Network Interface plugins that wire up pod networking, giving each pod its own IP and connecting them across nodes. CSI is the Container Storage Interface, the equivalent for storage: how volumes get provisioned and attached to pods. All three are plugin interfaces so the core doesn't hardcode any one runtime, network, or storage vendor. On CRI: the kubelet doesn't embed runtime logic anymore.",
+    "tags": [
+      "cri",
+      "cni",
+      "csi",
+      "kubernetes",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cri-cni-and-csi-in-kubernetes-163876-2",
+    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
+    "questions": [
+      "Tell me about CRI, CNI, and CSI in Kubernetes",
+      "What does the note CRI, CNI, and CSI in Kubernetes say?",
+      "What about speaks grpc whatever implements cri swap containerd cri?"
+    ],
+    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. It speaks gRPC to whatever implements the CRI, which is why you can swap containerd for CRI-O or even a custom runtime without recompiling Kubernetes. The main RPCs are RunPodSandbox, CreateContainer, StartContainer, StopContainer, and RemovePodSandbox plus image pull and status calls. On CNI: each plugin is just an executable the kubelet or a CNI agent calls with a JSON config on stdin describing the pod's network namespace, and the plugin returns the IP and routes it assigned. Common ones are Calico, Cilium, Flannel, and Weave.",
+    "tags": [
+      "cri",
+      "cni",
+      "csi",
+      "kubernetes",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cri-cni-and-csi-in-kubernetes-163876-3",
+    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
+    "questions": [
+      "Tell me about CRI, CNI, and CSI in Kubernetes",
+      "What does the note CRI, CNI, and CSI in Kubernetes say?",
+      "What about cilium interesting because build ebpf policy enforcement observability?"
+    ],
+    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. Cilium is interesting because it builds on eBPF for policy enforcement and observability on top of plain pod networking. On CSI: before it existed, volume plugins were compiled into Kubernetes itself, which meant every new storage system needed a core change. CSI moved that out a CSI driver registers itself, and the external-provisioner and external-attacher sidecars handle the CreateVolume and ControllerPublishVolume calls against the driver's gRPC endpoint. That split is why you see things like the EBS CSI driver as a separate install.",
+    "tags": [
+      "cri",
+      "cni",
+      "csi",
+      "kubernetes",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cri-cni-and-csi-in-kubernetes-163876-4",
+    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
+    "questions": [
+      "Tell me about CRI, CNI, and CSI in Kubernetes",
+      "What does the note CRI, CNI, and CSI in Kubernetes say?",
+      "What about related kubernetes topic hub training kubernetes combined notes?"
+    ],
+    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. Related - Kubernetes: topic hub - Training/Kubernetes/Combined Notes: K8s architecture",
+    "tags": [
+      "cri",
+      "cni",
+      "csi",
+      "kubernetes",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-1",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about beyond simply adding more cache capacity expiration strategy?"
+    ],
+    "answer": "Notes: Cache expiration strategies. Beyond simply adding more cache capacity, the expiration strategy determines how long data stays cached and how you keep it fresh.",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-2",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about strategy work best main trade off ttl time?"
+    ],
+    "answer": "Notes: Cache expiration strategies. | | | | | |---|---|---|---| |Strategy|How it works|Best for|Main trade-off| |TTL (Time-to-Live)|Entry expires after a fixed time|Product data, profiles, API responses|Data can become stale| |Sliding expiration|Expiration timer resets whenever the item is accessed|Frequently accessed sessions/data|Popular data can remain cached indefinitely| |Absolute expiration|Entry expires at a specific time regardless of access|Time-sensitive data|May cause synchronized cache misses| |LRU eviction|Least-recently-used entries removed when cache is full|Memory-constrained caches|Doesn’t guarantee freshness|",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-3",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about write through update cache db together writes data?"
+    ],
+    "answer": "Notes: Cache expiration strategies. |Write-through|Update cache and DB together on writes|Data requiring consistency|Higher write latency| |Write-behind|Cache updates immediately; DB updated asynchronously|High-write workloads|Risk of data loss/inconsistency| |Cache-aside|Application reads cache; on miss, loads from DB and caches it|General-purpose applications|Cache misses create DB load| For a traffic spike I’d typically use cache-aside + TTL, with a few additional protections: But there’s an important problem: cache stampede.",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-4",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about if popular item expires during traffic spike thousands?"
+    ],
+    "answer": "Notes: Cache expiration strategies. If a popular item expires during a traffic spike, thousands of requests can simultaneously miss the cache and hit the database. You can mitigate that with:",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-5",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about ttl jitter add small random variation expiration times?"
+    ],
+    "answer": "Notes: Cache expiration strategies. - TTL jitter — add a small random variation to expiration times. - Request coalescing/single-flight — only one request refreshes the item. - Stale-while-revalidate — serve slightly stale data while refreshing it. - Pre-warming — refresh important keys before predictable traffic spikes.",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-6",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about high traffic system stale while revalidate ttl jitter?"
+    ],
+    "answer": "Notes: Cache expiration strategies. For a high-traffic system, stale-while-revalidate + TTL jitter + request coalescing is a particularly useful combination because it prevents a cache expiration event from suddenly overwhelming the database.",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-cache-expiration-strategies-7c1e62-7",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Tell me about Cache expiration strategies",
+      "What does the note Cache expiration strategies say?",
+      "What about related sre observability topic hub amazon elasticache cache?"
+    ],
+    "answer": "Notes: Cache expiration strategies. Related - SRE & Observability: topic hub - Amazon ElastiCache: cache TTL strategies - Amazon DAX: caching - Data access pattern changes for high traffic: cache-first reads - Akamai Pragma headers: CDN caching",
+    "tags": [
+      "cache",
+      "expiration",
+      "strategies",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-forward-proxy-vs-reverse-proxy-1b1f09-1",
+    "topic": "Notes: Forward proxy vs reverse proxy",
+    "questions": [
+      "Tell me about Forward proxy vs reverse proxy",
+      "What does the note Forward proxy vs reverse proxy say?",
+      "What about key difference side re protecting forward proxy sits?"
+    ],
+    "answer": "Notes: Forward proxy vs reverse proxy. Key difference is which side they’re protecting. Forward Proxy sits in front of clients, it’s used when a group of users, say inside a company network, need to reach the internet, and the proxy forwards their requests out on their behalf. The outside world sees the proxy, not the individual users. Reverse Proxy, on the other hand, sits in front of servers. It protects and manages the server side, hiding the backend infrastructure from the clients making requests. So forward proxy anonymizes and controls outbound traffic for clients, reverse proxy manages and distributes inbound traffic for servers.",
+    "tags": [
+      "forward",
+      "proxy",
+      "vs",
+      "reverse",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-forward-proxy-vs-reverse-proxy-1b1f09-2",
+    "topic": "Notes: Forward proxy vs reverse proxy",
+    "questions": [
+      "Tell me about Forward proxy vs reverse proxy",
+      "What does the note Forward proxy vs reverse proxy say?",
+      "What about reverse proxy handy things like load balancing across?"
+    ],
+    "answer": "Notes: Forward proxy vs reverse proxy. Reverse proxy is handy for things like load balancing across multiple servers, handling SSL termination, caching, and hiding your internal architecture for security. Examples are HAProxy or ngnix",
+    "tags": [
+      "forward",
+      "proxy",
+      "vs",
+      "reverse",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-forward-proxy-vs-reverse-proxy-1b1f09-3",
+    "topic": "Notes: Forward proxy vs reverse proxy",
+    "questions": [
+      "Tell me about Forward proxy vs reverse proxy",
+      "What does the note Forward proxy vs reverse proxy say?",
+      "What about related aws networking topic hub aws elb lb?"
+    ],
+    "answer": "Notes: Forward proxy vs reverse proxy. Related - AWS Networking: topic hub - AWS ELB: LB as reverse proxy - Istio: Envoy sidecar proxy",
+    "tags": [
+      "forward",
+      "proxy",
+      "vs",
+      "reverse",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-1",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about here s production style hpa using autoscaling v2?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. Here's a production-style HPA using autoscaling/v2, the current stable API. It scales a payments API on CPU, memory and a custom requests-per-second metric: apiVersion: autoscaling/v2￼kind: HorizontalPodAutoscaler￼metadata:￼ name: payments-api￼ namespace: payments￼spec:￼ # 1. What to scale￼ scaleTargetRef:￼ apiVersion: apps/v1￼ kind: Deployment￼ name: payments-api￼ 2. Bounds￼ minReplicas: 3 # HA floor: at least one pod per AZ￼ maxReplicas: 30 # cost / blast-radius ceiling￼ 3.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-2",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about signals scale metrics type resource resource name cpu?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. Signals to scale on￼ metrics:￼ - type: Resource￼ resource:￼ name: cpu￼ target:￼ type: Utilization￼ averageUtilization: 70 # % of the pod's CPU request￼ - type: Resource￼ resource:￼ name: memory￼ target:￼ type: AverageValue￼ averageValue: 800Mi￼ - type: Pods￼ pods:￼ metric:￼ name: httprequestsper_second # from Prometheus Adapter￼ target:￼ type: AverageValue￼ averageValue: \"100\"￼ 4.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-3",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about fast scale behavior scaleup stabilizationwindowseconds 0 policies type?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. How fast to scale￼ behavior:￼ scaleUp:￼ stabilizationWindowSeconds: 0￼ policies:￼ - type: Percent￼ value: 100 # can double...￼ periodSeconds: 60￼ - type: Pods￼ value: 4 # ...or add 4 pods￼ periodSeconds: 60￼ selectPolicy: Max # whichever is larger￼ scaleDown:￼ stabilizationWindowSeconds: 300 # wait 5 min before shrinking￼ policies:￼ - type: Percent￼ value: 10 # remove at most 10% per minute￼ periodSeconds: 60￼ selectPolicy: Min￼ How the structure works 1. scaleTargetRef names the workload the HPA scales.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-4",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about any resource scale subresource deployment statefulset replicaset some?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. It can be any resource with a /scale subresource: a Deployment, StatefulSet or ReplicaSet (and some CRDs, such as Argo Rollouts). The HPA only changes replicas on that resource. 2. minReplicas / maxReplicas set hard bounds. The minimum is a reliability choice: with 3 replicas across 3 AZs, you can lose a zone and still serve traffic. The maximum protects your bill and the systems downstream. Scaling to 200 pods can exhaust Aurora connections faster than it absorbs load. 3. metrics lists the signals. The HPA computes a desired replica count for each metric and uses the highest.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-5",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about formula desired ceil currentreplicas currentvalue targetvalue example 5?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. The formula: desired = ceil( currentReplicas × currentValue / targetValue )￼ For example: 5 pods at 140% CPU with a 70% target gives ceil(5 × 140/70) = 10 pods. There are four metric types:",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-6",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about type measures source resource cpu memory per pod?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. | | | | |---|---|---| |Type|What it measures|Source| |Resource|CPU or memory per pod|metrics-server| |ContainerResource|CPU or memory of one container (ignores sidecars such as Istio's)|metrics-server| |Pods|Custom per-pod metric, averaged across pods (RPS, queue items per pod)|Prometheus Adapter, custom.metrics API| |Object / External|A metric on another object, or outside the cluster (SQS depth, Kafka lag)|external.metrics API, e.g. KEDA|",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-7",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about target types utilization percentage request resource only averagevalue?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. Target types: Utilization (percentage of the request; Resource only), AverageValue (per pod) and Value (raw total). 4. behavior controls how fast the HPA scales, and it's where most tuning happens:",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-8",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about stabilizationwindowseconds hpa looks back over window picks conservative?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. - stabilizationWindowSeconds: the HPA looks back over this window and picks the most conservative recommendation. Use 0 for scale-up so you react fast, and about 300s for scale-down so pods don't flap. - policies: rate limits per period. selectPolicy: Max lets the fastest policy win, and Min lets the slowest win. Disabled turns that direction off.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-9",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about cpu utilization measured against pod s request not?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. - CPU utilization is measured against the pod's request, not its limit. Without requests, the HPA can't compute utilization and reports \\ . Bad requests make HPA decisions bad, which ties back to your right-sizing work. - Don't let the HPA and the VPA both act on CPU or memory for the same workload. They fight each other. Use the VPA in recommendation mode only, or point the HPA at custom metrics. - Memory is a weak scaling signal for runtimes like the JVM that hold onto memory and never shrink. Prefer CPU, RPS or latency.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-10",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about layering hpa adds pods if don t fit?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. - Layering: the HPA adds pods, and if they don't fit, they go Pending and Karpenter adds nodes. Scale-up time = metric scrape interval (~15s) + HPA sync (15s) + node launch + image pull + readiness. Readiness probes and slow-starting JVMs matter here. - Kafka consumers: CPU doesn't track consumer lag well. Use KEDA, which creates and manages an HPA behind the scenes, with a lag trigger. Cap maxReplicas at the partition count, since pods beyond that sit idle. - Debugging: kubectl describe hpa payments-api shows current vs.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-11",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about target values conditions abletoscale scalingactive scalinglimited recent scaling?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events. The equivalent KEDA ScaledObject for MSK consumer lag would fit Varo's stack well, if you want that next.",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-12",
+    "topic": "Notes: Kubernetes horizontal pod autoscaling",
+    "questions": [
+      "Tell me about Kubernetes horizontal pod autoscaling",
+      "What does the note Kubernetes horizontal pod autoscaling say?",
+      "What about related kubernetes topic hub aws auto scaling aws?"
+    ],
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. Related - Kubernetes: topic hub - AWS Auto Scaling: AWS vs K8s autoscaling - Karpenter: pod vs node autoscaling - Capacity Planning: requests/limits drive HPA",
+    "tags": [
+      "kubernetes",
+      "horizontal",
+      "pod",
+      "autoscaling",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-karpenter-55332e",
+    "topic": "Notes: Karpenter",
+    "questions": [
+      "Tell me about Karpenter",
+      "What does the note Karpenter say?",
+      "What about karpenter open source kubernetes node autoscaler aws build?"
+    ],
+    "answer": "Notes: Karpenter. Karpenter is an open-source Kubernetes node autoscaler. AWS built it, and it's now the default way to scale EKS clusters. It watches for pods that can't be scheduled and launches EC2 instances sized to fit them. When nodes are underused, it removes or replaces them. What it replaced. The older Cluster Autoscaler scales fixed node groups (Auto Scaling Groups) up or down. You decide the instance types ahead of time, and nodes are often oversized. Karpenter skips node groups and calls EC2 directly. For each batch of pending pods it picks the cheapest instance type that fits, often in under a minute. Main concepts:",
+    "tags": [
+      "karpenter",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-karpenter-55332e-2",
+    "topic": "Notes: Karpenter",
+    "questions": [
+      "Tell me about Karpenter",
+      "What does the note Karpenter say?",
+      "What about nodepool rules nodes karpenter may create such instance?"
+    ],
+    "answer": "Notes: Karpenter. - NodePool: rules for which nodes Karpenter may create, such as instance families, Spot vs. on-demand, zones, CPU architecture, taints and limits. - EC2NodeClass: AWS details for the node, such as the AMI, subnets, security groups, IAM role and disk. - Consolidation: it repacks pods onto fewer or cheaper nodes and removes empty ones. This is where most of the cost savings come from. - Drift and expiry: it replaces nodes whose config or AMI no longer matches, or that are older than a set age. That makes node patching and EKS upgrades automatic.",
+    "tags": [
+      "karpenter",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-karpenter-55332e-3",
+    "topic": "Notes: Karpenter",
+    "questions": [
+      "Tell me about Karpenter",
+      "What does the note Karpenter say?",
+      "What about disruption budgets limits many nodes disrupt once plus?"
+    ],
+    "answer": "Notes: Karpenter. - Disruption budgets: limits on how many nodes it can disrupt at once, plus time windows when it can.",
+    "tags": [
+      "karpenter",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-karpenter-55332e-4",
+    "topic": "Notes: Karpenter",
+    "questions": [
+      "Tell me about Karpenter",
+      "What does the note Karpenter say?",
+      "What about uses hpa keda partners pod scaling karpenter scales?"
+    ],
+    "answer": "Notes: Karpenter. - Uses HPA & KEDA as partners for Pod scaling and Karpenter scales the nodes.",
+    "tags": [
+      "karpenter",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-karpenter-55332e-5",
+    "topic": "Notes: Karpenter",
+    "questions": [
+      "Tell me about Karpenter",
+      "What does the note Karpenter say?",
+      "What about related aws topic hub kubernetes topic hub amazon?"
+    ],
+    "answer": "Notes: Karpenter. Related - AWS: topic hub - Kubernetes: topic hub - Amazon EC2: launches EC2 nodes - Amazon EKS: EKS node autoscaler - HPA - autoscaling for kubernetes: pod vs node autoscaling - Taints & tolerations: node pools & taints",
+    "tags": [
+      "karpenter",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-rto-vs-rpo-e95e01-1",
+    "topic": "Notes: RTO vs RPO",
+    "questions": [
+      "Tell me about RTO vs RPO",
+      "What does the note RTO vs RPO say?",
+      "What about rto recovery time objective long service down before?"
+    ],
+    "answer": "Notes: RTO vs RPO. RTO (Recovery Time Objective) is how long the service can be down before the business is seriously harmed: the time from failure to restored service. RPO (Recovery Point Objective) is how much data the business can afford to lose, measured in time: how far back your last good copy can be. A 4-hour RTO with a 15-minute RPO means \"back up within 4 hours, losing at most the last 15 minutes of writes.\" How the numbers shape the architecture RPO drives your data strategy. Nightly backups give roughly a 24-hour RPO, asynchronous replication gives seconds to minutes, and synchronous replication gets close to zero.",
+    "tags": [
+      "rto",
+      "vs",
+      "rpo",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-rto-vs-rpo-e95e01-2",
+    "topic": "Notes: RTO vs RPO",
+    "questions": [
+      "Tell me about RTO vs RPO",
+      "What does the note RTO vs RPO say?",
+      "What about near zero option cost every write waits remote?"
+    ],
+    "answer": "Notes: RTO vs RPO. The near-zero option has a cost: every write waits on the remote copy, which adds latency, and a replica problem can block writes entirely. RTO drives your standby strategy. Backup-and-restore takes hours, a pilot light takes tens of minutes, warm standby takes minutes, and active-active is near-instant. Cost and operational complexity rise steeply at each step, which is why tiering matters. The link to SLOs is the part interviewers like. A 99.9% monthly availability SLO allows about 43 minutes of downtime. A single incident that uses a 4-hour RTO burns more than five months of error budget.",
+    "tags": [
+      "rto",
+      "vs",
+      "rpo",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-rto-vs-rpo-e95e01-3",
+    "topic": "Notes: RTO vs RPO",
+    "questions": [
+      "Tell me about RTO vs RPO",
+      "What does the note RTO vs RPO say?",
+      "What about if rto slo weren t set together one?"
+    ],
+    "answer": "Notes: RTO vs RPO. If the RTO and SLO weren't set together, one disaster can quietly violate your reliability commitments. RTO covers recovery from catastrophic failure, while the SLO covers everyday reliability, and the two need to be consistent.",
+    "tags": [
+      "rto",
+      "vs",
+      "rpo",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-rto-vs-rpo-e95e01-4",
+    "topic": "Notes: RTO vs RPO",
+    "questions": [
+      "Tell me about RTO vs RPO",
+      "What does the note RTO vs RPO say?",
+      "What about related sre observability topic hub aws backup backup?"
+    ],
+    "answer": "Notes: RTO vs RPO. Related - SRE & Observability: topic hub - AWS Backup: backup strategy vs RPO - FMEA: risk & recovery - Training/Resiliency Testing/Combined Notes: DR testing - Benefits: availability/SLA",
+    "tags": [
+      "rto",
+      "vs",
+      "rpo",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about sast dast two complementary ways finding security vulnerabilities?"
+    ],
+    "answer": "Notes: SAST and DAST. SAST and DAST are two complementary ways of finding security vulnerabilities in an application. SAST (Static Application Security Testing) scans the source code, bytecode or binaries without running them. It's \"white-box\" testing: it reads the code the way a reviewer would.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-2",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about finds sql injection patterns hard coded secrets unsafe?"
+    ],
+    "answer": "Notes: SAST and DAST. - Finds: SQL injection patterns, hard-coded secrets, unsafe deserialization, weak crypto calls, missing input validation. It points to the exact file and line. - When it runs: early, on every commit or pull request in CI. - Tools: Veracode Static (which you've used at First Republic), Checkmarx, SonarQube, Semgrep, CodeQL / GitHub Advanced Security, Fortify. - Weaknesses: lots of false positives. It can't see runtime or configuration problems, and it's language-specific.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-3",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about dast dynamic application security testing attacks running application?"
+    ],
+    "answer": "Notes: SAST and DAST. DAST (Dynamic Application Security Testing) attacks the running application from the outside, like a real attacker would, with no access to the code. It's \"black-box\" testing.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-4",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about finds cross site scripting xss injection actually work?"
+    ],
+    "answer": "Notes: SAST and DAST. - Finds: cross-site scripting (XSS), injection that actually works, auth and session flaws, misconfigured headers, TLS problems, exposed admin endpoints. These are issues that only show up when the app is deployed. - When it runs: later, against a staging or test environment, often as a pipeline stage after deployment. - Tools: OWASP ZAP, Burp Suite, Veracode Dynamic, Invicti, StackHawk. - Weaknesses: it can't tell you which line of code is at fault, it's slower, and it only tests the paths it manages to crawl.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-5",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about sca software composition analysis scans open source dependencies?"
+    ],
+    "answer": "Notes: SAST and DAST. - SCA (Software Composition Analysis): scans your open-source dependencies for known CVEs. Examples are Snyk, Dependabot, Veracode SCA and JFrog Xray. - IAST: an agent inside the running app that watches for vulnerabilities during testing, a hybrid of SAST and DAST. - Secrets scanning: catches committed keys and tokens. Examples are Gitleaks and GitHub secret scanning. - \"Shift left\" / DevSecOps: building all of these into CI/CD as quality gates rather than leaving them for a pre-release audit.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-6",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about talk came up federal reserve bank sf lead?"
+    ],
+    "answer": "Notes: SAST and DAST. How to talk about it (it came up in the Federal Reserve Bank SF Lead SRE posting): \"At First Republic I ran Veracode static analysis as part of architecture and infosec reviews. I haven't owned a DAST tool, but I understand where it fits: SAST gates the PR, DAST runs against staging after deploy, SCA covers dependencies. I'd wire them into the pipeline as blocking gates with a triage process for false positives.\" You can also mention the Akamai Kona WAF work: a WAF blocks at runtime the same kinds of attacks DAST looks for.",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-sast-and-dast-2276e1-7",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "Tell me about SAST and DAST",
+      "What does the note SAST and DAST say?",
+      "What about related devops ci cd topic hub owasp top?"
+    ],
+    "answer": "Notes: SAST and DAST. Related - DevOps & CI-CD: topic hub - OWASP top 10 2023: finding OWASP vulnerabilities - Improving Secure CI-CD: security gates in pipelines - AWS Inspector: vulnerability scanning",
+    "tags": [
+      "sast",
+      "dast",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-strong-consistency-vs-eventual-consisten-21d86e",
+    "topic": "Notes: Strong consistency vs eventual consistency",
+    "questions": [
+      "Tell me about Strong consistency vs eventual consistency",
+      "What does the note Strong consistency vs eventual consistency say?",
+      "What about strong consistency means once write completes any later?"
+    ],
+    "answer": "Notes: Strong consistency vs eventual consistency. Strong consistency means that once a write completes, any later read will immediately see that value. So, no surprises. Everyone sees the latest write right away. Eventual consistency is looser. If no new writes happen, replicas will eventually converge to the same value, but in the meantime, reads might return older data. So, strong consistency favors correctness and predictability, while eventual consistency favors availability and performance, accepting temporary inconsistency.",
+    "tags": [
+      "strong",
+      "consistency",
+      "vs",
+      "eventual",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-strong-consistency-vs-eventual-consisten-21d86e-2",
+    "topic": "Notes: Strong consistency vs eventual consistency",
+    "questions": [
+      "Tell me about Strong consistency vs eventual consistency",
+      "What does the note Strong consistency vs eventual consistency say?",
+      "What about related cloud computing topic hub amazon dynamodb read?"
+    ],
+    "answer": "Notes: Strong consistency vs eventual consistency. Related - Cloud Computing: topic hub - Amazon DynamoDB: read consistency options - Data access pattern changes for high traffic: replica consistency trade-off",
+    "tags": [
+      "strong",
+      "consistency",
+      "vs",
+      "eventual",
+      "notes"
+    ],
+    "link": "#skills",
+    "source": "vault"
   }
 ]

@@ -86,7 +86,8 @@ test("the sync script leaves kb.json unchanged when no notes are tagged public",
     writeNote(notes, "plain.md", "SYNC_ZERO_PLAIN_SENTINEL has no public tag.\n");
 
     const kb = join(work, "kb.json");
-    copyFileSync(kbPath, kb);
+    const handWritten = JSON.parse(readFileSync(kbPath, "utf8")).filter((entry) => entry?.source !== "vault");
+    writeFileSync(kb, `${JSON.stringify(handWritten, null, 2)}\n`);
     const before = readFileSync(kb);
     const result = runSync(["--repo", repo, "--kb", kb]);
     assert.equal(result.status, 0, result.stderr || result.stdout);
