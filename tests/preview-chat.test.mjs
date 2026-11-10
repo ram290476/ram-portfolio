@@ -32,6 +32,23 @@ test("preview page has one accessible chat widget and the coming-soon page does 
   assert.match(page, /data-theme-value="contrast"/);
 });
 
+test("Ask about Ram lives in the left nav immediately after Contact", () => {
+  assert.match(page, /<a href="#contact">Contact<\/a>\s*<button class="chat-launch"[^>]*data-chat-open[^>]*>Ask about Ram<\/button>/);
+  assert.equal((page.match(/data-chat-open/g) || []).length, 1);
+  assert.equal((page.match(/class="chat-launch"/g) || []).length, 1);
+  const contact = page.indexOf('<a href="#contact">Contact</a>');
+  const launch = page.indexOf('data-chat-open');
+  const picker = page.indexOf('class="theme-picker"');
+  assert.ok(contact !== -1 && launch !== -1 && picker !== -1);
+  assert.ok(contact < launch && launch < picker, "launcher should sit after Contact and before the theme picker");
+  assert.match(page, /aria-haspopup="dialog"/);
+  assert.match(page, /aria-expanded="false"/);
+  assert.match(page, /aria-controls="portfolio-chat-panel"/);
+  assert.doesNotMatch(css, /\.chat-launch\s*\{[^}]*position:\s*fixed/);
+  assert.match(themes, /\.nav \.chat-launch/);
+  assert.doesNotMatch(home, /data-chat-open|chat-launch/);
+});
+
 test("knowledge base is curated, local, and free of private patterns", () => {
   assert.ok(validKnowledge(kb));
   assert.equal(new Set(kb.map((entry) => entry.id)).size, kb.length);
