@@ -435,3 +435,32 @@ test("menu icons have a gap from their labels and are vertically centered, left-
   assert.match(themeRule[1], /gap:\s*10px/);
   assert.match(themeRule[1], /text-align:\s*left/);
 });
+
+test("font size controls sit beside Theme and restore before first paint", () => {
+  const cssLink = page.indexOf('href="styles.css"');
+  const fontRead = page.indexOf('localStorage.getItem("font-scale")');
+  assert.ok(fontRead !== -1 && fontRead < cssLink, "font scale is read before the stylesheet");
+  assert.match(page, /setAttribute\("data-font-scale"/);
+  const navEnd = page.indexOf("</nav>");
+  const themeAt = page.indexOf('id="theme-toggle"');
+  const decAt = page.indexOf('id="font-decrease"');
+  const incAt = page.indexOf('id="font-increase"');
+  assert.ok(navEnd < themeAt && themeAt < decAt && decAt < incAt, "A− and A+ belong beside Theme, outside the nav");
+  assert.match(page, /aria-label="Decrease font size A−"/);
+  assert.match(page, /aria-label="Increase font size A\+"/);
+  assert.match(page, /role="group" aria-label="Font size"/);
+  assert.match(page, /src="font-size\.js"/);
+  const fontJS = read("font-size.js");
+  assert.match(fontJS, /localStorage\.setItem\("font-scale"/);
+  assert.match(fontJS, /\.disabled/);
+  assert.match(themes, /html\[data-font-scale="87\.5"\]/);
+  assert.match(themes, /html\[data-font-scale="150"\]/);
+  assert.match(themes, /font-size:\s*87\.5%/);
+  assert.match(themes, /font-size:\s*150%/);
+  const btnRule = themes.match(/\.font-size-btn\s*\{([^}]*)\}/);
+  assert.ok(btnRule, "font size button rule is missing");
+  assert.match(btnRule[1], /min-width:\s*40px/);
+  assert.match(btnRule[1], /min-height:\s*40px/);
+  const navRule = themes.match(/\.nav a,\s*\.nav \.chat-launch\s*\{([^}]*)\}/);
+  assert.match(navRule[1], /font-size:\s*11px/);
+});

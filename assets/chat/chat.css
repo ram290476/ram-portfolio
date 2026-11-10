@@ -23,7 +23,7 @@
 .chat-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 8px; }
 .chat-chips button { min-height: 44px; max-width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--radius); font: inherit; font-size: .8rem; background: var(--bg2); color: var(--ink); cursor: pointer; text-align: left; }
 .chat-form { display: flex; align-items: stretch; gap: 8px; padding: 8px 16px 12px; border-top: 1px solid var(--line); }
-.chat-form input { width: 100%; min-width: 0; min-height: 46px; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; background: var(--card); color: var(--ink); font: inherit; font-size: 16px; }
+.chat-form input { width: 100%; min-width: 0; min-height: 46px; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; background: var(--card); color: var(--ink); font: inherit; font-size: max(16px, 1rem); }
 .chat-form input::placeholder { color: var(--mu); opacity: 1; }
 .chat-form button { min-height: 46px; border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 12px; background: var(--cy); color: var(--on-cy); font: inherit; font-weight: 600; cursor: pointer; }
 .chat-form button:disabled, .chat-chips button:disabled { opacity: .65; cursor: wait; }

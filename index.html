@@ -11,6 +11,13 @@
       if (stored && allowed[stored]) theme = stored;
     } catch (e) {}
     document.documentElement.setAttribute("data-theme", theme);
+    var fontScale = "100";
+    var fontSteps = { "87.5": 1, "100": 1, "112.5": 1, "125": 1, "137.5": 1, "150": 1 };
+    try {
+      var storedFont = localStorage.getItem("font-scale");
+      if (storedFont && fontSteps[storedFont]) fontScale = storedFont;
+    } catch (e) {}
+    document.documentElement.setAttribute("data-font-scale", fontScale);
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("reduce");
   })();
   </script>
@@ -73,7 +80,14 @@
     </nav>
 
     <div class="theme-picker">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-menu"><svg class="nav-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Theme</button>
+      <div class="sidebar-tools">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-menu"><svg class="nav-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Theme</button>
+        <div class="font-size-controls" role="group" aria-label="Font size">
+          <button type="button" class="font-size-btn" id="font-decrease" aria-label="Decrease font size A−"><span class="font-size-glyph">A<sup>−</sup></span></button>
+          <button type="button" class="font-size-btn" id="font-increase" aria-label="Increase font size A+"><span class="font-size-glyph">A<sup>+</sup></span></button>
+          <span id="font-size-status" class="font-size-status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+      </div>
       <div class="theme-menu" id="theme-menu" role="dialog" aria-modal="true" aria-labelledby="theme-menu-label" hidden>
         <div class="theme-menu-head">
           <span class="theme-menu-label">Theme</span>
@@ -879,6 +893,7 @@
   <script src="main.js"></script>
   <script src="booking.js"></script>
   <script src="theme.js"></script>
+  <script src="font-size.js"></script>
   <script type="module" src="durations.js"></script>
   <script src="company-info.js"></script>
   <script src="experience-skills.js"></script>
