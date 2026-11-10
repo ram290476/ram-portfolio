@@ -703,3 +703,39 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   .js .sidebar, .theme-menu, .info-pop { transition: none; }
   body { background-attachment: scroll; }
 }
+
+.exp-skills { margin-top: 12px; }
+.exp-skills-heading {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.exp-skill-group { margin: 0 0 12px; }
+.exp-skill-group:last-child { margin-bottom: 0; }
+.exp-skill-label {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.exp-skill-chips { margin: 0; }
+.exp-skill-toggle {
+  display: none;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--navy);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.js .exp-skill-toggle { display: inline-block; }
+.js .exp-skill-chips:not(.is-open) .exp-skill-more { display: none; }

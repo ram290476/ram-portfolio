@@ -59,7 +59,11 @@ for (const [question, id] of [
   ["How long was he at JPMorgan Chase?", "jpmc"],
   ["How long was he at each company?", "experience"],
   ["Where is he based?", "location"],
-  ["What is his email?", "contact"]
+  ["What is his email?", "contact"],
+  ["What skills did he use at First Republic?", "first-republic-skills"],
+  ["What skills did he use at JPMorgan?", "jpmc-skills"],
+  ["What skills did he use at Corsair?", "corsair-skills"],
+  ["What skills did he use at ESP?", "esp-skills"]
 ]) {
   test(`grounded retrieval — ${question}`, () => {
     const answer = replyTo(question, retrieve);
@@ -89,6 +93,19 @@ test("suggested questions all retrieve a grounded answer", () => {
   for (const match of page.matchAll(/data-chat-question>([^<]+)<\/button>/g)) {
     assert.equal(replyTo(match[1], retrieve).kind, "answer", match[1]);
   }
+});
+
+test("experience roles list LinkedIn skills with an accessible show-all toggle", () => {
+  assert.equal((page.match(/class="exp-skills"/g) || []).length, 4);
+  assert.equal((page.match(/class="exp-skill-toggle"/g) || []).length, 6);
+  assert.match(page, /Site Reliability &amp; Platform \(2023–2026\)/);
+  assert.match(page, /MLOps platform \(2026\)/);
+  assert.match(page, /Senior \.NET Engineer \(2013–2017\)/);
+  assert.match(page, /Commerce Architect \(2017–2020\)/);
+  assert.match(page, /src="experience-skills\.js"/);
+  assert.match(page, /aria-expanded="false"/);
+  assert.match(page, /aria-controls="skills-frb"/);
+  assert.doesNotMatch(home, /exp-skill-toggle/);
 });
 
 test("private questions are refused before retrieval", () => {
