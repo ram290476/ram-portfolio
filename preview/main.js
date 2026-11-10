@@ -28,8 +28,8 @@
       toggle.focus();
     }
   });
-  sidebar.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
+  sidebar.querySelectorAll("a, [data-chat-open]").forEach(function (item) {
+    item.addEventListener("click", function () {
       if (window.matchMedia("(max-width: 860px)").matches) setOpen(false);
     });
   });

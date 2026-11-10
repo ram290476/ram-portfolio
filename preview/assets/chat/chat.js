@@ -94,10 +94,11 @@ export function replyTo(question, retrieve) {
 if (typeof document !== "undefined") setupWidget();
 function setupWidget() {
   const root = document.querySelector("[data-portfolio-chat]");
-  if (!root || root.dataset.chatReady) return;
+  const launcher = document.querySelector("[data-chat-open]");
+  if (!root || !launcher || root.dataset.chatReady) return;
   root.dataset.chatReady = "true";
-  const launcher = root.querySelector("[data-chat-open]");
   const dialog = root.querySelector("dialog");
+  if (!dialog) return;
   const form = root.querySelector("form");
   const input = root.querySelector("input");
   const log = root.querySelector("[data-chat-log]");
@@ -145,7 +146,13 @@ function setupWidget() {
   function close() {
     dialog.close();
     launcher.setAttribute("aria-expanded", "false");
-    launcher.focus();
+    const toggle = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    if (toggle && sidebar && window.matchMedia("(max-width: 860px)").matches && !sidebar.classList.contains("is-open")) {
+      toggle.focus();
+    } else {
+      launcher.focus();
+    }
   }
   launcher.addEventListener("click", () => {
     if (dialog.open) return;
