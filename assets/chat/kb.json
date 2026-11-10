@@ -580,7 +580,7 @@
       "What LinkedIn Learning courses has he completed?",
       "Has he done Azure or Terraform training?"
     ],
-    "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. The Training section also lists LinkedIn Learning and DataCamp coursework: Learning Go and Python Essential Training (issued Sep 2026), HashiCorp Certified Terraform Associate (003) cert prep by KodeKloud (issued Feb 2026), DataCamp’s Large Language Models (LLMs) Concepts (issued Nov 2024) and Understanding Machine Learning (issued Oct 2024), the three-part Microsoft Azure Fundamentals (AZ-900) cert prep (August 2023), Communication Foundations (issued Jun 2023), Effective Listening (2019), Fluent API Development in C#, and React: Lifecycles. Older courses with no date shown are AWS Certified Security - Specialty 2020 and Introduction to Agile for teams (associated with First Republic), Oracle 9i programming with PL/SQL (associated with ESP acquired by IHS Markit), and SAP Commerce Cloud Developer (associated with Corsair).",
+    "answer": "In 2023 he completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. The Training section also lists LinkedIn Learning and DataCamp coursework, including Learning Go, Python Essential Training, HashiCorp Terraform Associate cert prep, DataCamp courses on large language models and machine learning, the three-part Microsoft Azure Fundamentals (AZ-900) cert prep, and courses in communication, C#, and React. Older courses with no date shown include AWS Certified Security - Specialty 2020, Introduction to Agile for teams, Oracle 9i programming with PL/SQL, and SAP Commerce Cloud Developer.",
     "tags": [
       "training",
       "copilot",
