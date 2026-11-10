@@ -99,8 +99,8 @@
     <section id="skills" aria-labelledby="skills-heading">
       <div class="section-row">
         <h2 id="skills-heading" class="section-h">Skills</h2>
-        <button type="button" class="button button-icon wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 18a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.6 4.2 4.2 0 0 1 18 18H7zM9 12.5h2.5M14 12.5h1M9 15h6"/></svg>
+        <button type="button" class="wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 18a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.6 4.2 4.2 0 0 1 18 18H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.5h3M8.5 15h6.5M13 12.5h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </button>
       </div>
       <div class="skill-grid">
@@ -767,7 +767,10 @@
 
   <dialog class="wc-dialog" id="wordcloud-dialog" aria-modal="true" aria-labelledby="wordcloud-title">
     <div class="wc-head">
-      <h2 id="wordcloud-title">Keywords on this page</h2>
+      <div>
+        <p class="kicker wc-kicker">Skills · Word cloud</p>
+        <h2 id="wordcloud-title">Keywords on this page</h2>
+      </div>
       <button type="button" class="wc-close" aria-label="Close word cloud">×</button>
     </div>
     <p class="wc-note">Bigger words appear more often across Skills, Experience and Projects.</p>
