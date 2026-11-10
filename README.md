@@ -10,7 +10,7 @@ The public homepage is the coming-soon page at the repository root. It stays tha
 
 Until `preview/assets/photo.jpg` exists, the sidebar shows an initials monogram. Add a square JPEG at that path to replace it.
 
-The Experience section has an **Experience overview** button that opens a full-screen player for the six-slide deck. Slide images live in `preview/assets/slides/`, rendered from the already-public `preview/assets/Ram_Career_Overview_Lite.pdf`. Do not commit a PowerPoint source. `*.pptx` is gitignored.
+The Experience section has an **Experience overview** button that opens a full-screen player for the six-slide deck, and a **Download slides (PowerPoint)** button next to it. Slide images live in `preview/assets/slides/`, rendered from the already-public `preview/assets/Ram_Career_Overview_Lite.pdf`. The downloadable deck is `preview/assets/Ram_Career_Overview.pptx`. Other PowerPoint sources stay gitignored.
 
 ## Booking
 
