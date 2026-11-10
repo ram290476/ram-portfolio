@@ -8,7 +8,7 @@
       "What is his background?",
       "Tell me about Ram"
     ],
-    "answer": "Senior SRE and platform engineer with 20 years in software, 6 of them in financial services. I lead platform migrations end to end into production, from Sitecore and SAP Commerce, through a bank's content platform on Azure, to DevOps and SRE work. DevOps using Jenkins, Spinnaker, Kubernetes, and Terraform. SRE with observability using Dynatrace, Splunk, and Grafana, along with SLO and SLI setup.",
+    "answer": "Senior SRE and platform engineer with 20 years in software, 6 of them in financial services. I lead platform migrations end to end into production, from Sitecore and SAP Commerce, through a bank's content platform on Azure, to DevOps and SRE work. DevOps using Jenkins, Spinnaker, Kubernetes, and Terraform. SRE with observability using Dynatrace, Splunk, and Grafana along with SLO, SLI/SLO setup, and burn rate alerts.",
     "tags": [
       "ram",
       "prasad",

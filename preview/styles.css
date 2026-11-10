@@ -382,6 +382,18 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   text-decoration: none;
   cursor: pointer;
 }
+.button-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.button-icon svg { display: block; }
+.button-icon:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
 .button:hover { background: var(--navy); color: var(--on-navy); }
 .button-solid { background: var(--navy); color: var(--on-navy); }
 .button-solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
