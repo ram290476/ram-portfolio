@@ -494,10 +494,11 @@
     "topic": "Book a call",
     "questions": [
       "How do I book a call?",
+      "How do I book a call with Ram?",
       "Can I schedule time with him?",
       "What happens on an intro call?"
     ],
-    "answer": "The Book a call section is a 30-minute intro call about Senior SRE, Platform, or Cloud roles and how his experience fits a team. Same-day times are not offered. Until the scheduler is open, the page says to email him and find a time.",
+    "answer": "You can book a 30-minute Intro call with Ram at https://cal.com/ramvellamsetti/30min. It is about Senior SRE, Platform, or Cloud roles and how his experience fits a team. The same link is in Contact and in the Book a call section, and it opens in a new tab on Cal Video.",
     "tags": [
       "book",
       "call",
