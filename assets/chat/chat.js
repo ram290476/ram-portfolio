@@ -21,15 +21,27 @@ const PRIVATE = [
   /\b(?:how much|what)\b.{0,24}\b(?:paid|earn|earns|money|pay)\b/i,
   /\b\d{3}[-. ]\d{3}[-. ]\d{4}\b/
 ];
-export function isSensitive(question) { return PRIVATE.some((pattern) => pattern.test(question)); }
+export function isSensitive(question) {
+  if (/(?:\+\d{1,3}[\s.-]?)?(?:\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]\d{4}\b|\b\d{7,15}\b|\b\d{3}[-. ]\d{4}\b/.test(question)) return true;
+  const digitWords = (question.match(/\b(?:zero|one|two|three|four|five|six|seven|eight|nine)\b/gi) || []).length;
+  const safeInterview = digitWords >= 7 || /\b(?:number|contact|dial|reach|mobile|cell|digits|call\s+me)\b/i.test(question)
+    ? question : question.replace(/\bphone[\s-]+(?:screen(?:ing)?|interview)\b/gi, "interview");
+  return PRIVATE.some((pattern) => pattern.test(safeInterview));
+}
 export const PRIVACY_REPLY = "I only share the public portfolio. I can’t answer about a phone number, a street address, academic results, standardized exams, pay, or medical details.";
 export const UNKNOWN_REPLY = "I don’t know that from the public portfolio, and I won’t guess.";
 const SAFE_LINK = /^#[a-z0-9-]+$/;
+export function isExcludedKnowledge(value) {
+  const text = typeof value === "string" ? value : JSON.stringify(value);
+  return /\bbank[\s_-]*gpt\b|\bcredit[\s_-]+union\b|\bcareer[\s_-]*facts\b/i.test(text);
+}
 export function validKnowledge(value) {
   return Array.isArray(value) && value.length > 0 && value.every((entry) =>
     entry && ["id", "topic", "answer", "link"].every((key) => typeof entry[key] === "string" && entry[key].length > 0)
     && ["questions", "tags"].every((key) => Array.isArray(entry[key]) && entry[key].length > 0 && entry[key].every((item) => typeof item === "string"))
-    && SAFE_LINK.test(entry.link));
+    && SAFE_LINK.test(entry.link) && !isExcludedKnowledge(entry)
+    && (entry.routeQuestions === undefined || (Array.isArray(entry.routeQuestions) && entry.routeQuestions.length > 0
+      && entry.routeQuestions.every((question) => typeof question === "string" && question.trim().length > 0))));
 }
 export function createRetriever(entries) {
   if (!validKnowledge(entries)) throw new Error("Invalid portfolio knowledge base");
@@ -43,6 +55,9 @@ export function createRetriever(entries) {
   for (const doc of docs) for (const word of doc.counts.keys()) frequencies.set(word, (frequencies.get(word) || 0) + 1);
   const average = docs.reduce((sum, doc) => sum + doc.length, 0) / docs.length;
   return (question) => {
+    const routeWords = (s) => [...new Set(tokenize(s.replace(/\b(?:explain|describe|walk|through|could|interview)\b/gi, " ")))].sort().join(" ");
+    const exact = entries.find((entry) => entry.routeQuestions?.some((alias) => routeWords(alias) === routeWords(question)));
+    if (exact) return { answer: exact.answer, link: exact.link, topic: exact.topic, id: exact.id };
     const words = [...new Set(tokenize(question))];
     if (!words.length) return null;
     const ranked = docs.map((doc, index) => {
@@ -87,6 +102,7 @@ export function replyTo(question, retrieve) {
   if (/^(?:thanks|thank you|thank you very much)[!.\s]*$/i.test(question.trim())) {
     return { kind: "greeting", answer: "You’re welcome. You can ask about experience, projects, or booking a call." };
   }
+  if (/\bas[- ]of\b/i.test(question)) return { kind: "unknown", answer: UNKNOWN_REPLY };
   const answer = retrieve(question);
   return answer ? { kind: "answer", ...answer } : { kind: "unknown", answer: UNKNOWN_REPLY };
 }
