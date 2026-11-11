@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, basename } from "node:path";
-import { tokenize } from "../assets/chat/chat.js";
+import { tokenize, isExcludedKnowledge } from "../assets/chat/chat.js";
 
 const SAFE_LINK = /^#[a-z0-9-]+$/;
 const DEFAULT_LINK = "#about";
@@ -161,7 +161,7 @@ function toPlain(markdown) {
 
 function noteTitle(data, body, filename) {
   const fromMeta = typeof data.title === "string" ? data.title : "";
-  const heading = body.match(/^#{1,6}[ \t]+(.+)$/m);
+  const heading = [...body.matchAll(/^#{1,6}[ \t]+(.+)$/gm)].find((match) => !/^related(?:\s+notes)?$/i.test(match[1].trim()));
   const fromName = basename(filename).replace(/\.md$/i, "").replace(/[-_]+/g, " ");
   const title = toPlain(fromMeta || (heading ? heading[1] : "") || fromName).replace(/[.?!:]+$/g, "").trim();
   return (title || "Untitled").slice(0, 80);
@@ -187,12 +187,21 @@ function questionsFor(title, passage) {
 }
 
 function rawPassages(body) {
-  const blocks = String(body).split(/\n{2,}/);
+  let relatedLevel = 0;
+  const content = String(body).split("\n").filter((line) => {
+    const heading = /^(#{1,6})\s+(.+)$/.exec(line);
+    if (heading && /^related(?:\s+notes)?$/i.test(heading[2].trim())) { relatedLevel = heading[1].length; return false; }
+    if (heading && relatedLevel && heading[1].length <= relatedLevel) relatedLevel = 0;
+    return !relatedLevel;
+  }).join("\n");
+  const blocks = content.split(/\n{2,}/);
   const groups = [];
   let heading = "";
   for (const block of blocks) {
     const trimmed = block.trim();
     if (!trimmed) continue;
+    if (/^\*{0,2}Source document:\*{0,2}.*\/(?:workspace|Users|home|tmp)\//i.test(trimmed)
+      || /^Should I update .*\b(?:doc|project)\b/i.test(trimmed)) continue;
     if (/^#{1,6}\s+\S/.test(trimmed) && !trimmed.includes("\n")) {
       heading = trimmed;
       continue;
@@ -204,9 +213,13 @@ function rawPassages(body) {
   return groups;
 }
 
-function splitLong(text, budget) {
+export function splitLong(text, budget) {
   if (text.length <= budget) return [text];
-  const parts = text.split(/(?<=[.!?])\s+/);
+  const parts = [];
+  for (const sentence of text.split(/(?<=[.!?])\s+/)) {
+    if (parts.length && /\bvs\.$/i.test(parts[parts.length - 1])) parts[parts.length - 1] += ` ${sentence}`;
+    else parts.push(sentence);
+  }
   const chunks = [];
   let current = "";
   const push = (piece) => { if (piece) chunks.push(piece); };
@@ -316,7 +329,7 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
   let skippedLarge = 0;
   let ignored = 0;
   let publicNotes = 0;
-  const curated = baseEntries.filter((entry) => entry?.source !== "vault");
+  const curated = baseEntries.filter((entry) => entry?.source !== "vault" && !isExcludedKnowledge(entry));
   const used = new Set(curated.map((entry) => entry.id));
   const notes = [];
 
@@ -340,7 +353,7 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
     }
     const source = readFileSync(file, "utf8");
     const { data, body } = parseFrontMatter(source);
-    if (!isPortfolioPublic(data)) {
+    if (!isPortfolioPublic(data) || isExcludedKnowledge(relative(vaultDir, file)) || isExcludedKnowledge(data.title || "")) {
       ignored += 1;
       continue;
     }
@@ -365,6 +378,7 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
     let emitted = 0;
     for (const raw of rawPassages(body)) {
       const rawReasons = scrubReasons(raw, denylist.terms);
+      if (isExcludedKnowledge(raw)) rawReasons.push("denylist");
       if (rawReasons.length) {
         tally(rawReasons);
         continue;

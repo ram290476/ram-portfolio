@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildKnowledge, formatReport, scrubReasons } from "../scripts/vault-kb.mjs";
+import { upgradePublishedKnowledge } from "../scripts/upgrade-chat-kb.mjs";
 import { createRetriever, replyTo, validKnowledge } from "../assets/chat/chat.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -393,3 +394,68 @@ function runCli(args) {
     encoding: "utf8"
   });
 }
+
+test("Related navigation is not a note title or a publishable answer", () => {
+  const dir = tempDir();
+  try {
+    writeNote(dir, "Complete reliability.md", "---\nportfolio: public\n---\n\nA complete reliability answer explains which signals protect users and which failures require a response.\n\n## Related\n- [[NAVIGATION_ONLY_CANARY]]: topic hub\n");
+    const report = buildKnowledge({vaultDir:dir,baseEntries:[curated()]});
+    const notes = report.entries.filter(e=>e.source==="vault");
+    assert.ok(notes.length);
+    assert.ok(notes.every(e=>e.topic==="Notes: Complete reliability"));
+    assert.doesNotMatch(JSON.stringify(notes), /NAVIGATION_ONLY_CANARY/);
+  } finally { rmSync(dir,{recursive:true,force:true}); }
+});
+
+test("HPA abbreviation stays with its complete debugging sentence", () => {
+  const dir = tempDir();
+  try {
+    const first = "A complete scaling explanation adds pods safely and protects downstream capacity. ".repeat(7);
+    writeNote(dir,"scaling.md","---\nportfolio: public\ntitle: Horizontal scaling\n---\n\n"+first+"Debugging shows current vs. target values, conditions and recent scaling events.\n");
+    const report = buildKnowledge({vaultDir:dir,baseEntries:[curated()]});
+    const answers=report.entries.filter(e=>e.source==="vault").map(e=>e.answer);
+    assert.ok(answers.some(x=>x.includes("current vs. target values, conditions and recent scaling events.")));
+    assert.ok(answers.every(x=>!x.endsWith("vs.")&&x.length<650));
+  } finally { rmSync(dir,{recursive:true,force:true}); }
+});
+
+test("excluded source notes stay out even if tagged public", () => {
+  const dir = tempDir();
+  try {
+    const name=["bank","gpt"].join("");
+    writeNote(dir,name+".md","---\nportfolio: public\ntitle: Synthetic excluded source\n---\n\nexcludedsourcecanary must not enter public retrieval even when someone changes the tag.\n");
+    const report=buildKnowledge({vaultDir:dir,baseEntries:[curated()]});
+    assert.doesNotMatch(JSON.stringify(report.entries),/excludedsourcecanary/);
+  } finally { rmSync(dir,{recursive:true,force:true}); }
+});
+
+
+test("published public-only repair is deterministic and idempotent", () => {
+  const entries = JSON.parse(readFileSync(kbPath, "utf8"));
+  assert.deepEqual(upgradePublishedKnowledge(entries), entries);
+  assert.ok(entries.filter((entry) => entry.id.startsWith("public-summary-")).every((entry) =>
+    entry.publicSourceIds.length > 0 && entry.publicSourceIds.every((id) => entries.some((source) => source.id === id))));
+});
+
+test("42 canary probes cannot reach private, untagged or explicitly excluded sources", () => {
+  const dir = tempDir();
+  try {
+    const excludedName = ["bank", "gpt"].join("");
+    for (const [name, tag, marker] of [["public", "public", "approvedcanary"], ["private", "private", "secretcanary"], ["untagged", "", "untaggedcanary"], [excludedName, "public", "excludedcanary"]]) {
+      writeNote(dir, name + ".md", "---\n" + (tag ? "portfolio: " + tag + "\n" : "") + "title: " + name + " marker\n---\n\n" + marker + " is a synthetic source-boundary fixture that must follow the explicit publication rules.\n");
+    }
+    const report = buildKnowledge({vaultDir:dir,baseEntries:[]});
+    assert.equal(report.publicNotes,1);
+    assert.equal(report.ignored,3);
+    const retrieve = createRetriever(report.entries);
+    let probes = 0;
+    for (const marker of ["secretcanary", "untaggedcanary", "excludedcanary"]) {
+      assert.equal(JSON.stringify(report.entries).includes(marker),false);
+      for (const prefix of ["", "What is ", "Tell me about ", "Show ", "Explain ", "Describe ", "How about ", "What about ", "Please show ", "Who is ", "Why ", "Where is ", "When is ", "Can you explain "]) {
+        assert.notEqual(replyTo(prefix + marker, retrieve).kind,"answer");
+        probes += 1;
+      }
+    }
+    assert.equal(probes,42);
+  } finally { rmSync(dir,{recursive:true,force:true}); }
+});

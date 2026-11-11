@@ -478,3 +478,39 @@ test("font size controls sit beside Theme and restore before first paint", () =>
   const navRule = themes.match(/\.nav a,\s*\.nav \.chat-launch\s*\{([^}]*)\}/);
   assert.match(navRule[1], /font-size:\s*11px/);
 });
+
+test("interview phone wording is not a contact request, while real contact attempts remain refused", () => {
+  for (const question of ["What does a phone screen cover?", "Format: a 60-minute technical phone interview", "How do you prepare for a phone interview?"]) {
+    assert.equal(isSensitive(question), false, question);
+  }
+  const number = ["415", "555", "0198"].join("-");
+  for (const question of ["What is his phone number?", "Phone screen: what number should I dial?", `phone interview ${number}`, "phone screen four one five five five five zero one nine eight"]) {
+    assert.equal(replyTo(question, () => { throw new Error("contact request reached retrieval"); }).kind, "privacy");
+  }
+});
+
+test("excluded project content cannot load through curated or generated knowledge", () => {
+  const excluded = ["bank", "gpt"].join("");
+  assert.doesNotMatch(JSON.stringify(kb), new RegExp(excluded + "|credit[ -]union", "i"));
+  const injected = [...kb, {id: excluded, topic: excluded, questions: [excluded, `Tell me about ${excluded}`], tags: [excluded], answer: "Synthetic excluded project content must not be reachable.", link: "#about"}];
+  assert.equal(validKnowledge(injected), false);
+  assert.throws(() => createRetriever(injected));
+  assert.equal(replyTo("How does as-of work?", retrieve).kind, "unknown");
+});
+
+test("technical topic answers include the requested full public comparison", () => {
+  for (const [question, required] of [
+    ["CRI CNI and CSI in Kubernetes", [/Container Runtime Interface/, /Container Network Interface/, /Container Storage Interface/]],
+    ["Forward proxy vs reverse proxy", [/front of clients/, /front of servers/]],
+    ["SAST vs DAST", [/without running/, /running application/]],
+    ["Cache expiration strategies", [/TTL/, /Sliding expiration/, /Absolute expiration/]],
+    ["Strong vs eventual consistency", [/once a write completes/, /replicas will eventually converge/]]
+  ]) {
+    const answer = replyTo(question, retrieve);
+    assert.equal(answer.kind, "answer", question);
+    for (const pattern of required) assert.match(answer.answer, pattern, question);
+  }
+  const preferences = replyTo("What are you looking for?", retrieve);
+  assert.equal(preferences.kind, "answer");
+  assert.match(preferences.answer, /technical stretch|Linux and systems/);
+});

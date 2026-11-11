@@ -480,7 +480,7 @@
       "Show his projects",
       "What has he made?"
     ],
-    "answer": "Personal projects on the site are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, a credit-union knowledge system, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet. Work accomplishments are in the Work projects section.",
+    "answer": "Personal projects on the site are the Investor Dashboard, the Multi-Cloud Dashboard, opsKit, and a Tasks API. GitOps with Argo CD on k3s and OpenTelemetry into Grafana and Tempo are in progress and not public yet. Work accomplishments are in the Work projects section.",
     "tags": [
       "project",
       "build",
@@ -537,23 +537,6 @@
       "python",
       "operations",
       "kubernetes"
-    ],
-    "link": "#personal-projects"
-  },
-  {
-    "id": "credit-union",
-    "topic": "Credit union knowledge system",
-    "questions": [
-      "Tell me about the credit union knowledge system",
-      "What is the knowledge system project?"
-    ],
-    "answer": "The credit union knowledge system answers member questions from dated website snapshots, with citations, conflict resolution, and abstention when the snapshot does not say. The public repository records a practice score of 0.969 on a public 40-question eval.",
-    "tags": [
-      "credit",
-      "union",
-      "knowledge",
-      "citations",
-      "python"
     ],
     "link": "#personal-projects"
   },
@@ -665,7 +648,7 @@
       "What is his email?",
       "Where is his GitHub?"
     ],
-    "answer": "The public email is ram.vellamsetti@gmail.com. GitHub is github.com/ram290476 and LinkedIn is linkedin.com/in/vellamsetti. He is based in San Ramon, CA. In Contact, each of those options has an icon, and San Ramon, CA opens a Google Maps search for the city in a new tab, with no street address.",
+    "answer": "The public email is ram.vellamsetti@gmail.com. GitHub is github.com/ram290476 and LinkedIn is linkedin.com/in/vellamsetti. He is based in San Ramon, CA. In Contact, each of those options has an icon, and San Ramon, CA opens a Google Maps search for the city in a new tab.",
     "tags": [
       "email",
       "github",
@@ -2778,144 +2761,136 @@
   },
   {
     "id": "note-related-e444de-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Native Architecture Project",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Native Architecture Project",
+      "What does the note AI Native Architecture Project say?",
       "What about ai native experience infrastructure reliability making ai systems?"
     ],
-    "answer": "Notes: Related. My AI-native experience is infrastructure and reliability — making AI systems dependable in production — not model development. I'd rather be precise than overstate. The work. At JPMorgan Chase I re-platformed enterprise MLOps workloads onto new AWS accounts across all environments, rebuilt on Fusion/SageMaker, with model availability preserved for downstream consumers throughout. AI-native in the way that matters operationally: inference was the product, and downstream applications depended on those endpoints like any critical service.",
+    "answer": "Notes: AI Native Architecture Project. My AI-native experience is infrastructure and reliability — making AI systems dependable in production — not model development. I'd rather be precise than overstate. The work. At JPMorgan Chase I re-platformed enterprise MLOps workloads onto new AWS accounts across all environments, rebuilt on Fusion/SageMaker, with model availability preserved for downstream consumers throughout. AI-native in the way that matters operationally: inference was the product, and downstream applications depended on those endpoints like any critical service.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "native",
+      "architecture",
+      "project"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e444de-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Native Architecture Project",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Native Architecture Project",
+      "What does the note AI Native Architecture Project say?",
       "What about build python automation gates promotion inference regression checks?"
     ],
-    "answer": "Notes: Related. I built the Python automation that gates promotion on inference regression checks, and standardized MLOps CI/CD so model promotion was repeatable rather than ad hoc. Responsible design in a regulated environment. Model changes are governed, not just deployed. Four principles: validation as a gate, not a report — a model failing regression checks doesn't ship, regardless of who's waiting. Audit ability — IaC and declarative delivery so every change to the serving path has a reviewable trail, which SOX and model-risk governance both require.",
+    "answer": "Notes: AI Native Architecture Project. I built the Python automation that gates promotion on inference regression checks, and standardized MLOps CI/CD so model promotion was repeatable rather than ad hoc. Responsible design in a regulated environment. Model changes are governed, not just deployed. Four principles: validation as a gate, not a report — a model failing regression checks doesn't ship, regardless of who's waiting. Audit ability — IaC and declarative delivery so every change to the serving path has a reviewable trail, which SOX and model-risk governance both require.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "native",
+      "architecture",
+      "project"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e444de-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Native Architecture Project",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Native Architecture Project",
+      "What does the note AI Native Architecture Project say?",
       "What about models production dependencies availability expectations monitoring someone call?"
     ],
-    "answer": "Notes: Related. Models as production dependencies, with availability expectations, monitoring, and someone on call. And a clean separation between model correctness and platform correctness, so it's never ambiguous whether a bad output is a serving failure or a model failure. Challenges. The hardest: AI systems fail quietly. A broken web service returns errors you can alert on. A drifted model returns confident, well-formed, wrong answers at normal latency, and no conventional reliability signal moves — which is why I pushed inference validation into the deployment gate.",
+    "answer": "Notes: AI Native Architecture Project. Models as production dependencies, with availability expectations, monitoring, and someone on call. And a clean separation between model correctness and platform correctness, so it's never ambiguous whether a bad output is a serving failure or a model failure. Challenges. The hardest: AI systems fail quietly. A broken web service returns errors you can alert on. A drifted model returns confident, well-formed, wrong answers at normal latency, and no conventional reliability signal moves — which is why I pushed inference validation into the deployment gate.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "native",
+      "architecture",
+      "project"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e444de-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Native Architecture Project",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Native Architecture Project",
+      "What does the note AI Native Architecture Project say?",
       "What about beyond rollback harder than stateless services because reverting?"
     ],
-    "answer": "Notes: Related. Beyond that: rollback is harder than for stateless services, because reverting means reasoning about which artifact version served which results and what consumed them; capacity doesn't map onto request-rate planning; and data science and platform engineering describe the same incident in different vocabularies, so a real share of the job is translation. I've operated AI-native systems and know their failure modes from the production side. I haven't architected the model layer. That's exactly the growth I'm after.",
+    "answer": "Notes: AI Native Architecture Project. Beyond that: rollback is harder than for stateless services, because reverting means reasoning about which artifact version served which results and what consumed them; capacity doesn't map onto request-rate planning; and data science and platform engineering describe the same incident in different vocabularies, so a real share of the job is translation. I've operated AI-native systems and know their failure modes from the production side. I haven't architected the model layer. That's exactly the growth I'm after.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-e444de-5",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related ai ml topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - AI & ML: topic hub - Job Search: topic hub - KV Cache (LLM): model-serving infra - Evaluate Reliability of AI output: AI reliability",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "native",
+      "architecture",
+      "project"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-1499a7-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Tools in engineering workflows",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Tools in engineering workflows",
+      "What does the note AI Tools in engineering workflows say?",
       "What about copilot daily 2 years championed its adoption team?"
     ],
-    "answer": "Notes: Related. Copilot, daily, ~2 years — championed its adoption on my team. It earns its place on infrastructure code specifically: Terraform modules, CloudFormation, Kubernetes manifests, Python automation, and test coverage, where the impact has been clearest. I treat output as a draft; a plausible-looking Terraform diff is more dangerous than a plausible-looking function, so anything touching production gets reviewed like a colleague's PR. Agentic tooling. I build multi-step automation with Claude connected to external tools via MCP connectors.",
+    "answer": "Notes: AI Tools in engineering workflows. Copilot, daily, ~2 years — championed its adoption on my team. It earns its place on infrastructure code specifically: Terraform modules, CloudFormation, Kubernetes manifests, Python automation, and test coverage, where the impact has been clearest. I treat output as a draft; a plausible-looking Terraform diff is more dangerous than a plausible-looking function, so anything touching production gets reviewed like a colleague's PR. Agentic tooling. I build multi-step automation with Claude connected to external tools via MCP connectors.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "tools",
+      "in",
+      "engineering",
+      "workflows"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-1499a7-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Tools in engineering workflows",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Tools in engineering workflows",
+      "What does the note AI Tools in engineering workflows say?",
       "What about developed example drives web scraping api pull structured?"
     ],
-    "answer": "Notes: Related. My most developed example drives a web-scraping API to pull structured job postings, scores each against criteria, and generates tailored documents for strong matches — API orchestration, deduplication and normalization, LLM evaluation, and document generation, end to end. A personal project, but it taught me the practical shape of agentic systems: where the model is the right tool and where deterministic code is, how much of the work is data plumbing and context management, and how fast context windows become the binding constraint. AI platform operations.",
+    "answer": "Notes: AI Tools in engineering workflows. My most developed example drives a web-scraping API to pull structured job postings, scores each against criteria, and generates tailored documents for strong matches — API orchestration, deduplication and normalization, LLM evaluation, and document generation, end to end. A personal project, but it taught me the practical shape of agentic systems: where the model is the right tool and where deterministic code is, how much of the work is data plumbing and context management, and how fast context windows become the binding constraint. AI platform operations.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "tools",
+      "in",
+      "engineering",
+      "workflows"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-1499a7-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: AI Tools in engineering workflows",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about AI Tools in engineering workflows",
+      "What does the note AI Tools in engineering workflows say?",
       "What about sagemaker model serving infrastructure plus python automation validating?"
     ],
-    "answer": "Notes: Related. SageMaker model-serving infrastructure, plus Python automation validating inference endpoints to catch a degraded model before downstream consumers see it. Straight answer on depth: I operate and apply AI systems rather than train models. That's the direction I'm building in, and much of why this role interests me.",
+    "answer": "Notes: AI Tools in engineering workflows. SageMaker model-serving infrastructure, plus Python automation validating inference endpoints to catch a degraded model before downstream consumers see it. Straight answer on depth: I operate and apply AI systems rather than train models. That's the direction I'm building in, and much of why this role interests me.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-1499a7-4",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related ai ml topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - AI & ML: topic hub - Job Search: topic hub - Staying current in AI Advances: Copilot usage - Git Hub Co-Pilot: Copilot - Analyze and build app: AI-assisted coding",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "ai",
+      "tools",
+      "in",
+      "engineering",
+      "workflows"
     ],
     "link": "#skills",
     "source": "vault"
@@ -2966,1248 +2941,1280 @@
   },
   {
     "id": "note-related-377008-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: All core Skills",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about All core Skills",
+      "What does the note All core Skills say?",
       "What about programming languages python c java golang typescript java?"
     ],
-    "answer": "Notes: Related. Programming Languages Python, C#, Java, Golang, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, PL/SQL Web & Backend ASP.NET MVC, ASP.NET Web API, React, TypeScript, Spring, Sitecore, SAP Commerce Cloud Architecture & Delivery Distributed systems, Micro-services, API Design, Event Driven Architecture, Platform Migrations, Data Migration Strategy, Technical Leadership, Full SDLC Ownership, Software Design Patterns, Agile Development Data Microsoft SQL Server, Azure SQL, Oracle, PostgreSQL, MySQL, Solr Cloud Services AWS - EC2, ECS, S3, VPC, IAM, ACM, KMS, SageMaker, CloudWatch Azure - App Services, Application",
+    "answer": "Notes: All core Skills. Programming Languages Python, C#, Java, Golang, TypeScript, Java, Bash, PowerShell, Groovy, GraphQL, T-SQL, PL/SQL Web & Backend ASP.NET MVC, ASP.NET Web API, React, TypeScript, Spring, Sitecore, SAP Commerce Cloud Architecture & Delivery Distributed systems, Micro-services, API Design, Event Driven Architecture, Platform Migrations, Data Migration Strategy, Technical Leadership, Full SDLC Ownership, Software Design Patterns, Agile Development Data Microsoft SQL Server, Azure SQL, Oracle, PostgreSQL, MySQL, Solr Cloud Services AWS - EC2, ECS, S3, VPC, IAM, ACM, KMS, SageMaker, CloudWatch Azure - App Services,",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "all",
+      "core",
+      "skills"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-377008-1-reflow2",
+    "topic": "Notes: All core Skills",
+    "questions": [
+      "Tell me about All core Skills",
+      "What does the note All core Skills say?",
+      "What about programming languages python c java golang typescript java?"
+    ],
+    "answer": "Notes: All core Skills. Application",
+    "tags": [
+      "notes",
+      "all",
+      "core",
+      "skills"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-377008-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: All core Skills",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about All core Skills",
+      "What does the note All core Skills say?",
       "What about gateway vnets azure sql infrastructure code containers terraform?"
     ],
-    "answer": "Notes: Related. Gateway, VNets, Azure SQL Infrastructure as Code & Containers Terraform, CloudFormation, Kubernetes, Docker, Helm CI/CD & DevOps Jenkins, Spinnaker, GitHub Actions, Azure Pipelines, ArgoCD, TFS, Artifactory, blue-green deployments, rolling deployments Reliability & Observability SLO and SLI definition, error budgets, on-call incident response, blameless postmortems, Grafana, Prometheus, Dynatrace, Splunk, New Relic, distributed tracing AI/ML Platform AWS SageMaker, AI-assisted development with GitHub Copilot, agentic automation with MCP connectors Security & Compliance DevSecOps, SOX, PCI, GDPR, least-privilege IAM, secrets",
+    "answer": "Notes: All core Skills. Gateway, VNets, Azure SQL Infrastructure as Code & Containers Terraform, CloudFormation, Kubernetes, Docker, Helm CI/CD & DevOps Jenkins, Spinnaker, GitHub Actions, Azure Pipelines, ArgoCD, TFS, Artifactory, blue-green deployments, rolling deployments Reliability & Observability SLO and SLI definition, error budgets, on-call incident response, blameless postmortems, Grafana, Prometheus, Dynatrace, Splunk, New Relic, distributed tracing AI/ML Platform AWS SageMaker, AI-assisted development with GitHub Copilot, agentic automation with MCP connectors Security & Compliance DevSecOps, SOX, PCI, GDPR, least-privilege IAM,",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "all",
+      "core",
+      "skills"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-377008-2-reflow2",
+    "topic": "Notes: All core Skills",
+    "questions": [
+      "Tell me about All core Skills",
+      "What does the note All core Skills say?",
+      "What about gateway vnets azure sql infrastructure code containers terraform?"
+    ],
+    "answer": "Notes: All core Skills. secrets",
+    "tags": [
+      "notes",
+      "all",
+      "core",
+      "skills"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-377008-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: All core Skills",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about All core Skills",
+      "What does the note All core Skills say?",
       "What about management veracode sonarqube akamai edge services gtm waf?"
     ],
-    "answer": "Notes: Related. management, Veracode, SonarQube Akamai Edge Services GTM, WAF, SiteShield, Edge Redirector, NetStorage, Purge APIs, CDN and edge delivery configuration, content caching and purge strategies, secure delivery configuration",
+    "answer": "Notes: All core Skills. management, Veracode, SonarQube Akamai Edge Services GTM, WAF, SiteShield, Edge Redirector, NetStorage, Purge APIs, CDN and edge delivery configuration, content caching and purge strategies, secure delivery configuration",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-377008-4",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub experience summary skill?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Experience Summary: skills summary - Skills - Comprehensive: skills lists",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "all",
+      "core",
+      "skills"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2c00c1-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Capacity Planning",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Capacity Planning",
+      "What does the note Capacity Planning say?",
       "What about jpmorgan chase capacity planning sat within finops responsibility?"
     ],
-    "answer": "Notes: Related. At JPMorgan Chase, capacity planning sat within my FinOps responsibility across Kubernetes workloads on private cloud and AWS. I reviewed three months of CPU and memory utilization per workload and calculated resource requests and limits targeting ~70% utilization — enough headroom for peaks, without the over-provisioning teams default to when they size from worst case rather than measured demand. Working from each team's own utilization data made right-sizing a factual conversation, and the savings showed up directly in the FinOps metrics.",
+    "answer": "Notes: Capacity Planning. At JPMorgan Chase, capacity planning sat within my FinOps responsibility across Kubernetes workloads on private cloud and AWS. I reviewed three months of CPU and memory utilization per workload and calculated resource requests and limits targeting ~70% utilization — enough headroom for peaks, without the over-provisioning teams default to when they size from worst case rather than measured demand. Working from each team's own utilization data made right-sizing a factual conversation, and the savings showed up directly in the FinOps metrics.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "capacity",
+      "planning"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2c00c1-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Capacity Planning",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Capacity Planning",
+      "What does the note Capacity Planning say?",
       "What about we also scheduled capacity around actual demand applications?"
     ],
-    "answer": "Notes: Related. We also scheduled capacity around actual demand: for applications and batch jobs idle over weekends and off-hours, we used LightSwitch to turn resources off and back on per schedule, so we weren't paying for capacity nobody was consuming. That pattern has a distinct troubleshooting signature — failures come from things not coming back, not from things going down. A job fails because a dependency is still in a scheduled-off window, and it presents as an application error, so the instinct is to debug the wrong layer. \"Is everything this depends on actually up right now?\" became my first check.",
+    "answer": "Notes: Capacity Planning. We also scheduled capacity around actual demand: for applications and batch jobs idle over weekends and off-hours, we used LightSwitch to turn resources off and back on per schedule, so we weren't paying for capacity nobody was consuming. That pattern has a distinct troubleshooting signature — failures come from things not coming back, not from things going down. A job fails because a dependency is still in a scheduled-off window, and it presents as an application error, so the instinct is to debug the wrong layer. \"Is everything this depends on actually up right now?\" became my first check.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "capacity",
+      "planning"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2c00c1-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Capacity Planning",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Capacity Planning",
+      "What does the note Capacity Planning say?",
       "What about fixes ordering start up so dependencies return first?"
     ],
-    "answer": "Notes: Related. The fixes are ordering start-up so dependencies return first, validating schedules against real usage rather than assumed usage, and alerting on resources that miss their start window instead of learning about it from a failed downstream job.",
+    "answer": "Notes: Capacity Planning. The fixes are ordering start-up so dependencies return first, validating schedules against real usage rather than assumed usage, and alerting on resources that miss their start window instead of learning about it from a failed downstream job.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-2c00c1-4",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related kubernetes topic hub sre observability topic hub?"
-    ],
-    "answer": "Notes: Related. Related - Kubernetes: topic hub - SRE & Observability: topic hub - Job Search: topic hub - HPA - autoscaling for kubernetes: requests/limits drive HPA - AWS Cost Explorer: FinOps",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "capacity",
+      "planning"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-c92219-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Backend",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Backend",
+      "What does the note Elevator Pitch   Backend say?",
       "What about 30 second version 90 words m ram senior?"
     ],
-    "answer": "Notes: Related. 30-second version (90 words)** \"I'm Ram, a senior backend engineer with about 20 years of building and running production systems. I started out writing the APIs, services and reporting engine for an enterprise SaaS product. Then I led commerce platform migrations at Corsair and moved First Republic's platform to Azure four months ahead of schedule. Most recently, at JPMorgan Chase, I moved live ML services onto SageMaker without any downtime. I also wrote the Python validation that decides which models are allowed to ship.",
+    "answer": "Notes: Elevator Pitch   Backend. 30-second version (90 words)** \"I'm Ram, a senior backend engineer with about 20 years of building and running production systems. I started out writing the APIs, services and reporting engine for an enterprise SaaS product. Then I led commerce platform migrations at Corsair and moved First Republic's platform to Azure four months ahead of schedule. Most recently, at JPMorgan Chase, I moved live ML services onto SageMaker without any downtime. I also wrote the Python validation that decides which models are allowed to ship.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "backend"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-c92219-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Backend",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Backend",
+      "What does the note Elevator Pitch   Backend say?",
       "What about build backends work day one keep work day?"
     ],
-    "answer": "Notes: Related. I build backends that work on day one and keep working on day 500, and that's what I want to do next on a product team.\" 60-second version (150 words)** \"I'm Ram, a senior backend engineer based in the Bay Area. I've spent 20 years building distributed systems and then owning them in production. I started at ESP, where I built the web framework, REST APIs and services for an enterprise reporting product. I got page loads under two seconds and rebuilt the reporting engine on .NET so the product could ship in seven languages.",
+    "answer": "Notes: Elevator Pitch   Backend. I build backends that work on day one and keep working on day 500, and that's what I want to do next on a product team.\" 60-second version (150 words)** \"I'm Ram, a senior backend engineer based in the Bay Area. I've spent 20 years building distributed systems and then owning them in production. I started at ESP, where I built the web framework, REST APIs and services for an enterprise reporting product. I got page loads under two seconds and rebuilt the reporting engine on .NET so the product could ship in seven languages.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "backend"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-c92219-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Backend",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Backend",
+      "What does the note Elevator Pitch   Backend say?",
       "What about corsair architect two e commerce migrations including payments?"
     ],
-    "answer": "Notes: Related. At Corsair I was the architect for two e-commerce migrations, including the payments, fraud, tax and SSO integrations. At First Republic I led an Azure migration that finished in 8 months against a typical 12. Most recently, at JPMorgan Chase, I moved live ML services onto SageMaker with no loss of availability for the teams using them. I built Python promotion gates and React/TypeScript tooling around them, and my runbooks cut incident resolution time by 30%. What makes me different is that I write the code and I also carry the pager for it.",
+    "answer": "Notes: Elevator Pitch   Backend. At Corsair I was the architect for two e-commerce migrations, including the payments, fraud, tax and SSO integrations. At First Republic I led an Azure migration that finished in 8 months against a typical 12. Most recently, at JPMorgan Chase, I moved live ML services onto SageMaker with no loss of availability for the teams using them. I built Python promotion gates and React/TypeScript tooling around them, and my runbooks cut incident resolution time by 30%. What makes me different is that I write the code and I also carry the pager for it.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "backend"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-c92219-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Backend",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Backend",
+      "What does the note Elevator Pitch   Backend say?",
       "What about m looking senior backend role reliability part product?"
     ],
-    "answer": "Notes: Related. I'm looking for a senior backend role where reliability is part of the product.\" Tips for delivering it",
+    "answer": "Notes: Elevator Pitch   Backend. I'm looking for a senior backend role where reliability is part of the product.\" Tips for delivering it",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "backend"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-c92219-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Backend",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Backend",
+      "What does the note Elevator Pitch   Backend say?",
       "What about ending startup change last line something shipping fast?"
     ],
-    "answer": "Notes: Related. - Ending: For a startup, change the last line to something about shipping fast without breaking things. For a larger company, talk about scale and regulated environments. - If they ask \"why backend and not SRE?\": Say you've always been a builder. SRE taught you what breaks in production, and now you design for that from the start. - Dates: Your Experience Summary has older dates (JPMC \"2023–present\", First Republic \"2020–2023\") that don't match your resume (Jul 2022–Aug 2026 and Apr 2020–Jul 2022). Use the resume dates when you speak so your story matches what recruiters see.",
+    "answer": "Notes: Elevator Pitch   Backend. - Ending: For a startup, change the last line to something about shipping fast without breaking things. For a larger company, talk about scale and regulated environments. - If they ask \"why backend and not SRE?\": Say you've always been a builder. SRE taught you what breaks in production, and now you design for that from the start. - Dates: Your Experience Summary has older dates (JPMC \"2023–present\", First Republic \"2020–2023\") that don't match your resume (Jul 2022–Aug 2026 and Apr 2020–Jul 2022). Use the resume dates when you speak so your story matches what recruiters see.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-c92219-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub elevator pitch full?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Elevator Pitch - Full-Stack: pitch variants",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "backend"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-00dc30-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Cloud Engineer",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Cloud Engineer",
+      "What does the note Elevator Pitch   Cloud Engineer say?",
       "What about 30 second version 90 words m ram cloud?"
     ],
-    "answer": "Notes: Related. 30-second version (90 words)** \"I'm Ram, a cloud engineer and AWS Certified Solutions Architect with 20 years in software, working across AWS and Azure in regulated banking environments. At JPMorgan Chase I built infrastructure in new AWS accounts across every environment and moved a live ML platform onto SageMaker without downtime, all through Terraform and CloudFormation. At First Republic I led the bank's platform migration to Azure in 8 months against a typical 12, covering networking, security reviews and cutover.",
+    "answer": "Notes: Elevator Pitch   Cloud Engineer. 30-second version (90 words)** \"I'm Ram, a cloud engineer and AWS Certified Solutions Architect with 20 years in software, working across AWS and Azure in regulated banking environments. At JPMorgan Chase I built infrastructure in new AWS accounts across every environment and moved a live ML platform onto SageMaker without downtime, all through Terraform and CloudFormation. At First Republic I led the bank's platform migration to Azure in 8 months against a typical 12, covering networking, security reviews and cutover.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "cloud",
+      "engineer"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-00dc30-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Cloud Engineer",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Cloud Engineer",
+      "What does the note Elevator Pitch   Cloud Engineer say?",
       "What about build cloud foundations secure cost efficient repeatable 60?"
     ],
-    "answer": "Notes: Related. I build cloud foundations that are secure, cost-efficient and repeatable.\" 60-second version (150 words)** \"I'm Ram, a cloud engineer based in the Bay Area and an AWS Certified Solutions Architect. I design, provision and migrate infrastructure, usually where compliance leaves no room for mistakes. At JPMorgan Chase I wrote the Terraform and CloudFormation modules for compliance-driven migrations across AWS and private cloud, which eliminated configuration drift and manual setup.",
+    "answer": "Notes: Elevator Pitch   Cloud Engineer. I build cloud foundations that are secure, cost-efficient and repeatable.\" 60-second version (150 words)** \"I'm Ram, a cloud engineer based in the Bay Area and an AWS Certified Solutions Architect. I design, provision and migrate infrastructure, usually where compliance leaves no room for mistakes. At JPMorgan Chase I wrote the Terraform and CloudFormation modules for compliance-driven migrations across AWS and private cloud, which eliminated configuration drift and manual setup.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "cloud",
+      "engineer"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-00dc30-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Cloud Engineer",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Cloud Engineer",
+      "What does the note Elevator Pitch   Cloud Engineer say?",
       "What about build out new aws accounts across every environment?"
     ],
-    "answer": "Notes: Related. I built out new AWS accounts across every environment and moved the firm's MLOps platform onto SageMaker, ECS and S3 with least-privilege IAM, without interrupting inference. I also owned cost efficiency, right-sizing Kubernetes workloads from real usage data. At First Republic I led the bank's migration to Azure in 8 months instead of 12. That covered App Services, Application Gateway, VNets, firewall rules and VPN connectivity to on-prem networks. I ran the security reviews and owned cutover through a clean go-live.",
+    "answer": "Notes: Elevator Pitch   Cloud Engineer. I built out new AWS accounts across every environment and moved the firm's MLOps platform onto SageMaker, ECS and S3 with least-privilege IAM, without interrupting inference. I also owned cost efficiency, right-sizing Kubernetes workloads from real usage data. At First Republic I led the bank's migration to Azure in 8 months instead of 12. That covered App Services, Application Gateway, VNets, firewall rules and VPN connectivity to on-prem networks. I ran the security reviews and owned cutover through a clean go-live.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "cloud",
+      "engineer"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-00dc30-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Cloud Engineer",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Cloud Engineer",
+      "What does the note Elevator Pitch   Cloud Engineer say?",
       "What about bring hands infrastructure code across both cloud also?"
     ],
-    "answer": "Notes: Related. I bring hands-on infrastructure-as-code across both clouds, and I also run what I build in production.\" Tips for delivering it",
+    "answer": "Notes: Elevator Pitch   Cloud Engineer. I bring hands-on infrastructure-as-code across both clouds, and I also run what I build in production.\" Tips for delivering it",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "cloud",
+      "engineer"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-00dc30-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Cloud Engineer",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Cloud Engineer",
+      "What does the note Elevator Pitch   Cloud Engineer say?",
       "What about match cloud posting if s aws first lead?"
     ],
-    "answer": "Notes: Related. - Match the cloud in the posting: If it's AWS-first, lead with the certification and the SageMaker/ECS work. If it's Azure-first, open with the First Republic migration. - Expect networking questions: Cloud engineer screens often go deep on VPCs, subnets, routing and private connectivity. Review your Azure VNet, App Gateway and VPN work so you can sketch the architecture. - GCP postings: Your resume lists GCP as \"actively building,\" so say that plainly. Don't claim production GCP experience.",
+    "answer": "Notes: Elevator Pitch   Cloud Engineer. - Match the cloud in the posting: If it's AWS-first, lead with the certification and the SageMaker/ECS work. If it's Azure-first, open with the First Republic migration. - Expect networking questions: Cloud engineer screens often go deep on VPCs, subnets, routing and private connectivity. Review your Azure VNet, App Gateway and VPN work so you can sketch the architecture. - GCP postings: Your resume lists GCP as \"actively building,\" so say that plainly. Don't claim production GCP experience.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-00dc30-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub elevator pitch platform?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Elevator Pitch - Platform-DevOps: pitch variants - Elevator Pitch - SRE: pitch variants - AWS: AWS experience - Amazon: AWS interview",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "cloud",
+      "engineer"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-931668",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Full Stack",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
       "What about 30 second version 90 words m ram senior?"
     ],
-    "answer": "Notes: Related. 30-second version (90 words)** \"I'm Ram, a senior full-stack engineer with about 20 years of shipping features from the database all the way to the browser. I built the web framework, REST APIs and single-page admin UI for an enterprise SaaS product, and got page loads under two seconds. I spent years building customer-facing commerce features at Corsair, and most recently I built React and TypeScript tooling at JPMorgan Chase. I also run what I build in production, so I write the frontend, the API and the alerting that tells me when either one breaks.\" 60-second version (150 words)**",
+    "answer": "Notes: Elevator Pitch   Full Stack. 30-second version (90 words)** \"I'm Ram, a senior full-stack engineer with about 20 years of shipping features from the database all the way to the browser. I built the web framework, REST APIs and single-page admin UI for an enterprise SaaS product, and got page loads under two seconds. I spent years building customer-facing commerce features at Corsair, and most recently I built React and TypeScript tooling at JPMorgan Chase. I also run what I build in production, so I write the frontend, the API and the alerting that tells me when either one breaks.\" 60-second version (150 words)**",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-931668-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Full Stack",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
       "What about m ram senior full stack engineer based bay?"
     ],
-    "answer": "Notes: Related. | | | |---|---| |\"I'm Ram, a senior full-stack engineer based in the Bay Area.|I like owning a feature end to end, from the schema and the API through the UI to how it behaves in production.|",
+    "answer": "Notes: Elevator Pitch   Full Stack. | | | |---|---| |\"I'm Ram, a senior full-stack engineer based in the Bay Area.|I like owning a feature end to end, from the schema and the API through the UI to how it behaves in production.|",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-931668-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Full Stack",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
       "What about esp designed web framework rest apis single page?"
     ],
-    "answer": "Notes: Related. At ESP I designed the web framework, REST APIs and single-page admin UI for an enterprise reporting product. Caching and query batching got page loads under two seconds, and I rebuilt the reporting engine so the product could ship in seven languages. At Corsair I built customer-facing commerce features and internal tools in ASP.NET, Angular and C#. I then led two platform migrations covering payments, tax and SSO. Most recently, at JPMorgan Chase, I built React and TypeScript dashboards that show SLO burn rate and deployment health, backed by Python services and AWS. What I bring is full-stack depth plus production instincts.",
+    "answer": "Notes: Elevator Pitch   Full Stack. At ESP I designed the web framework, REST APIs and single-page admin UI for an enterprise reporting product. Caching and query batching got page loads under two seconds, and I rebuilt the reporting engine so the product could ship in seven languages. At Corsair I built customer-facing commerce features and internal tools in ASP.NET, Angular and C#. I then led two platform migrations covering payments, tax and SSO. Most recently, at JPMorgan Chase, I built React and TypeScript dashboards that show SLO burn rate and deployment health, backed by Python services and AWS.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-931668-3-reflow2",
+    "topic": "Notes: Elevator Pitch   Full Stack",
+    "questions": [
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
+      "What about esp designed web framework rest apis single page?"
+    ],
+    "answer": "Notes: Elevator Pitch   Full Stack. What I bring is full-stack depth plus production instincts.",
+    "tags": [
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-931668-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Full Stack",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
       "What about think latency failure modes observability while m building?"
     ],
-    "answer": "Notes: Related. I think about latency, failure modes and observability while I'm building the UI, not after it ships.\" Tips for delivering it",
+    "answer": "Notes: Elevator Pitch   Full Stack. I think about latency, failure modes and observability while I'm building the UI, not after it ships.\" Tips for delivering it",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-931668-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Full Stack",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Full Stack",
+      "What does the note Elevator Pitch   Full Stack say?",
       "What about honest recent frontend work recent react work internal?"
     ],
-    "answer": "Notes: Related. - Be honest about your recent frontend work: Most of your recent React work was internal tooling. If they press on it, say so directly and point to ESP and Corsair for customer-facing UI depth. Then mention that you use React and TypeScript today. - Match the company's stack: If the posting lists Node or Next.js, add a line saying you work across TypeScript on both the client and the server. If the stack is .NET-heavy, start with ASP.NET MVC/Web API and C#. - Ending: For product companies, close on caring about the user experience and the reliability behind it.",
+    "answer": "Notes: Elevator Pitch   Full Stack. - Be honest about your recent frontend work: Most of your recent React work was internal tooling. If they press on it, say so directly and point to ESP and Corsair for customer-facing UI depth. Then mention that you use React and TypeScript today. - Match the company's stack: If the posting lists Node or Next.js, add a line saying you work across TypeScript on both the client and the server. If the stack is .NET-heavy, start with ASP.NET MVC/Web API and C#. - Ending: For product companies, close on caring about the user experience and the reliability behind it.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-931668-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub elevator pitch backend?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Elevator Pitch - Backend: pitch variants - Startup style experience: ESP full-stack work",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "full",
+      "stack"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-26f294-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
       "What about 30 second version 90 words m ram platform?"
     ],
-    "answer": "Notes: Related. 30-second version (90 words)** \"I'm Ram, a platform and DevOps engineer with 20 years in software, and the last four years building the paved road for application teams at JPMorgan Chase. I built the Jenkins and Spinnaker pipelines and the Terraform modules those teams shipped on, and I ran Kubernetes workloads across AWS and private cloud. I also wrote the firm's Dynatrace and Splunk observability standard and defined SLOs and error budgets in Grafana and Prometheus. My runbooks cut incident resolution time by 30%.",
+    "answer": "Notes: Elevator Pitch   Platform DevOps. 30-second version (90 words)** \"I'm Ram, a platform and DevOps engineer with 20 years in software, and the last four years building the paved road for application teams at JPMorgan Chase. I built the Jenkins and Spinnaker pipelines and the Terraform modules those teams shipped on, and I ran Kubernetes workloads across AWS and private cloud. I also wrote the firm's Dynatrace and Splunk observability standard and defined SLOs and error budgets in Grafana and Prometheus. My runbooks cut incident resolution time by 30%.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-26f294-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
       "What about build shipping safely easy default developers 60 second?"
     ],
-    "answer": "Notes: Related. I make shipping safely the easy default for developers.\" 60-second version (150 words)** \"I'm Ram, a platform engineer based in the Bay Area. I build the layer that sits between application developers and production infrastructure. At JPMorgan Chase I built and ran Jenkins, Spinnaker and Bitbucket pipelines that did blue-green and rolling deployments to ECS and Kubernetes. I backed them with Terraform and CloudFormation modules that eliminated configuration drift. Veracode scanning and secrets management ran inside the pipeline, so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
+    "answer": "Notes: Elevator Pitch   Platform DevOps. I make shipping safely the easy default for developers.\" 60-second version (150 words)** \"I'm Ram, a platform engineer based in the Bay Area. I build the layer that sits between application developers and production infrastructure. At JPMorgan Chase I built and ran Jenkins, Spinnaker and Bitbucket pipelines that did blue-green and rolling deployments to ECS and Kubernetes. I backed them with Terraform and CloudFormation modules that eliminated configuration drift.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-26f294-2-reflow2",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
+    "questions": [
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
+      "What about build shipping safely easy default developers 60 second?"
+    ],
+    "answer": "Notes: Elevator Pitch   Platform DevOps. Veracode scanning and secrets management ran inside the pipeline, so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
+    "tags": [
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-26f294-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
       "What about observability wrote team s dynatrace splunk standard covering?"
     ],
-    "answer": "Notes: Related. On observability, I wrote the team's Dynatrace and Splunk standard, covering tracing, tagging, synthetics and alerting, packaged as reusable assets with per-environment overlays. I defined SLOs and error budgets in Grafana and Prometheus, and I carried the on-call. I also led Kubernetes FinOps: I right-sized workloads based on three months of real usage data and scaled idle capacity down off-hours. Right now I'm building GitOps with Argo CD and OpenTelemetry on my own. I'd like to do that at scale.\" Tips for delivering it",
+    "answer": "Notes: Elevator Pitch   Platform DevOps. On observability, I wrote the team's Dynatrace and Splunk standard, covering tracing, tagging, synthetics and alerting, packaged as reusable assets with per-environment overlays. I defined SLOs and error budgets in Grafana and Prometheus, and I carried the on-call. I also led Kubernetes FinOps: I right-sized workloads based on three months of real usage data and scaled idle capacity down off-hours. Right now I'm building GitOps with Argo CD and OpenTelemetry on my own. I'd like to do that at scale.\" Tips for delivering it",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-26f294-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
       "What about precise kubernetes resume says ran workloads firm s?"
     ],
-    "answer": "Notes: Related. - Be precise about Kubernetes: Your resume says you ran workloads on the firm's private Kubernetes platform, which suggests you weren't the cluster administrator. If they ask about control-plane work, say clearly what you owned (workloads, resource tuning, Control-M jobs, Helm, FinOps) and point to your k3s and Argo CD project for hands-on cluster work. - Name the tools they use: For observability-heavy roles, lead with the SLO and error-budget work and name the vendor-neutral approach (OpenTelemetry), since many teams are leaving Dynatrace and Splunk for cost reasons.",
+    "answer": "Notes: Elevator Pitch   Platform DevOps. - Be precise about Kubernetes: Your resume says you ran workloads on the firm's private Kubernetes platform, which suggests you weren't the cluster administrator. If they ask about control-plane work, say clearly what you owned (workloads, resource tuning, Control-M jobs, Helm, FinOps) and point to your k3s and Argo CD project for hands-on cluster work. - Name the tools they use: For observability-heavy roles, lead with the SLO and error-budget work and name the vendor-neutral approach (OpenTelemetry), since many teams are leaving Dynatrace and Splunk for cost reasons.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-26f294-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   Platform DevOps",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   Platform DevOps",
+      "What does the note Elevator Pitch   Platform DevOps say?",
       "What about ending devops titles close developer experience measure success?"
     ],
-    "answer": "Notes: Related. - Ending for DevOps titles: Close on developer experience: \"I measure success by how little app teams have to think about the platform.\"",
+    "answer": "Notes: Elevator Pitch   Platform DevOps. - Ending for DevOps titles: Close on developer experience: \"I measure success by how little app teams have to think about the platform.\"",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-26f294-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related devops ci cd topic hub work search?"
-    ],
-    "answer": "Notes: Related. Related - DevOps & CI-CD: topic hub - Job Search: topic hub - Elevator Pitch - SRE: pitch variants - Elevator Pitch - Cloud Engineer: pitch variants - Improving Secure CI-CD: pipelines",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "platform",
+      "devops"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-a92566-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   SRE",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   SRE",
+      "What does the note Elevator Pitch   SRE say?",
       "What about 30 second version 90 words m ram site?"
     ],
-    "answer": "Notes: Related. 30-second version (90 words)** \"I'm Ram, a site reliability engineer with 20 years in software and the last six years carrying the pager for regulated production systems at JPMorgan Chase and First Republic. I define what healthy means for a system, with SLOs, SLIs and error budgets in Grafana and Prometheus, and then I stand behind those numbers on-call. My runbooks and postmortems cut incident resolution time by 30%.",
+    "answer": "Notes: Elevator Pitch   SRE. 30-second version (90 words)** \"I'm Ram, a site reliability engineer with 20 years in software and the last six years carrying the pager for regulated production systems at JPMorgan Chase and First Republic. I define what healthy means for a system, with SLOs, SLIs and error budgets in Grafana and Prometheus, and then I stand behind those numbers on-call. My runbooks and postmortems cut incident resolution time by 30%.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "sre"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-a92566-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   SRE",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   SRE",
+      "What does the note Elevator Pitch   SRE say?",
       "What about recently moved live ml inference onto sagemaker without?"
     ],
-    "answer": "Notes: Related. Most recently I moved live ML inference onto SageMaker without losing availability, and I put latency SLOs and an on-call owner on every model endpoint.\" 60-second version (150 words)** \"I'm Ram, an SRE based in the Bay Area. I started as a software engineer, so I approach reliability as an engineering problem, not a ticket queue. At JPMorgan Chase I defined availability and latency SLOs across a portfolio of business applications on Kubernetes and AWS, and tracked error budgets so leadership had one view of reliability.",
+    "answer": "Notes: Elevator Pitch   SRE. Most recently I moved live ML inference onto SageMaker without losing availability, and I put latency SLOs and an on-call owner on every model endpoint.\" 60-second version (150 words)** \"I'm Ram, an SRE based in the Bay Area. I started as a software engineer, so I approach reliability as an engineering problem, not a ticket queue. At JPMorgan Chase I defined availability and latency SLOs across a portfolio of business applications on Kubernetes and AWS, and tracked error budgets so leadership had one view of reliability.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "sre"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-a92566-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   SRE",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   SRE",
+      "What does the note Elevator Pitch   SRE say?",
       "What about ran incident response led blameless postmortems wrote runbooks?"
     ],
-    "answer": "Notes: Related. I ran incident response, led blameless postmortems, and wrote runbooks that cut incident resolution time by 30%. I automated away toil in Python and Bash, and I right-sized Kubernetes capacity based on three months of real usage data. On the MLOps platform, I treated models as production dependencies: p95 and p99 latency SLOs on inference endpoints, plus Python gates that block a bad model from shipping. I also migrated that whole estate to SageMaker without losing availability. Before that, at First Republic, I owned on-call, disaster-recovery testing and edge security for the bank's Azure platform.",
+    "answer": "Notes: Elevator Pitch   SRE. I ran incident response, led blameless postmortems, and wrote runbooks that cut incident resolution time by 30%. I automated away toil in Python and Bash, and I right-sized Kubernetes capacity based on three months of real usage data. On the MLOps platform, I treated models as production dependencies: p95 and p99 latency SLOs on inference endpoints, plus Python gates that block a bad model from shipping. I also migrated that whole estate to SageMaker without losing availability. Before that, at First Republic, I owned on-call, disaster-recovery testing and edge security for the bank's Azure platform.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "sre"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-a92566-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   SRE",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   SRE",
+      "What does the note Elevator Pitch   SRE say?",
       "What about m looking sre role reliability shapes things get?"
     ],
-    "answer": "Notes: Related. I'm looking for an SRE role where reliability shapes how things get built.\" Tips for delivering it",
+    "answer": "Notes: Elevator Pitch   SRE. I'm looking for an SRE role where reliability shapes how things get built.\" Tips for delivering it",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "sre"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-a92566-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Elevator Pitch   SRE",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Elevator Pitch   SRE",
+      "What does the note Elevator Pitch   SRE say?",
       "What about one incident story ready interviewers almost always follow?"
     ],
-    "answer": "Notes: Related. - Have one incident story ready: Interviewers almost always follow up with \"tell me about an incident.\" Your \"Diagnosing and Resolving an Unexpected Reliability Incident\" doc in this project is the natural follow-up, so rehearse it as a 90-second story. - Bring the numbers: Be ready to say how you picked SLO targets and what happened when an error budget ran out (for example, a release freeze or reliability work getting prioritized). That's where SRE screeners check for depth. - Ending for ML-heavy companies: Lead with the MLOps reliability work. Few SREs have put SLOs on model inference, so it sets you apart.",
+    "answer": "Notes: Elevator Pitch   SRE. - Have one incident story ready: Interviewers almost always follow up with \"tell me about an incident.\" Your \"Diagnosing and Resolving an Unexpected Reliability Incident\" doc in this project is the natural follow-up, so rehearse it as a 90-second story. - Bring the numbers: Be ready to say how you picked SLO targets and what happened when an error budget ran out (for example, a release freeze or reliability work getting prioritized). That's where SRE screeners check for depth. - Ending for ML-heavy companies: Lead with the MLOps reliability work. Few SREs have put SLOs on model inference, so it sets you apart.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-a92566-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related sre observability topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - SRE & Observability: topic hub - Job Search: topic hub - Elevator Pitch - Platform-DevOps: pitch variants - Elevator Pitch - Cloud Engineer: pitch variants",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "elevator",
+      "pitch",
+      "sre"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-cbcf4a-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Experience Summary",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Experience Summary",
+      "What does the note Experience Summary say?",
       "What about ve doing platform modernization continuously 20 years here?"
     ],
-    "answer": "Notes: Related. I’ve been doing platform modernization continuously for about 20 years. Here's the story my resume tells, most recent first: Site Reliability/DevOps/AWS Cloud — JPMorgan Chase (2023–2026). Migrated enterprise MLOps workloads to new AWS accounts across every environment, re-platforming from scratch onto the latest Fusion/SageMaker framework while preserving model availability for downstream consumers. Backed it with Terraform IaC for compliance-driven migrations across AWS and JPMC Private Cloud, and Python automation to validate inference endpoints post-migration.",
+    "answer": "Notes: Experience Summary. I’ve been doing platform modernization continuously for about 20 years. Here's the story my resume tells, most recent first: Site Reliability/DevOps/AWS Cloud — JPMorgan Chase (2023–2026). Migrated enterprise MLOps workloads to new AWS accounts across every environment, re-platforming from scratch onto the latest Fusion/SageMaker framework while preserving model availability for downstream consumers. Backed it with Terraform IaC for compliance-driven migrations across AWS and JPMC Private Cloud, and Python automation to validate inference endpoints post-migration.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "experience",
+      "summary"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-cbcf4a-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Experience Summary",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Experience Summary",
+      "What does the note Experience Summary say?",
       "What about legacy modernization its hardest form live production ml?"
     ],
-    "answer": "Notes: Related. This is legacy modernization in its hardest form: live production ML services, zero tolerance for availability loss, bank-grade compliance. Content Platform Operations & upgrade — First Republic Bank (2020–2023). Led the Sitecore v9.1 → v10.2 upgrade on Azure: architecture and info-sec reviews across App Services, Application Gateway, and VNets; VPN/firewall coordination with on-prem network teams; authored the cutover and Go-Live runbook; validated DNS, TLS, SMTP, and monitoring integrations in the upgraded environment. A full enterprise upgrade executed under banking scrutiny.",
+    "answer": "Notes: Experience Summary. This is legacy modernization in its hardest form: live production ML services, zero tolerance for availability loss, bank-grade compliance. Content Platform Operations & upgrade — First Republic Bank (2020–2023). Led the Sitecore v9.1 → v10.2 upgrade on Azure: architecture and info-sec reviews across App Services, Application Gateway, and VNets; VPN/firewall coordination with on-prem network teams; authored the cutover and Go-Live runbook; validated DNS, TLS, SMTP, and monitoring integrations in the upgraded environment. A full enterprise upgrade executed under banking scrutiny.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "experience",
+      "summary"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-cbcf4a-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Experience Summary",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Experience Summary",
+      "What does the note Experience Summary say?",
       "What about commerce platform migrations corsair 2013 2020 two major?"
     ],
-    "answer": "Notes: Related. Commerce platform migrations — Corsair (2013–2020). Two major ones: led the end-to-end SAP Commerce Cloud V2 upgrade in five months, and before that managed a 12-month migration off Sitecore onto SAP Hybris cloud — team of 4+ contractors, vendor selection through Go-Live, including data migration strategy, SSO consolidation, GDPR processes, and payment/tax integrations. Earlier, I migrated the same commerce estate to Sitecore 6 and then 8. Application modernization — ESP (2006–2013).",
+    "answer": "Notes: Experience Summary. Commerce platform migrations — Corsair (2013–2020). Two major ones: led the end-to-end SAP Commerce Cloud V2 upgrade in five months, and before that managed a 12-month migration off Sitecore onto SAP Hybris cloud — team of 4+ contractors, vendor selection through Go-Live, including data migration strategy, SSO consolidation, GDPR processes, and payment/tax integrations. Earlier, I migrated the same commerce estate to Sitecore 6 and then 8. Application modernization — ESP (2006–2013).",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "experience",
+      "summary"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-cbcf4a-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Experience Summary",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Experience Summary",
+      "What does the note Experience Summary say?",
       "What about migrated opsweb reporting engine net scalability multi language?"
     ],
-    "answer": "Notes: Related. Migrated the opsWeb & reporting engine to .NET for scalability and multi-language support, and rebuilt the Web Admin as a single-page application. I’ve modernized every layer — application, commerce, cloud infrastructure, and now ML platforms — always on live systems, always preserving availability, recent ones under regulatory constraints, and repeatedly as the person leading the migration rather than just executing it.",
+    "answer": "Notes: Experience Summary. Migrated the opsWeb & reporting engine to .NET for scalability and multi-language support, and rebuilt the Web Admin as a single-page application. I’ve modernized every layer — application, commerce, cloud infrastructure, and now ML platforms — always on live systems, always preserving availability, recent ones under regulatory constraints, and repeatedly as the person leading the migration rather than just executing it.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-cbcf4a-5",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub career facts career?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Career Facts: career history - All core Skills: skills summary - Experience Roles: roles history - Update Cover Letter with AI: cover letter content",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "experience",
+      "summary"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-24512b-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Improving Secure CI CD",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Improving Secure CI CD",
+      "What does the note Improving Secure CI CD say?",
       "What about ci cd work regulated financial services environments ship?"
     ],
-    "answer": "Notes: Related. Most of my CI/CD work has been in regulated financial-services environments, where \"ship faster\" and \"prove it's safe\" aren't allowed to be in tension. Three things I've implemented repeatedly: Standardize the path. At JPMorgan Chase I standardized MLOps deployment workflows for model-serving infrastructure so promotion across development, test, and production became consistent and repeatable instead of a bespoke exercise per environment.",
+    "answer": "Notes: Improving Secure CI CD. Most of my CI/CD work has been in regulated financial-services environments, where \"ship faster\" and \"prove it's safe\" aren't allowed to be in tension. Three things I've implemented repeatedly: Standardize the path. At JPMorgan Chase I standardized MLOps deployment workflows for model-serving infrastructure so promotion across development, test, and production became consistent and repeatable instead of a bespoke exercise per environment.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "improving",
+      "secure",
+      "ci",
+      "cd"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-24512b-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Improving Secure CI CD",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Improving Secure CI CD",
+      "What does the note Improving Secure CI CD say?",
       "What about pair terraform provisioning eliminates configuration drift causes worked?"
     ],
-    "answer": "Notes: Related. I pair that with Terraform for provisioning — which eliminates the configuration drift that causes most \"it worked in staging\" failures — and I've built pipelines in Spinnaker, Jenkins, Bitbucket, and GitHub for line-of-business teams deploying to AWS ECS and private cloud. Standardization is the speed lever: engineers stop hand-rolling releases and stop debugging environment differences. Put security inside the pipeline, not after it.",
+    "answer": "Notes: Improving Secure CI CD. I pair that with Terraform for provisioning — which eliminates the configuration drift that causes most \"it worked in staging\" failures — and I've built pipelines in Spinnaker, Jenkins, Bitbucket, and GitHub for line-of-business teams deploying to AWS ECS and private cloud. Standardization is the speed lever: engineers stop hand-rolling releases and stop debugging environment differences. Put security inside the pipeline, not after it.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "improving",
+      "secure",
+      "ci",
+      "cd"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-24512b-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Improving Secure CI CD",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Improving Secure CI CD",
+      "What does the note Improving Secure CI CD say?",
       "What about ve integrated veracode scanning artifactory jenkins spinnaker pipelines?"
     ],
-    "answer": "Notes: Related. I've integrated Veracode scanning and Artifactory into Jenkins and Spinnaker pipelines so findings surface while a change is still in review, and used SonarQube as a code-quality gate on an earlier commerce platform. Around that: IAM controls and least-privilege roles and secrets management. Working under SOX, PCI, and GDPR obligations, I'm used to producing audit evidence as a pipeline output rather than a quarterly scramble. Make verification automatic.",
+    "answer": "Notes: Improving Secure CI CD. I've integrated Veracode scanning and Artifactory into Jenkins and Spinnaker pipelines so findings surface while a change is still in review, and used SonarQube as a code-quality gate on an earlier commerce platform. Around that: IAM controls and least-privilege roles and secrets management. Working under SOX, PCI, and GDPR obligations, I'm used to producing audit evidence as a pipeline output rather than a quarterly scramble. Make verification automatic.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "improving",
+      "secure",
+      "ci",
+      "cd"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-24512b-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Improving Secure CI CD",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Improving Secure CI CD",
+      "What does the note Improving Secure CI CD say?",
       "What about write python automation environment validation deployment verification including?"
     ],
-    "answer": "Notes: Related. I write Python automation for environment validation and deployment verification, including automated regression checks that confirm model-inference endpoints are healthy post-deploy. That's wired into Dynatrace synthetic monitors and Grafana/Prometheus dashboards, so a bad release is caught by the pipeline rather than by a customer. I've also used GitHub Copilot to accelerate test coverage on infrastructure code — with peer review held firmly in place. The principle underneath all of it: a security gate that slows engineers down gets routed around. The job is to make the safe path the fast path.",
+    "answer": "Notes: Improving Secure CI CD. I write Python automation for environment validation and deployment verification, including automated regression checks that confirm model-inference endpoints are healthy post-deploy. That's wired into Dynatrace synthetic monitors and Grafana/Prometheus dashboards, so a bad release is caught by the pipeline rather than by a customer. I've also used GitHub Copilot to accelerate test coverage on infrastructure code — with peer review held firmly in place. The principle underneath all of it: a security gate that slows engineers down gets routed around. The job is to make the safe path the fast path.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-24512b-5",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related devops ci cd topic hub work search?"
-    ],
-    "answer": "Notes: Related. Related - DevOps & CI-CD: topic hub - Job Search: topic hub - SAST-DAST: security gates in pipelines - AWS CI-CD: CI/CD practices - Elevator Pitch - Platform-DevOps: pipelines",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "improving",
+      "secure",
+      "ci",
+      "cd"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2df5cf",
-    "topic": "Notes: Related",
+    "topic": "Notes: Incident Response",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Incident Response",
+      "What does the note Incident Response say?",
       "What about situation team owns business critical scheduled workflow runs?"
     ],
-    "answer": "Notes: Related. Situation: My team owns a business-critical scheduled workflow that runs daily, built in Java as a set of Control-M jobs and deployed on Kubernetes containers in JPMC's Private Cloud (GKP). The workflow failed unexpectedly during a scheduled run, disrupting downstream processing. Task: As the on-call SRE, I needed to isolate the root cause quickly, restore the workflow, and put a fix in place to prevent recurrence. Action:",
+    "answer": "Notes: Incident Response. Situation: My team owns a business-critical scheduled workflow that runs daily, built in Java as a set of Control-M jobs and deployed on Kubernetes containers in JPMC's Private Cloud (GKP). The workflow failed unexpectedly during a scheduled run, disrupting downstream processing. Task: As the on-call SRE, I needed to isolate the root cause quickly, restore the workflow, and put a fix in place to prevent recurrence. Action:",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "incident",
+      "response"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2df5cf-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Incident Response",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Incident Response",
+      "What does the note Incident Response say?",
       "What about analyzed splunk logs trace failure isolate internal api?"
     ],
-    "answer": "Notes: Related. - Analyzed Splunk logs to trace the failure and isolate it to an internal API owned by another team, ruling out issues in our own job code and deployment. - Escalated to the owning team with the specific error evidence from the logs, covering both the client layer and the Mule-soft API Gateway, so they could reproduce and diagnose the fault directly. - Partnered with that team to troubleshoot the API and isolated the issue database needing a restart after a Datacenter Isolation test the day before.",
+    "answer": "Notes: Incident Response. - Analyzed Splunk logs to trace the failure and isolate it to an internal API owned by another team, ruling out issues in our own job code and deployment. - Escalated to the owning team with the specific error evidence from the logs, covering both the client layer and the Mule-soft API Gateway, so they could reproduce and diagnose the fault directly. - Partnered with that team to troubleshoot the API and isolated the issue database needing a restart after a Datacenter Isolation test the day before.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "incident",
+      "response"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2df5cf-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Incident Response",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Incident Response",
+      "What does the note Incident Response say?",
       "What about once api fix confirmed restarting database manually re?"
     ],
-    "answer": "Notes: Related. - Once the API fix was confirmed by restarting the database, I manually re-ran the failed workflow instance and validated a clean, successful completion. - Long term fix was to update the run book for this specific error to restart the database. Result: The workflow recovered and completed successfully, and the incident was formally closed. The dependency-level fix removed the underlying failure mode and improved the reliability of future scheduled runs.",
+    "answer": "Notes: Incident Response. - Once the API fix was confirmed by restarting the database, I manually re-ran the failed workflow instance and validated a clean, successful completion. - Long term fix was to update the run book for this specific error to restart the database. Result: The workflow recovered and completed successfully, and the incident was formally closed. The dependency-level fix removed the underlying failure mode and improved the reliability of future scheduled runs.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-2df5cf-4",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related sre observability topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - SRE & Observability: topic hub - Job Search: topic hub - Training/AWS/Incident Response: incident response (AWS vs real incident) - Training/Control-M/Combined Notes: Control-M workflow incident - Training/Java spring/Combined Notes: Java workflow - MTTD: detection during incidents",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "incident",
+      "response"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e17ef7-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Looking for in next job",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Looking for in next job",
+      "What does the note Looking for in next job say?",
       "What about scale changes problems last six years reliability mattered?"
     ],
-    "answer": "Notes: Related. Scale that changes the problems. Last six years where reliability mattered but volume was enterprise-sized. I want the scale where standard answers stop working. Infrastructure and AI in one job. The best work of my last two years was making model-serving infrastructure reliable. I want that core, not adjacent. Full lifecycle ownership. Write it, deploy it, carry the pager. Production Engineering appeals precisely because it refuses to split those. Engineers deeper than me. I learn fastest from people who know their stack a layer below where I know mine.",
+    "answer": "Notes: Looking for in next job. Scale that changes the problems. Last six years where reliability mattered but volume was enterprise-sized. I want the scale where standard answers stop working. Infrastructure and AI in one job. The best work of my last two years was making model-serving infrastructure reliable. I want that core, not adjacent. Full lifecycle ownership. Write it, deploy it, carry the pager. Production Engineering appeals precisely because it refuses to split those. Engineers deeper than me. I learn fastest from people who know their stack a layer below where I know mine.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "looking",
+      "for",
+      "in",
+      "next",
+      "job"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e17ef7-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Looking for in next job",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Looking for in next job",
+      "What does the note Looking for in next job say?",
       "What about real technical stretch different scale different constraints honestly?"
     ],
-    "answer": "Notes: Related. A real technical stretch — different scale, different constraints, and honestly more Linux and systems depth than my last role demanded.",
+    "answer": "Notes: Looking for in next job. A real technical stretch — different scale, different constraints, and honestly more Linux and systems depth than my last role demanded.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-e17ef7-3",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub am looking motivation?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Why am I looking: motivation answers",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "looking",
+      "for",
+      "in",
+      "next",
+      "job"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about one project m proud observability enablement initiative worked?"
     ],
-    "answer": "Notes: Related. One of the projects I'm most proud of was an observability enablement initiative I worked on with our Core Engineering team for marketing tech at JPMorgan Chase. Our team supported multiple applications, most of which were deployed on our internal Kubernetes platform, the Gaia Kubernetes Platform, or GKP. We used Jules, Jenkins and Spinnaker for the DevOps pipeline. One option was to have multiple engineers work directly with individual application teams to create and configure all the required assets, including Kubernetes configuration for Dynatrace and Splunk.",
+    "answer": "Notes: Project I’m proud of. One of the projects I'm most proud of was an observability enablement initiative I worked on with our Core Engineering team for marketing tech at JPMorgan Chase. Our team supported multiple applications, most of which were deployed on our internal Kubernetes platform, the Gaia Kubernetes Platform, or GKP. We used Jules, Jenkins and Spinnaker for the DevOps pipeline. One option was to have multiple engineers work directly with individual application teams to create and configure all the required assets, including Kubernetes configuration for Dynatrace and Splunk.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about however approach require significant repeated effort across applications?"
     ],
-    "answer": "Notes: Related. However, that approach would require significant repeated effort across applications and environments. Instead, I chose to invest more time upfront in creating reusable common code assets, configuration, and automation. The goal was to reduce the overall implementation time across all of the applications. We created a common set of base assets that could be reused, along with customizable overlays for Development, UAT, and Production environments.",
+    "answer": "Notes: Project I’m proud of. However, that approach would require significant repeated effort across applications and environments. Instead, I chose to invest more time upfront in creating reusable common code assets, configuration, and automation. The goal was to reduce the overall implementation time across all of the applications. We created a common set of base assets that could be reused, along with customizable overlays for Development, UAT, and Production environments.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about each application could then customize environment specific settings?"
     ],
-    "answer": "Notes: Related. Each application could then customize environment-specific settings, such as resource requests, limits, and other configuration requirements, without having to recreate the entire observability setup from scratch. We also created a sample project where all of these assets were already configured and used it as a reference implementation. I documented the complete process in Confluence with detailed, step-by-step instructions.",
+    "answer": "Notes: Project I’m proud of. Each application could then customize environment-specific settings, such as resource requests, limits, and other configuration requirements, without having to recreate the entire observability setup from scratch. We also created a sample project where all of these assets were already configured and used it as a reference implementation. I documented the complete process in Confluence with detailed, step-by-step instructions.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about application developers could review documentation copy reusable assets?"
     ],
-    "answer": "Notes: Related. Application developers could review the documentation, copy the reusable assets from the common reference project, and customize the Development, UAT, and Production environment configurations for their specific application needs. This approach allowed me to directly help approximately 11 teams onboard their first application. After that initial onboarding and hands-on guidance, those teams were able to use the reusable assets and documentation to implement the observability setup for their remaining applications on their own.",
+    "answer": "Notes: Project I’m proud of. Application developers could review the documentation, copy the reusable assets from the common reference project, and customize the Development, UAT, and Production environment configurations for their specific application needs. This approach allowed me to directly help approximately 11 teams onboard their first application. After that initial onboarding and hands-on guidance, those teams were able to use the reusable assets and documentation to implement the observability setup for their remaining applications on their own.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about worked closely teams questions encountered issues documented process?"
     ],
-    "answer": "Notes: Related. I worked closely with teams when they had questions or encountered issues with the documented process. One of the most rewarding outcomes was that the documentation and reusable framework were adopted beyond our own Commercial Banking pillar. Teams from other lines of business reviewed the process, discussed the approach with me, and implemented their own observability setups using the same concepts and documentation. As adoption increased, teams became more self-sufficient and required less hands-on support from our engineering team.",
+    "answer": "Notes: Project I’m proud of. I worked closely with teams when they had questions or encountered issues with the documented process. One of the most rewarding outcomes was that the documentation and reusable framework were adopted beyond our own Commercial Banking pillar. Teams from other lines of business reviewed the process, discussed the approach with me, and implemented their own observability setups using the same concepts and documentation. As adoption increased, teams became more self-sufficient and required less hands-on support from our engineering team.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-6",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about allowed onboard applications much faster scale solution without?"
     ],
-    "answer": "Notes: Related. This allowed us to onboard applications much faster and scale the solution without scaling the number of engineers supporting it. From an observability perspective, we also implemented operational monitoring and reporting. In Splunk, we configured twice-daily error reports and error-rate alerts in dynatrace. In Dynatrace, we also implemented synthetic monitoring and established SLIs and SLOs for key reliability indicators such as availability and latency.",
+    "answer": "Notes: Project I’m proud of. This allowed us to onboard applications much faster and scale the solution without scaling the number of engineers supporting it. From an observability perspective, we also implemented operational monitoring and reporting. In Splunk, we configured twice-daily error reports and error-rate alerts in dynatrace. In Dynatrace, we also implemented synthetic monitoring and established SLIs and SLOs for key reliability indicators such as availability and latency.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-7",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about we also tracked error budgets across applications configured?"
     ],
-    "answer": "Notes: Related. We also tracked error budgets across the applications and configured alerts so management could review the reliability posture and error-budget status across the application portfolio. Overall, the key trade-off was investing more engineering effort upfront to build reusable assets, common configurations, documentation, and automation. That initial investment significantly reduced repetitive work later and allowed the solution to scale across many applications, environments, teams, and even other lines of business.",
+    "answer": "Notes: Project I’m proud of. We also tracked error budgets across the applications and configured alerts so management could review the reliability posture and error-budget status across the application portfolio. Overall, the key trade-off was investing more engineering effort upfront to build reusable assets, common configurations, documentation, and automation. That initial investment significantly reduced repetitive work later and allowed the solution to scale across many applications, environments, teams, and even other lines of business.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-223c0d-8",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project I’m proud of",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project I’m proud of",
+      "What does the note Project I’m proud of say?",
       "What about good example choosing scalable engineering approach rather than?"
     ],
-    "answer": "Notes: Related. It was a good example of choosing a scalable engineering approach rather than solving the same problem repeatedly for each application. I’m proud of building something that not only improved reliability but empowered multiple teams to succeed on their own. I’d love to keep tackling problems that combine technical depth with cross-team impact or mentorship",
+    "answer": "Notes: Project I’m proud of. It was a good example of choosing a scalable engineering approach rather than solving the same problem repeatedly for each application. I’m proud of building something that not only improved reliability but empowered multiple teams to succeed on their own. I’d love to keep tackling problems that combine technical depth with cross-team impact or mentorship",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-223c0d-9",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related sre observability topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - SRE & Observability: topic hub - Job Search: topic hub - Project misstep: same observability initiative - Evidence of excellence: observability results",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "i",
+      "m",
+      "proud",
+      "of"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e00af3-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project misstep",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project misstep",
+      "What does the note Project misstep say?",
       "What about jpmorgan chase led observability enablement initiative marketing tech?"
     ],
-    "answer": "Notes: Related. At JPMorgan Chase, I led an observability enablement initiative for marketing tech applications running on our Private Cloud, Gaia Kubernetes Platform. Rather than having engineers configure Dynatrace and Splunk directly with each application team, I pushed hard for a reusable framework: common base assets, environment overlays for Dev, UAT, and Production, a reference project, and detailed Confluence documentation. In hindsight, I over-invested upfront. Building and refining the framework took considerably longer than I had estimated, which delayed visible monitoring coverage while stakeholders were waiting for results.",
+    "answer": "Notes: Project misstep. At JPMorgan Chase, I led an observability enablement initiative for marketing tech applications running on our Private Cloud, Gaia Kubernetes Platform. Rather than having engineers configure Dynatrace and Splunk directly with each application team, I pushed hard for a reusable framework: common base assets, environment overlays for Dev, UAT, and Production, a reference project, and detailed Confluence documentation. In hindsight, I over-invested upfront.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "misstep"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-e00af3-1-reflow2",
+    "topic": "Notes: Project misstep",
+    "questions": [
+      "Tell me about Project misstep",
+      "What does the note Project misstep say?",
+      "What about jpmorgan chase led observability enablement initiative marketing tech?"
+    ],
+    "answer": "Notes: Project misstep. Building and refining the framework took considerably longer than I had estimated, which delayed visible monitoring coverage while stakeholders were waiting for results.",
+    "tags": [
+      "notes",
+      "project",
+      "misstep"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-e00af3-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Project misstep",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Project misstep",
+      "What does the note Project misstep say?",
       "What about team s application landscape also varied more than?"
     ],
-    "answer": "Notes: Related. The team's application landscape also varied more than I assumed, so many teams still needed significant hands-on help adapting the templates, which reduced the payoff of standardization. The lesson I took away was to validate the approach against the team's real constraints before committing. Today, I'd start by onboarding a few applications directly, deliver early wins, and extract reusable patterns only once a real commonality emerged. In my opinion it was still a success since other Lines of business adopted this approach due to the documentation and reference implementation.",
+    "answer": "Notes: Project misstep. The team's application landscape also varied more than I assumed, so many teams still needed significant hands-on help adapting the templates, which reduced the payoff of standardization. The lesson I took away was to validate the approach against the team's real constraints before committing. Today, I'd start by onboarding a few applications directly, deliver early wins, and extract reusable patterns only once a real commonality emerged. In my opinion it was still a success since other Lines of business adopted this approach due to the documentation and reference implementation.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-e00af3-3",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related sre observability topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - SRE & Observability: topic hub - Job Search: topic hub - Project I’m proud of: same observability initiative - Training/Monitoring/Combined Notes: Dynatrace/Splunk monitoring",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "project",
+      "misstep"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-ce9c41-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Startup style experience",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Startup style experience",
+      "What does the note Startup style experience say?",
       "What about main answer 60 seconds haven t startup business?"
     ],
-    "answer": "Notes: Related. Main answer (60 seconds)** \"I haven't had a startup on my business card, but a lot of my career has worked like one: small teams, broad ownership and no one else to hand things to. At ESP I built the web framework, the REST APIs, the single-page admin UI and the backend services for our enterprise product, essentially from scratch. When the product needed to reach international markets, I rebuilt the reporting engine so it could ship in seven languages. At Corsair I was the architect for a global e-commerce platform with four contractors.",
+    "answer": "Notes: Startup style experience. Main answer (60 seconds)** \"I haven't had a startup on my business card, but a lot of my career has worked like one: small teams, broad ownership and no one else to hand things to. At ESP I built the web framework, the REST APIs, the single-page admin UI and the backend services for our enterprise product, essentially from scratch. When the product needed to reach international markets, I rebuilt the reporting engine so it could ship in seven languages. At Corsair I was the architect for a global e-commerce platform with four contractors.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "startup",
+      "style",
+      "experience"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-ce9c41-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Startup style experience",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Startup style experience",
+      "What does the note Startup style experience say?",
       "What about chose vendors designed architecture wired up payments fraud?"
     ],
-    "answer": "Notes: Related. I chose the vendors, designed the architecture, wired up payments, fraud, tax and SSO, ran QA and handled go-live. Later I delivered a full platform upgrade in five months. At First Republic I owned the bank's platform end to end, including architecture, security, edge delivery, on-call and disaster recovery, and I led the Azure migration in 8 months against a typical 12. Even now, between roles, I've built an agentic automation pipeline on Claude from scratch, simply because I wanted it to exist.",
+    "answer": "Notes: Startup style experience. I chose the vendors, designed the architecture, wired up payments, fraud, tax and SSO, ran QA and handled go-live. Later I delivered a full platform upgrade in five months. At First Republic I owned the bank's platform end to end, including architecture, security, edge delivery, on-call and disaster recovery, and I led the Azure migration in 8 months against a typical 12. Even now, between roles, I've built an agentic automation pipeline on Claude from scratch, simply because I wanted it to exist.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "startup",
+      "style",
+      "experience"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-ce9c41-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Startup style experience",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Startup style experience",
+      "What does the note Startup style experience say?",
       "What about m comfortable own problem start finish short version?"
     ],
-    "answer": "Notes: Related. I'm most comfortable when I own the problem from start to finish.\" Short version (20 seconds)** \"I've repeatedly been the person who owns everything: framework to UI at ESP, vendor selection to go-live at Corsair with a team of four contractors, and architecture to on-call at First Republic. I do my best work with broad ownership and few handoffs.\" Points to stress for a startup audience",
+    "answer": "Notes: Startup style experience. I'm most comfortable when I own the problem from start to finish.\" Short version (20 seconds)** \"I've repeatedly been the person who owns everything: framework to UI at ESP, vendor selection to go-live at Corsair with a team of four contractors, and architecture to on-call at First Republic. I do my best work with broad ownership and few handoffs.\" Points to stress for a startup audience",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "startup",
+      "style",
+      "experience"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-ce9c41-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Startup style experience",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Startup style experience",
+      "What does the note Startup style experience say?",
       "What about speed judgment 8 months instead 12 first republic?"
     ],
-    "answer": "Notes: Related. - Speed with judgment: 8 months instead of 12 at First Republic and a 5-month platform upgrade at Corsair. You move fast, but you've also written the cutover runbooks so speed doesn't turn into outages. - Range: you've worked across C#, Python, TypeScript and React, plus Terraform, Kubernetes and both AWS and Azure. You can fill gaps without waiting for a specialist. - Pragmatism: your agentic pipeline taught you when to use an LLM and when deterministic code is the better tool. That's the kind of build-vs-buy judgment startups value.",
+    "answer": "Notes: Startup style experience. - Speed with judgment: 8 months instead of 12 at First Republic and a 5-month platform upgrade at Corsair. You move fast, but you've also written the cutover runbooks so speed doesn't turn into outages. - Range: you've worked across C#, Python, TypeScript and React, plus Terraform, Kubernetes and both AWS and Azure. You can fill gaps without waiting for a specialist. - Pragmatism: your agentic pipeline taught you when to use an LLM and when deterministic code is the better tool. That's the kind of build-vs-buy judgment startups value.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "startup",
+      "style",
+      "experience"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-ce9c41-5",
-    "topic": "Notes: Related",
+    "topic": "Notes: Startup style experience",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Startup style experience",
+      "What does the note Startup style experience say?",
       "What about answering follow up won t miss big company?"
     ],
-    "answer": "Notes: Related. Answering the follow-up \"Won't you miss big-company structure?\" \"The structure at JPMorgan taught me discipline, like audit trails and change control. I'll bring the useful parts, such as good runbooks and SLOs, and leave the bureaucracy behind. I'm happy to be the one who sets up the first on-call rotation or the first CI pipeline.\" One caution: don't describe ESP or Corsair as startups unless you're sure they were. Interviewers may look them up, and calling them \"startup-style\" is accurate and still gets the point across.",
+    "answer": "Notes: Startup style experience. Answering the follow-up \"Won't you miss big-company structure?\" \"The structure at JPMorgan taught me discipline, like audit trails and change control. I'll bring the useful parts, such as good runbooks and SLOs, and leave the bureaucracy behind. I'm happy to be the one who sets up the first on-call rotation or the first CI pipeline.\" One caution: don't describe ESP or Corsair as startups unless you're sure they were. Interviewers may look them up, and calling them \"startup-style\" is accurate and still gets the point across.",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-ce9c41-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub elevator pitch full?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Elevator Pitch - Full-Stack: ESP full-stack work",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "startup",
+      "style",
+      "experience"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2a8038-1",
-    "topic": "Notes: Related",
+    "topic": "Notes: Staying current in AI Advances",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Staying current in AI Advances",
+      "What does the note Staying current in AI Advances say?",
       "What about keep current two ways structured training building things?"
     ],
-    "answer": "Notes: Related. \"I keep current in two ways: structured training and building things myself. At JPMorgan Chase I completed Microsoft's GitHub Copilot training through the internal program. I use Copilot every day on infrastructure code like Terraform, CloudFormation, Kubernetes manifests and Python automation. It speeds up the boilerplate. I still review everything it produces, especially IAM policies and network rules, because that's where a confident but wrong suggestion does real damage. Outside work, I learn the most by building with Claude. Three trends have changed how I work. First, agentic workflows.",
+    "answer": "Notes: Staying current in AI Advances. \"I keep current in two ways: structured training and building things myself. At JPMorgan Chase I completed Microsoft's GitHub Copilot training through the internal program. I use Copilot every day on infrastructure code like Terraform, CloudFormation, Kubernetes manifests and Python automation. It speeds up the boilerplate. I still review everything it produces, especially IAM policies and network rules, because that's where a confident but wrong suggestion does real damage. Outside work, I learn the most by building with Claude. Three trends have changed how I work. First, agentic workflows.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "staying",
+      "current",
+      "in",
+      "ai",
+      "advances"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2a8038-2",
-    "topic": "Notes: Related",
+    "topic": "Notes: Staying current in AI Advances",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Staying current in AI Advances",
+      "What does the note Staying current in AI Advances say?",
       "What about ai doesn t just answer question plans carries?"
     ],
-    "answer": "Notes: Related. The AI doesn't just answer a question. It plans and carries out several steps. Second, the Model Context Protocol, or MCP. It's a standard way to connect a model to real tools and data. Third, persistent project memory, so context carries over between sessions. For example, I built a pipeline that uses an MCP connector to scrape LinkedIn job postings, score each role against my resume, and generate a tailored cover letter as a Word document. Running something real like that shows me the practical limits quickly: where the model hallucinates, where it needs guardrails, and where a person still has to check the output.",
+    "answer": "Notes: Staying current in AI Advances. The AI doesn't just answer a question. It plans and carries out several steps. Second, the Model Context Protocol, or MCP. It's a standard way to connect a model to real tools and data. Third, persistent project memory, so context carries over between sessions. For example, I built a pipeline that uses an MCP connector to scrape LinkedIn job postings, score each role against my resume, and generate a tailored cover letter as a Word document.",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "staying",
+      "current",
+      "in",
+      "ai",
+      "advances"
+    ],
+    "link": "#skills",
+    "source": "vault"
+  },
+  {
+    "id": "note-related-2a8038-2-reflow2",
+    "topic": "Notes: Staying current in AI Advances",
+    "questions": [
+      "Tell me about Staying current in AI Advances",
+      "What does the note Staying current in AI Advances say?",
+      "What about ai doesn t just answer question plans carries?"
+    ],
+    "answer": "Notes: Staying current in AI Advances. Running something real like that shows me the practical limits quickly: where the model hallucinates, where it needs guardrails, and where a person still has to check the output.",
+    "tags": [
+      "notes",
+      "staying",
+      "current",
+      "in",
+      "ai",
+      "advances"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2a8038-3",
-    "topic": "Notes: Related",
+    "topic": "Notes: Staying current in AI Advances",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Staying current in AI Advances",
+      "What does the note Staying current in AI Advances say?",
       "What about s same mindset bring reliability work fill rest?"
     ],
-    "answer": "Notes: Related. That's the same mindset I bring to reliability work. I fill in the rest with online courses, plus the engineering blogs and release notes for the platforms I run.\" Tips for delivering it:",
+    "answer": "Notes: Staying current in AI Advances. That's the same mindset I bring to reliability work. I fill in the rest with online courses, plus the engineering blogs and release notes for the platforms I run.\" Tips for delivering it:",
     "tags": [
-      "related",
-      "notes"
+      "notes",
+      "staying",
+      "current",
+      "in",
+      "ai",
+      "advances"
     ],
     "link": "#skills",
     "source": "vault"
   },
   {
     "id": "note-related-2a8038-4",
-    "topic": "Notes: Related",
+    "topic": "Notes: Staying current in AI Advances",
     "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
+      "Tell me about Staying current in AI Advances",
+      "What does the note Staying current in AI Advances say?",
       "What about build sure go one level deeper mcp naming?"
     ],
-    "answer": "Notes: Related. - Make sure you can go one level deeper on MCP. Naming it marks you as current, but recruiters may follow up. A simple way to explain it: \"It's like a standard API contract between an LLM and external tools, so the model can call them safely.\" - Keep the college-applications example in reserve. Your saved answer mentions it, but it's personal. Use it only if the conversation turns casual. - For an SRE or platform role, an optional closing line can help: \"I'm especially interested in applying the same approach to on-call, like AI-assisted triage and runbook automation, with humans approving the actions.\"",
+    "answer": "Notes: Staying current in AI Advances. - Make sure you can go one level deeper on MCP. Naming it marks you as current, but recruiters may follow up. A simple way to explain it: \"It's like a standard API contract between an LLM and external tools, so the model can call them safely.\" - Keep the college-applications example in reserve. Your saved answer mentions it, but it's personal. Use it only if the conversation turns casual. - For an SRE or platform role, an optional closing line can help: \"I'm especially interested in applying the same approach to on-call, like AI-assisted triage and runbook automation, with humans approving the actions.\"",
     "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-related-2a8038-5",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related ai ml topic hub work search topic?"
-    ],
-    "answer": "Notes: Related. Related - AI & ML: topic hub - Job Search: topic hub - AI Tools in engineering workflows: Copilot usage - Git Hub Co-Pilot: Copilot training",
-    "tags": [
-      "related",
-      "notes"
+      "notes",
+      "staying",
+      "current",
+      "in",
+      "ai",
+      "advances"
     ],
     "link": "#skills",
     "source": "vault"
@@ -4293,22 +4300,6 @@
     "source": "vault"
   },
   {
-    "id": "note-related-5fb5bf-6",
-    "topic": "Notes: Related",
-    "questions": [
-      "Tell me about Related",
-      "What does the note Related say?",
-      "What about related work search topic hub looking next work?"
-    ],
-    "answer": "Notes: Related. Related - Job Search: topic hub - Looking for in next job: motivation answers",
-    "tags": [
-      "related",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
     "id": "note-cri-cni-and-csi-in-kubernetes-163876-1",
     "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
     "questions": [
@@ -4355,25 +4346,6 @@
       "What about cilium interesting because build ebpf policy enforcement observability?"
     ],
     "answer": "Notes: CRI, CNI, and CSI in Kubernetes. Cilium is interesting because it builds on eBPF for policy enforcement and observability on top of plain pod networking. On CSI: before it existed, volume plugins were compiled into Kubernetes itself, which meant every new storage system needed a core change. CSI moved that out a CSI driver registers itself, and the external-provisioner and external-attacher sidecars handle the CreateVolume and ControllerPublishVolume calls against the driver's gRPC endpoint. That split is why you see things like the EBS CSI driver as a separate install.",
-    "tags": [
-      "cri",
-      "cni",
-      "csi",
-      "kubernetes",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-cri-cni-and-csi-in-kubernetes-163876-4",
-    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
-    "questions": [
-      "Tell me about CRI, CNI, and CSI in Kubernetes",
-      "What does the note CRI, CNI, and CSI in Kubernetes say?",
-      "What about related kubernetes topic hub training kubernetes combined notes?"
-    ],
-    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. Related - Kubernetes: topic hub - Training/Kubernetes/Combined Notes: K8s architecture",
     "tags": [
       "cri",
       "cni",
@@ -4493,24 +4465,6 @@
     "source": "vault"
   },
   {
-    "id": "note-cache-expiration-strategies-7c1e62-7",
-    "topic": "Notes: Cache expiration strategies",
-    "questions": [
-      "Tell me about Cache expiration strategies",
-      "What does the note Cache expiration strategies say?",
-      "What about related sre observability topic hub amazon elasticache cache?"
-    ],
-    "answer": "Notes: Cache expiration strategies. Related - SRE & Observability: topic hub - Amazon ElastiCache: cache TTL strategies - Amazon DAX: caching - Data access pattern changes for high traffic: cache-first reads - Akamai Pragma headers: CDN caching",
-    "tags": [
-      "cache",
-      "expiration",
-      "strategies",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
     "id": "note-forward-proxy-vs-reverse-proxy-1b1f09-1",
     "topic": "Notes: Forward proxy vs reverse proxy",
     "questions": [
@@ -4538,25 +4492,6 @@
       "What about reverse proxy handy things like load balancing across?"
     ],
     "answer": "Notes: Forward proxy vs reverse proxy. Reverse proxy is handy for things like load balancing across multiple servers, handling SSL termination, caching, and hiding your internal architecture for security. Examples are HAProxy or ngnix",
-    "tags": [
-      "forward",
-      "proxy",
-      "vs",
-      "reverse",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-forward-proxy-vs-reverse-proxy-1b1f09-3",
-    "topic": "Notes: Forward proxy vs reverse proxy",
-    "questions": [
-      "Tell me about Forward proxy vs reverse proxy",
-      "What does the note Forward proxy vs reverse proxy say?",
-      "What about related aws networking topic hub aws elb lb?"
-    ],
-    "answer": "Notes: Forward proxy vs reverse proxy. Related - AWS Networking: topic hub - AWS ELB: LB as reverse proxy - Istio: Envoy sidecar proxy",
     "tags": [
       "forward",
       "proxy",
@@ -4746,7 +4681,7 @@
       "What does the note Kubernetes horizontal pod autoscaling say?",
       "What about layering hpa adds pods if don t fit?"
     ],
-    "answer": "Notes: Kubernetes horizontal pod autoscaling. - Layering: the HPA adds pods, and if they don't fit, they go Pending and Karpenter adds nodes. Scale-up time = metric scrape interval (~15s) + HPA sync (15s) + node launch + image pull + readiness. Readiness probes and slow-starting JVMs matter here. - Kafka consumers: CPU doesn't track consumer lag well. Use KEDA, which creates and manages an HPA behind the scenes, with a lag trigger. Cap maxReplicas at the partition count, since pods beyond that sit idle. - Debugging: kubectl describe hpa payments-api shows current vs.",
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. - Layering: the HPA adds pods, and if they don't fit, they go Pending and Karpenter adds nodes. Scale-up time = metric scrape interval (~15s) + HPA sync (15s) + node launch + image pull + readiness. Readiness probes and slow-starting JVMs matter here. - Kafka consumers: CPU doesn't track consumer lag well. Use KEDA, which creates and manages an HPA behind the scenes, with a lag trigger. Cap maxReplicas at the partition count, since pods beyond that sit idle.",
     "tags": [
       "kubernetes",
       "horizontal",
@@ -4765,26 +4700,7 @@
       "What does the note Kubernetes horizontal pod autoscaling say?",
       "What about target values conditions abletoscale scalingactive scalinglimited recent scaling?"
     ],
-    "answer": "Notes: Kubernetes horizontal pod autoscaling. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events. The equivalent KEDA ScaledObject for MSK consumer lag would fit Varo's stack well, if you want that next.",
-    "tags": [
-      "kubernetes",
-      "horizontal",
-      "pod",
-      "autoscaling",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-kubernetes-horizontal-pod-autoscaling-a340f9-12",
-    "topic": "Notes: Kubernetes horizontal pod autoscaling",
-    "questions": [
-      "Tell me about Kubernetes horizontal pod autoscaling",
-      "What does the note Kubernetes horizontal pod autoscaling say?",
-      "What about related kubernetes topic hub aws auto scaling aws?"
-    ],
-    "answer": "Notes: Kubernetes horizontal pod autoscaling. Related - Kubernetes: topic hub - AWS Auto Scaling: AWS vs K8s autoscaling - Karpenter: pod vs node autoscaling - Capacity Planning: requests/limits drive HPA",
+    "answer": "Notes: Kubernetes horizontal pod autoscaling. - Debugging: kubectl describe hpa payments-api shows current vs. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events.",
     "tags": [
       "kubernetes",
       "horizontal",
@@ -4860,22 +4776,6 @@
     "source": "vault"
   },
   {
-    "id": "note-karpenter-55332e-5",
-    "topic": "Notes: Karpenter",
-    "questions": [
-      "Tell me about Karpenter",
-      "What does the note Karpenter say?",
-      "What about related aws topic hub kubernetes topic hub amazon?"
-    ],
-    "answer": "Notes: Karpenter. Related - AWS: topic hub - Kubernetes: topic hub - Amazon EC2: launches EC2 nodes - Amazon EKS: EKS node autoscaler - HPA - autoscaling for kubernetes: pod vs node autoscaling - Taints & tolerations: node pools & taints",
-    "tags": [
-      "karpenter",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
     "id": "note-rto-vs-rpo-e95e01-1",
     "topic": "Notes: RTO vs RPO",
     "questions": [
@@ -4920,24 +4820,6 @@
       "What about if rto slo weren t set together one?"
     ],
     "answer": "Notes: RTO vs RPO. If the RTO and SLO weren't set together, one disaster can quietly violate your reliability commitments. RTO covers recovery from catastrophic failure, while the SLO covers everyday reliability, and the two need to be consistent.",
-    "tags": [
-      "rto",
-      "vs",
-      "rpo",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
-    "id": "note-rto-vs-rpo-e95e01-4",
-    "topic": "Notes: RTO vs RPO",
-    "questions": [
-      "Tell me about RTO vs RPO",
-      "What does the note RTO vs RPO say?",
-      "What about related sre observability topic hub aws backup backup?"
-    ],
-    "answer": "Notes: RTO vs RPO. Related - SRE & Observability: topic hub - AWS Backup: backup strategy vs RPO - FMEA: risk & recovery - Training/Resiliency Testing/Combined Notes: DR testing - Benefits: availability/SLA",
     "tags": [
       "rto",
       "vs",
@@ -5050,23 +4932,6 @@
     "source": "vault"
   },
   {
-    "id": "note-sast-and-dast-2276e1-7",
-    "topic": "Notes: SAST and DAST",
-    "questions": [
-      "Tell me about SAST and DAST",
-      "What does the note SAST and DAST say?",
-      "What about related devops ci cd topic hub owasp top?"
-    ],
-    "answer": "Notes: SAST and DAST. Related - DevOps & CI-CD: topic hub - OWASP top 10 2023: finding OWASP vulnerabilities - Improving Secure CI-CD: security gates in pipelines - AWS Inspector: vulnerability scanning",
-    "tags": [
-      "sast",
-      "dast",
-      "notes"
-    ],
-    "link": "#skills",
-    "source": "vault"
-  },
-  {
     "id": "note-strong-consistency-vs-eventual-consisten-21d86e",
     "topic": "Notes: Strong consistency vs eventual consistency",
     "questions": [
@@ -5086,22 +4951,121 @@
     "source": "vault"
   },
   {
-    "id": "note-strong-consistency-vs-eventual-consisten-21d86e-2",
+    "id": "public-summary-cache",
+    "topic": "Notes: Cache expiration strategies",
+    "questions": [
+      "Cache expiration strategies",
+      "Tell me about Cache expiration strategies"
+    ],
+    "tags": [
+      "notes",
+      "Cache expiration strategies"
+    ],
+    "answer": "Notes: Cache expiration strategies. TTL (Time-to-Live): Entry expires after a fixed time. Sliding expiration: Expiration timer resets whenever the item is accessed. Absolute expiration: Entry expires at a specific time regardless of access. LRU eviction: Least-recently-used entries removed when cache is full; Doesn’t guarantee freshness.",
+    "link": "#skills",
+    "source": "vault",
+    "routeQuestions": [
+      "Cache expiration strategies"
+    ],
+    "publicSourceIds": [
+      "note-cache-expiration-strategies-7c1e62-2"
+    ]
+  },
+  {
+    "id": "public-summary-sast",
+    "topic": "Notes: SAST and DAST",
+    "questions": [
+      "SAST DAST",
+      "SAST vs DAST",
+      "SAST and DAST",
+      "Tell me about SAST and DAST"
+    ],
+    "tags": [
+      "notes",
+      "SAST DAST",
+      "SAST vs DAST",
+      "SAST and DAST"
+    ],
+    "answer": "Notes: SAST and DAST. SAST and DAST are two complementary ways of finding security vulnerabilities in an application. SAST (Static Application Security Testing) scans the source code, bytecode or binaries without running them. It's \"white-box\" testing: it reads the code the way a reviewer would. DAST (Dynamic Application Security Testing) attacks the running application from the outside, like a real attacker would, with no access to the code. It's \"black-box\" testing.",
+    "link": "#skills",
+    "source": "vault",
+    "routeQuestions": [
+      "SAST DAST",
+      "SAST vs DAST",
+      "SAST and DAST"
+    ],
+    "publicSourceIds": [
+      "note-sast-and-dast-2276e1",
+      "note-sast-and-dast-2276e1-3"
+    ]
+  },
+  {
+    "id": "public-summary-cri",
+    "topic": "Notes: CRI, CNI, and CSI in Kubernetes",
+    "questions": [
+      "CRI CNI CSI",
+      "CRI CNI and CSI in Kubernetes",
+      "Tell me about CRI, CNI, and CSI in Kubernetes"
+    ],
+    "tags": [
+      "notes",
+      "CRI CNI CSI",
+      "CRI CNI and CSI in Kubernetes"
+    ],
+    "answer": "Notes: CRI, CNI, and CSI in Kubernetes. CRI is the Container Runtime Interface it defines how the kubelet talks to a container runtime like containerd or CRI-O to start and stop containers. CNI is the Container Network Interface plugins that wire up pod networking, giving each pod its own IP and connecting them across nodes. CSI is the Container Storage Interface, the equivalent for storage: how volumes get provisioned and attached to pods. All three are plugin interfaces so the core doesn't hardcode any one runtime, network, or storage vendor. On CRI: the kubelet doesn't embed runtime logic anymore.",
+    "link": "#skills",
+    "source": "vault",
+    "routeQuestions": [
+      "CRI CNI CSI",
+      "CRI CNI and CSI in Kubernetes"
+    ],
+    "publicSourceIds": [
+      "note-cri-cni-and-csi-in-kubernetes-163876-1"
+    ]
+  },
+  {
+    "id": "public-summary-proxy",
+    "topic": "Notes: Forward proxy vs reverse proxy",
+    "questions": [
+      "Forward proxy vs reverse proxy",
+      "Tell me about Forward proxy vs reverse proxy"
+    ],
+    "tags": [
+      "notes",
+      "Forward proxy vs reverse proxy"
+    ],
+    "answer": "Notes: Forward proxy vs reverse proxy. Key difference is which side they’re protecting. Forward Proxy sits in front of clients, it’s used when a group of users, say inside a company network, need to reach the internet, and the proxy forwards their requests out on their behalf. The outside world sees the proxy, not the individual users. Reverse Proxy, on the other hand, sits in front of servers. It protects and manages the server side, hiding the backend infrastructure from the clients making requests. So forward proxy anonymizes and controls outbound traffic for clients, reverse proxy manages and distributes inbound traffic for servers.",
+    "link": "#skills",
+    "source": "vault",
+    "routeQuestions": [
+      "Forward proxy vs reverse proxy"
+    ],
+    "publicSourceIds": [
+      "note-forward-proxy-vs-reverse-proxy-1b1f09-1"
+    ]
+  },
+  {
+    "id": "public-summary-consistency",
     "topic": "Notes: Strong consistency vs eventual consistency",
     "questions": [
-      "Tell me about Strong consistency vs eventual consistency",
-      "What does the note Strong consistency vs eventual consistency say?",
-      "What about related cloud computing topic hub amazon dynamodb read?"
+      "Strong vs eventual consistency",
+      "Strong consistency vs eventual consistency",
+      "Tell me about Strong consistency vs eventual consistency"
     ],
-    "answer": "Notes: Strong consistency vs eventual consistency. Related - Cloud Computing: topic hub - Amazon DynamoDB: read consistency options - Data access pattern changes for high traffic: replica consistency trade-off",
     "tags": [
-      "strong",
-      "consistency",
-      "vs",
-      "eventual",
-      "notes"
+      "notes",
+      "Strong vs eventual consistency",
+      "Strong consistency vs eventual consistency"
     ],
+    "answer": "Notes: Strong consistency vs eventual consistency. Strong consistency means that once a write completes, any later read will immediately see that value. So, no surprises. Everyone sees the latest write right away. Eventual consistency is looser. If no new writes happen, replicas will eventually converge to the same value, but in the meantime, reads might return older data. So, strong consistency favors correctness and predictability, while eventual consistency favors availability and performance, accepting temporary inconsistency.",
     "link": "#skills",
-    "source": "vault"
+    "source": "vault",
+    "routeQuestions": [
+      "Strong vs eventual consistency",
+      "Strong consistency vs eventual consistency"
+    ],
+    "publicSourceIds": [
+      "note-strong-consistency-vs-eventual-consisten-21d86e"
+    ]
   }
 ]

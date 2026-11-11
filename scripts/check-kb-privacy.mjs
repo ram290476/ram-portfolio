@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
 import { loadDenylist, scrubReasons } from "./vault-kb.mjs";
+import { isExcludedKnowledge } from "../assets/chat/chat.js";
 
 const kbPath = process.argv[2];
 const denylistPath = process.argv[3];
@@ -27,6 +28,11 @@ const denylist = loadDenylist(denylistPath);
 let failed = 0;
 let checked = 0;
 for (const entry of entries) {
+  if (isExcludedKnowledge(entry)) {
+    failed += 1;
+    console.error("An excluded source or project was found in the knowledge base.");
+    continue;
+  }
   // Hand-written entries may include public contact details. The second scrub
   // applies to vault-sourced passages only.
   if (entry?.source !== "vault") continue;
