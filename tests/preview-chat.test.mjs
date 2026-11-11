@@ -369,6 +369,15 @@ test("every Contact link opens in a new tab with noopener noreferrer", () => {
   assert.match(contact[1], /href="https:\/\/www\.linkedin\.com\/in\/vellamsetti\/"/);
   assert.match(contact[1], /href="https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=San\+Ramon%2C\+CA"/);
   assert.match(contact[1], /href="https:\/\/cal\.com\/ramvellamsetti\/30min"/);
+  assert.match(
+    contact[1],
+    /<a href="assets\/resume\.pdf" download="resume\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download latest resume\s*<\/a>/
+  );
+  assert.match(
+    contact[1],
+    /<a href="assets\/Ram_Career_Overview_Lite\.pdf" download="experience-overview\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download experience overview\s*<\/a>/
+  );
+  assert.doesNotMatch(contact[1], /download="(?!resume\.pdf|experience-overview\.pdf)[^"]+"/);
 });
 
 test("homepage and preview redirect use the generated photo favicons", () => {
