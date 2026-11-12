@@ -184,8 +184,10 @@ test("greetings do not invent a biography", () => {
   assert.equal(replyTo("Thank you", retrieve).kind, "greeting");
 });
 
-test("chat stays on this origin, with no credentials or saved transcript", () => {
+test("chat stays on this origin, with no credentials, and history stays in this browser", () => {
   assert.doesNotMatch(chatJS, /api[_-]?key|localStorage|sessionStorage|sendBeacon|innerHTML|\beval\(/i);
+  assert.match(chatJS, /import \{ createHistory, HISTORY_CAP \} from "\.\/history\.js"/);
+  assert.equal((chatJS.match(/fetch\(/g) || []).length, 1);
   assert.match(chatJS, /fetch\(new URL\("kb\.json", import\.meta\.url\)/);
   assert.match(chatJS, /credentials: "omit"/);
   assert.match(chatJS, /showModal\(\)/);

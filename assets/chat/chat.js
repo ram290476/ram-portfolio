@@ -1,3 +1,5 @@
+import { createHistory, HISTORY_CAP } from "./history.js";
+
 const STOP = new Set("a an and are as at be been by can did do does for from had has have he her him his how i in into is it me my of on or please she show tell that the their them there these they this to us was were what when where which who why will with would you your about since most".split(" "));
 const SYNONYMS = {
   built: "build", builds: "build", made: "build", make: "build", projects: "project",
@@ -123,6 +125,10 @@ function setupWidget() {
   let pending = null;
   let retrieve = null;
   let busy = false;
+  const history = createHistory();
+  let restored = false;
+  const clearButton = root.querySelector("[data-chat-clear]");
+  const GREETING = "Hello. I’m a small portfolio guide, not a generative model. Ask about Ram’s experience, projects, or skills. I only use the public page.";
   async function load() {
     if (retrieve) return retrieve;
     if (!pending) {
@@ -156,8 +162,26 @@ function setupWidget() {
       }
     }
     log.append(row);
-    while (log.children.length > 40) log.firstElementChild.remove();
+    while (log.children.length > 2 * HISTORY_CAP + 1) log.firstElementChild.remove();
     log.scrollTop = log.scrollHeight;
+  }
+  function restoreHistory() {
+    if (restored) return;
+    restored = true;
+    const earlier = history.messages();
+    for (const message of earlier) {
+      addMessage(message.question, "visitor");
+      addMessage(message.answer, "guide", message.link);
+    }
+    if (earlier.length) status.textContent = `Showing ${earlier.length} earlier ${earlier.length === 1 ? "question" : "questions"} saved in this browser.`;
+  }
+  function clearHistory() {
+    history.clear();
+    restored = true;
+    log.replaceChildren();
+    addMessage(GREETING, "guide");
+    status.textContent = "Chat history cleared from this browser.";
+    input.focus();
   }
   function close() {
     dialog.close();
@@ -174,6 +198,7 @@ function setupWidget() {
     if (dialog.open) return;
     dialog.showModal();
     launcher.setAttribute("aria-expanded", "true");
+    restoreHistory();
     input.focus();
     load().catch(() => { status.textContent = "The guide could not load. Send a question to retry, or use the page sections."; });
   });
@@ -199,6 +224,7 @@ function setupWidget() {
     try {
       const answer = isSensitive(text) ? replyTo(text, () => null) : replyTo(text, await load());
       addMessage(answer.answer, "guide", answer.link);
+      history.append({ question: text, answer: answer.answer, sources: answer.topic ? [answer.topic] : [], link: answer.link });
       status.textContent = "";
     } catch {
       addMessage("The guide could not load right now. Please try again, or read the sections on this page.", "guide");
@@ -212,6 +238,7 @@ function setupWidget() {
   }
   form.addEventListener("submit", (event) => { event.preventDefault(); ask(input.value); });
   root.querySelectorAll("[data-chat-question]").forEach((chip) => chip.addEventListener("click", () => ask(chip.textContent)));
-  addMessage("Hello. I’m a small portfolio guide, not a generative model. Ask about Ram’s experience, projects, or skills. I only use the public page.", "guide");
+  if (clearButton) clearButton.addEventListener("click", clearHistory);
+  addMessage(GREETING, "guide");
   launcher.hidden = false;
 }
