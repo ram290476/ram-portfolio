@@ -518,8 +518,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 .cred-card .exp-date { padding-top: 0; }
 .cred-card .exp-body { padding-bottom: 0; border-bottom: none; margin: 0; }
 .cred-card--dates-bottom .exp-date { margin-top: auto; }
-.cred-card--dates-bottom .cred-media { background: #fff; }
-.cred-card--dates-bottom .cred-media img {
+.cred-card--natural-logo .cred-media { background: #fff; }
+.cred-card--natural-logo .cred-media img {
   width: auto;
   height: auto;
   max-width: 100%;
