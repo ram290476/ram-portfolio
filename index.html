@@ -693,7 +693,7 @@
 
     <section id="work-projects" aria-labelledby="work-heading">
       <h2 id="work-heading" class="section-h">Work projects</h2>
-      <div class="projects">
+      <div class="projects" id="work-projects-grid">
         <article class="card">
           <p class="tag">JPMorgan Chase · Jul 2023 – Jan 2026</p>
           <h3>Kubernetes observability standard</h3>
@@ -731,11 +731,12 @@
           <ul class="pills"><li>ASP.NET</li><li>C#</li><li>REST</li></ul>
         </article>
       </div>
+      <button type="button" class="projects-toggle" aria-expanded="false" aria-controls="work-projects-grid">Show more</button>
     </section>
 
     <section id="personal-projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading" class="section-h">Personal projects</h2>
-      <div class="projects">
+      <div class="projects" id="personal-projects-grid">
         <article class="card">
           <p class="tag">AWS</p>
           <h3>Investor Dashboard</h3>
@@ -802,6 +803,7 @@
           <p class="pull">“Secure by default, short-lived tokens.”</p>
         </article>
       </div>
+      <button type="button" class="projects-toggle" aria-expanded="false" aria-controls="personal-projects-grid">Show more</button>
       <p class="aside-note">In progress, and not public yet: GitOps with Argo CD on a k3s cluster, and OpenTelemetry traces and metrics into a Grafana/Tempo stack.</p>
     </section>
 
