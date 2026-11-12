@@ -207,3 +207,163 @@ test("reduced motion turns the Experience and heatmap animations off", { timeout
   assert.equal(await page.locator("#heatmap-dialog").evaluate((d) => getComputedStyle(d).animationName), "none");
   await context.close();
 });
+
+// Reads the heatmap rows in order: skill name, years used, latest year, and the group header above it.
+function heatmapRows(page) {
+  return page.evaluate(() => {
+    const years = [...document.querySelectorAll("#heatmap-grid .hm-yr")].length;
+    const rows = [];
+    let group = null;
+    const kids = [...document.getElementById("heatmap-grid").children];
+    kids.forEach((node, i) => {
+      if (node.classList.contains("hm-group")) group = node.textContent.trim();
+      if (!node.classList.contains("hm-skill")) return;
+      const cells = kids.slice(i + 1, i + 1 + years);
+      const used = cells.map((c, j) => (c.classList.contains("hm-l0") ? -1 : j)).filter((j) => j >= 0);
+      rows.push({ skill: node.dataset.skill, years: used.length, last: used[used.length - 1], group });
+    });
+    return rows;
+  });
+}
+
+const pressed = (page) => page.locator(".hm-sort-btn").evaluateAll((els) => els.map((b) => b.dataset.sort + "=" + b.getAttribute("aria-pressed")));
+
+test("heatmap groups and sorts by Most used, By category, A–Z and Most recent, with Show all", { timeout: 60_000 }, async () => {
+  const { context, page, errors } = await openPage();
+  await page.click("#heatmap-open");
+  assert.deepEqual(await pressed(page), ["used=true", "category=false", "az=false", "recent=false"]);
+  assert.equal(await page.locator(".hm-sort").getAttribute("role"), "group");
+
+  for (const all of [false, true]) {
+    if (all) await page.click("#heatmap-toggle");
+    const expected = all ? 63 : 14;
+
+    await page.click('.hm-sort-btn[data-sort="used"]');
+    let rows = await heatmapRows(page);
+    assert.equal(rows.length, expected);
+    for (let i = 1; i < rows.length; i++) assert.ok(rows[i - 1].years >= rows[i].years, `Most used order at ${rows[i].skill}`);
+    assert.equal(await page.locator("#heatmap-grid .hm-group").count(), 0);
+    const mostUsed = rows.map((r) => r.skill).sort();
+
+    await page.click('.hm-sort-btn[data-sort="category"]');
+    assert.deepEqual(await pressed(page), ["used=false", "category=true", "az=false", "recent=false"]);
+    rows = await heatmapRows(page);
+    assert.equal(rows.length, expected);
+    assert.deepEqual(rows.map((r) => r.skill).sort(), mostUsed, "By category groups the same skills as Most used");
+    const siteGroups = await page.locator("#skills .skill-grid h3").evaluateAll((hs) => hs.map((h) => h.textContent.replace(/\s+/g, " ").trim()));
+    const allowed = new Set([...siteGroups, "Developer tools", "Integrations"]);
+    const headers = await page.locator("#heatmap-grid .hm-group").allInnerTexts();
+    assert.ok(headers.length >= 5);
+    assert.equal(new Set(headers.map((h) => h.toLowerCase())).size, headers.length, "each group appears once");
+    for (const r of rows) assert.ok(allowed.has(r.group), `${r.skill} is in a known group, got ${r.group}`);
+    const order = [...allowed];
+    for (let i = 1; i < rows.length; i++) assert.ok(order.indexOf(rows[i - 1].group) <= order.indexOf(rows[i].group), "groups follow the Skills section order");
+    // A skill listed in the Skills section keeps that section's group.
+    assert.equal(rows.find((r) => r.skill === "C#").group, "Languages");
+    if (all) assert.equal(rows.find((r) => r.skill === "Docker").group, "Infrastructure & containers");
+
+    await page.click('.hm-sort-btn[data-sort="az"]');
+    rows = await heatmapRows(page);
+    const names = rows.map((r) => r.skill);
+    assert.deepEqual(names, [...names].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" })));
+
+    await page.click('.hm-sort-btn[data-sort="recent"]');
+    rows = await heatmapRows(page);
+    assert.equal(rows.length, expected);
+    for (let i = 1; i < rows.length; i++) assert.ok(rows[i - 1].last >= rows[i].last, `Most recent order at ${rows[i].skill}`);
+  }
+  assert.deepEqual(errors, []);
+  await context.close();
+});
+
+test("the grouping control works from the keyboard and is remembered for the session", { timeout: 60_000 }, async () => {
+  const { context, page } = await openPage();
+  await page.click("#heatmap-open");
+  await page.focus('.hm-sort-btn[data-sort="used"]');
+  await page.keyboard.press("ArrowRight");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "category");
+  await page.keyboard.press("End");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "recent");
+  await page.keyboard.press("ArrowRight");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "used");
+  await page.keyboard.press("ArrowLeft");
+  await page.keyboard.press("ArrowLeft");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "az");
+  await page.keyboard.press("Enter");
+  assert.deepEqual(await pressed(page), ["used=false", "category=false", "az=true", "recent=false"]);
+  await page.keyboard.press("Escape");
+
+  await page.reload({ waitUntil: "networkidle" });
+  await page.click("#heatmap-open");
+  assert.deepEqual(await pressed(page), ["used=false", "category=false", "az=true", "recent=false"]);
+  const first = await heatmapRows(page);
+  assert.equal(first[0].skill, [...first.map((r) => r.skill)].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))[0]);
+
+  // A new session starts on Most used again.
+  const fresh = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const other = await fresh.newPage();
+  await other.goto(`${base}/`, { waitUntil: "networkidle" });
+  await other.click("#heatmap-open");
+  assert.deepEqual(await pressed(other), ["used=true", "category=false", "az=false", "recent=false"]);
+  await fresh.close();
+  await context.close();
+});
+
+test("heatmap colors come from each theme with a readable scale, including High contrast", { timeout: 60_000 }, async () => {
+  const { context, page } = await openPage();
+  const themes = ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"];
+  const seen = new Set();
+  for (const theme of themes) {
+    await page.evaluate((t) => document.documentElement.setAttribute("data-theme", t), theme);
+    await page.click("#heatmap-open");
+    await page.click('.hm-sort-btn[data-sort="category"]');
+    const m = await page.evaluate(() => {
+      const ctx = document.createElement("canvas").getContext("2d");
+      const rgb = (c) => { ctx.clearRect(0, 0, 1, 1); ctx.fillStyle = c; ctx.fillRect(0, 0, 1, 1); return [...ctx.getImageData(0, 0, 1, 1).data].slice(0, 3); };
+      const lum = (c) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; const [r, g, b] = rgb(c); return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+      const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+      const cs = (sel) => getComputedStyle(document.querySelector(sel));
+      const bg = cs("#heatmap-scroll").backgroundColor;
+      const l0 = cs("#heatmap-grid .hm-l0").backgroundColor;
+      const l1 = cs("#heatmap-grid .hm-l1").backgroundColor;
+      const l2 = cs("#heatmap-grid .hm-l2").backgroundColor;
+      const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+      return {
+        l2, accent: rgb(accent).join(","), l2rgb: rgb(l2).join(","),
+        legend: cs(".hm-legend .hm-l2").backgroundColor === l2 && cs(".hm-legend .hm-l1").backgroundColor === l1,
+        l2l0: ratio(l2, l0), l1l0: ratio(l1, l0), l2l1: ratio(l2, l1),
+        group: ratio(cs("#heatmap-grid .hm-group").color, bg), year: ratio(cs("#heatmap-grid .hm-yr").color, bg),
+        pressed: ratio(cs('.hm-sort-btn[aria-pressed="true"]').color, cs('.hm-sort-btn[aria-pressed="true"]').backgroundColor),
+      };
+    });
+    assert.equal(m.l2rgb, m.accent, `${theme}: the darkest cell is the theme accent`);
+    assert.ok(m.legend, `${theme}: legend swatches match the grid`);
+    assert.ok(m.l2l0 >= 3, `${theme}: 2+ roles vs empty ${m.l2l0}`);
+    assert.ok(m.l1l0 >= 1.8, `${theme}: 1 role vs empty ${m.l1l0}`);
+    assert.ok(m.l2l1 >= 2.5, `${theme}: 2+ roles vs 1 role ${m.l2l1}`);
+    assert.ok(m.group >= 4.5 && m.year >= 4.5, `${theme}: header text contrast ${m.group}/${m.year}`);
+    assert.ok(m.pressed >= 4.5, `${theme}: selected grouping button contrast ${m.pressed}`);
+    seen.add(m.l2);
+    await page.keyboard.press("Escape");
+  }
+  assert.equal(seen.size, themes.length, "every theme has its own heatmap color");
+  await context.close();
+});
+
+test("at 375px the grouping control fits and skill labels stay visible while the grid scrolls", { timeout: 60_000 }, async () => {
+  const { context, page } = await openPage({ width: 375, height: 812 });
+  await page.click("#heatmap-open");
+  const box = await page.locator(".hm-sort").boundingBox();
+  for (const b of await page.locator(".hm-sort-btn").all()) {
+    const r = await b.boundingBox();
+    assert.ok(r.x >= box.x - 1 && r.x + r.width <= box.x + box.width + 1 && r.y + r.height <= box.y + box.height + 1, "button inside the control");
+    assert.ok(r.height >= 24, "target size");
+  }
+  // The grid opens on the latest years, and the skill label column stays pinned.
+  assert.ok(await page.locator("#heatmap-scroll").evaluate((el) => el.scrollLeft > 0));
+  const label = await page.locator("#heatmap-grid .hm-skill").first().boundingBox();
+  const scroller = await page.locator("#heatmap-scroll").boundingBox();
+  assert.ok(label.x >= scroller.x && label.x < scroller.x + 20, "label pinned to the left edge");
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), 0);
+  await context.close();
+});

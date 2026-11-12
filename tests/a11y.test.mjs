@@ -204,6 +204,27 @@ test("axe: Experience with a company and a role expanded, in every theme", { tim
   assert.equal(failures.join("\n"), "", failures.join("\n"));
 });
 
+test("axe: skills heatmap in each grouping and every theme", { timeout: 180_000 }, async () => {
+  const failures = [];
+  for (const vp of VIEWPORTS) {
+    const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    for (const theme of THEMES) {
+      await page.goto(`${base}/`, { waitUntil: "networkidle" });
+      await setTheme(page, theme);
+      await page.evaluate(() => document.getElementById("heatmap-open").click());
+      for (const sort of theme === "editorial" ? ["used", "category", "az", "recent"] : ["category"]) {
+        await page.evaluate((s) => document.querySelector(`.hm-sort-btn[data-sort="${s}"]`).click(), sort);
+        const results = await runAxe(page);
+        const msg = formatViolations(`${vp.name}/${theme}/heatmap-${sort}`, results);
+        if (msg) failures.push(msg);
+      }
+    }
+    await context.close();
+  }
+  assert.equal(failures.join("\n"), "", failures.join("\n"));
+});
+
 test("axe: preview redirect page", { timeout: 30_000 }, async () => {
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();
