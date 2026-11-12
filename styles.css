@@ -632,13 +632,52 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 .form-error { color: var(--accent); min-height: 1.2em; font-size: 0.875rem; }
 .form-error:empty { display: none; }
 
+.contact-layout-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid var(--navy);
+}
+.contact-layout-btn {
+  margin: 0;
+  border: 0;
+  border-right: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.contact-layout-btn:last-child { border-right: 0; }
+.contact-layout-btn[aria-checked="true"] {
+  background: var(--navy);
+  color: var(--on-navy);
+  font-weight: 600;
+}
+.contact-layout-btn:hover:not([aria-checked="true"]) {
+  background: var(--pill);
+}
+.contact-layout-btn:focus-visible,
+.contact-list a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.contact-panel { margin-top: 0; }
 .contact-list { list-style: none; margin: 14px 0 0; padding: 0; }
-.contact-list li { margin: 6px 0; }
+.contact-list li { margin: 0; min-width: 0; }
 .contact-list a {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
   color: var(--navy);
+  text-decoration: none;
+  min-width: 0;
 }
 .contact-list a[href*="cal.com"] {
   font-weight: 700;
@@ -648,6 +687,110 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
   height: 1.1em;
   flex-shrink: 0;
   fill: currentColor;
+}
+
+/* (a) Card grid with icons — default */
+.contact-panel[data-contact-layout="a"] .contact-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.contact-panel[data-contact-layout="a"] .contact-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 16px;
+  background: var(--paper);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.contact-panel[data-contact-layout="a"] .contact-list a:hover {
+  border-color: var(--navy);
+}
+.contact-panel[data-contact-layout="a"] .contact-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* (b) Horizontal bar of labeled buttons */
+.contact-panel[data-contact-layout="b"] .contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.contact-panel[data-contact-layout="b"] .contact-list a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  padding: 8px 14px;
+  min-height: 40px;
+  max-width: 100%;
+  background: transparent;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  color: var(--navy);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.contact-panel[data-contact-layout="b"] .contact-list a:hover {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+/* (c) Split intro plus contact tiles */
+.contact-panel[data-contact-layout="c"] {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.36fr) minmax(0, 1fr);
+  gap: 24px 32px;
+  align-items: start;
+  margin-top: 4px;
+}
+.contact-panel[data-contact-layout="c"] .contact-intro {
+  margin: 0;
+  max-width: none;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+.contact-panel[data-contact-layout="c"] .contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 0;
+}
+.contact-panel[data-contact-layout="c"] .contact-list a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding: 12px 14px;
+  background: var(--paper);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.contact-panel[data-contact-layout="c"] .contact-list a:hover {
+  border-color: var(--navy);
+}
+.contact-panel[data-contact-layout="c"] .contact-icon {
+  width: 1.35em;
+  height: 1.35em;
 }
 
 .colophon {
@@ -660,6 +803,8 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 
 @media (max-width: 980px) {
   .skill-grid, .projects, .cred-grid { grid-template-columns: 1fr 1fr; }
+  .contact-panel[data-contact-layout="a"] .contact-list { grid-template-columns: 1fr 1fr; }
+  .contact-panel[data-contact-layout="c"] { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -667,6 +812,13 @@ section { margin-top: 36px; scroll-margin-top: 24px; }
 }
 
 @media (max-width: 860px) {
+  .contact-panel[data-contact-layout="a"] .contact-list,
+  .contact-panel[data-contact-layout="c"] .contact-list { grid-template-columns: 1fr; }
+  .contact-panel[data-contact-layout="b"] .contact-list li { flex: 1 1 100%; }
+  .contact-panel[data-contact-layout="b"] .contact-list a { width: 100%; }
+  .contact-layout-switch { width: 100%; }
+  .contact-layout-btn { flex: 1 1 auto; }
+
   .sidebar {
     position: relative;
     width: auto;
