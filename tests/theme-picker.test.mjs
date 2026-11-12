@@ -7,7 +7,7 @@ import { after, before, test } from "node:test";
 import { chromium, webkit, devices } from "playwright";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const THEMES = ["editorial", "midnight", "minimal", "gradient", "glass", "contrast"];
+const THEMES = ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"];
 const BACKGROUND = {
   editorial: "rgb(247, 243, 236)",
   midnight: "rgb(7, 11, 26)",

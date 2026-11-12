@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url);
 const axePath = require.resolve("axe-core/axe.min.js");
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-const THEMES = ["editorial", "midnight", "minimal", "gradient", "glass", "contrast"];
+const THEMES = ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"];
 const VIEWPORTS = [
   { name: "desktop", width: 1280, height: 800 },
   { name: "mobile", width: 390, height: 844 },

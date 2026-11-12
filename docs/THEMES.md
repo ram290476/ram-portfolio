@@ -7,9 +7,9 @@ The site has six theme styles. Visitors switch between them with the theme picke
 | `editorial` | Editorial | The default: a light editorial look with a serif headline. |
 | `midnight` | Midnight | A dark theme. |
 | `minimal` | Minimal | A plain, low-ornament light theme. |
+| `contrast` | High contrast | Maximum contrast for readability. |
 | `gradient` | Gradient | Colour-gradient accents. |
 | `glass` | Glass | Translucent, frosted-glass panels. |
-| `contrast` | High contrast | Maximum contrast for readability. |
 
 ## Where they live
 

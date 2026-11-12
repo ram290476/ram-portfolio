@@ -8,7 +8,7 @@
   if (!toggle || !menu) return;
   var items = Array.prototype.slice.call(menu.querySelectorAll("[data-theme-value]"));
   var closeBtn = picker.querySelector("[data-theme-close]");
-  var allowed = { editorial: 1, midnight: 1, minimal: 1, gradient: 1, glass: 1, contrast: 1 };
+  var allowed = { editorial: 1, midnight: 1, minimal: 1, contrast: 1, gradient: 1, glass: 1 };
   var fonts = {
     editorial: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,560&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap",
     midnight: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap",
