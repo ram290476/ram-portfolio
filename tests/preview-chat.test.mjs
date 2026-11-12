@@ -172,6 +172,7 @@ test("Skills title row has the heatmap icon immediately left of the word-cloud i
   assert.match(row, /<button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>/);
   assert.match(page, /<dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">/);
   assert.match(page, /href="assets\/heatmap\.css"/);
+  assert.match(page, /<div class="hm-sort" role="group" aria-label="Group and sort skills">\s*<button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="true">Most used<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="false">Most recent<\/button>/);
   assert.match(page, /<p class="wc-note">Each row is a skill and each column a year\. Built from the skills listed for each Experience role\. Darker cells/);
   assert.doesNotMatch(page, /skill chips on each Experience role/);
   assert.match(page, /src="assets\/heatmap\.js"/);
@@ -181,6 +182,9 @@ test("Skills title row has the heatmap icon immediately left of the word-cloud i
   assert.match(heatJS, /openBtn\.focus\(\)/);
   const heatCSS = read("assets/heatmap.css");
   assert.match(heatCSS, /animation: hm-rise 260ms/);
+  assert.match(heatCSS, /--hm-2: var\(--accent\);/);
+  assert.match(heatCSS, /html\[data-theme="contrast"\] \.hm-dialog \{/);
+  assert.match(heatJS, /sessionStorage/);
   assert.match(heatCSS, /@media \(prefers-reduced-motion: reduce\) \{\s*\.hm-dialog\[open\] \{ animation: none; \}/);
 });
 
