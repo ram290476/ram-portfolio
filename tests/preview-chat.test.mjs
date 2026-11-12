@@ -361,6 +361,40 @@ test("Personal project and career-overview links open in a new tab", () => {
   assert.match(pptx[1], /rel="[^"]*\bnoopener\b[^"]*"/);
 });
 
+test("Work and Personal projects collapse behind a Show more toggle", () => {
+  const cases = [
+    ["work-projects", "work-projects-grid", 6],
+    ["personal-projects", "personal-projects-grid", 5],
+  ];
+  for (const [sid, gridId, expected] of cases) {
+    const section = page.match(new RegExp(`<section id="${sid}"[\\s\\S]*?</section>`));
+    assert.ok(section, `${sid} section is missing`);
+    const grid = section[0].match(new RegExp(`<div class="projects" id="${gridId}">([\\s\\S]*?)</div>`));
+    assert.ok(grid, `${gridId} is missing`);
+    const cards = [...grid[1].matchAll(/<article class="card">/g)];
+    assert.equal(cards.length, expected, `${sid} should keep all ${expected} projects`);
+    const toggle = section[0].match(/<button type="button" class="projects-toggle"[^>]*>[\s\S]*?<\/button>/);
+    if (expected > 3) {
+      assert.ok(toggle, `missing Show more toggle for ${sid}`);
+      assert.match(toggle[0], /aria-expanded="false"/);
+      assert.match(toggle[0], new RegExp(`aria-controls="${gridId}"`));
+      assert.match(toggle[0], />Show more</);
+    } else {
+      assert.equal(toggle, null, `${sid} should not have a toggle`);
+    }
+  }
+  assert.match(themes, /\.js \.projects:not\(\.is-open\) > \.card:nth-child\(n\+4\)\s*\{\s*display:\s*none/);
+  assert.match(themes, /\.projects-toggle \{/);
+  assert.match(themes, /\.js \.projects-toggle/);
+  assert.match(themes, /\.js \.projects-toggle\[hidden\]\s*\{\s*display:\s*none/);
+  const skillJS = read("experience-skills.js");
+  assert.match(skillJS, /projects-toggle/);
+  assert.match(skillJS, /Show more/);
+  assert.match(skillJS, /Show less/);
+  assert.match(skillJS, /cards\.length <= PROJECTS_LIMIT/);
+  assert.match(skillJS, /button\.hidden = true/);
+});
+
 test("Contact links open in a new tab, including the download links", () => {
   const contact = page.match(/<section id="contact"[^>]*>([\s\S]*?)<\/section>/);
   assert.ok(contact, "Contact section is missing");

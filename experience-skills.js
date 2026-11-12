@@ -60,4 +60,29 @@
 
   initExpListCollapse("cert-exp");
   initExpListCollapse("training-exp");
+
+  var PROJECTS_LIMIT = 3;
+
+  function initProjectsToggle(button) {
+    var list = document.getElementById(button.getAttribute("aria-controls"));
+    if (!list) {
+      button.hidden = true;
+      return;
+    }
+    var cards = list.querySelectorAll(":scope > .card");
+    if (cards.length <= PROJECTS_LIMIT) {
+      button.hidden = true;
+      return;
+    }
+    function setOpen(open) {
+      list.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      button.textContent = open ? "Show less" : "Show more";
+    }
+    button.addEventListener("click", function () {
+      setOpen(button.getAttribute("aria-expanded") !== "true");
+    });
+  }
+
+  document.querySelectorAll(".projects-toggle").forEach(initProjectsToggle);
 })();

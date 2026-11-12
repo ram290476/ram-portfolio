@@ -984,7 +984,8 @@ html.reduce body { background-attachment: scroll; }
 .exp-skill-chips { margin: 10px 0 0; }
 .exp-skill-toggle,
 .exp-resp-toggle,
-.exp-list-toggle {
+.exp-list-toggle,
+.projects-toggle {
   display: none;
   margin-top: 8px;
   padding: 0;
@@ -1001,10 +1002,14 @@ html.reduce body { background-attachment: scroll; }
   min-width: 24px;
 }
 .exp-list-toggle { grid-column: 1 / -1; justify-self: start; }
+.projects-toggle { margin-top: 16px; }
 .js .exp-skill-toggle,
 .js .exp-resp-toggle,
-.js .exp-list-toggle { display: inline-flex; align-items: center; }
+.js .exp-list-toggle,
+.js .projects-toggle { display: inline-flex; align-items: center; }
+.js .projects-toggle[hidden] { display: none; }
 .js .exp-skill-chips:not(.is-open) .exp-skill-more { display: none; }
 .js .exp-resp-list:not(.is-open) .exp-resp-more { display: none; }
 .js .exp:not(.is-open) > .exp-more { display: none; }
 .js .cred-grid:not(.is-open) > .exp-more { display: none; }
+.js .projects:not(.is-open) > .card:nth-child(n+4) { display: none; }
