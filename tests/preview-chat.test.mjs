@@ -354,16 +354,12 @@ test("Personal project and career-overview links open in a new tab", () => {
   assert.match(pptx[1], /rel="[^"]*\bnoopener\b[^"]*"/);
 });
 
-test("Contact links open in a new tab, except same-origin downloads", () => {
+test("Contact links open in a new tab, including the download links", () => {
   const contact = page.match(/<section id="contact"[^>]*>([\s\S]*?)<\/section>/);
   assert.ok(contact, "Contact section is missing");
   const links = [...contact[1].matchAll(/<a\b([^>]*)>/g)].map((m) => m[1]);
   assert.ok(links.length >= 5, "Contact should list email, Book a call, GitHub, LinkedIn, and the map link");
   for (const attrs of links) {
-    if (/\bdownload="/.test(attrs)) {
-      assert.doesNotMatch(attrs, /target=/, attrs);
-      continue;
-    }
     assert.match(attrs, /target="_blank"/, attrs);
     assert.match(attrs, /rel="[^"]*\bnoopener\b[^"]*"/, attrs);
     assert.match(attrs, /rel="[^"]*\bnoreferrer\b[^"]*"/, attrs);
@@ -375,13 +371,12 @@ test("Contact links open in a new tab, except same-origin downloads", () => {
   assert.match(contact[1], /href="https:\/\/cal\.com\/ramvellamsetti\/30min"/);
   assert.match(
     contact[1],
-    /<a href="assets\/resume\.pdf" download="resume\.pdf">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download latest resume\s*<\/a>/
+    /<a href="assets\/resume\.pdf" download="resume\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download latest resume\s*<\/a>/
   );
   assert.match(
     contact[1],
-    /<a href="assets\/Ram_Career_Overview_Lite\.pdf" download="experience-overview\.pdf">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download experience overview\s*<\/a>/
+    /<a href="assets\/Ram_Career_Overview_Lite\.pdf" download="experience-overview\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download experience overview\s*<\/a>/
   );
-  assert.doesNotMatch(contact[1], /<a [^>]*download="[^"]*"[^>]*target=/);
   assert.doesNotMatch(contact[1], /download="(?!resume\.pdf|experience-overview\.pdf)[^"]+"/);
 });
 
