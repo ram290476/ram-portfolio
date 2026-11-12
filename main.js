@@ -68,39 +68,3 @@
   window.addEventListener("hashchange", redirectBookHash);
   redirectBookHash();
 })();
-
-(function () {
-  var panel = document.querySelector(".contact-panel");
-  var group = document.querySelector(".contact-layout-switch");
-  if (!panel || !group) return;
-  var buttons = Array.prototype.slice.call(group.querySelectorAll("[data-contact-layout]"));
-  if (!buttons.length) return;
-
-  function setLayout(layout) {
-    if (layout !== "a" && layout !== "b" && layout !== "c") layout = "a";
-    panel.setAttribute("data-contact-layout", layout);
-    buttons.forEach(function (btn) {
-      var on = btn.getAttribute("data-contact-layout") === layout;
-      btn.setAttribute("aria-checked", on ? "true" : "false");
-      btn.tabIndex = on ? 0 : -1;
-    });
-  }
-
-  buttons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      setLayout(btn.getAttribute("data-contact-layout"));
-    });
-    btn.addEventListener("keydown", function (event) {
-      var dir = 0;
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") dir = 1;
-      else if (event.key === "ArrowLeft" || event.key === "ArrowUp") dir = -1;
-      if (!dir) return;
-      event.preventDefault();
-      var next = buttons[(buttons.indexOf(btn) + dir + buttons.length) % buttons.length];
-      setLayout(next.getAttribute("data-contact-layout"));
-      next.focus();
-    });
-  });
-
-  setLayout(panel.getAttribute("data-contact-layout") || "a");
-})();
