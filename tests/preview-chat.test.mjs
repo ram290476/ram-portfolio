@@ -134,19 +134,52 @@ test("suggested questions all retrieve a grounded answer", () => {
   }
 });
 
-test("experience roles list LinkedIn skills with an accessible show-all toggle", () => {
+test("experience uses company cards that open roles, then responsibilities", () => {
   const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
-  assert.equal((experience.match(/class="exp-role-block"/g) || []).length, 6);
-  assert.equal((experience.match(/class="exp-skill-toggle"/g) || []).length, 6);
-  assert.doesNotMatch(experience, /class="exp-skills"/);
-  assert.doesNotMatch(experience, /Skills used/);
-  assert.match(page, /Site Reliability &amp; Platform Engineer \(2023–2026\)/);
-  assert.match(page, /MLOps platform \(2026\)/);
-  assert.match(page, /Senior \.NET Engineer \(2013–2017\)/);
-  assert.match(page, /Lead Commerce Architect \(2017–2020\)/);
+  const cards = [...experience.matchAll(/<button type="button" class="xp-card" id="(xp-card-[a-z]+)" aria-expanded="false" aria-controls="(xp-panel-[a-z]+)">/g)];
+  assert.equal(cards.length, 4);
+  for (const [, cardId, panelId] of cards) {
+    assert.match(experience, new RegExp(`<div class="xp-panel" id="${panelId}" role="region" aria-labelledby="${cardId}"`));
+  }
+  assert.equal((experience.match(/<li class="exp-role-block"/g) || []).length, 6);
+  const roles = [...experience.matchAll(/<button type="button" class="xp-role" id="role-([a-z-]+)" aria-expanded="false" aria-controls="resp-\1"/g)];
+  assert.equal(roles.length, 6);
+  for (const [, id] of roles) assert.match(experience, new RegExp(`<div class="xp-panel xp-resp" id="resp-${id}" role="region" aria-labelledby="role-${id}">`));
+  assert.match(experience, /<span class="xp-role-t">Site Reliability &amp; Platform Engineer<\/span>/);
+  assert.match(experience, /<span class="xp-role-t">MLOps platform<\/span>/);
+  assert.match(experience, /<span class="xp-role-t">Senior \.NET Engineer<\/span>/);
+  assert.match(experience, /<span class="xp-role-t">Lead Commerce Architect<\/span>/);
+  assert.doesNotMatch(experience, /class="exp-skill-toggle"|class="exp-resp-toggle"|Skills used/);
+  // Role skill chips stay in the page as data for the word cloud and the skills heatmap.
+  assert.equal((experience.match(/<ul class="pills exp-skill-chips" id="skills-[a-z-]+" hidden/g) || []).length, 6);
   assert.match(page, /src="experience-skills\.js"/);
-  assert.match(page, /aria-expanded="false"/);
-  assert.match(page, /aria-controls="skills-frb"/);
+  assert.match(page, /src="experience-layout\.js"/);
+  const layoutJS = read("experience-layout.js");
+  assert.match(layoutJS, /aria-expanded/);
+  assert.match(layoutJS, /closeRoles/);
+  assert.match(themes, /\.js \.xp-panel \{\s*grid-template-rows: 0fr;/);
+  assert.match(themes, /\.js \.xp-panel\.is-open \{ grid-template-rows: 1fr; \}/);
+  assert.match(themes, /--xp-dur: 420ms;/);
+  assert.match(themes, /--xp-lift: -6px;/);
+  assert.match(themes, /@media \(prefers-reduced-motion: reduce\) \{\s*#experience \{ --xp-dur: 0ms;/);
+});
+
+test("Skills title row has the heatmap icon immediately left of the word-cloud icon", () => {
+  const row = page.match(/<h2 id="skills-heading"[\s\S]*?<\/div>\s*<\/div>/)[0];
+  const heat = row.indexOf('id="heatmap-open"');
+  const cloud = row.indexOf('id="wordcloud-open"');
+  assert.ok(heat > 0 && cloud > heat, "heatmap icon must come right before the word-cloud icon");
+  assert.match(row, /<button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>/);
+  assert.match(page, /<dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">/);
+  assert.match(page, /href="assets\/heatmap\.css"/);
+  assert.match(page, /src="assets\/heatmap\.js"/);
+  const heatJS = read("assets/heatmap.js");
+  assert.match(heatJS, /exp-skill-chips li/);
+  assert.match(heatJS, /showModal/);
+  assert.match(heatJS, /openBtn\.focus\(\)/);
+  const heatCSS = read("assets/heatmap.css");
+  assert.match(heatCSS, /animation: hm-rise 260ms/);
+  assert.match(heatCSS, /@media \(prefers-reduced-motion: reduce\) \{\s*\.hm-dialog\[open\] \{ animation: none; \}/);
 });
 
 test("private questions are refused before retrieval", () => {
@@ -273,7 +306,7 @@ test("the Experience callout quote has been removed", () => {
 
 test("each Experience role leads with LinkedIn responsibilities, then that role's skills", () => {
   const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
-  const blocks = [...experience.matchAll(/<article class="exp-role-block"[^>]*>([\s\S]*?)<\/article>/g)].map((m) => m[1]);
+  const blocks = experience.split(/<li class="exp-role-block"[^>]*>/).slice(1).map((chunk) => [null, chunk]).map((m) => m[1]);
   assert.equal(blocks.length, 6);
   const phrases = [
     "Platform and reliability engineering for Line of Business application teams across AWS and the firm’s private cloud",
@@ -292,7 +325,7 @@ test("each Experience role leads with LinkedIn responsibilities, then that role'
   for (const phrase of phrases) assert.match(experience, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
 
   for (const block of blocks) {
-    const respIdx = block.search(/<div class="exp-resp"/);
+    const respIdx = block.search(/<div class="exp-resp\b/);
     const skillsIdx = block.search(/<ul class="pills exp-skill-chips"/);
     assert.ok(respIdx >= 0, "role is missing a responsibilities block");
     assert.ok(skillsIdx > respIdx, "responsibilities must come before the skills list");
@@ -300,26 +333,9 @@ test("each Experience role leads with LinkedIn responsibilities, then that role'
     assert.ok(list, "role is missing a responsibilities list");
     const items = [...list[2].matchAll(/<li([^>]*)>([\s\S]*?)<\/li>/g)];
     assert.ok(items.length >= 3, list[1]);
-    const visible = items.filter((item) => !/\bexp-resp-more\b/.test(item[1]));
-    const hidden = items.filter((item) => /\bexp-resp-more\b/.test(item[1]));
-    assert.equal(visible.length, Math.min(3, items.length), list[1]);
-    assert.equal(hidden.length, Math.max(0, items.length - 3), list[1]);
-    const toggle = block.match(/<button type="button" class="exp-resp-toggle"[^>]*>/);
-    if (items.length > 3) {
-      assert.ok(toggle, `missing show-more toggle for ${list[1]}`);
-      assert.match(toggle[0], /aria-expanded="false"/);
-      assert.match(toggle[0], new RegExp(`aria-controls="${list[1]}"`));
-      assert.match(block, /class="exp-resp-toggle"[^>]*>Show more/);
-    } else {
-      assert.equal(toggle, null, `${list[1]} should not have a toggle`);
-    }
+    assert.equal(items.filter((item) => /\bexp-resp-more\b/.test(item[1])).length, 0, `${list[1]} shows every bullet`);
+    assert.doesNotMatch(block, /exp-resp-toggle/);
   }
-  assert.doesNotMatch(blocks.find((block) => block.includes('id="resp-esp-list"')), /exp-resp-toggle/);
-  assert.match(themes, /\.js \.exp-resp-list:not\(\.is-open\) \.exp-resp-more\s*\{\s*display:\s*none/);
-  const skillJS = read("experience-skills.js");
-  assert.match(skillJS, /exp-resp-toggle/);
-  assert.match(skillJS, /Show more/);
-  assert.match(skillJS, /Show less/);
 });
 
 

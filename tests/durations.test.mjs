@@ -74,26 +74,28 @@ test("a company total is the sum of role months, not the overall span", () => {
   }
 });
 
-test("the Experience section shows one company range and a matching static total", () => {
+test("each Experience company card shows its year range and a matching static total", () => {
   const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
-  const experience = html.split('id="experience"')[1].split('id="work-projects"')[0];
+  const experience = html.split('id="experience"')[1].split('id="certifications"')[0];
 
-  assert.doesNotMatch(experience, /Jul 2023 – Jan 2026/);
-  assert.doesNotMatch(experience, /Jan 2026 – Aug 2026/);
-  assert.doesNotMatch(experience, /May 2013 – Jan 2017/);
-  assert.doesNotMatch(experience, /Jan 2017 – Feb 2020/);
   assert.doesNotMatch(experience, /exp-total/);
-  assert.doesNotMatch(experience, />2 yrs 6 mos</);
-  assert.doesNotMatch(experience, />7 mos</);
-  assert.doesNotMatch(experience, />3 yrs 8 mos</);
-
-  const blocks = [...experience.matchAll(/<div class="exp-date">([\s\S]*?)<\/div>/g)].map((m) => m[1]);
-  assert.equal(blocks.length, 4);
+  const cards = [...experience.matchAll(/<button type="button" class="xp-card"[^>]*>([\s\S]*?)<\/button>/g)].map((m) => m[1]);
+  assert.equal(cards.length, 4);
   for (const [i, company] of COMPANIES.entries()) {
     const attr = company.roles.map(([start, end]) => `${start}/${end}`).join(",");
-    assert.match(blocks[i], new RegExp(company.range));
-    assert.equal((blocks[i].match(/<p[ >]/g) || []).length, 1, company.name);
-    assert.match(blocks[i], new RegExp(`data-roles="${attr}">${company.total}<`));
+    const startYear = company.roles[0][0].slice(0, 4);
+    const lastEnd = company.roles[company.roles.length - 1][1];
+    const [ey, em] = lastEnd.split("-").map(Number);
+    const endYear = em === 1 ? ey - 1 : ey;
+    assert.match(cards[i], new RegExp(`<span class="xp-years">${startYear}–${endYear}</span>`), company.name);
+    assert.match(cards[i], new RegExp(`data-roles="${attr}">${company.total}<`), company.name);
     assert.equal(formatRoleSum(parseRoles(attr)), company.total, company.name);
+    const panel = experience.split(`id="xp-panel-`)[i + 1];
+    assert.match(panel, new RegExp(`data-range="${company.range}"`), company.name);
   }
+
+  // Every role shows its own dates, and its duration matches the month data.
+  const roles = [...experience.matchAll(/<span class="xp-role-d">([A-Z][a-z]{2} \d{4}) – ([A-Z][a-z]{2} \d{4}) · <span class="exp-len" data-start="(\d{4}-\d{2})" data-end="(\d{4}-\d{2})">([^<]+)<\/span>/g)];
+  assert.equal(roles.length, 6);
+  for (const [, , , start, end, total] of roles) assert.equal(formatMonthSpan(start, end), total);
 });

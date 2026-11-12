@@ -52,4 +52,4 @@ jobs:
         run: |
           npm ci
           npx playwright install --with-deps chromium webkit
-          node --test tests/a11y.test.mjs tests/theme-picker.test.mjs tests/font-size.test.mjs tests/projects-toggle.test.mjs
+          node --test tests/a11y.test.mjs tests/theme-picker.test.mjs tests/font-size.test.mjs tests/projects-toggle.test.mjs tests/experience-layout.test.mjs
