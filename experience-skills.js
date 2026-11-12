@@ -27,13 +27,21 @@
   function initExpListCollapse(listId) {
     var list = document.getElementById(listId);
     if (!list) return;
+    var cards = Array.prototype.slice.call(list.querySelectorAll(":scope > .cred-card"));
     var dates = Array.prototype.slice.call(list.querySelectorAll(":scope > .exp-date"));
     var bodies = Array.prototype.slice.call(list.querySelectorAll(":scope > .exp-body"));
-    if (dates.length !== bodies.length) return;
-    if (dates.length <= EXP_LIST_LIMIT) return;
-    for (var i = EXP_LIST_LIMIT; i < dates.length; i += 1) {
-      dates[i].classList.add("exp-more");
-      bodies[i].classList.add("exp-more");
+    if (cards.length) {
+      if (cards.length <= EXP_LIST_LIMIT) return;
+      for (var i = EXP_LIST_LIMIT; i < cards.length; i += 1) {
+        cards[i].classList.add("exp-more");
+      }
+    } else {
+      if (dates.length !== bodies.length) return;
+      if (dates.length <= EXP_LIST_LIMIT) return;
+      for (var i = EXP_LIST_LIMIT; i < dates.length; i += 1) {
+        dates[i].classList.add("exp-more");
+        bodies[i].classList.add("exp-more");
+      }
     }
     var button = document.createElement("button");
     button.type = "button";
