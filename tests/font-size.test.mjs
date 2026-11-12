@@ -7,7 +7,7 @@ import { after, before, test } from "node:test";
 import { chromium, webkit, devices } from "playwright";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const THEMES = ["editorial", "midnight", "minimal", "gradient", "glass", "contrast"];
+const THEMES = ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"];
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",

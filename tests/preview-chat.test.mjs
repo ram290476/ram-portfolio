@@ -204,7 +204,7 @@ test("chat and themes follow the page tokens, motion setting, and contrast theme
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /var\(--(?:ink|bg|card|cy)/);
   assert.doesNotMatch(css, /#[0-9a-f]{3,8}\b|rgba?\(/i);
-  for (const name of ["editorial", "midnight", "minimal", "gradient", "glass", "contrast"]) {
+  for (const name of ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"]) {
     assert.match(themes, new RegExp(`data-theme="${name}"`));
   }
   assert.match(themes, /prefers-reduced-motion/);
