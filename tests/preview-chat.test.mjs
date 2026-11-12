@@ -122,8 +122,15 @@ test("company total questions are answerable from the guide", () => {
 });
 
 test("suggested questions all retrieve a grounded answer", () => {
-  for (const match of page.matchAll(/data-chat-question>([^<]+)<\/button>/g)) {
-    assert.equal(replyTo(match[1], retrieve).kind, "answer", match[1]);
+  const suggested = [...page.matchAll(/data-chat-question>([^<]+)<\/button>/g)].map((match) => match[1]);
+  assert.deepEqual(suggested, [
+    "Has he championed Copilot adoption on his team?",
+    "Is he still hands-on and writing code?",
+    "What is he looking for in his next job with infrastructure and AI?",
+    "Is he comfortable with on-call?"
+  ]);
+  for (const question of suggested) {
+    assert.equal(replyTo(question, retrieve).kind, "answer", question);
   }
 });
 
