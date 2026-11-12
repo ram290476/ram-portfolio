@@ -172,6 +172,8 @@ test("Skills title row has the heatmap icon immediately left of the word-cloud i
   assert.match(row, /<button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>/);
   assert.match(page, /<dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">/);
   assert.match(page, /href="assets\/heatmap\.css"/);
+  assert.match(page, /<p class="wc-note">Each row is a skill and each column a year\. Built from the skills listed for each Experience role\. Darker cells/);
+  assert.doesNotMatch(page, /skill chips on each Experience role/);
   assert.match(page, /src="assets\/heatmap\.js"/);
   const heatJS = read("assets/heatmap.js");
   assert.match(heatJS, /exp-skill-chips li/);
