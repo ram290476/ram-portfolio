@@ -50,7 +50,10 @@ test("the widget restores history when the panel opens and saves each answer", (
   const chatJS = read("assets/chat/chat.js");
   assert.match(chatJS, /launcher\.addEventListener\("click", \(\) => \{[\s\S]*?restoreHistory\(\);[\s\S]*?\}\);/);
   assert.match(chatJS, /history\.append\(\{ question: text, answer: answer\.answer/);
-  assert.match(read("index.html"), /<button type="button" class="chat-clear" data-chat-clear>Clear history<\/button>/);
+  const page = read("index.html");
+  assert.match(page, /<button type="button" class="chat-clear" data-chat-clear>Clear history<\/button>/);
+  assert.match(page, /<p class="chat-note">Nothing is sent off-site\. Your questions and answers are saved only in this browser\.<\/p>/);
+  assert.doesNotMatch(page, /Answers are looked up from this page\./);
 });
 
 test("history keeps only the newest 500 messages", () => {
