@@ -423,7 +423,7 @@ test("Contact links open in a new tab, including the download links", () => {
   assert.doesNotMatch(contact[1], /download="(?!resume\.pdf|experience-overview\.pdf)[^"]+"/);
 });
 
-test("Contact offers three layouts from one list, defaulting to the card grid", () => {
+test("Contact uses only the Split layout, with no layout switcher", () => {
   const contact = page.match(/<section id="contact"[^>]*>([\s\S]*?)<\/section>/);
   assert.ok(contact, "Contact section is missing");
   assert.equal((page.match(/<ul class="contact-list">/g) || []).length, 1, "Contact items must come from a single list");
@@ -431,18 +431,14 @@ test("Contact offers three layouts from one list, defaulting to the card grid", 
   assert.ok(list, "contact list is missing");
   const items = [...list[1].matchAll(/<li>/g)];
   assert.equal(items.length, 7, "Contact should keep all seven items");
-  assert.match(contact[1], /class="contact-panel"[^>]*data-contact-layout="a"/);
-  const switcher = contact[1].match(/<div class="contact-layout-switch" role="radiogroup" aria-label="Contact layout">([\s\S]*?)<\/div>/);
-  assert.ok(switcher, "Contact layout switcher is missing");
-  const radios = [...switcher[1].matchAll(/<button type="button" class="contact-layout-btn" role="radio" aria-checked="(true|false)" data-contact-layout="([abc])">([^<]+)<\/button>/g)];
-  assert.equal(radios.map((m) => [m[1], m[2], m[3].trim()]).join("|"), "true,a,Cards|false,b,Buttons|false,c,Split");
+  assert.match(contact[1], /<div class="contact-panel">/);
+  assert.doesNotMatch(contact[1], /contact-layout-switch|contact-layout-btn|data-contact-layout|aria-label="Contact layout"/);
+  assert.doesNotMatch(page, /class="contact-layout-switch"|data-contact-layout=/);
   const mainJS = read("main.js");
-  assert.match(mainJS, /data-contact-layout/);
-  assert.match(mainJS, /aria-checked/);
-  assert.match(mainJS, /ArrowRight/);
-  assert.match(themes, /\.contact-panel\[data-contact-layout="a"\]/);
-  assert.match(themes, /\.contact-panel\[data-contact-layout="b"\]/);
-  assert.match(themes, /\.contact-panel\[data-contact-layout="c"\]/);
+  assert.doesNotMatch(mainJS, /data-contact-layout|contact-layout-switch/);
+  assert.doesNotMatch(themes, /data-contact-layout|contact-layout-switch|contact-layout-btn/);
+  assert.match(themes, /\.contact-panel\s*\{[^}]*grid-template-columns:\s*minmax\(16rem,\s*0\.36fr\)\s*minmax\(0,\s*1fr\)/);
+  assert.match(themes, /\.contact-list\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
 });
 
 test("homepage and preview redirect use the generated photo favicons", () => {
