@@ -81,7 +81,7 @@ function launchOptions(name) {
 async function readTheme(page) {
   return page.evaluate(() => ({
     theme: document.documentElement.getAttribute("data-theme"),
-    stored: localStorage.getItem("theme"),
+    stored: localStorage.getItem("ram-portfolio-theme-v1"),
     background: getComputedStyle(document.body).backgroundColor,
   }));
 }

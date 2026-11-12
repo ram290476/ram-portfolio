@@ -67,7 +67,7 @@ async function fontSize(page, selector) {
 async function scaleOf(page) {
   return page.evaluate(() => ({
     scale: document.documentElement.getAttribute("data-font-scale"),
-    stored: localStorage.getItem("font-scale"),
+    stored: localStorage.getItem("ram-portfolio-font-scale-v1"),
   }));
 }
 
@@ -219,7 +219,7 @@ for (const surface of SURFACES) {
         assert.equal(colors.fontBorder, colors.themeBorder, `${surface.name} ${theme} border`);
       }
 
-      await page.evaluate(() => localStorage.setItem("font-scale", "999"));
+      await page.evaluate(() => localStorage.setItem("ram-portfolio-font-scale-v1", "999"));
       await page.reload({ waitUntil: "domcontentloaded" });
       assert.equal((await scaleOf(page)).scale, "100", "invalid stored scale should fall back to 100%");
       assert.ok(Math.abs(await fontSize(page, ".hero-sub") - 16) < 0.6);
@@ -232,7 +232,7 @@ for (const surface of SURFACES) {
   test(`stored font scale is restored on first load on ${surface.name}`, { timeout: 90_000 }, async () => {
     const browser = await surface.browser.launch(launchOptions(surface.browserName));
     const context = await browser.newContext(surface.context);
-    await context.addInitScript(() => localStorage.setItem("font-scale", "150"));
+    await context.addInitScript(() => localStorage.setItem("ram-portfolio-font-scale-v1", "150"));
     const page = await context.newPage();
     try {
       await page.goto(`${base}/`, { waitUntil: "domcontentloaded" });

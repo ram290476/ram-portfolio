@@ -208,9 +208,9 @@ test("chat and themes follow the page tokens, motion setting, and contrast theme
     assert.match(themes, new RegExp(`data-theme="${name}"`));
   }
   assert.match(themes, /prefers-reduced-motion/);
-  assert.match(themeJS, /localStorage\.setItem\("theme"/);
-  assert.match(themeJS, /localStorage\.getItem\("theme"\)|allowed\[theme\]/);
-  assert.match(page, /localStorage\.getItem\("theme"\)/);
+  assert.match(themeJS, /localStorage\.setItem\("ram-portfolio-theme-v1"/);
+  assert.match(themeJS, /allowed\[theme\]/);
+  assert.match(page, /localStorage\.getItem\("ram-portfolio-theme-v1"\)/);
 });
 
 test("closed slide player dialog stays hidden so the theme picker can be used", () => {
@@ -508,7 +508,7 @@ test("menu icons have a gap from their labels and are vertically centered, left-
 
 test("font size controls sit beside Theme and restore before first paint", () => {
   const cssLink = page.indexOf('href="styles.css"');
-  const fontRead = page.indexOf('localStorage.getItem("font-scale")');
+  const fontRead = page.indexOf('localStorage.getItem("ram-portfolio-font-scale-v1")');
   assert.ok(fontRead !== -1 && fontRead < cssLink, "font scale is read before the stylesheet");
   assert.match(page, /setAttribute\("data-font-scale"/);
   const navEnd = page.indexOf("</nav>");
@@ -521,7 +521,7 @@ test("font size controls sit beside Theme and restore before first paint", () =>
   assert.match(page, /role="group" aria-label="Font size"/);
   assert.match(page, /src="font-size\.js"/);
   const fontJS = read("font-size.js");
-  assert.match(fontJS, /localStorage\.setItem\("font-scale"/);
+  assert.match(fontJS, /localStorage\.setItem\("ram-portfolio-font-scale-v1"/);
   assert.match(fontJS, /\.disabled/);
   assert.match(themes, /html\[data-font-scale="87\.5"\]/);
   assert.match(themes, /html\[data-font-scale="150"\]/);
