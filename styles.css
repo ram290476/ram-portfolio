@@ -1065,3 +1065,163 @@ html.reduce body { background-attachment: scroll; }
 .js .exp:not(.is-open) > .exp-more { display: none; }
 .js .cred-grid:not(.is-open) > .exp-more { display: none; }
 .js .projects:not(.is-open) > .card:nth-child(n+4) { display: none; }
+
+/* Experience layout B: company cards -> roles -> responsibilities (experience-layout.js).
+   Expressive motion for these components only: 420 ms, 6 px lift, roles staggered 60 ms. */
+#experience {
+  --xp-dur: 420ms;
+  --xp-ease: cubic-bezier(.2, .7, .2, 1);
+  --xp-lift: -6px;
+  --xp-shift: 6px;
+  --xp-stagger: 60ms;
+  --xp-shadow: 0 14px 32px color-mix(in srgb, var(--ink) 22%, transparent);
+}
+.xp-hint { margin: 0 0 10px; color: var(--muted); font-size: 0.8125rem; }
+.xp-cos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 8px 2px 10px;
+}
+.xp-cos > li { display: flex; min-width: 0; }
+.xp-card {
+  position: relative;
+  width: 100%;
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  padding: 14px 16px;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  backdrop-filter: var(--blur);
+  transition: transform var(--xp-dur) var(--xp-ease), box-shadow var(--xp-dur) var(--xp-ease), border-color var(--xp-dur) var(--xp-ease);
+}
+.xp-name { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; line-height: 1.2; padding-right: 24px; }
+.xp-years { font-size: 0.875rem; }
+.xp-card .exp-len { display: inline; margin: 0; color: var(--muted); font-size: 0.8125rem; letter-spacing: 0; }
+.xp-loc { font-size: 0.75rem; color: var(--muted); }
+.xp-bar { position: relative; display: block; height: 4px; margin-top: 8px; border-radius: 2px; background: var(--pill); overflow: hidden; }
+.xp-bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: translateX(calc(var(--xp-s) * 100%)) scaleX(var(--xp-w)); }
+.xp-arrow { position: absolute; top: 13px; right: 13px; display: inline-flex; color: var(--accent); transition: transform var(--xp-dur) var(--xp-ease); }
+.xp-card:hover,
+.xp-card:focus-visible { transform: translateY(var(--xp-lift)); box-shadow: var(--xp-shadow); border-color: var(--accent); }
+.xp-card:focus-visible,
+.xp-role:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.xp-card:hover .xp-arrow,
+.xp-role:hover .xp-arrow { transform: translateX(var(--xp-shift)); }
+.xp-card[aria-expanded="true"] {
+  border-color: var(--navy);
+  background: color-mix(in srgb, var(--navy) 8%, var(--paper));
+  box-shadow: inset 0 0 0 1px var(--navy), var(--xp-shadow);
+}
+.xp-card[aria-expanded="true"] .xp-arrow,
+.xp-role[aria-expanded="true"] .xp-arrow { transform: rotate(90deg); }
+
+/* Height animation: grid rows 0fr -> 1fr, content fades in. Without JS every panel stays open. */
+.xp-panel { display: grid; grid-template-rows: 1fr; }
+.xp-inner { min-height: 0; }
+.js .xp-panel {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--xp-dur) var(--xp-ease);
+}
+.js .xp-panel > .xp-inner {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
+  transition: opacity var(--xp-dur) var(--xp-ease), transform var(--xp-dur) var(--xp-ease), visibility 0s linear var(--xp-dur);
+}
+.js .xp-panel.is-open { grid-template-rows: 1fr; }
+.js .xp-panel.is-open > .xp-inner {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity var(--xp-dur) var(--xp-ease), transform var(--xp-dur) var(--xp-ease), visibility 0s;
+  animation: xp-unclip 0s linear var(--xp-dur) forwards;
+}
+@keyframes xp-unclip { to { overflow: visible; } }
+
+.xp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 14px 0 10px; }
+.xp-head .exp-co { margin: 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+.xp-meta { margin: 0; color: var(--muted); font-size: 0.8125rem; }
+.xp-roles { list-style: none; display: grid; gap: 10px; margin: 0; padding: 0 0 4px 16px; border-left: 2px solid var(--line); }
+.xp-roles > .exp-role-block,
+.xp-roles > .exp-role-block + .exp-role-block { margin: 0; padding: 0; border: 0; }
+.js .xp-roles > .exp-role-block {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--xp-dur) var(--xp-ease), transform var(--xp-dur) var(--xp-ease);
+  transition-delay: calc(var(--xp-i, 0) * var(--xp-stagger));
+}
+.js .xp-panel.is-open .xp-roles > .exp-role-block { opacity: 1; transform: none; }
+.xp-roles .exp-role { font-size: 1rem; }
+.xp-role {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+  padding: 12px 44px 12px 16px;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform var(--xp-dur) var(--xp-ease), box-shadow var(--xp-dur) var(--xp-ease), border-color var(--xp-dur) var(--xp-ease);
+}
+.xp-role .xp-arrow { top: 12px; }
+.xp-role-t { font-weight: 600; }
+.xp-role-d { font-size: 0.8125rem; font-weight: 400; color: var(--muted); }
+.xp-role-d .exp-len { display: inline; margin: 0; color: inherit; letter-spacing: 0; }
+.xp-role:hover { transform: translateY(calc(var(--xp-lift) / 2)); box-shadow: var(--xp-shadow); border-color: var(--accent); }
+.xp-role[aria-expanded="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.xp-resp-card {
+  margin: 8px 0 2px;
+  padding: 14px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.xp-resp-card .exp-resp-summary { margin-top: 0; }
+.xp-resp-card .exp-resp-list li { margin-bottom: 6px; }
+.exp-skill-chips[hidden] { display: none; }
+
+@media (max-width: 760px) {
+  .xp-cos {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin: 0 -16px;
+    padding: 8px 16px 12px;
+    scrollbar-width: thin;
+  }
+  .xp-cos > li { flex: 0 0 68%; scroll-snap-align: start; }
+  .xp-roles { padding-left: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #experience { --xp-dur: 0ms; --xp-lift: 0px; --xp-shift: 0px; --xp-stagger: 0ms; }
+  .xp-card, .xp-role, .xp-arrow, .js .xp-panel, .js .xp-panel > .xp-inner, .js .xp-roles > .exp-role-block { transition: none; }
+  .js .xp-panel.is-open > .xp-inner { animation: none; overflow: visible; }
+}
+html.reduce #experience { --xp-dur: 0ms; --xp-lift: 0px; --xp-shift: 0px; --xp-stagger: 0ms; }
+html.reduce .xp-card,
+html.reduce .xp-role,
+html.reduce .xp-arrow,
+html.reduce .js .xp-panel,
+html.reduce.js .xp-panel,
+html.reduce.js .xp-panel > .xp-inner,
+html.reduce.js .xp-roles > .exp-role-block { transition: none; }
+html.reduce.js .xp-panel.is-open > .xp-inner { animation: none; overflow: visible; }

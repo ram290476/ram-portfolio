@@ -51,6 +51,7 @@
   <link rel="stylesheet" href="assets/chat/chat.css" />
   <link rel="stylesheet" href="assets/slides.css" />
   <link rel="stylesheet" href="assets/wordcloud.css" />
+  <link rel="stylesheet" href="assets/heatmap.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -130,9 +131,14 @@
     <section id="skills" aria-labelledby="skills-heading">
       <div class="section-row">
         <h2 id="skills-heading" class="section-h">Skills</h2>
+        <div class="section-actions skills-actions">
+        <button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="4" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="9.75" y="4" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="15.5" y="4" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="4" y="9.75" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="9.75" y="9.75" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="15.5" y="9.75" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="4" y="15.5" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="9.75" y="15.5" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="15.5" y="15.5" width="4.5" height="4.5" rx="1" fill="currentColor"/></svg>
+        </button>
         <button type="button" class="wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-expanded="false" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 18a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.6 4.2 4.2 0 0 1 18 18H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.5h3M8.5 15h6.5M13 12.5h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </button>
+        </div>
       </div>
       <div class="skill-grid">
         <article>
@@ -242,285 +248,306 @@
           <a class="button button-icon" href="assets/Ram_Career_Overview.pptx" download target="_blank" rel="noopener noreferrer" aria-label="Download career overview slides" title="Download career overview slides"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a>
         </div>
       </div>
-
-      <div class="exp">
-        <div class="exp-date">
-          <p>Jul 2023 – Aug 2026 <span class="exp-len" data-roles="2023-07/2026-01,2026-01/2026-08">3 yrs 1 mo</span></p>
+      <p class="xp-hint">Pick a company to see its roles, then a role to see its responsibilities.</p>
+      <ul class="xp-cos" aria-label="Companies">
+        <li><button type="button" class="xp-card" id="xp-card-jpmc" aria-expanded="false" aria-controls="xp-panel-jpmc"><span class="xp-name">JPMorgan Chase</span><span class="xp-years">2023–2026</span><span class="exp-len xp-dur" data-roles="2023-07/2026-01,2026-01/2026-08">3 yrs 1 mo</span><span class="xp-loc">San Francisco, CA</span><span class="xp-bar" aria-hidden="true"><i style="--xp-s:0.8502;--xp-w:0.1498"></i></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+        <li><button type="button" class="xp-card" id="xp-card-frb" aria-expanded="false" aria-controls="xp-panel-frb"><span class="xp-name">First Republic Bank</span><span class="xp-years">2020–2023</span><span class="exp-len xp-dur" data-roles="2020-04/2023-07">3 yrs 3 mos</span><span class="xp-loc">San Francisco, CA</span><span class="xp-bar" aria-hidden="true"><i style="--xp-s:0.6923;--xp-w:0.1579"></i></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+        <li><button type="button" class="xp-card" id="xp-card-corsair" aria-expanded="false" aria-controls="xp-panel-corsair"><span class="xp-name">Corsair</span><span class="xp-years">2013–2020</span><span class="exp-len xp-dur" data-roles="2013-05/2017-01,2017-01/2020-02">6 yrs 9 mos</span><span class="xp-loc">Fremont, CA</span><span class="xp-bar" aria-hidden="true"><i style="--xp-s:0.3563;--xp-w:0.3279"></i></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+        <li><button type="button" class="xp-card" id="xp-card-esp" aria-expanded="false" aria-controls="xp-panel-esp"><span class="xp-name">ESP</span><span class="xp-years">2006–2013</span><span class="exp-len xp-dur" data-roles="2006-01/2013-02">7 yrs 1 mo</span><span class="xp-loc">Santa Clara, CA</span><span class="xp-bar" aria-hidden="true"><i style="--xp-s:0.0000;--xp-w:0.3441"></i></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+      </ul>
+      <div class="xp-panel" id="xp-panel-jpmc" role="region" aria-labelledby="xp-card-jpmc" data-range="Jul 2023 – Aug 2026">
+        <div class="xp-inner">
+          <div class="xp-head"><p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-jpmc">JPMorgan Chase</button><span class="info-pop" id="co-jpmc" role="dialog" aria-modal="false" aria-labelledby="co-jpmc-title" hidden><span class="info-pop-head"><span id="co-jpmc-title">JPMorgan Chase</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">JPMorgan Chase is a global financial services firm and the largest U.S. bank by assets. Its headquarters is in New York. Ram worked in San Francisco and used an MLOps framework as DevOps on an AML application.</span></span></span> · San Francisco, CA</p><p class="xp-meta">Jul 2023 – Aug 2026 · 3 yrs 1 mo · 2 roles</p></div>
+          <ul class="xp-roles">
+            <li class="exp-role-block" style="--xp-i:0">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-jpmc-mlops" aria-expanded="false" aria-controls="resp-jpmc-mlops" data-start="2026-01" data-end="2026-08"><span class="xp-role-t">MLOps platform</span> <span class="xp-role-d">Jan 2026 – Aug 2026 · <span class="exp-len" data-start="2026-01" data-end="2026-08">7 mos</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-jpmc-mlops" role="region" aria-labelledby="role-jpmc-mlops">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="jpmc-mlops">
+                    <p class="exp-resp-summary">SRE for the enterprise AI/ML platform. Brought in to move the firm's MLOps estate onto a new SageMaker-based framework without interrupting inference for downstream consumers, and to put automated validation and reliability tooling around models running in production.</p>
+                    <ul class="exp-resp-list" id="resp-jpmc-mlops-list">
+                      <li>Re-platformed enterprise MLOps workloads onto AWS SageMaker, migrating to new AWS accounts across all environments from scratch while preserving model availability for downstream consumers.</li>
+                      <li>Engineered Python automation that validates AI/ML model inference endpoints, running automated regression checks that catch inference degradation before it reaches production.</li>
+                      <li>Standardized CI/CD model promotion for model-serving infrastructure, making deployments consistent and repeatable across development, test, and production.</li>
+                      <li>Championed AI-assisted development with GitHub Copilot and VS Code, accelerating delivery of infrastructure code, automation scripts, and test coverage across the team.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-jpmc-mlops" hidden>
+                    <li>AWS</li>
+                    <li>SageMaker</li>
+                    <li>Terraform</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Docker</li>
+                    <li>MLOps</li>
+                    <li>Jenkins</li>
+                    <li>Spinnaker</li>
+                    <li>Grafana</li>
+                    <li>RHEL</li>
+                    <li>Infrastructure as code</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Cloud Services</li>
+                    <li>Bash</li>
+                    <li>CI/CD</li>
+                    <li>Artifactory</li>
+                    <li>Git</li>
+                    <li>Jules</li>
+                    <li>GitHub Copilot</li>
+                    <li>VS Code</li>
+                    <li>Splunk Enterprise</li>
+                    <li>ServiceNow</li>
+                    <li>Machine Learning</li>
+                    <li>Large Language Models</li>
+                    <li>Reliability Engineering</li>
+                    <li>Incident Response</li>
+                    <li>Disaster Recovery</li>
+                    <li>Capacity Planning</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="exp-role-block" style="--xp-i:1">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-jpmc-sre" aria-expanded="false" aria-controls="resp-jpmc-sre" data-start="2023-07" data-end="2026-01"><span class="xp-role-t">Site Reliability &amp; Platform Engineer</span> <span class="xp-role-d">Jul 2023 – Jan 2026 · <span class="exp-len" data-start="2023-07" data-end="2026-01">2 yrs 6 mos</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-jpmc-sre" role="region" aria-labelledby="role-jpmc-sre">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="jpmc-sre">
+                    <p class="exp-resp-summary">Platform and reliability engineering for Line of Business application teams across AWS and the firm’s private cloud — the reliability layer between LOB developers and regulated infrastructure. Defined what healthy meant, carried the on-call that proved it, and built the pipelines and IaC those teams shipped on.</p>
+                    <ul class="exp-resp-list" id="resp-jpmc-sre-list">
+                      <li>Defined and tracked SLOs and SLIs for distributed microservices, building Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, FinOps spend, and SLA compliance across AWS and private cloud.</li>
+                      <li>Ran on-call incident response for high-availability distributed systems — triaged production incidents, drove root-cause analysis and blameless postmortems, and authored runbooks that reduced mean time to resolution by 30%.</li>
+                      <li>Performed capacity planning for Kubernetes clusters on the firm’s private cloud running on Linux/Unix hosts — right-sizing resource requests and limits, tuning Docker deployments, and managing cluster setup and deployment manifests to prevent over-provisioning.</li>
+                      <li>Authored and maintained Terraform and CloudFormation modules provisioning AWS and private cloud infrastructure for compliance-driven migrations, eliminating configuration drift and manual deployment effort.</li>
+                      <li>Built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deployments to AWS ECS and private cloud.</li>
+                      <li>Automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and private-cloud estates.</li>
+                      <li>Configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and built Splunk dashboards, reports, and alerts to strengthen end-to-end observability and incident detection.</li>
+                      <li>Managed Control-M scheduled job workflows and tuned failure alerting and escalation paths to shorten time to detection.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-jpmc-sre" hidden>
+                    <li>Kubernetes</li>
+                    <li>Terraform</li>
+                    <li>CloudFormation</li>
+                    <li>Docker</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Jenkins</li>
+                    <li>Spinnaker</li>
+                    <li>Dynatrace</li>
+                    <li>Splunk</li>
+                    <li>RHEL</li>
+                    <li>Infrastructure as code</li>
+                    <li>Private Clouds</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Cloud Services</li>
+                    <li>Cloud Cost Optimization</li>
+                    <li>Bash</li>
+                    <li>PowerShell</li>
+                    <li>CI/CD</li>
+                    <li>Artifactory</li>
+                    <li>Git</li>
+                    <li>Jules</li>
+                    <li>GitHub Copilot</li>
+                    <li>Grafana</li>
+                    <li>Splunk Enterprise</li>
+                    <li>ServiceNow</li>
+                    <li>Oracle Database</li>
+                    <li>Reliability Engineering</li>
+                    <li>Incident Response</li>
+                    <li>Disaster Recovery</li>
+                    <li>Microservices</li>
+                    <li>Machine Learning</li>
+                    <li>Large Language Models</li>
+                    <li>Capacity Planning</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="exp-body">
-          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-jpmc">JPMorgan Chase</button><span class="info-pop" id="co-jpmc" role="dialog" aria-modal="false" aria-labelledby="co-jpmc-title" hidden><span class="info-pop-head"><span id="co-jpmc-title">JPMorgan Chase</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">JPMorgan Chase is a global financial services firm and the largest U.S. bank by assets. Its headquarters is in New York. Ram worked in San Francisco and used an MLOps framework as DevOps on an AML application.</span></span></span> · San Francisco, CA</p>
-          <article class="exp-role-block" aria-labelledby="role-jpmc-sre">
-            <h3 class="exp-role" id="role-jpmc-sre">Site Reliability &amp; Platform Engineer (2023–2026)</h3>
-            <div class="exp-resp" data-role-resp="jpmc-sre">
-              <p class="exp-resp-summary">Platform and reliability engineering for Line of Business application teams across AWS and the firm’s private cloud — the reliability layer between LOB developers and regulated infrastructure. Defined what healthy meant, carried the on-call that proved it, and built the pipelines and IaC those teams shipped on.</p>
-              <ul class="exp-resp-list" id="resp-jpmc-sre-list">
-                <li>Defined and tracked SLOs and SLIs for distributed microservices, building Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, FinOps spend, and SLA compliance across AWS and private cloud.</li>
-                <li>Ran on-call incident response for high-availability distributed systems — triaged production incidents, drove root-cause analysis and blameless postmortems, and authored runbooks that reduced mean time to resolution by 30%.</li>
-                <li>Performed capacity planning for Kubernetes clusters on the firm’s private cloud running on Linux/Unix hosts — right-sizing resource requests and limits, tuning Docker deployments, and managing cluster setup and deployment manifests to prevent over-provisioning.</li>
-                <li class="exp-resp-more">Authored and maintained Terraform and CloudFormation modules provisioning AWS and private cloud infrastructure for compliance-driven migrations, eliminating configuration drift and manual deployment effort.</li>
-                <li class="exp-resp-more">Built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deployments to AWS ECS and private cloud.</li>
-                <li class="exp-resp-more">Automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and private-cloud estates.</li>
-                <li class="exp-resp-more">Configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and built Splunk dashboards, reports, and alerts to strengthen end-to-end observability and incident detection.</li>
-                <li class="exp-resp-more">Managed Control-M scheduled job workflows and tuned failure alerting and escalation paths to shorten time to detection.</li>
-              </ul>
-              <button type="button" class="exp-resp-toggle" aria-expanded="false" aria-controls="resp-jpmc-sre-list">Show more</button>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-jpmc-sre" aria-labelledby="role-jpmc-sre">
-              <li>Kubernetes</li>
-              <li>Terraform</li>
-              <li>CloudFormation</li>
-              <li>Docker</li>
-              <li>Python</li>
-              <li>Java</li>
-              <li>Jenkins</li>
-              <li>Spinnaker</li>
-              <li>Dynatrace</li>
-              <li>Splunk</li>
-              <li class="exp-skill-more">RHEL</li>
-              <li class="exp-skill-more">Infrastructure as code</li>
-              <li class="exp-skill-more">Private Clouds</li>
-              <li class="exp-skill-more">Cloud Infrastructure</li>
-              <li class="exp-skill-more">Cloud Services</li>
-              <li class="exp-skill-more">Cloud Cost Optimization</li>
-              <li class="exp-skill-more">Bash</li>
-              <li class="exp-skill-more">PowerShell</li>
-              <li class="exp-skill-more">CI/CD</li>
-              <li class="exp-skill-more">Artifactory</li>
-              <li class="exp-skill-more">Git</li>
-              <li class="exp-skill-more">Jules</li>
-              <li class="exp-skill-more">GitHub Copilot</li>
-              <li class="exp-skill-more">Grafana</li>
-              <li class="exp-skill-more">Splunk Enterprise</li>
-              <li class="exp-skill-more">ServiceNow</li>
-              <li class="exp-skill-more">Oracle Database</li>
-              <li class="exp-skill-more">Reliability Engineering</li>
-              <li class="exp-skill-more">Incident Response</li>
-              <li class="exp-skill-more">Disaster Recovery</li>
-              <li class="exp-skill-more">Microservices</li>
-              <li class="exp-skill-more">Machine Learning</li>
-              <li class="exp-skill-more">Large Language Models</li>
-              <li class="exp-skill-more">Capacity Planning</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-jpmc-sre">Show all 40</button>
-          </article>
-          <article class="exp-role-block" aria-labelledby="role-jpmc-mlops">
-            <h3 class="exp-role" id="role-jpmc-mlops">MLOps platform (2026)</h3>
-            <div class="exp-resp" data-role-resp="jpmc-mlops">
-              <p class="exp-resp-summary">SRE for the enterprise AI/ML platform. Brought in to move the firm's MLOps estate onto a new SageMaker-based framework without interrupting inference for downstream consumers, and to put automated validation and reliability tooling around models running in production.</p>
-              <ul class="exp-resp-list" id="resp-jpmc-mlops-list">
-                <li>Re-platformed enterprise MLOps workloads onto AWS SageMaker, migrating to new AWS accounts across all environments from scratch while preserving model availability for downstream consumers.</li>
-                <li>Engineered Python automation that validates AI/ML model inference endpoints, running automated regression checks that catch inference degradation before it reaches production.</li>
-                <li>Standardized CI/CD model promotion for model-serving infrastructure, making deployments consistent and repeatable across development, test, and production.</li>
-                <li class="exp-resp-more">Championed AI-assisted development with GitHub Copilot and VS Code, accelerating delivery of infrastructure code, automation scripts, and test coverage across the team.</li>
-              </ul>
-              <button type="button" class="exp-resp-toggle" aria-expanded="false" aria-controls="resp-jpmc-mlops-list">Show more</button>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-jpmc-mlops" aria-labelledby="role-jpmc-mlops">
-              <li>AWS</li>
-              <li>SageMaker</li>
-              <li>Terraform</li>
-              <li>Python</li>
-              <li>Java</li>
-              <li>Docker</li>
-              <li>MLOps</li>
-              <li>Jenkins</li>
-              <li>Spinnaker</li>
-              <li>Grafana</li>
-              <li class="exp-skill-more">RHEL</li>
-              <li class="exp-skill-more">Infrastructure as code</li>
-              <li class="exp-skill-more">Cloud Infrastructure</li>
-              <li class="exp-skill-more">Cloud Services</li>
-              <li class="exp-skill-more">Bash</li>
-              <li class="exp-skill-more">CI/CD</li>
-              <li class="exp-skill-more">Artifactory</li>
-              <li class="exp-skill-more">Git</li>
-              <li class="exp-skill-more">Jules</li>
-              <li class="exp-skill-more">GitHub Copilot</li>
-              <li class="exp-skill-more">VS Code</li>
-              <li class="exp-skill-more">Splunk Enterprise</li>
-              <li class="exp-skill-more">ServiceNow</li>
-              <li class="exp-skill-more">Machine Learning</li>
-              <li class="exp-skill-more">Large Language Models</li>
-              <li class="exp-skill-more">Reliability Engineering</li>
-              <li class="exp-skill-more">Incident Response</li>
-              <li class="exp-skill-more">Disaster Recovery</li>
-              <li class="exp-skill-more">Capacity Planning</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-jpmc-mlops">Show all 33</button>
-          </article>
+      </div>
+      <div class="xp-panel" id="xp-panel-frb" role="region" aria-labelledby="xp-card-frb" data-range="Apr 2020 – Jul 2023">
+        <div class="xp-inner">
+          <div class="xp-head"><p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-frb">First Republic Bank</button><span class="info-pop" id="co-frb" role="dialog" aria-modal="false" aria-labelledby="co-frb-title" hidden><span class="info-pop-head"><span id="co-frb-title">First Republic Bank</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">First Republic Bank was a private bank and private-wealth firm. Ram worked in San Francisco as technical lead for its Azure content platform, the platform-side person among a vendor and internal teams. JPMorgan Chase acquired First Republic in 2023.</span></span></span> · San Francisco, CA</p><p class="xp-meta">Apr 2020 – Jul 2023 · 3 yrs 3 mos · 1 role</p></div>
+          <ul class="xp-roles">
+            <li class="exp-role-block" style="--xp-i:0">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-frb" aria-expanded="false" aria-controls="resp-frb" data-start="2020-04" data-end="2023-07"><span class="xp-role-t">Technical Lead – Platform</span> <span class="xp-role-d">Apr 2020 – Jul 2023 · <span class="exp-len" data-start="2020-04" data-end="2023-07">3 yrs 3 mos</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-frb" role="region" aria-labelledby="role-frb">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="frb">
+                    <p class="exp-resp-summary">Technical lead for the bank's Azure-hosted Sitecore platform, owning it end to end — secure cloud architecture and infosec review, edge delivery, observability, disaster recovery, and the production on-call rotation — through its major version upgrade.</p>
+                    <ul class="exp-resp-list" id="resp-frb-list">
+                      <li>Led the Sitecore 9.1 → 10.2 upgrade on Azure end to end — authored the cutover plan and Go-Live runbook, then validated VPN tunnels, DNS, TLS certificates, SMTP, and Splunk/New Relic integrations in the upgraded environment.</li>
+                      <li>Ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, using Veracode static analysis to validate secure coding practices, and partnered with cloud and on-premises network teams on secure VPN access and firewall exception handling.</li>
+                      <li>Configured real-time alerting in Azure Monitor, New Relic, and Splunk, and served in the rotating on-call SRE rotation supporting platform uptime.</li>
+                      <li>Owned Akamai Kona edge delivery and security — WAF, GTM, SiteShield, and Edge Redirector — and integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.</li>
+                      <li>Improved page load performance through custom Solr indexes and Sitecore/Akamai caching strategies, and exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL.</li>
+                      <li>Ran disaster recovery testing across both on-premises infrastructure and the Azure-hosted Sitecore platform.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-frb" hidden>
+                    <li>Azure</li>
+                    <li>Sitecore</li>
+                    <li>Akamai</li>
+                    <li>C#</li>
+                    <li>TypeScript</li>
+                    <li>ASP.NET Core</li>
+                    <li>React</li>
+                    <li>Docker</li>
+                    <li>Jenkins</li>
+                    <li>New Relic</li>
+                    <li>AWS</li>
+                    <li>Private Clouds</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Cloud Services</li>
+                    <li>RHEL</li>
+                    <li>ASP.NET MVC</li>
+                    <li>ASP.NET Web API</li>
+                    <li>.NET Framework</li>
+                    <li>Groovy</li>
+                    <li>Bash</li>
+                    <li>PowerShell</li>
+                    <li>REST</li>
+                    <li>CI/CD</li>
+                    <li>Artifactory</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Jules</li>
+                    <li>Visual Studio</li>
+                    <li>VS Code</li>
+                    <li>Grafana</li>
+                    <li>Splunk</li>
+                    <li>Splunk Enterprise</li>
+                    <li>ServiceNow</li>
+                    <li>Web Application Firewalls</li>
+                    <li>SSO</li>
+                    <li>Microservices</li>
+                    <li>Reliability Engineering</li>
+                    <li>Incident Response</li>
+                    <li>Disaster Recovery</li>
+                    <li>Capacity Planning</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="exp-date">
-          <p>Apr 2020 – Jul 2023 <span class="exp-len" data-roles="2020-04/2023-07">3 yrs 3 mos</span></p>
+      </div>
+      <div class="xp-panel" id="xp-panel-corsair" role="region" aria-labelledby="xp-card-corsair" data-range="May 2013 – Feb 2020">
+        <div class="xp-inner">
+          <div class="xp-head"><p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-corsair">Corsair</button><span class="info-pop" id="co-corsair" role="dialog" aria-modal="false" aria-labelledby="co-corsair-title" hidden><span class="info-pop-head"><span id="co-corsair-title">Corsair</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">Corsair designs and makes high-performance gear for gamers, content creators, and PC enthusiasts. Ram worked in Fremont as the only on-site owner of the commerce platform, with a remote contractor team and a marketing partner who owned the website.</span></span></span> · Fremont, CA</p><p class="xp-meta">May 2013 – Feb 2020 · 6 yrs 9 mos · 2 roles</p></div>
+          <ul class="xp-roles">
+            <li class="exp-role-block" style="--xp-i:0">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-corsair-commerce" aria-expanded="false" aria-controls="resp-corsair-commerce" data-start="2017-01" data-end="2020-02"><span class="xp-role-t">Lead Commerce Architect</span> <span class="xp-role-d">Jan 2017 – Feb 2020 · <span class="exp-len" data-start="2017-01" data-end="2020-02">3 yrs 1 mo</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-corsair-commerce" role="region" aria-labelledby="role-corsair-commerce">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="corsair-commerce">
+                    <p class="exp-resp-summary">Architecture and delivery lead for a global e-commerce platform. Owned technology decisions, vendor selection, and release readiness across two successive platform migrations, leading a contractor team through a 12-month program to Go-Live.</p>
+                    <ul class="exp-resp-list" id="resp-corsair-commerce-list">
+                      <li>Led the SAP Commerce Cloud V2 upgrade end to end in five months, from requirements gathering through Go-Live, managing scope, timeline, and stakeholder alignment.</li>
+                      <li>Ran the Sitecore/Magento to SAP Hybris Commerce Cloud migration across requirements, architecture, development, QA, and training, then validated readiness through automated content quality checks and functional, performance, and user acceptance testing.</li>
+                      <li>Integrated payments, fraud, and tax systems — PayPal and Cybersource for order payments, Cybersource and Zendesk for returns fraud management, and Avalara for US and Canada tax configuration.</li>
+                      <li>Established GDPR data privacy processes and single sign-on across the web store, support portal, and forums using SAP Customer Data Cloud.</li>
+                      <li>Designed and executed the data migration strategy, integrated product feeds with retailer and affiliate partners, and owned Akamai delivery and security configuration.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-corsair-commerce" hidden>
+                    <li>SAP Commerce Cloud</li>
+                    <li>Azure</li>
+                    <li>Java</li>
+                    <li>C#</li>
+                    <li>TypeScript</li>
+                    <li>Sitecore</li>
+                    <li>Akamai</li>
+                    <li>React</li>
+                    <li>ASP.NET Core</li>
+                    <li>Jenkins</li>
+                    <li>SQL Server</li>
+                    <li>ASP.NET Web API</li>
+                    <li>PowerShell</li>
+                    <li>jQuery</li>
+                    <li>Visual Studio</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Splunk Enterprise</li>
+                    <li>New Relic</li>
+                    <li>SSO</li>
+                    <li>PayPal Integration</li>
+                    <li>Cybersource Integration</li>
+                    <li>Salesforce integration</li>
+                    <li>Zendesk Integration</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Cloud Services</li>
+                    <li>Microservices</li>
+                    <li>Incident Response</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="exp-role-block" style="--xp-i:1">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-corsair-net" aria-expanded="false" aria-controls="resp-corsair-net" data-start="2013-05" data-end="2017-01"><span class="xp-role-t">Senior .NET Engineer</span> <span class="xp-role-d">May 2013 – Jan 2017 · <span class="exp-len" data-start="2013-05" data-end="2017-01">3 yrs 8 mos</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-corsair-net" role="region" aria-labelledby="role-corsair-net">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="corsair-net">
+                    <p class="exp-resp-summary">Full-stack engineer on the commerce platform — customer-facing features plus the internal tooling and third-party integrations behind them, across .NET, Sitecore, and Magento. Primary engineer on two Sitecore platform migrations.</p>
+                    <ul class="exp-resp-list" id="resp-corsair-net-list">
+                      <li>Led migration of the commerce platform to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations.</li>
+                      <li>Built full-stack features and internal tooling in ASP.NET and C# — Sitecore content import/export, backup, and bulk operations — plus REST services delivering content to opsInfo Web/Windows applications.</li>
+                      <li>Automated pricing and inventory synchronization from Magento to Sitecore through Azure Pipelines and deployed Magento promotion and gift-card extensions, improving product data accuracy and reducing sync errors.</li>
+                      <li>Delivered Oracle ERP and Salesforce CRM integrations, analytics/SEO/BI reporting, affiliate product feeds, and Akamai CDN and NetStorage configuration.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-corsair-net" hidden>
+                    <li>C#</li>
+                    <li>ASP.NET MVC</li>
+                    <li>ASP.NET Web API</li>
+                    <li>Sitecore</li>
+                    <li>SQL Server</li>
+                    <li>jQuery</li>
+                    <li>REST</li>
+                    <li>PowerShell</li>
+                    <li>Akamai</li>
+                    <li>New Relic</li>
+                    <li>Visual Studio</li>
+                    <li>Magento Integration</li>
+                    <li>PayPal Integration</li>
+                    <li>Salesforce integration</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="exp-body">
-          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-frb">First Republic Bank</button><span class="info-pop" id="co-frb" role="dialog" aria-modal="false" aria-labelledby="co-frb-title" hidden><span class="info-pop-head"><span id="co-frb-title">First Republic Bank</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">First Republic Bank was a private bank and private-wealth firm. Ram worked in San Francisco as technical lead for its Azure content platform, the platform-side person among a vendor and internal teams. JPMorgan Chase acquired First Republic in 2023.</span></span></span> · San Francisco, CA</p>
-          <article class="exp-role-block" aria-labelledby="role-frb">
-            <h3 class="exp-role" id="role-frb">Technical Lead – Platform</h3>
-            <div class="exp-resp" data-role-resp="frb">
-              <p class="exp-resp-summary">Technical lead for the bank's Azure-hosted Sitecore platform, owning it end to end — secure cloud architecture and infosec review, edge delivery, observability, disaster recovery, and the production on-call rotation — through its major version upgrade.</p>
-              <ul class="exp-resp-list" id="resp-frb-list">
-                <li>Led the Sitecore 9.1 → 10.2 upgrade on Azure end to end — authored the cutover plan and Go-Live runbook, then validated VPN tunnels, DNS, TLS certificates, SMTP, and Splunk/New Relic integrations in the upgraded environment.</li>
-                <li>Ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, using Veracode static analysis to validate secure coding practices, and partnered with cloud and on-premises network teams on secure VPN access and firewall exception handling.</li>
-                <li>Configured real-time alerting in Azure Monitor, New Relic, and Splunk, and served in the rotating on-call SRE rotation supporting platform uptime.</li>
-                <li class="exp-resp-more">Owned Akamai Kona edge delivery and security — WAF, GTM, SiteShield, and Edge Redirector — and integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.</li>
-                <li class="exp-resp-more">Improved page load performance through custom Solr indexes and Sitecore/Akamai caching strategies, and exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL.</li>
-                <li class="exp-resp-more">Ran disaster recovery testing across both on-premises infrastructure and the Azure-hosted Sitecore platform.</li>
-              </ul>
-              <button type="button" class="exp-resp-toggle" aria-expanded="false" aria-controls="resp-frb-list">Show more</button>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-frb" aria-labelledby="role-frb">
-              <li>Azure</li>
-              <li>Sitecore</li>
-              <li>Akamai</li>
-              <li>C#</li>
-              <li>TypeScript</li>
-              <li>ASP.NET Core</li>
-              <li>React</li>
-              <li>Docker</li>
-              <li>Jenkins</li>
-              <li>New Relic</li>
-              <li class="exp-skill-more">AWS</li>
-              <li class="exp-skill-more">Private Clouds</li>
-              <li class="exp-skill-more">Cloud Infrastructure</li>
-              <li class="exp-skill-more">Cloud Services</li>
-              <li class="exp-skill-more">RHEL</li>
-              <li class="exp-skill-more">ASP.NET MVC</li>
-              <li class="exp-skill-more">ASP.NET Web API</li>
-              <li class="exp-skill-more">.NET Framework</li>
-              <li class="exp-skill-more">Groovy</li>
-              <li class="exp-skill-more">Bash</li>
-              <li class="exp-skill-more">PowerShell</li>
-              <li class="exp-skill-more">REST</li>
-              <li class="exp-skill-more">CI/CD</li>
-              <li class="exp-skill-more">Artifactory</li>
-              <li class="exp-skill-more">Git</li>
-              <li class="exp-skill-more">GitHub</li>
-              <li class="exp-skill-more">Jules</li>
-              <li class="exp-skill-more">Visual Studio</li>
-              <li class="exp-skill-more">VS Code</li>
-              <li class="exp-skill-more">Grafana</li>
-              <li class="exp-skill-more">Splunk</li>
-              <li class="exp-skill-more">Splunk Enterprise</li>
-              <li class="exp-skill-more">ServiceNow</li>
-              <li class="exp-skill-more">Web Application Firewalls</li>
-              <li class="exp-skill-more">SSO</li>
-              <li class="exp-skill-more">Microservices</li>
-              <li class="exp-skill-more">Reliability Engineering</li>
-              <li class="exp-skill-more">Incident Response</li>
-              <li class="exp-skill-more">Disaster Recovery</li>
-              <li class="exp-skill-more">Capacity Planning</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-frb">Show all 49</button>
-          </article>
-        </div>
-        <div class="exp-date">
-          <p>May 2013 – Feb 2020 <span class="exp-len" data-roles="2013-05/2017-01,2017-01/2020-02">6 yrs 9 mos</span></p>
-        </div>
-        <div class="exp-body">
-          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-corsair">Corsair</button><span class="info-pop" id="co-corsair" role="dialog" aria-modal="false" aria-labelledby="co-corsair-title" hidden><span class="info-pop-head"><span id="co-corsair-title">Corsair</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">Corsair designs and makes high-performance gear for gamers, content creators, and PC enthusiasts. Ram worked in Fremont as the only on-site owner of the commerce platform, with a remote contractor team and a marketing partner who owned the website.</span></span></span> · Fremont, CA</p>
-          <article class="exp-role-block" aria-labelledby="role-corsair-net">
-            <h3 class="exp-role" id="role-corsair-net">Senior .NET Engineer (2013–2017)</h3>
-            <div class="exp-resp" data-role-resp="corsair-net">
-              <p class="exp-resp-summary">Full-stack engineer on the commerce platform — customer-facing features plus the internal tooling and third-party integrations behind them, across .NET, Sitecore, and Magento. Primary engineer on two Sitecore platform migrations.</p>
-              <ul class="exp-resp-list" id="resp-corsair-net-list">
-                <li>Led migration of the commerce platform to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations.</li>
-                <li>Built full-stack features and internal tooling in ASP.NET and C# — Sitecore content import/export, backup, and bulk operations — plus REST services delivering content to opsInfo Web/Windows applications.</li>
-                <li>Automated pricing and inventory synchronization from Magento to Sitecore through Azure Pipelines and deployed Magento promotion and gift-card extensions, improving product data accuracy and reducing sync errors.</li>
-                <li class="exp-resp-more">Delivered Oracle ERP and Salesforce CRM integrations, analytics/SEO/BI reporting, affiliate product feeds, and Akamai CDN and NetStorage configuration.</li>
-              </ul>
-              <button type="button" class="exp-resp-toggle" aria-expanded="false" aria-controls="resp-corsair-net-list">Show more</button>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-corsair-net" aria-labelledby="role-corsair-net">
-              <li>C#</li>
-              <li>ASP.NET MVC</li>
-              <li>ASP.NET Web API</li>
-              <li>Sitecore</li>
-              <li>SQL Server</li>
-              <li>jQuery</li>
-              <li>REST</li>
-              <li>PowerShell</li>
-              <li>Akamai</li>
-              <li>New Relic</li>
-              <li class="exp-skill-more">Visual Studio</li>
-              <li class="exp-skill-more">Magento Integration</li>
-              <li class="exp-skill-more">PayPal Integration</li>
-              <li class="exp-skill-more">Salesforce integration</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-corsair-net">Show all 25</button>
-          </article>
-          <article class="exp-role-block" aria-labelledby="role-corsair-commerce">
-            <h3 class="exp-role" id="role-corsair-commerce">Lead Commerce Architect (2017–2020)</h3>
-            <div class="exp-resp" data-role-resp="corsair-commerce">
-              <p class="exp-resp-summary">Architecture and delivery lead for a global e-commerce platform. Owned technology decisions, vendor selection, and release readiness across two successive platform migrations, leading a contractor team through a 12-month program to Go-Live.</p>
-              <ul class="exp-resp-list" id="resp-corsair-commerce-list">
-                <li>Led the SAP Commerce Cloud V2 upgrade end to end in five months, from requirements gathering through Go-Live, managing scope, timeline, and stakeholder alignment.</li>
-                <li>Ran the Sitecore/Magento to SAP Hybris Commerce Cloud migration across requirements, architecture, development, QA, and training, then validated readiness through automated content quality checks and functional, performance, and user acceptance testing.</li>
-                <li>Integrated payments, fraud, and tax systems — PayPal and Cybersource for order payments, Cybersource and Zendesk for returns fraud management, and Avalara for US and Canada tax configuration.</li>
-                <li class="exp-resp-more">Established GDPR data privacy processes and single sign-on across the web store, support portal, and forums using SAP Customer Data Cloud.</li>
-                <li class="exp-resp-more">Designed and executed the data migration strategy, integrated product feeds with retailer and affiliate partners, and owned Akamai delivery and security configuration.</li>
-              </ul>
-              <button type="button" class="exp-resp-toggle" aria-expanded="false" aria-controls="resp-corsair-commerce-list">Show more</button>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-corsair-commerce" aria-labelledby="role-corsair-commerce">
-              <li>SAP Commerce Cloud</li>
-              <li>Azure</li>
-              <li>Java</li>
-              <li>C#</li>
-              <li>TypeScript</li>
-              <li>Sitecore</li>
-              <li>Akamai</li>
-              <li>React</li>
-              <li>ASP.NET Core</li>
-              <li>Jenkins</li>
-              <li class="exp-skill-more">SQL Server</li>
-              <li class="exp-skill-more">ASP.NET Web API</li>
-              <li class="exp-skill-more">PowerShell</li>
-              <li class="exp-skill-more">jQuery</li>
-              <li class="exp-skill-more">Visual Studio</li>
-              <li class="exp-skill-more">Git</li>
-              <li class="exp-skill-more">GitHub</li>
-              <li class="exp-skill-more">Splunk Enterprise</li>
-              <li class="exp-skill-more">New Relic</li>
-              <li class="exp-skill-more">SSO</li>
-              <li class="exp-skill-more">PayPal Integration</li>
-              <li class="exp-skill-more">Cybersource Integration</li>
-              <li class="exp-skill-more">Salesforce integration</li>
-              <li class="exp-skill-more">Zendesk Integration</li>
-              <li class="exp-skill-more">Cloud Infrastructure</li>
-              <li class="exp-skill-more">Cloud Services</li>
-              <li class="exp-skill-more">Microservices</li>
-              <li class="exp-skill-more">Incident Response</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-corsair-commerce">Show all 38</button>
-          </article>
-        </div>
-        <div class="exp-date">
-          <p>Jan 2006 – Feb 2013 <span class="exp-len" data-roles="2006-01/2013-02">7 yrs 1 mo</span></p>
-        </div>
-        <div class="exp-body">
-          <p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-esp">ESP</button><span class="info-pop" id="co-esp" role="dialog" aria-modal="false" aria-labelledby="co-esp-title" hidden><span class="info-pop-head"><span id="co-esp-title">ESP</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">ESP was an environmental software company that sold sustainability tools to enterprise clients. Ram worked in Santa Clara on opsInfo, a web application, and its reporting engine product. ESP was later acquired by IHS Markit.</span></span></span> · Santa Clara, CA</p>
-          <article class="exp-role-block" aria-labelledby="role-esp">
-            <h3 class="exp-role" id="role-esp">Senior Software Engineer</h3>
-            <div class="exp-resp" data-role-resp="esp">
-              <p class="exp-resp-summary">Full-stack engineer on opsInfo, an enterprise environmental and sustainability reporting product. Worked the whole stack — web framework, REST APIs, admin UI, reporting engine, and backend services — for a product deployed to enterprise clients across multiple countries.</p>
-              <ul class="exp-resp-list" id="resp-esp-list">
-                <li>Designed and built the web framework, REST APIs, and single-page Admin UI for the opsInfo web product, cutting page load times to under two seconds through advanced caching and query batching.</li>
-                <li>Re-platformed the reporting engine onto .NET to meet scalability demands and enable Unicode multi-language support, extending the product to 7 languages and new international markets.</li>
-                <li>Engineered integration APIs giving third-party products customizable access to opsInfo data, and built Windows services for asynchronous data processing plus diagnostics and upgrade tooling that cut client support inquiries.</li>
-              </ul>
-            </div>
-            <ul class="pills exp-skill-chips" id="skills-esp" aria-labelledby="role-esp">
-              <li>C#</li>
-              <li>.NET Framework</li>
-              <li>ASP.NET MVC</li>
-              <li>ASP.NET Web API</li>
-              <li>SQL Server</li>
-              <li>Oracle Database</li>
-              <li>jQuery</li>
-              <li>Visual Studio</li>
-            </ul>
-            <button type="button" class="exp-skill-toggle" aria-expanded="false" aria-controls="skills-esp">Show all 15</button>
-          </article>
+      </div>
+      <div class="xp-panel" id="xp-panel-esp" role="region" aria-labelledby="xp-card-esp" data-range="Jan 2006 – Feb 2013">
+        <div class="xp-inner">
+          <div class="xp-head"><p class="exp-co"><span class="company"><button type="button" class="company-btn" aria-expanded="false" aria-controls="co-esp">ESP</button><span class="info-pop" id="co-esp" role="dialog" aria-modal="false" aria-labelledby="co-esp-title" hidden><span class="info-pop-head"><span id="co-esp-title">ESP</span><button type="button" class="info-close" aria-label="Close company details">×</button></span><span class="info-pop-body">ESP was an environmental software company that sold sustainability tools to enterprise clients. Ram worked in Santa Clara on opsInfo, a web application, and its reporting engine product. ESP was later acquired by IHS Markit.</span></span></span> · Santa Clara, CA</p><p class="xp-meta">Jan 2006 – Feb 2013 · 7 yrs 1 mo · 1 role</p></div>
+          <ul class="xp-roles">
+            <li class="exp-role-block" style="--xp-i:0">
+              <h3 class="exp-role"><button type="button" class="xp-role" id="role-esp" aria-expanded="false" aria-controls="resp-esp" data-start="2006-01" data-end="2013-02"><span class="xp-role-t">Senior Software Engineer</span> <span class="xp-role-d">Jan 2006 – Feb 2013 · <span class="exp-len" data-start="2006-01" data-end="2013-02">7 yrs 1 mo</span></span><span class="xp-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></h3>
+              <div class="xp-panel xp-resp" id="resp-esp" role="region" aria-labelledby="role-esp">
+                <div class="xp-inner">
+                  <div class="exp-resp xp-resp-card" data-role-resp="esp">
+                    <p class="exp-resp-summary">Full-stack engineer on opsInfo, an enterprise environmental and sustainability reporting product. Worked the whole stack — web framework, REST APIs, admin UI, reporting engine, and backend services — for a product deployed to enterprise clients across multiple countries.</p>
+                    <ul class="exp-resp-list" id="resp-esp-list">
+                      <li>Designed and built the web framework, REST APIs, and single-page Admin UI for the opsInfo web product, cutting page load times to under two seconds through advanced caching and query batching.</li>
+                      <li>Re-platformed the reporting engine onto .NET to meet scalability demands and enable Unicode multi-language support, extending the product to 7 languages and new international markets.</li>
+                      <li>Engineered integration APIs giving third-party products customizable access to opsInfo data, and built Windows services for asynchronous data processing plus diagnostics and upgrade tooling that cut client support inquiries.</li>
+                    </ul>
+                  </div>
+                  <ul class="pills exp-skill-chips" id="skills-esp" hidden>
+                    <li>C#</li>
+                    <li>.NET Framework</li>
+                    <li>ASP.NET MVC</li>
+                    <li>ASP.NET Web API</li>
+                    <li>SQL Server</li>
+                    <li>Oracle Database</li>
+                    <li>jQuery</li>
+                    <li>Visual Studio</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -964,6 +991,29 @@
     <ul class="wc-cloud" id="wordcloud-list" tabindex="0" aria-label="Keyword list"></ul>
   </dialog>
 
+  <dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">
+    <div class="wc-head">
+      <div>
+        <p class="kicker wc-kicker">Skills · Heatmap</p>
+        <h2 id="heatmap-title">Skills by year</h2>
+      </div>
+      <button type="button" class="wc-close" aria-label="Close skills heatmap">×</button>
+    </div>
+    <p class="wc-note">Each row is a skill and each column a year, built from the skill chips on each Experience role. Darker cells mean more roles used that skill that year. Pick a skill to see its roles.</p>
+    <div class="hm-scroll" id="heatmap-scroll" tabindex="0" role="region" aria-label="Skills heatmap grid">
+      <div class="hm-grid" id="heatmap-grid"></div>
+    </div>
+    <div class="hm-foot">
+      <ul class="hm-legend" aria-label="Legend">
+        <li><i class="hm-cell hm-l0" aria-hidden="true"></i>Not used</li>
+        <li><i class="hm-cell hm-l1" aria-hidden="true"></i>1 role</li>
+        <li><i class="hm-cell hm-l2" aria-hidden="true"></i>2 or more roles</li>
+      </ul>
+      <button type="button" class="hm-toggle" id="heatmap-toggle" aria-expanded="false" aria-controls="heatmap-grid">Show all</button>
+    </div>
+    <div class="hm-roles" id="heatmap-roles" aria-live="polite"></div>
+  </dialog>
+
   <script src="config.js"></script>
   <script src="main.js"></script>
   <script src="booking.js"></script>
@@ -972,8 +1022,10 @@
   <script type="module" src="durations.js"></script>
   <script src="company-info.js"></script>
   <script src="experience-skills.js"></script>
+  <script src="experience-layout.js"></script>
   <script type="module" src="assets/chat/chat.js"></script>
   <script src="assets/slides.js"></script>
   <script src="assets/wordcloud.js"></script>
+  <script src="assets/heatmap.js"></script>
 </body>
 </html>

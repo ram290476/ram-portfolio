@@ -1,0 +1,118 @@
+/* Skills heatmap dialog. Shares the word-cloud dialog frame (.wc-dialog, .wc-head, .wc-note). */
+.skills-actions { margin-left: auto; }
+.skills-actions .wc-open { margin-left: 0; }
+
+.hm-dialog { width: min(920px, calc(100vw - 24px)); }
+.hm-dialog[open] { animation: hm-rise 260ms cubic-bezier(.2, .7, .2, 1); }
+@keyframes hm-rise {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.hm-scroll {
+  margin: 12px 22px 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy) var(--pill);
+  flex: 0 1 auto;
+  min-height: 0;
+}
+.hm-scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.hm-grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) repeat(var(--hm-cols, 21), minmax(18px, 1fr));
+  gap: 2px;
+  min-width: 640px;
+  padding: 8px;
+  align-items: center;
+}
+.hm-corner,
+.hm-skill {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg);
+}
+.hm-corner { font-size: 0.6875rem; color: var(--muted); padding: 0 6px; }
+.hm-yr { font-size: 0.65625rem; color: var(--muted); text-align: center; }
+.hm-skill {
+  min-height: 24px;
+  border: 0;
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78125rem;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.hm-skill:hover { color: var(--accent); }
+.hm-skill[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+.hm-skill:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.hm-cell {
+  display: block;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  background: var(--pill);
+  cursor: pointer;
+}
+.hm-l1 { background: color-mix(in srgb, var(--accent) 45%, var(--pill)); }
+.hm-l2 { background: var(--accent); border-color: var(--accent); }
+.hm-cell.is-selected { outline: 2px solid var(--ink); outline-offset: -1px; }
+
+.hm-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 16px;
+  margin: 10px 22px 0;
+}
+.hm-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.78125rem;
+  color: var(--muted);
+}
+.hm-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.hm-legend .hm-cell { width: 14px; height: 14px; cursor: default; }
+.hm-toggle {
+  min-height: 24px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.hm-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.hm-roles { margin: 10px 22px 20px; min-height: 8px; overflow: auto; }
+.hm-roles-title { margin: 0 0 6px; font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
+.hm-roles-list { margin: 0; padding-left: 18px; font-size: 0.875rem; }
+
+@media (max-width: 560px) {
+  .hm-scroll { margin: 12px 16px 0; }
+  .hm-grid { grid-template-columns: 116px repeat(var(--hm-cols, 21), 20px); min-width: 0; }
+  .hm-foot { margin: 10px 16px 0; }
+  .hm-roles { margin: 10px 16px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-dialog[open] { animation: none; }
+}
+html.reduce .hm-dialog[open] { animation: none; }

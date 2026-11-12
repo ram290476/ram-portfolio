@@ -121,7 +121,7 @@ test("axe: homepage in every theme at desktop and mobile", { timeout: 180_000 },
   assert.equal(failures.join("\n"), "", failures.join("\n"));
 });
 
-test("axe: theme menu, word cloud, chat, and slides dialogs", { timeout: 120_000 }, async () => {
+test("axe: theme menu, word cloud, skills heatmap, chat, and slides dialogs", { timeout: 120_000 }, async () => {
   const failures = [];
   for (const vp of VIEWPORTS) {
     const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
@@ -147,6 +147,16 @@ test("axe: theme menu, word cloud, chat, and slides dialogs", { timeout: 120_000
     await page.keyboard.press("Escape");
 
     await page.evaluate(() => {
+      const btn = document.getElementById("heatmap-open");
+      if (btn) { btn.hidden = false; btn.click(); }
+    });
+    await page.waitForTimeout(350);
+    results = await runAxe(page);
+    msg = formatViolations(`${vp.name}/heatmap`, results);
+    if (msg) failures.push(msg);
+    await page.keyboard.press("Escape");
+
+    await page.evaluate(() => {
       const btn = document.querySelector("[data-chat-open]");
       if (btn) { btn.hidden = false; btn.click(); }
     });
@@ -166,6 +176,29 @@ test("axe: theme menu, word cloud, chat, and slides dialogs", { timeout: 120_000
     if (msg) failures.push(msg);
     await page.keyboard.press("Escape");
 
+    await context.close();
+  }
+  assert.equal(failures.join("\n"), "", failures.join("\n"));
+});
+
+test("axe: Experience with a company and a role expanded, in every theme", { timeout: 180_000 }, async () => {
+  const failures = [];
+  for (const vp of VIEWPORTS) {
+    const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    for (const theme of THEMES) {
+      await page.goto(`${base}/`, { waitUntil: "networkidle" });
+      await setTheme(page, theme);
+      await openMobileMenu(page, vp.name);
+      await page.evaluate(() => {
+        document.getElementById("xp-card-corsair").click();
+        document.getElementById("role-corsair-commerce").click();
+      });
+      await page.waitForTimeout(100);
+      const results = await runAxe(page);
+      const msg = formatViolations(`${vp.name}/${theme}/experience-expanded`, results);
+      if (msg) failures.push(msg);
+    }
     await context.close();
   }
   assert.equal(failures.join("\n"), "", failures.join("\n"));
