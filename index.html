@@ -7,14 +7,26 @@
     var theme = "editorial";
     var allowed = { editorial: 1, midnight: 1, minimal: 1, contrast: 1, gradient: 1, glass: 1 };
     try {
-      var stored = localStorage.getItem("theme");
+      var stored = localStorage.getItem("ram-portfolio-theme-v1");
+      if (!(stored && allowed[stored])) {
+        stored = localStorage.getItem("theme");
+        if (stored && allowed[stored]) {
+          try { localStorage.setItem("ram-portfolio-theme-v1", stored); } catch (e2) {}
+        }
+      }
       if (stored && allowed[stored]) theme = stored;
     } catch (e) {}
     document.documentElement.setAttribute("data-theme", theme);
     var fontScale = "100";
     var fontSteps = { "87.5": 1, "100": 1, "112.5": 1, "125": 1, "137.5": 1, "150": 1 };
     try {
-      var storedFont = localStorage.getItem("font-scale");
+      var storedFont = localStorage.getItem("ram-portfolio-font-scale-v1");
+      if (!(storedFont && fontSteps[storedFont])) {
+        storedFont = localStorage.getItem("font-scale");
+        if (storedFont && fontSteps[storedFont]) {
+          try { localStorage.setItem("ram-portfolio-font-scale-v1", storedFont); } catch (e2) {}
+        }
+      }
       if (storedFont && fontSteps[storedFont]) fontScale = storedFont;
     } catch (e) {}
     document.documentElement.setAttribute("data-font-scale", fontScale);

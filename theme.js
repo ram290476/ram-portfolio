@@ -86,7 +86,7 @@
   function apply(theme) {
     if (!allowed[theme]) return;
     root.setAttribute("data-theme", theme);
-    try { localStorage.setItem("theme", theme); } catch (e) {}
+    try { localStorage.setItem("ram-portfolio-theme-v1", theme); } catch (e) {}
     ensureFonts(theme);
     mark();
   }

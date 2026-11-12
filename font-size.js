@@ -17,7 +17,7 @@
     if (index > steps.length - 1) index = steps.length - 1;
     var value = steps[index];
     root.setAttribute("data-font-scale", value);
-    try { localStorage.setItem("font-scale", value); } catch (e) {}
+    try { localStorage.setItem("ram-portfolio-font-scale-v1", value); } catch (e) {}
     dec.disabled = index === 0;
     inc.disabled = index === steps.length - 1;
     if (announce && status) status.textContent = "Font size " + value + "%";
