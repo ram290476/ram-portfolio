@@ -350,15 +350,6 @@ h1 {
 }
 .hero-sub.tight { margin-top: 0; font-size: 0.9375rem; }
 
-.thesis {
-  margin: 18px 0 0;
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  line-height: 1.4;
-  color: var(--navy);
-  max-width: 36ch;
-}
-
 .hero-meta {
   margin: 18px 0 0;
   font-size: 0.8125rem;
