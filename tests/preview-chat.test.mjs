@@ -65,10 +65,19 @@ test("knowledge base is curated, local, and free of private patterns", () => {
   ];
   for (const pattern of banned) assert.doesNotMatch(text, pattern);
   for (const entry of kb) {
-    assert.ok(entry.answer.length < 650, entry.id);
+    const maxAnswer = entry.id === "about" ? 800 : 650;
+    assert.ok(entry.answer.length < maxAnswer, entry.id);
     assert.ok(entry.questions.length >= 2, entry.id);
     assert.match(entry.link, /^#[a-z0-9-]+$/);
   }
+});
+
+test("the About summary matches the knowledge-base About answer verbatim", () => {
+  const about = "I'm a Senior Site Reliability and Platform Engineer with 20 years in software development, including six in financial services. At Corsair, the gaming hardware company, I led the Sitecore and SAP Commerce migration while those commerce systems stayed live. At First Republic Bank, I built and operated the bank's Azure-based content platform. At JPMorgan Chase, I owned the DevOps workflows behind large migrations on AWS, using Jenkins, Spinnaker, Kubernetes, and Terraform. I also did SRE work there, keeping systems reliable with an observability stack backed by clear SLI/SLO definitions and burn-rate alerting. Across every role, I've led platform migrations end to end, from design through production, and kept them reliable after launch.";
+  const hero = page.match(/<p class="hero-sub">([\s\S]*?)<\/p>/);
+  assert.ok(hero, "About summary paragraph is missing");
+  assert.equal(hero[1], about);
+  assert.equal(kb.find((entry) => entry.id === "about")?.answer, about);
 });
 
 for (const [question, id] of [

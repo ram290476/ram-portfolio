@@ -27,7 +27,8 @@ export function upgradePublishedKnowledge(entries) {
     }
     if (entry.id.endsWith("a340f9-10")) entry.answer = entry.answer.split(" - Debugging:")[0];
     if (entry.id.endsWith("a340f9-11")) entry.answer = "Notes: Kubernetes horizontal pod autoscaling. - Debugging: kubectl describe hpa payments-api shows current vs. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events.";
-    if (entry.answer.length <= 649) { repaired.push(entry); continue; }
+    // The handwritten About entry must match the live About paragraph verbatim, even if it is longer than 649 characters.
+    if (entry.id === "about" || entry.answer.length <= 649) { repaired.push(entry); continue; }
     const prefix = `${entry.topic}. `;
     for (const [index, passage] of splitLong(bodyOf(entry), 649 - prefix.length).entries()) {
       repaired.push({ ...entry, id: entry.id + (index ? `-reflow${index + 1}` : ""), answer: prefix + passage });
@@ -60,7 +61,7 @@ export function upgradePublishedKnowledge(entries) {
   if (!validKnowledge(repaired) || new Set(repaired.map((entry) => entry.id)).size !== repaired.length) throw new Error("Invalid repaired knowledge base.");
   let rejected = 0;
   for (const entry of repaired) {
-    if (entry.answer.length > 649) throw new Error("An answer exceeds the existing size limit.");
+    if (entry.id !== "about" && entry.answer.length > 649) throw new Error("An answer exceeds the existing size limit.");
     if (entry.source === "vault" && scrubReasons([entry.id, entry.topic, entry.answer, ...entry.questions, ...entry.tags].join("\n")).length) rejected += 1;
   }
   if (rejected) throw new Error(`Second scrub rejected ${rejected} repaired entries; knowledge base unchanged.`);
