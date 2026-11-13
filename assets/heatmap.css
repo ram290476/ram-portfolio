@@ -133,7 +133,7 @@ html[data-theme="contrast"] .hm-panel {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin: 12px 0 0;
+  margin: 12px 0 0 auto;
   width: max-content;
   max-width: 100%;
   border: 1px solid var(--line);
@@ -193,6 +193,7 @@ html[data-theme="contrast"] .hm-panel {
     grid-template-columns: 1fr 1fr;
     width: auto;
     max-width: none;
+    margin-left: 0;
   }
   .hm-sort-btn { padding: 4px 8px; }
   .hm-sort-btn:nth-child(odd) { border-left: 0; }

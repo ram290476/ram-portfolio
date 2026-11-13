@@ -353,3 +353,24 @@ test("at 375px the grouping control fits and skill labels stay visible while the
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), 0);
   await context.close();
 });
+
+test("the grouping control is right-aligned on desktop and full-width on a phone", { timeout: 60_000 }, async () => {
+  const themes = ["editorial", "midnight", "minimal", "contrast", "gradient", "glass"];
+  const { context, page } = await openPage({ width: 1280, height: 800 });
+  for (const theme of themes) {
+    await page.evaluate((th) => document.documentElement.setAttribute("data-theme", th), theme);
+    const sort = await page.locator(".hm-sort").boundingBox();
+    const grid = await page.locator("#heatmap-scroll").boundingBox();
+    assert.ok(Math.abs((sort.x + sort.width) - (grid.x + grid.width)) <= 2, `${theme}: sort bar right edge lines up with the grid`);
+    assert.ok(sort.x > grid.x + 40, `${theme}: sort bar is on the right, not the left`);
+  }
+  await context.close();
+
+  const phone = await openPage({ width: 375, height: 812 });
+  const sort = await phone.page.locator(".hm-sort").boundingBox();
+  const grid = await phone.page.locator("#heatmap-scroll").boundingBox();
+  assert.ok(Math.abs(sort.x - grid.x) <= 2, "on a phone the 2×2 control stays full-width on the left");
+  assert.ok(Math.abs((sort.x + sort.width) - (grid.x + grid.width)) <= 2, "on a phone the 2×2 control stays full-width on the right");
+  assert.equal(await phone.page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), 0);
+  await phone.context.close();
+});

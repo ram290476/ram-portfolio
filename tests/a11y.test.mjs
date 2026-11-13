@@ -226,15 +226,28 @@ test("axe: skills heatmap in each grouping and every theme", { timeout: 180_000 
 test("axe: preview redirect page", { timeout: 30_000 }, async () => {
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();
+  // The preview page's meta refresh (content=0) races a post-goto DOM cleanup and
+  // lands axe on the homepage mid tab-panel fade. Strip the tag from the HTML
+  // before the browser parses it, and keep the location.replace stub, so this
+  // check stays on the preview page.
+  await page.route((url) => url.pathname.startsWith("/preview"), async (route) => {
+    const response = await route.fetch();
+    const body = (await response.text())
+      .replace(/<meta\s+http-equiv=["']refresh["'][^>]*>/i, "")
+      .replace(/<script>\s*location\.replace\([^<]*<\/script>/i, "");
+    const headers = { ...response.headers() };
+    delete headers["content-encoding"];
+    delete headers["content-length"];
+    await route.fulfill({ status: response.status(), headers, body });
+  });
   await page.addInitScript(() => {
     const raw = window.location.replace.bind(window.location);
     window.location.replace = () => {};
     void raw;
   });
   await page.goto(`${base}/preview/index.html`, { waitUntil: "domcontentloaded" });
-  await page.evaluate(() => {
-    document.querySelectorAll('meta[http-equiv="refresh"]').forEach((m) => m.remove());
-  });
+  assert.match(page.url(), /\/preview(?:\/index\.html)?(?:#.*)?$/);
+  assert.equal(await page.locator("#skills-panel-heatmap").count(), 0);
   const results = await runAxe(page);
   await context.close();
   const msg = formatViolations("preview", results);
