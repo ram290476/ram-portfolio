@@ -8,7 +8,7 @@
       "What is his background?",
       "Tell me about Ram"
     ],
-    "answer": "Senior Site Reliability Engineer and Platform Engineer with 20 years of experience in software development, including six years in financial services. I lead end-to-end platform migrations into production, transitioning systems such as Sitecore and SAP Commerce to a bank’s content platform on Azure. DevOps workflows behind them using Jenkins, Spinnaker, Kubernetes, and Terraform. Kept systems reliable with an observability stack built on Dynatrace, Splunk, and Grafana, backed by clear SLI/SLO definitions and burn-rate alerting.",
+    "answer": "I'm a Senior Site Reliability and Platform Engineer with 20 years in software development, including six in financial services. At Corsair, the gaming hardware company, I led the Sitecore and SAP Commerce migration while those commerce systems stayed live. At First Republic Bank, I built and operated the bank's Azure-based content platform. At JPMorgan Chase, I owned the DevOps workflows behind large migrations on AWS, using Jenkins, Spinnaker, Kubernetes, and Terraform. I also did SRE work there, keeping systems reliable with an observability stack backed by clear SLI/SLO definitions and burn-rate alerting. Across every role, I've led platform migrations end to end, from design through production, and kept them reliable after launch.",
     "tags": [
       "ram",
       "prasad",
