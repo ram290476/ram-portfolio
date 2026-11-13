@@ -138,16 +138,10 @@ test("without JavaScript every company, role and responsibility is visible", { t
   await context.close();
 });
 
-test("skills heatmap opens left of the word cloud, lists top 14 or all skills, traps and returns focus", { timeout: 60_000 }, async () => {
+test("skills heatmap is the default tab, lists top 14 or all skills, and a roles control lists roles", { timeout: 60_000 }, async () => {
   const { context, page, errors } = await openPage();
-  const heat = await page.locator("#heatmap-open").boundingBox();
-  const cloud = await page.locator("#wordcloud-open").boundingBox();
-  assert.ok(heat.x + heat.width <= cloud.x, "heatmap icon sits left of the word-cloud icon");
-  assert.ok(Math.abs(heat.y - cloud.y) < 2, "icons share a row");
-
-  await page.click("#heatmap-open");
-  assert.equal(await page.locator("#heatmap-dialog").evaluate((d) => d.open), true);
-  assert.equal(await expanded(page, "#heatmap-open"), "true");
+  assert.equal(await page.locator("#skills-tab-heatmap").getAttribute("aria-selected"), "true");
+  assert.equal(await page.locator("#skills-panel-heatmap").getAttribute("hidden"), null);
   assert.equal(await page.locator("#heatmap-grid .hm-skill").count(), 14);
   await page.click("#heatmap-toggle");
   const all = await page.locator("#heatmap-grid .hm-skill").count();
@@ -156,28 +150,29 @@ test("skills heatmap opens left of the word cloud, lists top 14 or all skills, t
   await page.click("#heatmap-toggle");
   assert.equal(await page.locator("#heatmap-grid .hm-skill").count(), 14);
 
-  await page.locator("#heatmap-grid .hm-skill").first().click();
+  assert.equal((await page.locator("#heatmap-roles").innerText()).trim(), "");
+  await page.locator("#heatmap-grid .hm-roles-open").first().click();
   assert.match(await page.locator("#heatmap-roles").innerText(), /\S/);
-
-  for (let i = 0; i < 40; i++) await page.keyboard.press("Tab");
-  assert.equal(await page.evaluate(() => document.getElementById("heatmap-dialog").contains(document.activeElement)), true);
-  await page.keyboard.press("Escape");
-  // The dialog's close event fires in a later task, so wait for its handler.
-  await page.waitForFunction(() => document.getElementById("heatmap-open").getAttribute("aria-expanded") === "false");
-  assert.equal(await page.locator("#heatmap-dialog").evaluate((d) => d.open), false);
-  assert.equal(await page.evaluate(() => document.activeElement.id), "heatmap-open");
   assert.deepEqual(errors, []);
   await context.close();
 });
 
-test("the word cloud still opens with every skill from the page", { timeout: 60_000 }, async () => {
+test("the word cloud still lists every skill from the page", { timeout: 60_000 }, async () => {
   const { context, page } = await openPage();
-  await page.click("#wordcloud-open");
-  assert.equal(await page.locator("#wordcloud-dialog").evaluate((d) => d.open), true);
-  assert.ok(await page.locator("#wordcloud-list li").count() > 100);
-  await page.keyboard.press("Escape");
-  await page.waitForFunction(() => !document.getElementById("wordcloud-dialog").open);
-  assert.equal(await page.evaluate(() => document.activeElement.id), "wordcloud-open");
+  await page.click("#skills-tab-wordcloud");
+  const count = await page.locator("#wordcloud-list li").count();
+  const unique = await page.evaluate(() => {
+    const counts = new Map();
+    document.querySelectorAll("main .pills li, .pills li").forEach((li) => {
+      if (li.closest("#wordcloud-list")) return;
+      const word = li.textContent.replace(/\s+/g, " ").trim();
+      if (!word || word.length > 40) return;
+      counts.set(word.toLowerCase(), word);
+    });
+    return counts.size;
+  });
+  assert.equal(count, unique);
+  assert.equal(count, 138);
   await context.close();
 });
 
@@ -191,8 +186,6 @@ test("at 375px the cards scroll inside their row and the page never scrolls side
   await page.click("#role-corsair-commerce");
   await page.waitForTimeout(500);
   assert.equal(await overflow(), 0);
-  await page.click("#heatmap-open");
-  assert.equal(await overflow(), 0);
   await context.close();
 });
 
@@ -203,8 +196,7 @@ test("reduced motion turns the Experience and heatmap animations off", { timeout
   await page.click("#xp-card-frb");
   const panelTransition = await page.locator("#xp-panel-frb").evaluate((el) => getComputedStyle(el).transitionDuration);
   assert.match(panelTransition, /^0s(, 0s)*$/);
-  await page.click("#heatmap-open");
-  assert.equal(await page.locator("#heatmap-dialog").evaluate((d) => getComputedStyle(d).animationName), "none");
+  assert.equal(await page.locator("#skills-panel-heatmap").evaluate((d) => getComputedStyle(d).animationName), "none");
   await context.close();
 });
 
@@ -217,10 +209,11 @@ function heatmapRows(page) {
     const kids = [...document.getElementById("heatmap-grid").children];
     kids.forEach((node, i) => {
       if (node.classList.contains("hm-group")) group = node.textContent.trim();
-      if (!node.classList.contains("hm-skill")) return;
+      const skillBtn = node.classList.contains("hm-label") ? node.querySelector(".hm-skill") : null;
+      if (!skillBtn) return;
       const cells = kids.slice(i + 1, i + 1 + years);
       const used = cells.map((c, j) => (c.classList.contains("hm-l0") ? -1 : j)).filter((j) => j >= 0);
-      rows.push({ skill: node.dataset.skill, years: used.length, last: used[used.length - 1], group });
+      rows.push({ skill: skillBtn.dataset.skill, years: used.length, last: used[used.length - 1], group });
     });
     return rows;
   });
@@ -230,7 +223,6 @@ const pressed = (page) => page.locator(".hm-sort-btn").evaluateAll((els) => els.
 
 test("heatmap groups and sorts by Most used, By category, A–Z and Most recent, with Show all", { timeout: 60_000 }, async () => {
   const { context, page, errors } = await openPage();
-  await page.click("#heatmap-open");
   assert.deepEqual(await pressed(page), ["used=true", "category=false", "az=false", "recent=false"]);
   assert.equal(await page.locator(".hm-sort").getAttribute("role"), "group");
 
@@ -278,7 +270,6 @@ test("heatmap groups and sorts by Most used, By category, A–Z and Most recent,
 
 test("the grouping control works from the keyboard and is remembered for the session", { timeout: 60_000 }, async () => {
   const { context, page } = await openPage();
-  await page.click("#heatmap-open");
   await page.focus('.hm-sort-btn[data-sort="used"]');
   await page.keyboard.press("ArrowRight");
   assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "category");
@@ -294,7 +285,6 @@ test("the grouping control works from the keyboard and is remembered for the ses
   await page.keyboard.press("Escape");
 
   await page.reload({ waitUntil: "networkidle" });
-  await page.click("#heatmap-open");
   assert.deepEqual(await pressed(page), ["used=false", "category=false", "az=true", "recent=false"]);
   const first = await heatmapRows(page);
   assert.equal(first[0].skill, [...first.map((r) => r.skill)].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))[0]);
@@ -303,7 +293,6 @@ test("the grouping control works from the keyboard and is remembered for the ses
   const fresh = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const other = await fresh.newPage();
   await other.goto(`${base}/`, { waitUntil: "networkidle" });
-  await other.click("#heatmap-open");
   assert.deepEqual(await pressed(other), ["used=true", "category=false", "az=false", "recent=false"]);
   await fresh.close();
   await context.close();
@@ -315,8 +304,7 @@ test("heatmap colors come from each theme with a readable scale, including High 
   const seen = new Set();
   for (const theme of themes) {
     await page.evaluate((t) => document.documentElement.setAttribute("data-theme", t), theme);
-    await page.click("#heatmap-open");
-    await page.click('.hm-sort-btn[data-sort="category"]');
+      await page.click('.hm-sort-btn[data-sort="category"]');
     const m = await page.evaluate(() => {
       const ctx = document.createElement("canvas").getContext("2d");
       const rgb = (c) => { ctx.clearRect(0, 0, 1, 1); ctx.fillStyle = c; ctx.fillRect(0, 0, 1, 1); return [...ctx.getImageData(0, 0, 1, 1).data].slice(0, 3); };
@@ -344,7 +332,6 @@ test("heatmap colors come from each theme with a readable scale, including High 
     assert.ok(m.group >= 4.5 && m.year >= 4.5, `${theme}: header text contrast ${m.group}/${m.year}`);
     assert.ok(m.pressed >= 4.5, `${theme}: selected grouping button contrast ${m.pressed}`);
     seen.add(m.l2);
-    await page.keyboard.press("Escape");
   }
   assert.equal(seen.size, themes.length, "every theme has its own heatmap color");
   await context.close();
@@ -352,7 +339,6 @@ test("heatmap colors come from each theme with a readable scale, including High 
 
 test("at 375px the grouping control fits and skill labels stay visible while the grid scrolls", { timeout: 60_000 }, async () => {
   const { context, page } = await openPage({ width: 375, height: 812 });
-  await page.click("#heatmap-open");
   const box = await page.locator(".hm-sort").boundingBox();
   for (const b of await page.locator(".hm-sort-btn").all()) {
     const r = await b.boundingBox();
