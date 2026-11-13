@@ -362,7 +362,7 @@ test("each Experience role leads with LinkedIn responsibilities, then that role'
 });
 
 
-test("Personal project and career-overview links open in a new tab", () => {
+test("Personal project and work project links open in a new tab, and the Experience heading has no overview or download buttons", () => {
   const personal = page.match(/<section id="personal-projects"[\s\S]*?<\/section>/);
   assert.ok(personal, "Personal projects section is missing");
   const links = [...personal[0].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
@@ -391,15 +391,11 @@ test("Personal project and career-overview links open in a new tab", () => {
     assert.match(m[1], /rel="[^"]*\bnoopener\b[^"]*"/, m[1]);
     assert.match(m[1], /rel="[^"]*\bnoreferrer\b[^"]*"/, m[1]);
   }
-  const pdf = page.match(/<a class="button" href="assets\/Ram_Career_Overview_Lite\.pdf"([^>]*)>/);
-  assert.ok(pdf, "PDF career-overview download is missing");
-  assert.match(pdf[1], /target="_blank"/);
-  assert.match(pdf[1], /rel="[^"]*\bnoopener\b[^"]*"/);
-  const pptx = page.match(/<a class="button button-icon" href="assets\/Ram_Career_Overview\.pptx"([^>]*)>/);
-  assert.ok(pptx, "PPTX career-overview download is missing");
-  assert.match(pptx[1], /\bdownload\b/);
-  assert.match(pptx[1], /target="_blank"/);
-  assert.match(pptx[1], /rel="[^"]*\bnoopener\b[^"]*"/);
+  const experience = page.match(/<section id="experience"[\s\S]*?<\/section>/)[0];
+  assert.doesNotMatch(experience, /id="experience-overview"/);
+  assert.doesNotMatch(experience, /data-slides-open/);
+  assert.doesNotMatch(experience, /Ram_Career_Overview\.pptx/);
+  assert.doesNotMatch(experience, /Download career overview slides/);
 });
 
 test("Work and Personal projects collapse behind a Show more toggle", () => {
