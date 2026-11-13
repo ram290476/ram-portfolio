@@ -10,7 +10,7 @@ The homepage at the repository root is the full portfolio. The former unlisted p
 
 The sidebar uses `assets/photo.jpg`. If that file is missing, it falls back to an initials monogram. Add a square JPEG at that path to replace it.
 
-The Experience section has an **Experience overview** button that opens a full-screen player for the six-slide deck, and a **Download slides (PowerPoint)** button next to it. Slide images live in `assets/slides/`, rendered from the already-public `assets/Ram_Career_Overview_Lite.pdf`. The downloadable deck is `assets/Ram_Career_Overview.pptx`. Other PowerPoint sources stay gitignored.
+Slide images for the six-slide career overview live in `assets/slides/`, rendered from the already-public `assets/Ram_Career_Overview_Lite.pdf`. The Contact section has a **Download experience overview** link for that PDF, and a **Download latest resume** link. The PowerPoint deck `assets/Ram_Career_Overview.pptx` remains in the repo. Other PowerPoint sources stay gitignored.
 
 ## Portfolio guide notes
 

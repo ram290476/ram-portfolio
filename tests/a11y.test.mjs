@@ -164,16 +164,6 @@ test("axe: theme menu, word cloud, skills heatmap, chat, and slides dialogs", { 
     if (msg) failures.push(msg);
     await page.keyboard.press("Escape");
 
-    await page.evaluate(() => {
-      const btn = document.querySelector("[data-slides-open]");
-      if (btn) { btn.hidden = false; btn.click(); }
-    });
-    await page.waitForTimeout(250);
-    results = await runAxe(page);
-    msg = formatViolations(`${vp.name}/slides`, results);
-    if (msg) failures.push(msg);
-    await page.keyboard.press("Escape");
-
     await context.close();
   }
   assert.equal(failures.join("\n"), "", failures.join("\n"));
