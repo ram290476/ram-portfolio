@@ -199,7 +199,8 @@ test("Skills section has Heatmap, Category and Word cloud tabs, with Heatmap fir
   assert.match(tabJS, /Home/);
   const chatJS = read("assets/chat/chat.js");
   assert.match(chatJS, /data-chat-prefill/);
-  assert.match(chatJS, /openWithPrefill/);
+  assert.match(chatJS, /openAndAsk/);
+  assert.match(chatJS, /openAndAsk\([\s\S]*?ask\(/);
   assert.equal((section.match(/class="skill-ask"/g) || []).length, 92);
   assert.doesNotMatch(page.match(/id="experience"[\s\S]*?<\/section>/)[0], /skill-ask|data-chat-prefill/);
 });

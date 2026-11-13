@@ -201,12 +201,11 @@ function setupWidget() {
     restoreHistory();
     load().catch(() => { status.textContent = "The guide could not load. Send a question to retry, or use the page sections."; });
   }
-  function openWithPrefill(question) {
+  function openAndAsk(question) {
     const text = String(question || "").trim().slice(0, 500);
-    if (text) input.value = text;
+    if (!text) return;
     openPanel();
-    input.focus();
-    try { const n = input.value.length; input.setSelectionRange(n, n); } catch (e) {}
+    ask(text);
   }
   launcher.addEventListener("click", () => {
     openPanel();
@@ -218,7 +217,7 @@ function setupWidget() {
     const question = btn.getAttribute("data-chat-prefill");
     if (!question) return;
     event.preventDefault();
-    openWithPrefill(question);
+    openAndAsk(question);
   });
   root.querySelector("[data-chat-close]").addEventListener("click", close);
   dialog.addEventListener("cancel", (event) => { event.preventDefault(); close(); });

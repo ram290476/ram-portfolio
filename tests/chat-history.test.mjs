@@ -50,8 +50,8 @@ test("the widget restores history when the panel opens and saves each answer", (
   const chatJS = read("assets/chat/chat.js");
   assert.match(chatJS, /function openPanel\(\) \{[\s\S]*?restoreHistory\(\);[\s\S]*?\}/);
   assert.match(chatJS, /launcher\.addEventListener\("click", \(\) => \{[\s\S]*?openPanel\(\);[\s\S]*?\}\);/);
-  assert.match(chatJS, /function openWithPrefill\([\s\S]*?openPanel\(\);[\s\S]*?input\.focus\(\)/);
-  assert.doesNotMatch(chatJS, /openWithPrefill[\s\S]{0,400}ask\(/);
+  assert.match(chatJS, /function openAndAsk\([\s\S]*?openPanel\(\);[\s\S]*?ask\(/);
+  assert.doesNotMatch(chatJS, /openWithPrefill/);
   assert.match(chatJS, /history\.append\(\{ question: text, answer: answer\.answer/);
   const page = read("index.html");
   assert.match(page, /<button type="button" class="chat-clear" data-chat-clear>Clear history<\/button>/);
