@@ -85,11 +85,18 @@ async function visitorCount(page) {
   return page.locator(".chat-message--visitor").count();
 }
 
-async function assertPrefill(page, skill) {
+async function assertAutoSend(page, skill, sentBefore) {
   const expected = `What is his experience with ${skill}?`;
   assert.equal(await page.locator("#portfolio-chat-panel").evaluate((d) => d.open), true);
-  assert.equal(await page.locator("#portfolio-chat-input").inputValue(), expected);
-  assert.equal(await visitorCount(page), 0, "the pre-filled question must not be sent");
+  await page.waitForFunction((n) => document.querySelectorAll(".chat-message--visitor").length === n, sentBefore + 1);
+  assert.equal(await visitorCount(page), sentBefore + 1, "the question must be sent exactly once");
+  assert.equal((await page.locator(".chat-message--visitor p").last().innerText()).trim(), expected);
+  await page.waitForFunction(() => {
+    const msgs = [...document.querySelectorAll("#portfolio-chat-panel .chat-message")];
+    const lastVisitor = msgs.findLastIndex((m) => m.classList.contains("chat-message--visitor"));
+    return lastVisitor >= 0 && msgs.slice(lastVisitor + 1).some((m) => m.classList.contains("chat-message--guide"));
+  });
+  assert.equal(await page.locator("#portfolio-chat-input").inputValue(), "");
 }
 
 async function closeChat(page) {
@@ -153,13 +160,15 @@ test("without JavaScript the Category cards stay visible", { timeout: 60_000 }, 
   await context.close();
 });
 
-test("clicking a skill in each Skills tab opens Ask Ram with the question pre-filled and not sent", { timeout: 60_000 }, async () => {
+test("clicking a skill in each Skills tab opens Ask Ram and sends the question once", { timeout: 60_000 }, async () => {
   const { context, page, errors } = await openPage();
 
-  // Heatmap: the skill name opens Ask Ram; it does not list roles.
+  // Heatmap: the skill name opens Ask Ram and sends; it does not list roles.
   const heatSkill = await page.locator("#heatmap-grid .hm-skill").first().innerText();
-  await page.locator("#heatmap-grid .hm-skill").first().click();
-  await assertPrefill(page, heatSkill);
+  const heatBtn = page.locator("#heatmap-grid .hm-skill").first();
+  const heatBefore = await visitorCount(page);
+  await heatBtn.evaluate((el) => { el.click(); el.click(); });
+  await assertAutoSend(page, heatSkill, heatBefore);
   assert.equal((await page.locator("#heatmap-roles").innerText()).trim(), "");
   await closeChat(page);
 
@@ -176,15 +185,18 @@ test("clicking a skill in each Skills tab opens Ask Ram with the question pre-fi
   assert.equal(await page.locator("#portfolio-chat-panel").evaluate((d) => d.open), false);
 
   await page.click("#skills-tab-category");
-  await page.locator('#skills-panel-category .skill-ask[aria-label="Ask Ram about Terraform"]').click();
-  await assertPrefill(page, "Terraform");
+  const terraform = page.locator('#skills-panel-category .skill-ask[aria-label="Ask Ram about Terraform"]');
+  const catBefore = await visitorCount(page);
+  await terraform.evaluate((el) => { el.click(); el.click(); });
+  await assertAutoSend(page, "Terraform", catBefore);
   await closeChat(page);
 
   await page.click("#skills-tab-wordcloud");
   const cloud = page.locator('#wordcloud-list .skill-ask[aria-label="Ask Ram about Terraform"]');
   assert.equal(await cloud.count(), 1);
-  await cloud.click();
-  await assertPrefill(page, "Terraform");
+  const cloudBefore = await visitorCount(page);
+  await cloud.evaluate((el) => { el.click(); el.click(); });
+  await assertAutoSend(page, "Terraform", cloudBefore);
   assert.deepEqual(errors, []);
   await context.close();
 });
