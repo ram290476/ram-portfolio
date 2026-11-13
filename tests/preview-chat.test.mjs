@@ -80,6 +80,13 @@ test("the About summary matches the knowledge-base About answer verbatim", () =>
   assert.equal(kb.find((entry) => entry.id === "about")?.answer, about);
 });
 
+test("the About section no longer has the solo platform owner thesis line", () => {
+  const about = page.match(/<section id="about"[\s\S]*?<\/section>/)[0];
+  assert.doesNotMatch(about, /class="thesis"/);
+  assert.doesNotMatch(about, /Solo platform owner/);
+  assert.doesNotMatch(about, /production first/);
+});
+
 for (const [question, id] of [
   ["What is his background?", "about"],
   ["What projects has he built?", "projects"],
