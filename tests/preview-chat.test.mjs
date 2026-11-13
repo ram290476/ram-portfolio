@@ -251,6 +251,37 @@ test("unsupported questions are not guessed", () => {
   ]) assert.equal(replyTo(question, retrieve).kind, "unknown", question);
 });
 
+test("skill-card experience questions retrieve the matching skill note", () => {
+  const decode = (value) => value.replaceAll("&amp;", "&");
+  const skills = [...new Set([...page.matchAll(/data-chat-prefill="What is his experience with ([^"]+)\?"/g)].map((match) => decode(match[1])))];
+  assert.equal(skills.length, 92);
+  const bySkill = new Map();
+  for (const entry of kb) {
+    const match = String(entry.topic || "").match(/^Notes:\s*What skills does he use with (.+)$/i);
+    if (match) bySkill.set(match[1].toLowerCase(), entry);
+  }
+  assert.equal(bySkill.size, 47);
+  let matched = 0;
+  for (const skill of skills) {
+    const answer = replyTo(`What is his experience with ${skill}?`, retrieve);
+    const expected = bySkill.get(skill.toLowerCase());
+    if (expected) {
+      assert.equal(answer.kind, "answer", skill);
+      assert.equal(answer.id, expected.id, skill);
+      matched += 1;
+      continue;
+    }
+    if (answer.kind === "answer") {
+      const crossed = String(answer.topic || "").match(/^Notes:\s*What skills does he use with (.+)$/i);
+      assert.equal(crossed, null, `${skill} retrieved ${crossed ? crossed[1] : answer.id}`);
+    }
+  }
+  assert.equal(matched, 47);
+  assert.notEqual(replyTo("What is his experience with On-call?", retrieve).id, "booking");
+  assert.equal(replyTo("How do I book a call?", retrieve).id, "booking");
+  assert.equal(replyTo("Is he comfortable with on-call?", retrieve).kind, "answer");
+});
+
 test("greetings do not invent a biography", () => {
   assert.equal(replyTo("Hello!", retrieve).kind, "greeting");
   assert.equal(replyTo("Thank you", retrieve).kind, "greeting");

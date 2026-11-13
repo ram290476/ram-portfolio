@@ -45,6 +45,19 @@ export function validKnowledge(value) {
     && (entry.routeQuestions === undefined || (Array.isArray(entry.routeQuestions) && entry.routeQuestions.length > 0
       && entry.routeQuestions.every((question) => typeof question === "string" && question.trim().length > 0))));
 }
+
+function normalizeSkillLabel(value) {
+  return String(value).replace(/&amp;/gi, "&").normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .trim().replace(/[?!.]+$/g, "").replace(/\s+/g, " ").toLowerCase();
+}
+function skillFromExperienceQuestion(question) {
+  const match = String(question).trim().match(/^what is his experience with (.+?)\??$/i);
+  return match ? normalizeSkillLabel(match[1]) : null;
+}
+function skillFromUseNote(entry) {
+  const match = String(entry.topic || "").match(/^notes:\s*what skills does he use with (.+)$/i);
+  return match ? normalizeSkillLabel(match[1]) : null;
+}
 export function createRetriever(entries) {
   if (!validKnowledge(entries)) throw new Error("Invalid portfolio knowledge base");
   const docs = entries.map((entry) => {
@@ -60,6 +73,14 @@ export function createRetriever(entries) {
     const routeWords = (s) => [...new Set(tokenize(s.replace(/\b(?:explain|describe|walk|through|could|interview)\b/gi, " ")))].sort().join(" ");
     const exact = entries.find((entry) => entry.routeQuestions?.some((alias) => routeWords(alias) === routeWords(question)));
     if (exact) return { answer: exact.answer, link: exact.link, topic: exact.topic, id: exact.id };
+    const skill = skillFromExperienceQuestion(question);
+    if (skill) {
+      const notes = entries.filter((entry) => skillFromUseNote(entry) === skill);
+      if (notes.length === 1) {
+        const note = notes[0];
+        return { answer: note.answer, link: note.link, topic: note.topic, id: note.id };
+      }
+    }
     const words = [...new Set(tokenize(question))];
     if (!words.length) return null;
     const ranked = docs.map((doc, index) => {
