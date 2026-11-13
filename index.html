@@ -52,6 +52,7 @@
   <link rel="stylesheet" href="assets/slides.css" />
   <link rel="stylesheet" href="assets/wordcloud.css" />
   <link rel="stylesheet" href="assets/heatmap.css" />
+  <link rel="stylesheet" href="assets/skills-tabs.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -131,28 +132,48 @@
     <section id="skills" aria-labelledby="skills-heading">
       <div class="section-row">
         <h2 id="skills-heading" class="section-h">Skills</h2>
-        <div class="section-actions skills-actions">
-        <button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="4" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="9.75" y="4" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="15.5" y="4" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="4" y="9.75" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="9.75" y="9.75" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="15.5" y="9.75" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="4" y="15.5" width="4.5" height="4.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="9.75" y="15.5" width="4.5" height="4.5" rx="1" fill="currentColor" opacity=".55"/><rect x="15.5" y="15.5" width="4.5" height="4.5" rx="1" fill="currentColor"/></svg>
-        </button>
-        <button type="button" class="wc-open" id="wordcloud-open" aria-label="Show a word cloud of every keyword on this page" aria-haspopup="dialog" aria-expanded="false" aria-controls="wordcloud-dialog" title="Keyword word cloud" hidden>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 18a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.6 4.2 4.2 0 0 1 18 18H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.5h3M8.5 15h6.5M13 12.5h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </button>
-        </div>
       </div>
+      <div class="skills-tabs" data-skills-tabs>
+        <div class="skills-tablist" role="tablist" aria-label="Skills views">
+          <button type="button" class="skills-tab" role="tab" id="skills-tab-heatmap" aria-controls="skills-panel-heatmap" aria-selected="true" tabindex="0">Heatmap</button>
+          <button type="button" class="skills-tab" role="tab" id="skills-tab-category" aria-controls="skills-panel-category" aria-selected="false" tabindex="-1">Category</button>
+          <button type="button" class="skills-tab" role="tab" id="skills-tab-wordcloud" aria-controls="skills-panel-wordcloud" aria-selected="false" tabindex="-1">Word cloud</button>
+        </div>
+        <div class="skills-panel hm-panel" role="tabpanel" id="skills-panel-heatmap" aria-labelledby="skills-tab-heatmap">
+          <p class="wc-note">Each row is a skill and each column a year. Built from the skills listed for each Experience role. Darker cells mean more roles used that skill that year. The skill name opens Ask Ram. Pick a year cell, or the roles control next to the name, to see its roles.</p>
+          <div class="hm-sort" role="group" aria-label="Group and sort skills">
+            <button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="true">Most used</button>
+            <button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category</button>
+            <button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z</button>
+            <button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="false">Most recent</button>
+          </div>
+          <div class="hm-scroll" id="heatmap-scroll" tabindex="0" role="region" aria-label="Skills heatmap grid">
+            <div class="hm-grid" id="heatmap-grid"></div>
+          </div>
+          <div class="hm-foot">
+            <ul class="hm-legend" aria-label="Legend">
+              <li><i class="hm-cell hm-l0" aria-hidden="true"></i>Not used</li>
+              <li><i class="hm-cell hm-l1" aria-hidden="true"></i>1 role</li>
+              <li><i class="hm-cell hm-l2" aria-hidden="true"></i>2 or more roles</li>
+            </ul>
+            <button type="button" class="hm-toggle" id="heatmap-toggle" aria-expanded="false" aria-controls="heatmap-grid">Show all</button>
+          </div>
+          <div class="hm-roles" id="heatmap-roles" aria-live="polite"></div>
+        </div>
+        <div class="skills-panel" role="tabpanel" id="skills-panel-category" aria-labelledby="skills-tab-category" hidden>
       <div class="skill-grid">
         <article>
           <h3>Languages</h3>
           <ul class="pills">
-            <li>C#</li><li>Python</li><li>TypeScript</li><li>Java</li><li>Bash</li>
-            <li>PowerShell</li><li>Groovy</li><li>GraphQL</li><li>T-SQL</li><li>PL/SQL</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with C#?" aria-label="Ask Ram about C#">C#</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Python?" aria-label="Ask Ram about Python">Python</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with TypeScript?" aria-label="Ask Ram about TypeScript">TypeScript</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Java?" aria-label="Ask Ram about Java">Java</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Bash?" aria-label="Ask Ram about Bash">Bash</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with PowerShell?" aria-label="Ask Ram about PowerShell">PowerShell</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Groovy?" aria-label="Ask Ram about Groovy">Groovy</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GraphQL?" aria-label="Ask Ram about GraphQL">GraphQL</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with T-SQL?" aria-label="Ask Ram about T-SQL">T-SQL</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with PL/SQL?" aria-label="Ask Ram about PL/SQL">PL/SQL</button></li>
           </ul>
         </article>
         <article>
           <h3>Web &amp; backend</h3>
           <ul class="pills">
-            <li>ASP.NET MVC</li><li>ASP.NET Web API</li><li>React</li><li>Spring</li>
-            <li>Sitecore</li><li>SAP Commerce Cloud</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with ASP.NET MVC?" aria-label="Ask Ram about ASP.NET MVC">ASP.NET MVC</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with ASP.NET Web API?" aria-label="Ask Ram about ASP.NET Web API">ASP.NET Web API</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with React?" aria-label="Ask Ram about React">React</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Spring?" aria-label="Ask Ram about Spring">Spring</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Sitecore?" aria-label="Ask Ram about Sitecore">Sitecore</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SAP Commerce Cloud?" aria-label="Ask Ram about SAP Commerce Cloud">SAP Commerce Cloud</button></li>
           </ul>
         </article>
         <article>
@@ -161,16 +182,16 @@
             <div class="skill-subgroup">
               <h4 class="tag">AWS</h4>
               <ul class="pills">
-                <li>VPC</li><li>EC2</li><li>ECS</li><li>S3</li><li>IAM</li>
-                <li>Lambda</li><li>SageMaker</li><li>CloudWatch</li>
-                <li>KMS</li><li>ACM</li><li>Secrets Manager</li><li>SSM</li>
+                <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with VPC?" aria-label="Ask Ram about VPC">VPC</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with EC2?" aria-label="Ask Ram about EC2">EC2</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with ECS?" aria-label="Ask Ram about ECS">ECS</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with S3?" aria-label="Ask Ram about S3">S3</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with IAM?" aria-label="Ask Ram about IAM">IAM</button></li>
+                <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Lambda?" aria-label="Ask Ram about Lambda">Lambda</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SageMaker?" aria-label="Ask Ram about SageMaker">SageMaker</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with CloudWatch?" aria-label="Ask Ram about CloudWatch">CloudWatch</button></li>
+                <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with KMS?" aria-label="Ask Ram about KMS">KMS</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with ACM?" aria-label="Ask Ram about ACM">ACM</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Secrets Manager?" aria-label="Ask Ram about Secrets Manager">Secrets Manager</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SSM?" aria-label="Ask Ram about SSM">SSM</button></li>
               </ul>
             </div>
             <div class="skill-subgroup">
               <h4 class="tag">Azure</h4>
               <ul class="pills">
-                <li>Application Gateway</li><li>VNets</li>
-                <li>App Service</li><li>Azure SQL</li>
+                <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Application Gateway?" aria-label="Ask Ram about Application Gateway">Application Gateway</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with VNets?" aria-label="Ask Ram about VNets">VNets</button></li>
+                <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with App Service?" aria-label="Ask Ram about App Service">App Service</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Azure SQL?" aria-label="Ask Ram about Azure SQL">Azure SQL</button></li>
               </ul>
             </div>
           </div>
@@ -178,64 +199,70 @@
         <article>
           <h3>Infrastructure &amp; containers</h3>
           <ul class="pills">
-            <li>Terraform</li><li>CloudFormation</li><li>Kubernetes</li><li>Docker</li><li>Helm</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Terraform?" aria-label="Ask Ram about Terraform">Terraform</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with CloudFormation?" aria-label="Ask Ram about CloudFormation">CloudFormation</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Kubernetes?" aria-label="Ask Ram about Kubernetes">Kubernetes</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Docker?" aria-label="Ask Ram about Docker">Docker</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Helm?" aria-label="Ask Ram about Helm">Helm</button></li>
           </ul>
         </article>
         <article>
           <h3>CI/CD</h3>
           <ul class="pills">
-            <li>Jenkins</li><li>Spinnaker</li><li>Bitbucket</li><li>GitHub Actions</li>
-            <li>Azure Pipelines</li><li>TFS</li><li>Artifactory</li>
-            <li>Blue-green</li><li>Rolling deploys</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Jenkins?" aria-label="Ask Ram about Jenkins">Jenkins</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Spinnaker?" aria-label="Ask Ram about Spinnaker">Spinnaker</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Bitbucket?" aria-label="Ask Ram about Bitbucket">Bitbucket</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GitHub Actions?" aria-label="Ask Ram about GitHub Actions">GitHub Actions</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Azure Pipelines?" aria-label="Ask Ram about Azure Pipelines">Azure Pipelines</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with TFS?" aria-label="Ask Ram about TFS">TFS</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Artifactory?" aria-label="Ask Ram about Artifactory">Artifactory</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Blue-green?" aria-label="Ask Ram about Blue-green">Blue-green</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Rolling deploys?" aria-label="Ask Ram about Rolling deploys">Rolling deploys</button></li>
           </ul>
         </article>
         <article>
           <h3>Reliability</h3>
           <ul class="pills">
-            <li>SLOs &amp; SLIs</li><li>Error budgets</li><li>On-call</li>
-            <li>Blameless postmortems</li><li>Grafana</li><li>Prometheus</li>
-            <li>Dynatrace</li><li>Splunk</li><li>New Relic</li><li>Distributed tracing</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SLOs &amp; SLIs?" aria-label="Ask Ram about SLOs &amp; SLIs">SLOs &amp; SLIs</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Error budgets?" aria-label="Ask Ram about Error budgets">Error budgets</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with On-call?" aria-label="Ask Ram about On-call">On-call</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Blameless postmortems?" aria-label="Ask Ram about Blameless postmortems">Blameless postmortems</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Grafana?" aria-label="Ask Ram about Grafana">Grafana</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Prometheus?" aria-label="Ask Ram about Prometheus">Prometheus</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Dynatrace?" aria-label="Ask Ram about Dynatrace">Dynatrace</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Splunk?" aria-label="Ask Ram about Splunk">Splunk</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with New Relic?" aria-label="Ask Ram about New Relic">New Relic</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Distributed tracing?" aria-label="Ask Ram about Distributed tracing">Distributed tracing</button></li>
           </ul>
         </article>
         <article>
           <h3>AI/ML platform</h3>
           <ul class="pills">
-            <li>AWS SageMaker</li><li>MLOps pipelines</li><li>GitHub Copilot</li><li>MCP connectors</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with AWS SageMaker?" aria-label="Ask Ram about AWS SageMaker">AWS SageMaker</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with MLOps pipelines?" aria-label="Ask Ram about MLOps pipelines">MLOps pipelines</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GitHub Copilot?" aria-label="Ask Ram about GitHub Copilot">GitHub Copilot</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with MCP connectors?" aria-label="Ask Ram about MCP connectors">MCP connectors</button></li>
           </ul>
         </article>
         <article>
           <h3>Security &amp; data</h3>
           <ul class="pills">
-            <li>DevSecOps</li><li>SOX</li><li>PCI</li><li>GDPR</li><li>Least-privilege IAM</li>
-            <li>Secrets management</li><li>Veracode</li><li>SonarQube</li>
-            <li>SQL Server</li><li>Oracle</li><li>PostgreSQL</li><li>Solr</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with DevSecOps?" aria-label="Ask Ram about DevSecOps">DevSecOps</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SOX?" aria-label="Ask Ram about SOX">SOX</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with PCI?" aria-label="Ask Ram about PCI">PCI</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GDPR?" aria-label="Ask Ram about GDPR">GDPR</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Least-privilege IAM?" aria-label="Ask Ram about Least-privilege IAM">Least-privilege IAM</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Secrets management?" aria-label="Ask Ram about Secrets management">Secrets management</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Veracode?" aria-label="Ask Ram about Veracode">Veracode</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SonarQube?" aria-label="Ask Ram about SonarQube">SonarQube</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SQL Server?" aria-label="Ask Ram about SQL Server">SQL Server</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Oracle?" aria-label="Ask Ram about Oracle">Oracle</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with PostgreSQL?" aria-label="Ask Ram about PostgreSQL">PostgreSQL</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Solr?" aria-label="Ask Ram about Solr">Solr</button></li>
           </ul>
         </article>
         <article>
           <h3>Edge</h3>
           <ul class="pills">
-            <li>Akamai Kona</li><li>GTM</li><li>WAF</li><li>SiteShield</li>
-            <li>Edge Redirector</li><li>NetStorage</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Akamai Kona?" aria-label="Ask Ram about Akamai Kona">Akamai Kona</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GTM?" aria-label="Ask Ram about GTM">GTM</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with WAF?" aria-label="Ask Ram about WAF">WAF</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SiteShield?" aria-label="Ask Ram about SiteShield">SiteShield</button></li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Edge Redirector?" aria-label="Ask Ram about Edge Redirector">Edge Redirector</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with NetStorage?" aria-label="Ask Ram about NetStorage">NetStorage</button></li>
           </ul>
         </article>
         <article>
           <h3>Architecture and design</h3>
           <ul class="pills">
-            <li>Software Design</li><li>Software Architecture</li><li>Agile Methodologies</li><li>SDLC</li><li>Distributed Systems</li><li>Software Observability</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Software Design?" aria-label="Ask Ram about Software Design">Software Design</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Software Architecture?" aria-label="Ask Ram about Software Architecture">Software Architecture</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Agile Methodologies?" aria-label="Ask Ram about Agile Methodologies">Agile Methodologies</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with SDLC?" aria-label="Ask Ram about SDLC">SDLC</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Distributed Systems?" aria-label="Ask Ram about Distributed Systems">Distributed Systems</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Software Observability?" aria-label="Ask Ram about Software Observability">Software Observability</button></li>
           </ul>
         </article>
         <article>
           <h3>Leadership and delivery</h3>
           <ul class="pills">
-            <li>Technical Leadership</li><li>Technical Project Leadership</li><li>Stakeholder Management</li><li>Communication</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Technical Leadership?" aria-label="Ask Ram about Technical Leadership">Technical Leadership</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Technical Project Leadership?" aria-label="Ask Ram about Technical Project Leadership">Technical Project Leadership</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Stakeholder Management?" aria-label="Ask Ram about Stakeholder Management">Stakeholder Management</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Communication?" aria-label="Ask Ram about Communication">Communication</button></li>
           </ul>
         </article>
         <article>
           <h3>Actively building</h3>
           <ul class="pills">
-            <li>Go</li><li>GitOps with Argo CD</li><li>OpenTelemetry</li><li>GCP</li>
+            <li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with Go?" aria-label="Ask Ram about Go">Go</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GitOps with Argo CD?" aria-label="Ask Ram about GitOps with Argo CD">GitOps with Argo CD</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with OpenTelemetry?" aria-label="Ask Ram about OpenTelemetry">OpenTelemetry</button></li><li><button type="button" class="skill-ask" data-chat-prefill="What is his experience with GCP?" aria-label="Ask Ram about GCP">GCP</button></li>
           </ul>
         </article>
+      </div>
+        </div>
+        <div class="skills-panel" role="tabpanel" id="skills-panel-wordcloud" aria-labelledby="skills-tab-wordcloud" hidden>
+          <p class="wc-note">Bigger words appear more often across Skills, Experience and Projects.</p>
+          <ul class="wc-cloud" id="wordcloud-list" tabindex="0" aria-label="Keyword list"></ul>
+        </div>
       </div>
     </section>
 
@@ -979,46 +1006,6 @@
     </div>
   </dialog>
 
-  <dialog class="wc-dialog" id="wordcloud-dialog" aria-modal="true" aria-labelledby="wordcloud-title">
-    <div class="wc-head">
-      <div>
-        <p class="kicker wc-kicker">Skills · Word cloud</p>
-        <h2 id="wordcloud-title">Keywords on this page</h2>
-      </div>
-      <button type="button" class="wc-close" aria-label="Close word cloud">×</button>
-    </div>
-    <p class="wc-note">Bigger words appear more often across Skills, Experience and Projects.</p>
-    <ul class="wc-cloud" id="wordcloud-list" tabindex="0" aria-label="Keyword list"></ul>
-  </dialog>
-
-  <dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">
-    <div class="wc-head">
-      <div>
-        <p class="kicker wc-kicker">Skills · Heatmap</p>
-        <h2 id="heatmap-title">Skills by year</h2>
-      </div>
-      <button type="button" class="wc-close" aria-label="Close skills heatmap">×</button>
-    </div>
-    <p class="wc-note">Each row is a skill and each column a year. Built from the skills listed for each Experience role. Darker cells mean more roles used that skill that year. Pick a skill to see its roles.</p>
-    <div class="hm-sort" role="group" aria-label="Group and sort skills">
-      <button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="true">Most used</button>
-      <button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category</button>
-      <button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z</button>
-      <button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="false">Most recent</button>
-    </div>
-    <div class="hm-scroll" id="heatmap-scroll" tabindex="0" role="region" aria-label="Skills heatmap grid">
-      <div class="hm-grid" id="heatmap-grid"></div>
-    </div>
-    <div class="hm-foot">
-      <ul class="hm-legend" aria-label="Legend">
-        <li><i class="hm-cell hm-l0" aria-hidden="true"></i>Not used</li>
-        <li><i class="hm-cell hm-l1" aria-hidden="true"></i>1 role</li>
-        <li><i class="hm-cell hm-l2" aria-hidden="true"></i>2 or more roles</li>
-      </ul>
-      <button type="button" class="hm-toggle" id="heatmap-toggle" aria-expanded="false" aria-controls="heatmap-grid">Show all</button>
-    </div>
-    <div class="hm-roles" id="heatmap-roles" aria-live="polite"></div>
-  </dialog>
 
   <script src="config.js"></script>
   <script src="main.js"></script>
@@ -1033,5 +1020,6 @@
   <script src="assets/slides.js"></script>
   <script src="assets/wordcloud.js"></script>
   <script src="assets/heatmap.js"></script>
+  <script src="assets/skills-tabs.js"></script>
 </body>
 </html>

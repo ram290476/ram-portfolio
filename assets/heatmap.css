@@ -1,10 +1,6 @@
-/* Skills heatmap dialog. Shares the word-cloud dialog frame (.wc-dialog, .wc-head, .wc-note). */
-.skills-actions { margin-left: auto; }
-.skills-actions .wc-open { margin-left: 0; }
-
-.hm-dialog {
-  width: min(920px, calc(100vw - 24px));
-  /* Heatmap scale, derived from each theme's own colors: empty, one role, two or more roles. */
+/* Skills heatmap panel. Color scale is derived from each theme's own colors. */
+.hm-panel {
+  /* Heatmap scale: empty, one role, two or more roles. */
   --hm-0: color-mix(in srgb, var(--ink) 7%, var(--bg));
   --hm-1: color-mix(in srgb, var(--accent) 48%, var(--bg));
   --hm-2: var(--accent);
@@ -12,20 +8,15 @@
   --hm-head: var(--muted);
   --hm-hover: var(--focus);
 }
-html[data-theme="contrast"] .hm-dialog {
+html[data-theme="contrast"] .hm-panel {
   --hm-0: #000000;
   --hm-1: color-mix(in srgb, var(--accent) 50%, #000000);
   --hm-edge: var(--line);
   --hm-head: var(--ink);
 }
-.hm-dialog[open] { animation: hm-rise 260ms cubic-bezier(.2, .7, .2, 1); }
-@keyframes hm-rise {
-  from { opacity: 0; transform: translateY(12px) scale(.98); }
-  to { opacity: 1; transform: none; }
-}
 
 .hm-scroll {
-  margin: 12px 22px 0;
+  margin: 12px 0 0;
   overflow: auto;
   overscroll-behavior: contain;
   border: 1px solid var(--line);
@@ -46,19 +37,32 @@ html[data-theme="contrast"] .hm-dialog {
   align-items: center;
 }
 .hm-corner,
-.hm-skill {
+.hm-label {
   position: sticky;
   left: 0;
   z-index: 1;
   background: var(--bg);
 }
+.hm-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
 .hm-corner { font-size: 0.6875rem; color: var(--hm-head); padding: 0 6px; }
 .hm-yr { font-size: 0.65625rem; color: var(--hm-head); text-align: center; }
+.hm-skill.skill-ask {
+  display: block;
+  justify-content: flex-start;
+}
 .hm-skill {
+  flex: 1;
+  min-width: 0;
   min-height: 24px;
   border: 0;
   border-radius: 4px;
   padding: 1px 6px;
+  background: transparent;
   color: var(--ink);
   font: inherit;
   font-size: 0.78125rem;
@@ -68,9 +72,27 @@ html[data-theme="contrast"] .hm-dialog {
   text-overflow: ellipsis;
   cursor: pointer;
 }
-.hm-skill:hover { color: var(--accent); }
-.hm-skill[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+.hm-skill:hover { box-shadow: 0 0 0 1px color-mix(in srgb, var(--focus) 75%, transparent); }
 .hm-skill:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.hm-roles-open {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.hm-roles-open:hover { color: var(--accent); }
+.hm-roles-open[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+.hm-roles-open:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 .hm-cell {
   display: block;
   height: 18px;
@@ -83,7 +105,7 @@ html[data-theme="contrast"] .hm-dialog {
 .hm-l2 { background: var(--hm-2); border-color: var(--hm-2); }
 .hm-grid .hm-cell:hover { outline: 2px solid var(--hm-hover); outline-offset: -1px; }
 .hm-cell.is-selected { outline: 2px solid var(--ink); outline-offset: -1px; }
-.hm-skill:hover + .hm-cell, .hm-skill:focus-visible + .hm-cell { box-shadow: -4px 0 0 -2px var(--hm-hover); }
+.hm-label:hover + .hm-cell, .hm-label:focus-within + .hm-cell { box-shadow: -4px 0 0 -2px var(--hm-hover); }
 
 .hm-foot {
   display: flex;
@@ -91,7 +113,7 @@ html[data-theme="contrast"] .hm-dialog {
   justify-content: space-between;
   align-items: center;
   gap: 8px 16px;
-  margin: 10px 22px 0;
+  margin: 10px 0 0;
 }
 .hm-legend {
   list-style: none;
@@ -111,9 +133,9 @@ html[data-theme="contrast"] .hm-dialog {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin: 12px 22px 0;
+  margin: 12px 0 0;
   width: max-content;
-  max-width: calc(100% - 44px);
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -161,28 +183,25 @@ html[data-theme="contrast"] .hm-dialog {
   cursor: pointer;
 }
 .hm-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-.hm-roles { margin: 10px 22px 20px; min-height: 8px; overflow: auto; }
+.hm-roles { margin: 10px 0 0; min-height: 8px; overflow: auto; }
 .hm-roles-title { margin: 0 0 6px; font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
 .hm-roles-list { margin: 0; padding-left: 18px; font-size: 0.875rem; }
 
 @media (max-width: 560px) {
-  .hm-scroll { margin: 12px 16px 0; }
   .hm-sort {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: auto;
     max-width: none;
-    margin: 12px 16px 0;
   }
   .hm-sort-btn { padding: 4px 8px; }
   .hm-sort-btn:nth-child(odd) { border-left: 0; }
   .hm-sort-btn:nth-child(n + 3) { border-top: 1px solid var(--line); }
-  .hm-grid { grid-template-columns: 116px repeat(var(--hm-cols, 21), 20px); min-width: 0; width: max-content; }
-  .hm-foot { margin: 10px 16px 0; }
-  .hm-roles { margin: 10px 16px 16px; }
+  .hm-grid { grid-template-columns: 132px repeat(var(--hm-cols, 21), 20px); min-width: 0; width: max-content; }
+  .hm-skill { padding: 1px 2px 1px 4px; font-size: 0.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hm-dialog[open] { animation: none; }
+  .hm-panel { animation: none; }
 }
-html.reduce .hm-dialog[open] { animation: none; }
+html.reduce .hm-panel { animation: none; }

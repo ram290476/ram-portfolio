@@ -1,13 +1,13 @@
 // Skills heatmap: skills by year, built from each Experience role's skill list and month range.
 // Rows can be grouped or sorted: Most used, By category, A–Z, Most recent.
+// The skill name opens Ask Ram; year cells or the roles control list that skill's roles.
 (function () {
   "use strict";
-  var openBtn = document.getElementById("heatmap-open");
-  var dialog = document.getElementById("heatmap-dialog");
+  var panel = document.getElementById("skills-panel-heatmap");
   var grid = document.getElementById("heatmap-grid");
   var toggle = document.getElementById("heatmap-toggle");
   var out = document.getElementById("heatmap-roles");
-  if (!openBtn || !dialog || !grid || !toggle || !out || typeof dialog.showModal !== "function") return;
+  if (!panel || !grid || !toggle || !out) return;
 
   var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   var TOP = 14;
@@ -20,8 +20,8 @@
     document.querySelectorAll("#experience .exp-role-block").forEach(function (block) {
       var btn = block.querySelector(".xp-role[data-start][data-end]");
       var chips = block.querySelectorAll(".exp-skill-chips li");
-      var panel = block.closest(".xp-panel");
-      var company = panel ? panel.querySelector(".company-btn") : null;
+      var companyPanel = block.closest(".xp-panel");
+      var company = companyPanel ? companyPanel.querySelector(".company-btn") : null;
       if (!btn || !chips.length) return;
       roles.push({
         title: btn.querySelector(".xp-role-t").textContent.trim(),
@@ -116,7 +116,7 @@
     var saved = window.sessionStorage.getItem(MODE_KEY);
     if (MODES.indexOf(saved) !== -1) mode = saved;
   } catch (e) {}
-  var sortButtons = Array.prototype.slice.call(dialog.querySelectorAll(".hm-sort-btn[data-sort]"));
+  var sortButtons = Array.prototype.slice.call(panel.querySelectorAll(".hm-sort-btn[data-sort]"));
 
   // Top 14 is always the 14 most used skills, except Most recent, which picks the 14 used most recently.
   function visibleSkills() {
@@ -133,6 +133,7 @@
 
   var showAll = false;
   var selected = null;
+  var didScroll = false;
   grid.style.setProperty("--hm-cols", years.length);
 
   function el(tag, cls, text) {
@@ -140,6 +141,23 @@
     if (cls) node.className = cls;
     if (text != null) node.textContent = text;
     return node;
+  }
+
+  function listIcon() {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("width", "14");
+    svg.setAttribute("height", "14");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("stroke-linecap", "round");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01");
+    svg.appendChild(path);
+    return svg;
   }
 
   function render() {
@@ -162,13 +180,24 @@
       }
       var st = stats.get(skill);
       var n = st.roles;
-      var btn = el("button", "hm-skill", skill);
+      var rowLabel = el("div", "hm-label" + (selected === skill ? " is-selected" : ""));
+      var btn = el("button", "hm-skill skill-ask", skill);
       btn.type = "button";
       btn.title = skill;
       btn.dataset.skill = skill;
-      btn.setAttribute("aria-pressed", selected === skill ? "true" : "false");
-      btn.appendChild(el("span", "sr", ", " + n + (n === 1 ? " role" : " roles") + ", " + st.first + " to " + st.last));
-      grid.appendChild(btn);
+      btn.setAttribute("data-chat-prefill", "What is his experience with " + skill + "?");
+      btn.setAttribute("aria-label", "Ask Ram about " + skill);
+      rowLabel.appendChild(btn);
+      var rolesBtn = el("button", "hm-roles-open");
+      rolesBtn.type = "button";
+      rolesBtn.dataset.skill = skill;
+      rolesBtn.setAttribute("aria-pressed", selected === skill ? "true" : "false");
+      rolesBtn.setAttribute("aria-label", (selected === skill ? "Hide roles for " : "Show roles for ") + skill);
+      rolesBtn.title = selected === skill ? "Hide roles" : "Show roles";
+      rolesBtn.appendChild(listIcon());
+      rolesBtn.appendChild(el("span", "sr", ", " + n + (n === 1 ? " role" : " roles") + ", " + st.first + " to " + st.last));
+      rowLabel.appendChild(rolesBtn);
+      grid.appendChild(rowLabel);
       years.forEach(function (yr) {
         var c = count(skill, yr);
         var cell = el("span", "hm-cell hm-l" + Math.min(c, 2) + (selected === skill && c ? " is-selected" : ""));
@@ -199,15 +228,27 @@
     out.appendChild(ul);
   }
 
+  function scrollLatest() {
+    var scroller = document.getElementById("heatmap-scroll");
+    if (!scroller) return;
+    scroller.scrollLeft = scroller.scrollWidth;
+    didScroll = scroller.scrollLeft > 0;
+  }
+
+  function showHeatmap() {
+    render();
+    if (!didScroll) scrollLatest();
+  }
+
   grid.addEventListener("click", function (event) {
-    var target = event.target.closest("[data-skill]");
-    if (!target) return;
+    var target = event.target.closest(".hm-roles-open, .hm-cell[data-skill]");
+    if (!target || !grid.contains(target)) return;
     var skill = target.dataset.skill;
     selected = selected === skill ? null : skill;
     render();
     listRoles();
-    var again = grid.querySelector('.hm-skill[data-skill="' + CSS.escape(skill) + '"]');
-    if (again) again.focus();
+    var again = grid.querySelector('.hm-roles-open[data-skill="' + CSS.escape(skill) + '"]');
+    if (again && target.classList.contains("hm-roles-open")) again.focus();
   });
   toggle.addEventListener("click", function () { showAll = !showAll; render(); });
   sortButtons.forEach(function (button, i) {
@@ -228,35 +269,8 @@
     });
   });
 
-  openBtn.hidden = false;
-  openBtn.addEventListener("click", function () {
-    render();
-    dialog.showModal();
-    // Start at the latest years so recent use is in view when the grid scrolls sideways.
-    var scroller = document.getElementById("heatmap-scroll");
-    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
-    openBtn.setAttribute("aria-expanded", "true");
+  showHeatmap();
+  document.addEventListener("skills-tab-selected", function (event) {
+    if (event.target && event.target.id === "skills-tab-heatmap") showHeatmap();
   });
-  function focusable() {
-    return Array.prototype.slice.call(dialog.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])")).filter(function (node) {
-      return !node.disabled && node.tabIndex !== -1 && !node.hidden;
-    });
-  }
-  dialog.querySelector(".wc-close").addEventListener("click", function () { dialog.close(); });
-  dialog.addEventListener("click", function (event) { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener("keydown", function (event) {
-    if (event.key !== "Tab") return;
-    var items = focusable();
-    if (!items.length) return;
-    var first = items[0];
-    var last = items[items.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
-  dialog.addEventListener("close", function () { openBtn.setAttribute("aria-expanded", "false"); openBtn.focus(); });
 })();

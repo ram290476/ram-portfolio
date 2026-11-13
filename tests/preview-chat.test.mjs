@@ -164,28 +164,44 @@ test("experience uses company cards that open roles, then responsibilities", () 
   assert.match(themes, /@media \(prefers-reduced-motion: reduce\) \{\s*#experience \{ --xp-dur: 0ms;/);
 });
 
-test("Skills title row has the heatmap icon immediately left of the word-cloud icon", () => {
-  const row = page.match(/<h2 id="skills-heading"[\s\S]*?<\/div>\s*<\/div>/)[0];
-  const heat = row.indexOf('id="heatmap-open"');
-  const cloud = row.indexOf('id="wordcloud-open"');
-  assert.ok(heat > 0 && cloud > heat, "heatmap icon must come right before the word-cloud icon");
-  assert.match(row, /<button type="button" class="wc-open hm-open" id="heatmap-open" aria-label="Skills heatmap" aria-haspopup="dialog" aria-expanded="false" aria-controls="heatmap-dialog" title="Skills heatmap" hidden>/);
-  assert.match(page, /<dialog class="wc-dialog hm-dialog" id="heatmap-dialog" aria-modal="true" aria-labelledby="heatmap-title">/);
+test("Skills section has Heatmap, Category and Word cloud tabs, with Heatmap first", () => {
+  const section = page.match(/<section id="skills"[\s\S]*?<\/section>/)[0];
+  assert.match(section, /role="tablist" aria-label="Skills views"/);
+  assert.match(section, /<button type="button" class="skills-tab" role="tab" id="skills-tab-heatmap" aria-controls="skills-panel-heatmap" aria-selected="true" tabindex="0">Heatmap<\/button>/);
+  assert.match(section, /id="skills-tab-category"[^>]*>Category</);
+  assert.match(section, /id="skills-tab-wordcloud"[^>]*>Word cloud</);
+  assert.ok(section.indexOf("skills-tab-heatmap") < section.indexOf("skills-tab-category"));
+  assert.ok(section.indexOf("skills-tab-category") < section.indexOf("skills-tab-wordcloud"));
+  assert.match(section, /id="skills-panel-heatmap"/);
+  assert.match(section, /id="skills-panel-category"[^>]*hidden/);
+  assert.match(section, /id="skills-panel-wordcloud"[^>]*hidden/);
+  assert.doesNotMatch(section, /id="heatmap-open"|id="wordcloud-open"|id="heatmap-dialog"|id="wordcloud-dialog"/);
   assert.match(page, /href="assets\/heatmap\.css"/);
+  assert.match(page, /href="assets\/skills-tabs\.css"/);
   assert.match(page, /<div class="hm-sort" role="group" aria-label="Group and sort skills">\s*<button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="true">Most used<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="false">Most recent<\/button>/);
   assert.match(page, /<p class="wc-note">Each row is a skill and each column a year\. Built from the skills listed for each Experience role\. Darker cells/);
+  assert.match(page, /The skill name opens Ask Ram/);
   assert.doesNotMatch(page, /skill chips on each Experience role/);
   assert.match(page, /src="assets\/heatmap\.js"/);
+  assert.match(page, /src="assets\/skills-tabs\.js"/);
   const heatJS = read("assets/heatmap.js");
   assert.match(heatJS, /exp-skill-chips li/);
-  assert.match(heatJS, /showModal/);
-  assert.match(heatJS, /openBtn\.focus\(\)/);
+  assert.match(heatJS, /data-chat-prefill/);
+  assert.match(heatJS, /hm-roles-open/);
+  assert.doesNotMatch(heatJS, /showModal/);
   const heatCSS = read("assets/heatmap.css");
-  assert.match(heatCSS, /animation: hm-rise 260ms/);
   assert.match(heatCSS, /--hm-2: var\(--accent\);/);
-  assert.match(heatCSS, /html\[data-theme="contrast"\] \.hm-dialog \{/);
+  assert.match(heatCSS, /html\[data-theme="contrast"\] \.hm-panel \{/);
   assert.match(heatJS, /sessionStorage/);
-  assert.match(heatCSS, /@media \(prefers-reduced-motion: reduce\) \{\s*\.hm-dialog\[open\] \{ animation: none; \}/);
+  assert.match(heatCSS, /@media \(prefers-reduced-motion: reduce\) \{\s*\.hm-panel \{ animation: none; \}/);
+  const tabJS = read("assets/skills-tabs.js");
+  assert.match(tabJS, /ArrowRight/);
+  assert.match(tabJS, /Home/);
+  const chatJS = read("assets/chat/chat.js");
+  assert.match(chatJS, /data-chat-prefill/);
+  assert.match(chatJS, /openWithPrefill/);
+  assert.equal((section.match(/class="skill-ask"/g) || []).length, 92);
+  assert.doesNotMatch(page.match(/id="experience"[\s\S]*?<\/section>/)[0], /skill-ask|data-chat-prefill/);
 });
 
 test("private questions are refused before retrieval", () => {

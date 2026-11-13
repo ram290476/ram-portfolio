@@ -136,25 +136,23 @@ test("axe: theme menu, word cloud, skills heatmap, chat, and slides dialogs", { 
     if (msg) failures.push(msg);
     await page.keyboard.press("Escape");
 
-    await page.evaluate(() => {
-      const btn = document.getElementById("wordcloud-open");
-      if (btn) { btn.hidden = false; btn.click(); }
-    });
+    await page.evaluate(() => document.getElementById("skills-tab-wordcloud").click());
     await page.waitForTimeout(200);
     results = await runAxe(page);
     msg = formatViolations(`${vp.name}/wordcloud`, results);
     if (msg) failures.push(msg);
-    await page.keyboard.press("Escape");
 
-    await page.evaluate(() => {
-      const btn = document.getElementById("heatmap-open");
-      if (btn) { btn.hidden = false; btn.click(); }
-    });
-    await page.waitForTimeout(350);
+    await page.evaluate(() => document.getElementById("skills-tab-category").click());
+    await page.waitForTimeout(200);
+    results = await runAxe(page);
+    msg = formatViolations(`${vp.name}/category`, results);
+    if (msg) failures.push(msg);
+
+    await page.evaluate(() => document.getElementById("skills-tab-heatmap").click());
+    await page.waitForTimeout(200);
     results = await runAxe(page);
     msg = formatViolations(`${vp.name}/heatmap`, results);
     if (msg) failures.push(msg);
-    await page.keyboard.press("Escape");
 
     await page.evaluate(() => {
       const btn = document.querySelector("[data-chat-open]");
@@ -212,7 +210,7 @@ test("axe: skills heatmap in each grouping and every theme", { timeout: 180_000 
     for (const theme of THEMES) {
       await page.goto(`${base}/`, { waitUntil: "networkidle" });
       await setTheme(page, theme);
-      await page.evaluate(() => document.getElementById("heatmap-open").click());
+      await page.evaluate(() => document.getElementById("skills-tab-heatmap").click());
       for (const sort of theme === "editorial" ? ["used", "category", "az", "recent"] : ["category"]) {
         await page.evaluate((s) => document.querySelector(`.hm-sort-btn[data-sort="${s}"]`).click(), sort);
         const results = await runAxe(page);

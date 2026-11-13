@@ -1,0 +1,94 @@
+/* Skills section: Heatmap, Category and Word cloud tabs, plus Ask Ram skill buttons. */
+.skills-tablist { display: none; }
+.js .skills-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.skills-tab {
+  min-height: 36px;
+  border: 0;
+  border-left: 1px solid var(--line);
+  padding: 6px 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.skills-tab:first-child { border-left: 0; }
+.skills-tab:hover { color: var(--accent); }
+.skills-tab[aria-selected="true"] { background: var(--navy); color: var(--on-navy); }
+.skills-tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
+
+.js .skills-panel[hidden] { display: none; }
+.js .skills-panel:not([hidden]) {
+  animation: skills-panel-in 200ms ease;
+}
+@keyframes skills-panel-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Without JS: hide the tablist and the empty Heatmap / Word cloud panels; keep Category. */
+html:not(.js) .skills-tablist,
+html:not(.js) #skills-panel-heatmap,
+html:not(.js) #skills-panel-wordcloud { display: none !important; }
+html:not(.js) #skills-panel-category { display: block !important; }
+
+#skills-panel-category .skill-grid { margin-top: 0; }
+
+/* Skill buttons keep the surrounding typography; only a hover/focus ring is added. */
+.skill-ask {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  min-width: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  border-radius: 2px;
+}
+#skills .skill-grid .pills li:has(.skill-ask) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+.skill-ask:hover {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--focus) 75%, transparent);
+}
+.skill-ask:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+#skills .skill-grid .pills li:has(.skill-ask):hover {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--focus) 75%, transparent);
+}
+#skills .skill-grid .pills li .skill-ask:hover { box-shadow: none; }
+
+@media (max-width: 560px) {
+  .js .skills-tablist { width: 100%; }
+  .skills-tab { flex: 1 1 auto; padding: 6px 10px; font-size: 0.8125rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .skills-panel:not([hidden]) { animation: none; }
+}
+html.reduce .js .skills-panel:not([hidden]) { animation: none; }
