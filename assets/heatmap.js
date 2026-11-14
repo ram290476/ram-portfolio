@@ -1,5 +1,5 @@
 // Skills heatmap: skills by year, built from each Experience role's skill list and month range.
-// Rows can be grouped or sorted: Most used, By category, A–Z, Most recent.
+// Rows can be grouped or sorted: Most recent, Most used, By category, A–Z.
 // The skill name opens Ask Ram; year cells or the roles control list that skill's roles.
 (function () {
   "use strict";
