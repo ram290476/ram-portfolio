@@ -6150,9 +6150,9 @@
     "questions": [
       "Tell me about What skills does he use with Groovy",
       "What does the note What skills does he use with Groovy say?",
-      "What about skill use groovy corsair lead commerce architect jenkins?"
+      "What about skill use groovy first republic bank used groovy?"
     ],
-    "answer": "Notes: What skills does he use with Groovy. What skills does he use with Groovy? At Corsair, as Lead Commerce Architect, Jenkins (Groovy) was part of the documented technology stack for the commerce platform, alongside SonarQube. Groovy also appears in my public skill set and among First Republic Bank platform skills, with no public description of a specific Groovy task or outcome.",
+    "answer": "Notes: What skills does he use with Groovy. What skills does he use with Groovy? At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform. Groovy and Jenkins are listed among the platform skills for that Technical Lead – Platform role. The public write-ups do not describe a specific Groovy task or outcome.",
     "tags": [
       "skill",
       "groovy",
@@ -6160,7 +6160,7 @@
       "use",
       "notes"
     ],
-    "link": "#skills",
+    "link": "#experience",
     "source": "vault"
   },
   {
