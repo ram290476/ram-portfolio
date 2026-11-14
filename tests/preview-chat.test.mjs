@@ -260,7 +260,7 @@ test("skill-card experience questions retrieve the matching skill note", () => {
     const match = String(entry.topic || "").match(/^Notes:\s*What skills does he use with (.+)$/i);
     if (match) bySkill.set(match[1].toLowerCase(), entry);
   }
-  assert.equal(bySkill.size, 47);
+  assert.equal(bySkill.size, 80);
   let matched = 0;
   for (const skill of skills) {
     const answer = replyTo(`What is his experience with ${skill}?`, retrieve);
@@ -276,7 +276,7 @@ test("skill-card experience questions retrieve the matching skill note", () => {
       assert.equal(crossed, null, `${skill} retrieved ${crossed ? crossed[1] : answer.id}`);
     }
   }
-  assert.equal(matched, 47);
+  assert.equal(matched, 80);
   assert.notEqual(replyTo("What is his experience with On-call?", retrieve).id, "booking");
   assert.equal(replyTo("How do I book a call?", retrieve).id, "booking");
   assert.equal(replyTo("Is he comfortable with on-call?", retrieve).kind, "answer");
