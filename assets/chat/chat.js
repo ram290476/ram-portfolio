@@ -61,7 +61,9 @@ function skillFromUseNote(entry) {
 export function createRetriever(entries) {
   if (!validKnowledge(entries)) throw new Error("Invalid portfolio knowledge base");
   const docs = entries.map((entry) => {
-    const tokens = tokenize([...entry.questions, ...entry.tags, ...entry.tags, entry.answer].join(" "));
+    // Displayed answers no longer include a "Notes: <title>." label, so index
+    // the topic separately to keep title words available to BM25 retrieval.
+    const tokens = tokenize([entry.topic, ...entry.questions, ...entry.tags, ...entry.tags, entry.answer].join(" "));
     const counts = new Map();
     for (const word of tokens) counts.set(word, (counts.get(word) || 0) + 1);
     return { entry, counts, length: tokens.length, questions: entry.questions.map((question) => new Set(tokenize(question))) };

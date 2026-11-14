@@ -5,7 +5,7 @@ import { copyFileSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildKnowledge, formatReport, scrubReasons, stripLeadingQuestion, stripLeadingQuestionFromAnswer } from "../scripts/vault-kb.mjs";
+import { buildKnowledge, formatReport, scrubReasons, stripLeadingQuestion, stripLeadingQuestionFromAnswer, isRewordedTitleQuestion } from "../scripts/vault-kb.mjs";
 import { upgradePublishedKnowledge } from "../scripts/upgrade-chat-kb.mjs";
 import { createRetriever, replyTo, validKnowledge } from "../assets/chat/chat.js";
 
@@ -119,7 +119,8 @@ test("public notes are chunked and everything else stays out of the knowledge ba
   assert.equal(quoted.link, "#skills");
   const nested = report.entries.find((entry) => entry.topic === "Notes: Nested synthetic checklist");
   assert.equal(nested.link, "#about");
-  assert.match(nested.answer, /^Notes: Nested synthetic checklist\. /);
+  assert.match(nested.answer, /^NESTEDFIXTURE\. /);
+  assert.doesNotMatch(nested.answer, /^Notes: /);
 });
 
 test("a tagged note that still contains private text is rejected passage by passage", () => {
@@ -282,7 +283,8 @@ test("long notes stay inside the knowledge-base limits and skip symlinks", () =>
     assert.ok(notes.length >= 2);
     assert.ok(notes.every((entry) => entry.answer.length < 650));
     assert.equal(JSON.stringify(report.entries).includes("SYMLINK_SENTINEL_DO_NOT_PUBLISH"), false);
-    assert.match(notes[0].answer, /^Notes: Long synthetic note\. /);
+    assert.match(notes[0].answer, /^The fictional Northwind workshop repeats this synthetic sentence about checklists\. /);
+    assert.doesNotMatch(notes[0].answer, /^Notes: /);
   } finally {
     rmSync(dir, { recursive: true, force: true });
     rmSync(outside, { recursive: true, force: true });
@@ -473,7 +475,7 @@ test("stripLeadingQuestion removes only a punctuated leading title copy", () => 
   );
 });
 
-test("a public note whose heading repeats the title does not put the question in the answer", () => {
+test("a public note whose heading repeats the title does not put the question or Notes label in the answer", () => {
   const dir = mkdtempSync(join(tmpdir(), "vault-title-repeat-"));
   writeFileSync(join(dir, "groovy.md"), `---
 portfolio: public
@@ -493,20 +495,38 @@ At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted c
     assert.equal(entry.topic, "Notes: What skills does he use with Groovy");
     assert.equal(
       entry.answer,
-      "Notes: What skills does he use with Groovy. At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform."
+      "At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform."
     );
+    assert.doesNotMatch(entry.answer, /^Notes: /);
     assert.doesNotMatch(entry.answer, /What skills does he use with Groovy\?/);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
 });
 
-test("stripLeadingQuestionFromAnswer is idempotent and leaves non-repeated bodies alone", () => {
+test("stripLeadingQuestionFromAnswer removes the Notes label and reworded questions only", () => {
   const topic = "Notes: What skills does he use with Groovy";
   const before = `${topic}. What skills does he use with Groovy? At First Republic Bank I used Groovy.`;
   const after = stripLeadingQuestionFromAnswer(before, topic);
-  assert.equal(after, `${topic}. At First Republic Bank I used Groovy.`);
+  assert.equal(after, "At First Republic Bank I used Groovy.");
   assert.equal(stripLeadingQuestionFromAnswer(after, topic), after);
   const karpenter = "Notes: Karpenter. Karpenter is an open-source Kubernetes node autoscaler.";
-  assert.equal(stripLeadingQuestionFromAnswer(karpenter, "Notes: Karpenter"), karpenter);
+  assert.equal(
+    stripLeadingQuestionFromAnswer(karpenter, "Notes: Karpenter"),
+    "Karpenter is an open-source Kubernetes node autoscaler."
+  );
+  const mlopsTopic = "Notes: What is your MLOps experience";
+  const mlops = `${mlopsTopic}. What's your MLOps experience? My MLOps experience is the infrastructure side of ML.`;
+  assert.equal(
+    stripLeadingQuestionFromAnswer(mlops, mlopsTopic),
+    "My MLOps experience is the infrastructure side of ML."
+  );
+  assert.equal(
+    isRewordedTitleQuestion("What's your MLOps experience?", "What is your MLOps experience"),
+    true
+  );
+  assert.equal(
+    isRewordedTitleQuestion("Karpenter is an open-source Kubernetes node autoscaler.", "Karpenter"),
+    false
+  );
 });

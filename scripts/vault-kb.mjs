@@ -159,6 +159,23 @@ function toPlain(markdown) {
     .trim();
 }
 
+export function topicTitle(topic) {
+  return String(topic ?? "").replace(/^Notes:\s*/i, "").replace(/[.?!:]+$/g, "").trim();
+}
+
+// Remove a leading "Notes: <title>. " or "<topic>. " label from a stored answer.
+export function stripTopicLabel(answer, topic) {
+  const value = String(answer ?? "");
+  const topicText = String(topic ?? "").trim();
+  if (topicText && value.startsWith(`${topicText}. `)) return value.slice(topicText.length + 2);
+  const title = topicTitle(topicText);
+  const notesPrefix = title ? `Notes: ${title}. ` : "";
+  if (notesPrefix && value.toLowerCase().startsWith(notesPrefix.toLowerCase())) {
+    return value.slice(notesPrefix.length);
+  }
+  return value;
+}
+
 // Strip a leading copy of the note title/question plus trailing punctuation
 // and whitespace. Require punctuation after the title so a sentence that
 // merely starts with the topic word ("Karpenter is an…") is left alone.
@@ -170,11 +187,55 @@ export function stripLeadingQuestion(text, title) {
   return value.replace(new RegExp(`^${escaped}[.?!]+\\s+`, "i"), "");
 }
 
+const COMPARE_STOP = new Set("what whats which who whom whose where when why how is are was were be been being do does did the a an and or of for to in on at by with from as it its you your my me i we our than then that this these those about tell note notes vs versus between difference different kind type types thing things needed need can would could should".split(" "));
+
+function compareTokens(text) {
+  const folded = String(text ?? "")
+    .replace(/what's/gi, "what is")
+    .replace(/[\u2019']/g, "")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
+    .replace(/[-_]+/g, " ")
+    .toLowerCase();
+  return [...new Set((folded.match(/[a-z0-9]+/g) || [])
+    .map((word) => (word.length > 3 && word.endsWith("s") && !word.endsWith("ss") ? word.slice(0, -1) : word))
+    .filter((word) => word.length > 1 && !COMPARE_STOP.has(word)))];
+}
+
+export function isRewordedTitleQuestion(sentence, title) {
+  const lead = String(sentence ?? "").trim();
+  if (!lead.endsWith("?") || lead.length > 180) return false;
+  const question = compareTokens(lead);
+  const topic = compareTokens(title);
+  if (!question.length || !topic.length) return false;
+  const overlap = question.filter((word) => topic.includes(word));
+  const precision = overlap.length / question.length;
+  const recall = overlap.length / topic.length;
+  const dice = 2 * overlap.length / (question.length + topic.length);
+  return dice >= 0.35 || recall >= 0.4 || precision >= 0.45 || overlap.length >= 2 || (lead.length <= 80 && overlap.length >= 1);
+}
+
+// Strip a leading sentence that restates the title as a question, including
+// short rewordings such as "What's your MLOps experience?". Leave sentences
+// that carry real content, including ones that merely start with the topic word.
+export function stripLeadingRewordedQuestion(text, title) {
+  const value = String(text ?? "");
+  const match = value.match(/^(.+?\?)\s+/);
+  if (!match) return value;
+  if (!isRewordedTitleQuestion(match[1], title)) return value;
+  return value.slice(match[0].length);
+}
+
+export function cleanAnswerBody(answer, topic) {
+  const title = topicTitle(topic);
+  let body = stripTopicLabel(answer, topic);
+  body = stripLeadingQuestion(body, title);
+  body = stripLeadingRewordedQuestion(body, title);
+  return body;
+}
+
 export function stripLeadingQuestionFromAnswer(answer, topic) {
-  const prefix = `${topic}. `;
-  if (!topic || !String(answer).startsWith(prefix)) return answer;
-  const title = String(topic).replace(/^Notes:\s*/i, "").replace(/[.?!:]+$/g, "").trim();
-  return prefix + stripLeadingQuestion(String(answer).slice(prefix.length), title);
+  return cleanAnswerBody(answer, topic);
 }
 
 function noteTitle(data, body, filename) {
@@ -381,7 +442,7 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
     const link = noteLink(data);
     const tags = noteTags(data, title);
     const topic = `Notes: ${title}`;
-    const budget = MAX_ANSWER - topic.length - 2;
+    const budget = MAX_ANSWER;
     const titleReasons = [...new Set([
       ...scrubReasons(title, denylist.terms),
       ...scrubReasons(topic, denylist.terms),
@@ -401,13 +462,13 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
         tally(rawReasons);
         continue;
       }
-      const plains = splitLong(stripLeadingQuestion(toPlain(raw), title), budget).filter((passage) => passage.length >= MIN_PASSAGE);
+      const plains = splitLong(stripLeadingRewordedQuestion(stripLeadingQuestion(toPlain(raw), title), title), budget).filter((passage) => passage.length >= MIN_PASSAGE);
       if (!plains.length) {
         short += 1;
         continue;
       }
       for (const passage of plains) {
-        const answer = `${topic}. ${passage}`;
+        const answer = passage;
         const questions = questionsFor(title, passage);
         const reasons = [...new Set([
           ...scrubReasons(passage, denylist.terms),
