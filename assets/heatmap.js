@@ -111,7 +111,7 @@
 
   var MODES = ["used", "category", "az", "recent"];
   var MODE_KEY = "ram-portfolio-heatmap-sort-v1";
-  var mode = "used";
+  var mode = "recent";
   try {
     var saved = window.sessionStorage.getItem(MODE_KEY);
     if (MODES.indexOf(saved) !== -1) mode = saved;
