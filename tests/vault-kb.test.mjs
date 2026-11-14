@@ -5,7 +5,7 @@ import { copyFileSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildKnowledge, formatReport, scrubReasons } from "../scripts/vault-kb.mjs";
+import { buildKnowledge, formatReport, scrubReasons, stripLeadingQuestion, stripLeadingQuestionFromAnswer } from "../scripts/vault-kb.mjs";
 import { upgradePublishedKnowledge } from "../scripts/upgrade-chat-kb.mjs";
 import { createRetriever, replyTo, validKnowledge } from "../assets/chat/chat.js";
 
@@ -458,4 +458,55 @@ test("42 canary probes cannot reach private, untagged or explicitly excluded sou
     }
     assert.equal(probes,42);
   } finally { rmSync(dir,{recursive:true,force:true}); }
+});
+
+
+test("stripLeadingQuestion removes only a punctuated leading title copy", () => {
+  const title = "What skills does he use with Groovy";
+  const body = "At First Republic Bank I used Groovy during my DevOps work.";
+  assert.equal(stripLeadingQuestion(`${title}? ${body}`, title), body);
+  assert.equal(stripLeadingQuestion(`${title}. ${body}`, title), body);
+  assert.equal(stripLeadingQuestion(body, title), body);
+  assert.equal(
+    stripLeadingQuestion("Karpenter is an open-source Kubernetes node autoscaler.", "Karpenter"),
+    "Karpenter is an open-source Kubernetes node autoscaler."
+  );
+});
+
+test("a public note whose heading repeats the title does not put the question in the answer", () => {
+  const dir = mkdtempSync(join(tmpdir(), "vault-title-repeat-"));
+  writeFileSync(join(dir, "groovy.md"), `---
+portfolio: public
+title: What skills does he use with Groovy?
+link: "#experience"
+---
+
+# What skills does he use with Groovy?
+
+At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform.
+`);
+  try {
+    const report = buildKnowledge({ vaultDir: dir, baseEntries: [] });
+    assert.equal(report.status, "ready");
+    assert.equal(report.appended, 1);
+    const entry = report.entries[0];
+    assert.equal(entry.topic, "Notes: What skills does he use with Groovy");
+    assert.equal(
+      entry.answer,
+      "Notes: What skills does he use with Groovy. At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform."
+    );
+    assert.doesNotMatch(entry.answer, /What skills does he use with Groovy\?/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("stripLeadingQuestionFromAnswer is idempotent and leaves non-repeated bodies alone", () => {
+  const topic = "Notes: What skills does he use with Groovy";
+  const before = `${topic}. What skills does he use with Groovy? At First Republic Bank I used Groovy.`;
+  const after = stripLeadingQuestionFromAnswer(before, topic);
+  assert.equal(after, `${topic}. At First Republic Bank I used Groovy.`);
+  assert.equal(stripLeadingQuestionFromAnswer(after, topic), after);
+  const karpenter = "Notes: Karpenter. Karpenter is an open-source Kubernetes node autoscaler.";
+  assert.equal(stripLeadingQuestionFromAnswer(karpenter, "Notes: Karpenter"), karpenter);
 });

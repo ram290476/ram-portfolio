@@ -4958,7 +4958,7 @@
       "What does the note What skills does he use with Akamai Kona say?",
       "What about skill use akamai kona first republic bank owned?"
     ],
-    "answer": "Notes: What skills does he use with Akamai Kona. What skills does he use with Akamai Kona? At First Republic Bank I owned Akamai Kona edge delivery and security — including WAF, GTM, SiteShield, and Edge Redirector — and integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
+    "answer": "Notes: What skills does he use with Akamai Kona. At First Republic Bank I owned Akamai Kona edge delivery and security — including WAF, GTM, SiteShield, and Edge Redirector — and integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
     "tags": [
       "skill",
       "akamai",
@@ -4977,7 +4977,7 @@
       "What does the note What skills does he use with App Service say?",
       "What about skill use app service first republic bank technical?"
     ],
-    "answer": "Notes: What skills does he use with App Service. What skills does he use with App Service? At First Republic Bank I was technical lead for the Azure-hosted content platform. I ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure through a clean go-live with no loss of availability. On the public Multi-Cloud Dashboard, the same API also runs on Azure App Service, alongside Cloud Run and ECS.",
+    "answer": "Notes: What skills does he use with App Service. At First Republic Bank I was technical lead for the Azure-hosted content platform. I ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure through a clean go-live with no loss of availability. On the public Multi-Cloud Dashboard, the same API also runs on Azure App Service, alongside Cloud Run and ECS.",
     "tags": [
       "skill",
       "app",
@@ -4997,7 +4997,7 @@
       "What does the note What skills does he use with Artifactory say?",
       "What about skill use artifactory jpmorgan chase embedded security quality?"
     ],
-    "answer": "Notes: What skills does he use with Artifactory. What skills does he use with Artifactory? At JPMorgan Chase I embedded security and quality gates in the delivery path, integrating Veracode scanning and Artifactory into Jenkins and Spinnaker pipelines so findings surfaced while a change was still in review.",
+    "answer": "Notes: What skills does he use with Artifactory. At JPMorgan Chase I embedded security and quality gates in the delivery path, integrating Veracode scanning and Artifactory into Jenkins and Spinnaker pipelines so findings surfaced while a change was still in review.",
     "tags": [
       "skill",
       "artifactory",
@@ -5016,7 +5016,7 @@
       "What does the note What skills does he use with Azure Pipelines say?",
       "What about skill use azure pipelines corsair senior net engineer?"
     ],
-    "answer": "Notes: What skills does he use with Azure Pipelines. What skills does he use with Azure Pipelines? At Corsair, as a Senior .NET Engineer, I automated pricing and inventory synchronization from Magento to Sitecore through Azure Pipelines and deployed Magento promotion and gift-card extensions, improving product data accuracy and reducing sync errors.",
+    "answer": "Notes: What skills does he use with Azure Pipelines. At Corsair, as a Senior .NET Engineer, I automated pricing and inventory synchronization from Magento to Sitecore through Azure Pipelines and deployed Magento promotion and gift-card extensions, improving product data accuracy and reducing sync errors.",
     "tags": [
       "skill",
       "azure",
@@ -5036,7 +5036,7 @@
       "What does the note What skills does he use with Azure SQL say?",
       "What about skill use azure sql first republic bank exposed?"
     ],
-    "answer": "Notes: What skills does he use with Azure SQL. What skills does he use with Azure SQL? At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL, on the Azure-hosted Sitecore content platform. Azure SQL is also listed in my public Azure skill set and on my resume under Data and Cloud.",
+    "answer": "Notes: What skills does he use with Azure SQL. At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL, on the Azure-hosted Sitecore content platform. Azure SQL is also listed in my public Azure skill set and on my resume under Data and Cloud.",
     "tags": [
       "skill",
       "azure",
@@ -5055,7 +5055,7 @@
       "What does the note What skills does he use with Bitbucket say?",
       "What about skill use bitbucket jpmorgan chase site reliability platform?"
     ],
-    "answer": "Notes: What skills does he use with Bitbucket. What skills does he use with Bitbucket? At JPMorgan Chase, as a Site Reliability and Platform Engineer, I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud.",
+    "answer": "Notes: What skills does he use with Bitbucket. At JPMorgan Chase, as a Site Reliability and Platform Engineer, I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud.",
     "tags": [
       "skill",
       "bitbucket",
@@ -5075,7 +5075,7 @@
       "What does the note What skills does he use with Blameless postmortems say?",
       "What about skill use blameless postmortems jpmorgan chase part call?"
     ],
-    "answer": "Notes: What skills does he use with Blameless postmortems. What skills does he use with Blameless postmortems? At JPMorgan Chase, as part of on-call incident response for high-availability distributed systems, I drove root-cause analysis and blameless postmortems and authored runbooks that reduced mean time to resolution by 30%.",
+    "answer": "Notes: What skills does he use with Blameless postmortems. At JPMorgan Chase, as part of on-call incident response for high-availability distributed systems, I drove root-cause analysis and blameless postmortems and authored runbooks that reduced mean time to resolution by 30%.",
     "tags": [
       "skill",
       "blameless",
@@ -5095,7 +5095,7 @@
       "What does the note What skills does he use with Blue-green say?",
       "What about skill use blue green jpmorgan chase build ci?"
     ],
-    "answer": "Notes: What skills does he use with Blue-green. What skills does he use with Blue-green? At JPMorgan Chase I built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deployments to AWS ECS and the private cloud. My resume also names Bitbucket among the pipelines that performed those blue-green and rolling deployments, for version-controlled delivery.",
+    "answer": "Notes: What skills does he use with Blue-green. At JPMorgan Chase I built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deployments to AWS ECS and the private cloud. My resume also names Bitbucket among the pipelines that performed those blue-green and rolling deployments, for version-controlled delivery.",
     "tags": [
       "skill",
       "blue",
@@ -5116,7 +5116,7 @@
       "What does the note What skills does he use with CloudWatch say?",
       "What about skill use cloudwatch cloudwatch appears public aws skill?"
     ],
-    "answer": "Notes: What skills does he use with CloudWatch. What skills does he use with CloudWatch? CloudWatch appears in my public AWS skill set and in the Core Skills list on my resume. In the public opsKit library I wrote CloudWatch metric helpers used by resource insights for EC2, EBS, RDS, and Lambda. The JPMorgan and other employer write-ups describe Grafana, Prometheus, Dynatrace, and Splunk rather than a specific CloudWatch task or outcome.",
+    "answer": "Notes: What skills does he use with CloudWatch. CloudWatch appears in my public AWS skill set and in the Core Skills list on my resume. In the public opsKit library I wrote CloudWatch metric helpers used by resource insights for EC2, EBS, RDS, and Lambda. The JPMorgan and other employer write-ups describe Grafana, Prometheus, Dynatrace, and Splunk rather than a specific CloudWatch task or outcome.",
     "tags": [
       "skill",
       "cloudwatch",
@@ -5135,7 +5135,7 @@
       "What does the note What skills does he use with DevSecOps say?",
       "What about skill use devsecops jpmorgan chase practiced devsecops embedding?"
     ],
-    "answer": "Notes: What skills does he use with DevSecOps. What skills does he use with DevSecOps? At JPMorgan Chase I practiced DevSecOps by embedding security and quality gates inside the delivery path rather than after it: Veracode scanning and Artifactory in the pipelines, with least-privilege IAM and secrets management, under SOX, PCI, and GDPR, so audit evidence came out of the pipeline rather than a quarterly exercise.",
+    "answer": "Notes: What skills does he use with DevSecOps. At JPMorgan Chase I practiced DevSecOps by embedding security and quality gates inside the delivery path rather than after it: Veracode scanning and Artifactory in the pipelines, with least-privilege IAM and secrets management, under SOX, PCI, and GDPR, so audit evidence came out of the pipeline rather than a quarterly exercise.",
     "tags": [
       "skill",
       "devsecops",
@@ -5154,7 +5154,7 @@
       "What does the note What skills does he use with Distributed Systems say?",
       "What about skill use distributed systems senior level experience building?"
     ],
-    "answer": "Notes: What skills does he use with Distributed Systems. What skills does he use with Distributed Systems? I have senior-level experience building and operating high-availability distributed systems, as stated on my resume and in the public Skills list. At JPMorgan Chase I ran on-call incident response for high-availability distributed systems and defined SLOs and SLIs for distributed microservices across AWS and the private cloud.",
+    "answer": "Notes: What skills does he use with Distributed Systems. I have senior-level experience building and operating high-availability distributed systems, as stated on my resume and in the public Skills list. At JPMorgan Chase I ran on-call incident response for high-availability distributed systems and defined SLOs and SLIs for distributed microservices across AWS and the private cloud.",
     "tags": [
       "skill",
       "distributed",
@@ -5173,7 +5173,7 @@
       "What does the note What skills does he use with Distributed tracing say?",
       "What about skill use distributed tracing jpmorgan chase configured dynatrace?"
     ],
-    "answer": "Notes: What skills does he use with Distributed tracing. What skills does he use with Distributed tracing? At JPMorgan Chase I configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and I authored the team's Dynatrace and Splunk observability standard — including distributed tracing — packaged as reusable base assets with environment overlays and documentation. The public work-projects section describes that Kubernetes observability standard, including tracing, tagging, synthetics, and dashboards.",
+    "answer": "Notes: What skills does he use with Distributed tracing. At JPMorgan Chase I configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and I authored the team's Dynatrace and Splunk observability standard — including distributed tracing — packaged as reusable base assets with environment overlays and documentation. The public work-projects section describes that Kubernetes observability standard, including tracing, tagging, synthetics, and dashboards.",
     "tags": [
       "skill",
       "distributed",
@@ -5193,7 +5193,7 @@
       "What does the note What skills does he use with EC2 say?",
       "What about skill use ec2 jpmorgan chase ec2 listed among?"
     ],
-    "answer": "Notes: What skills does he use with EC2. What skills does he use with EC2? At JPMorgan Chase, EC2 is listed among the AWS technologies I used on the MLOps platform role, alongside ECS, S3, and IAM, while re-platforming production ML onto SageMaker. In my public opsKit library I also wrote helpers that read EC2 instance health and CloudWatch metrics for operational inventory. The public materials do not describe a specific production EC2 design or outcome at an employer.",
+    "answer": "Notes: What skills does he use with EC2. At JPMorgan Chase, EC2 is listed among the AWS technologies I used on the MLOps platform role, alongside ECS, S3, and IAM, while re-platforming production ML onto SageMaker. In my public opsKit library I also wrote helpers that read EC2 instance health and CloudWatch metrics for operational inventory. The public materials do not describe a specific production EC2 design or outcome at an employer.",
     "tags": [
       "skill",
       "ec2",
@@ -5213,7 +5213,7 @@
       "What does the note What skills does he use with Edge Redirector say?",
       "What about skill use edge redirector first republic bank owned?"
     ],
-    "answer": "Notes: What skills does he use with Edge Redirector. What skills does he use with Edge Redirector? At First Republic Bank I owned Akamai Kona edge delivery and security, including Edge Redirector, along with WAF, GTM, and SiteShield, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
+    "answer": "Notes: What skills does he use with Edge Redirector. At First Republic Bank I owned Akamai Kona edge delivery and security, including Edge Redirector, along with WAF, GTM, and SiteShield, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
     "tags": [
       "skill",
       "edge",
@@ -5233,7 +5233,7 @@
       "What does the note What skills does he use with Error budgets say?",
       "What about skill use error budgets jpmorgan chase tracked error?"
     ],
-    "answer": "Notes: What skills does he use with Error budgets. What skills does he use with Error budgets? At JPMorgan Chase I tracked error budgets in Grafana and Prometheus alongside Dynatrace and Splunk reporting, and I built dashboards that showed error budgets and SLO burn rate so management had a portfolio-level reliability view across AWS and the private cloud.",
+    "answer": "Notes: What skills does he use with Error budgets. At JPMorgan Chase I tracked error budgets in Grafana and Prometheus alongside Dynatrace and Splunk reporting, and I built dashboards that showed error budgets and SLO burn rate so management had a portfolio-level reliability view across AWS and the private cloud.",
     "tags": [
       "skill",
       "error",
@@ -5253,7 +5253,7 @@
       "What does the note What skills does he use with GCP say?",
       "What about skill use gcp gcp listed among skill am?"
     ],
-    "answer": "Notes: What skills does he use with GCP. What skills does he use with GCP? GCP is listed among the skills I am actively building, not as production employer experience. On the public Multi-Cloud Dashboard, the same API runs on Cloud Run (the Go API under backends/go-gcp), ECS, and Azure App Service. The repository's Terraform for GCP is written to create Cloud Run and related resources, and the README says to validate only and not apply until new accounts exist.",
+    "answer": "Notes: What skills does he use with GCP. GCP is listed among the skills I am actively building, not as production employer experience. On the public Multi-Cloud Dashboard, the same API runs on Cloud Run (the Go API under backends/go-gcp), ECS, and Azure App Service. The repository's Terraform for GCP is written to create Cloud Run and related resources, and the README says to validate only and not apply until new accounts exist.",
     "tags": [
       "skill",
       "gcp",
@@ -5273,7 +5273,7 @@
       "What does the note What skills does he use with GitHub Actions say?",
       "What about skill use github actions use github actions public?"
     ],
-    "answer": "Notes: What skills does he use with GitHub Actions. What skills does he use with GitHub Actions? I use GitHub Actions on public repositories I own, including ram-portfolio, hybrid-cloud-dashboard, investor-dashboard, and tasks-api, for tests, privacy and link scans, Terraform validate, pull-request checks, an approval-gated deploy workflow, and PostgreSQL end-to-end tests. GitHub Actions is also listed in the public Skills section, not in the employer write-ups, which describe Jenkins, Spinnaker, Bitbucket, Azure Pipelines, and TFS instead.",
+    "answer": "Notes: What skills does he use with GitHub Actions. I use GitHub Actions on public repositories I own, including ram-portfolio, hybrid-cloud-dashboard, investor-dashboard, and tasks-api, for tests, privacy and link scans, Terraform validate, pull-request checks, an approval-gated deploy workflow, and PostgreSQL end-to-end tests. GitHub Actions is also listed in the public Skills section, not in the employer write-ups, which describe Jenkins, Spinnaker, Bitbucket, Azure Pipelines, and TFS instead.",
     "tags": [
       "skill",
       "github",
@@ -5293,7 +5293,7 @@
       "What does the note What skills does he use with GitOps with Argo CD say?",
       "What about skill use gitops argo cd am actively building?"
     ],
-    "answer": "Notes: What skills does he use with GitOps with Argo CD. What skills does he use with GitOps with Argo CD? I am actively building GitOps with Argo CD as a personal project, still in progress and not public yet: an Argo CD app-of-apps setup on a k3s cluster with sync waves and automated rollback, mirroring Spinnaker deployment patterns I ran in production at JPMorgan Chase.",
+    "answer": "Notes: What skills does he use with GitOps with Argo CD. I am actively building GitOps with Argo CD as a personal project, still in progress and not public yet: an Argo CD app-of-apps setup on a k3s cluster with sync waves and automated rollback, mirroring Spinnaker deployment patterns I ran in production at JPMorgan Chase.",
     "tags": [
       "skill",
       "gitops",
@@ -5313,7 +5313,7 @@
       "What does the note What skills does he use with Go say?",
       "What about skill use go am actively building skill go?"
     ],
-    "answer": "Notes: What skills does he use with Go. What skills does he use with Go? I am actively building skill in Go. The public Multi-Cloud Dashboard includes a Go API that targets Cloud Run on GCP, and the project's facade policy engine is also written in Go. In September 2026 I completed the LinkedIn Learning course Learning Go. I do not describe Go as a production employer language in the public work history.",
+    "answer": "Notes: What skills does he use with Go. I am actively building skill in Go. The public Multi-Cloud Dashboard includes a Go API that targets Cloud Run on GCP, and the project's facade policy engine is also written in Go. In September 2026 I completed the LinkedIn Learning course Learning Go. I do not describe Go as a production employer language in the public work history.",
     "tags": [
       "skill",
       "go",
@@ -5332,7 +5332,7 @@
       "What does the note What skills does he use with GTM say?",
       "What about skill use gtm first republic bank owned akamai?"
     ],
-    "answer": "Notes: What skills does he use with GTM. What skills does he use with GTM? At First Republic Bank I owned Akamai Kona edge delivery and security, including GTM, along with WAF, SiteShield, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling. GTM was also listed in the documented platform stack as Akamai Kona/GTM.",
+    "answer": "Notes: What skills does he use with GTM. At First Republic Bank I owned Akamai Kona edge delivery and security, including GTM, along with WAF, SiteShield, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling. GTM was also listed in the documented platform stack as Akamai Kona/GTM.",
     "tags": [
       "skill",
       "gtm",
@@ -5351,7 +5351,7 @@
       "What does the note What skills does he use with IAM say?",
       "What about skill use iam jpmorgan chase iam listed among?"
     ],
-    "answer": "Notes: What skills does he use with IAM. What skills does he use with IAM? At JPMorgan Chase, IAM is listed among the AWS technologies I used on the MLOps platform, and I applied least-privilege IAM when moving that platform onto SageMaker, ECS, and S3 without interrupting inference. In the earlier Site Reliability and Platform role I also used least-privilege IAM and secrets management inside delivery pipelines under SOX, PCI, and GDPR, producing audit evidence as a pipeline output rather than a quarterly exercise.",
+    "answer": "Notes: What skills does he use with IAM. At JPMorgan Chase, IAM is listed among the AWS technologies I used on the MLOps platform, and I applied least-privilege IAM when moving that platform onto SageMaker, ECS, and S3 without interrupting inference. In the earlier Site Reliability and Platform role I also used least-privilege IAM and secrets management inside delivery pipelines under SOX, PCI, and GDPR, producing audit evidence as a pipeline output rather than a quarterly exercise.",
     "tags": [
       "skill",
       "iam",
@@ -5371,7 +5371,7 @@
       "What does the note What skills does he use with Lambda say?",
       "What about skill use lambda public investor dashboard use aws?"
     ],
-    "answer": "Notes: What skills does he use with Lambda. What skills does he use with Lambda? On the public Investor Dashboard I use AWS Lambda in the serverless design: EventBridge invokes Python Lambda jobs that write serving data to S3, and a static dashboard is hosted behind CloudFront. The live portfolio lists AWS Lambda among that project's skills. In the public opsKit library I also published helpers to package Python code for Lambda and to make guarded runtime and code updates. The public employer write-ups do not describe Lambda use at a company.",
+    "answer": "Notes: What skills does he use with Lambda. On the public Investor Dashboard I use AWS Lambda in the serverless design: EventBridge invokes Python Lambda jobs that write serving data to S3, and a static dashboard is hosted behind CloudFront. The live portfolio lists AWS Lambda among that project's skills. In the public opsKit library I also published helpers to package Python code for Lambda and to make guarded runtime and code updates. The public employer write-ups do not describe Lambda use at a company.",
     "tags": [
       "skill",
       "lambda",
@@ -5390,7 +5390,7 @@
       "What does the note What skills does he use with Least-privilege IAM say?",
       "What about skill use least privilege iam jpmorgan chase used?"
     ],
-    "answer": "Notes: What skills does he use with Least-privilege IAM. What skills does he use with Least-privilege IAM? At JPMorgan Chase I used least-privilege IAM in two settings. On the MLOps platform I moved workloads onto SageMaker, ECS, and S3 with least-privilege IAM, without interrupting inference. In the Site Reliability and Platform role I combined least-privilege IAM and secrets management with pipeline security gates under SOX, PCI, and GDPR.",
+    "answer": "Notes: What skills does he use with Least-privilege IAM. At JPMorgan Chase I used least-privilege IAM in two settings. On the MLOps platform I moved workloads onto SageMaker, ECS, and S3 with least-privilege IAM, without interrupting inference. In the Site Reliability and Platform role I combined least-privilege IAM and secrets management with pipeline security gates under SOX, PCI, and GDPR.",
     "tags": [
       "skill",
       "least",
@@ -5411,7 +5411,7 @@
       "What does the note What skills does he use with MCP connectors say?",
       "What about skill use mcp connectors use mcp connectors personal?"
     ],
-    "answer": "Notes: What skills does he use with MCP connectors. What skills does he use with MCP connectors? I use MCP connectors in a personal agentic automation pipeline: multi-step orchestration built on Claude, where MCP connectors drive a scraping API, then the pipeline deduplicates and normalizes structured records, scores them, and generates documents end to end. MCP connectors are also listed in my public AI/ML skill set.",
+    "answer": "Notes: What skills does he use with MCP connectors. I use MCP connectors in a personal agentic automation pipeline: multi-step orchestration built on Claude, where MCP connectors drive a scraping API, then the pipeline deduplicates and normalizes structured records, scores them, and generates documents end to end. MCP connectors are also listed in my public AI/ML skill set.",
     "tags": [
       "skill",
       "mcp",
@@ -5430,7 +5430,7 @@
       "What does the note What skills does he use with MLOps pipelines say?",
       "What about skill use mlops pipelines jpmorgan chase sre enterprise?"
     ],
-    "answer": "Notes: What skills does he use with MLOps pipelines. What skills does he use with MLOps pipelines? At JPMorgan Chase I was SRE for the enterprise AI/ML platform and standardized MLOps pipelines for CI/CD model promotion, so deployments of model-serving infrastructure were consistent and repeatable across development, test, and production. I also re-platformed production ML onto a SageMaker-based framework in new AWS accounts without interrupting inference, and gated promotion with Python validation.",
+    "answer": "Notes: What skills does he use with MLOps pipelines. At JPMorgan Chase I was SRE for the enterprise AI/ML platform and standardized MLOps pipelines for CI/CD model promotion, so deployments of model-serving infrastructure were consistent and repeatable across development, test, and production. I also re-platformed production ML onto a SageMaker-based framework in new AWS accounts without interrupting inference, and gated promotion with Python validation.",
     "tags": [
       "skill",
       "mlops",
@@ -5450,7 +5450,7 @@
       "What does the note What skills does he use with NetStorage say?",
       "What about skill use netstorage first republic bank integrated akamai?"
     ],
-    "answer": "Notes: What skills does he use with NetStorage. What skills does he use with NetStorage? At First Republic Bank I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling as part of owning Akamai edge delivery. Earlier at Corsair, as a Senior .NET Engineer, I also configured Akamai CDN and NetStorage for the commerce platform.",
+    "answer": "Notes: What skills does he use with NetStorage. At First Republic Bank I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling as part of owning Akamai edge delivery. Earlier at Corsair, as a Senior .NET Engineer, I also configured Akamai CDN and NetStorage for the commerce platform.",
     "tags": [
       "skill",
       "netstorage",
@@ -5469,7 +5469,7 @@
       "What does the note What skills does he use with On-call say?",
       "What about skill use call jpmorgan chase ran call incident?"
     ],
-    "answer": "Notes: What skills does he use with On-call. What skills does he use with On-call? At JPMorgan Chase I ran on-call incident response for high-availability distributed systems: I triaged production incidents, drove root-cause analysis and blameless postmortems, and wrote runbooks that reduced mean time to resolution by 30%. In the MLOps role I also put an on-call owner on model inference endpoints. At First Republic Bank I served in the rotating on-call SRE rotation supporting platform uptime.",
+    "answer": "Notes: What skills does he use with On-call. At JPMorgan Chase I ran on-call incident response for high-availability distributed systems: I triaged production incidents, drove root-cause analysis and blameless postmortems, and wrote runbooks that reduced mean time to resolution by 30%. In the MLOps role I also put an on-call owner on model inference endpoints. At First Republic Bank I served in the rotating on-call SRE rotation supporting platform uptime.",
     "tags": [
       "skill",
       "call",
@@ -5488,7 +5488,7 @@
       "What does the note What skills does he use with OpenTelemetry say?",
       "What about skill use opentelemetry am actively building opentelemetry personal?"
     ],
-    "answer": "Notes: What skills does he use with OpenTelemetry. What skills does he use with OpenTelemetry? I am actively building OpenTelemetry as a personal project, still in progress and not public yet: traces and metrics routed through an OpenTelemetry collector into a Grafana and Tempo stack, replacing agent-based instrumentation with vendor-neutral signals.",
+    "answer": "Notes: What skills does he use with OpenTelemetry. I am actively building OpenTelemetry as a personal project, still in progress and not public yet: traces and metrics routed through an OpenTelemetry collector into a Grafana and Tempo stack, replacing agent-based instrumentation with vendor-neutral signals.",
     "tags": [
       "skill",
       "opentelemetry",
@@ -5506,7 +5506,7 @@
       "What does the note What skills does he use with PCI say?",
       "What about skill use pci jpmorgan chase worked under sox?"
     ],
-    "answer": "Notes: What skills does he use with PCI. What skills does he use with PCI? At JPMorgan Chase I worked under SOX, PCI, and GDPR obligations in the Site Reliability and Platform role. I embedded Veracode scanning, Artifactory, least-privilege IAM, and secrets management in the delivery pipelines so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
+    "answer": "Notes: What skills does he use with PCI. At JPMorgan Chase I worked under SOX, PCI, and GDPR obligations in the Site Reliability and Platform role. I embedded Veracode scanning, Artifactory, least-privilege IAM, and secrets management in the delivery pipelines so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
     "tags": [
       "skill",
       "pci",
@@ -5526,7 +5526,7 @@
       "What does the note What skills does he use with PostgreSQL say?",
       "What about skill use postgresql public tasks api use postgresql?"
     ],
-    "answer": "Notes: What skills does he use with PostgreSQL. What skills does he use with PostgreSQL? On the public Tasks API I use PostgreSQL as the database for a small REST API with JWT authentication, migrations, rate limits, and CI that builds and smoke-tests the container against Postgres. PostgreSQL is also listed in my public data skill set and on my resume under Data. The employer write-ups describe SQL Server, Azure SQL, and Oracle in more detail than PostgreSQL.",
+    "answer": "Notes: What skills does he use with PostgreSQL. On the public Tasks API I use PostgreSQL as the database for a small REST API with JWT authentication, migrations, rate limits, and CI that builds and smoke-tests the container against Postgres. PostgreSQL is also listed in my public data skill set and on my resume under Data. The employer write-ups describe SQL Server, Azure SQL, and Oracle in more detail than PostgreSQL.",
     "tags": [
       "skill",
       "postgresql",
@@ -5545,7 +5545,7 @@
       "What does the note What skills does he use with Rolling deploys say?",
       "What about skill use rolling deploys jpmorgan chase build ci?"
     ],
-    "answer": "Notes: What skills does he use with Rolling deploys. What skills does he use with Rolling deploys? At JPMorgan Chase I built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deploys to AWS ECS and the private cloud. My resume also names Bitbucket among the pipelines that performed those rolling deployments, for version-controlled delivery.",
+    "answer": "Notes: What skills does he use with Rolling deploys. At JPMorgan Chase I built CI/CD pipelines in Jenkins and Spinnaker for Line of Business application teams, supporting blue-green and rolling deploys to AWS ECS and the private cloud. My resume also names Bitbucket among the pipelines that performed those rolling deployments, for version-controlled delivery.",
     "tags": [
       "skill",
       "rolling",
@@ -5566,7 +5566,7 @@
       "What does the note What skills does he use with S3 say?",
       "What about skill use s3 jpmorgan chase moved firm s?"
     ],
-    "answer": "Notes: What skills does he use with S3. What skills does he use with S3? At JPMorgan Chase I moved the firm's MLOps platform onto SageMaker, ECS, and S3 with least-privilege IAM, without interrupting inference. On the public Investor Dashboard, the architecture uses Python collection jobs that write Parquet and serving JSON to S3, and a static dashboard hosted from a private S3 bucket behind CloudFront.",
+    "answer": "Notes: What skills does he use with S3. At JPMorgan Chase I moved the firm's MLOps platform onto SageMaker, ECS, and S3 with least-privilege IAM, without interrupting inference. On the public Investor Dashboard, the architecture uses Python collection jobs that write Parquet and serving JSON to S3, and a static dashboard hosted from a private S3 bucket behind CloudFront.",
     "tags": [
       "skill",
       "s3",
@@ -5586,7 +5586,7 @@
       "What does the note What skills does he use with SDLC say?",
       "What about skill use sdlc resume lists full sdlc ownership?"
     ],
-    "answer": "Notes: What skills does he use with SDLC. What skills does he use with SDLC? My resume lists full SDLC ownership among architecture and delivery skills. At Corsair I led the Sitecore and Magento to SAP Hybris migration as a 12-month program through requirements, architecture, development, QA, and training, and I led the SAP Commerce Cloud V2 upgrade from requirements gathering through go-live.",
+    "answer": "Notes: What skills does he use with SDLC. My resume lists full SDLC ownership among architecture and delivery skills. At Corsair I led the Sitecore and Magento to SAP Hybris migration as a 12-month program through requirements, architecture, development, QA, and training, and I led the SAP Commerce Cloud V2 upgrade from requirements gathering through go-live.",
     "tags": [
       "skill",
       "sdlc",
@@ -5604,7 +5604,7 @@
       "What does the note What skills does he use with Secrets management say?",
       "What about skill use secrets management jpmorgan chase practiced secrets?"
     ],
-    "answer": "Notes: What skills does he use with Secrets management. What skills does he use with Secrets management? At JPMorgan Chase I practiced secrets management as part of the delivery path, alongside least-privilege IAM, Veracode scanning, and Artifactory, under SOX, PCI, and GDPR, so audit evidence came out of the pipeline rather than a quarterly exercise. Public notes describe this as a secrets-management practice; they do not name a specific secrets product.",
+    "answer": "Notes: What skills does he use with Secrets management. At JPMorgan Chase I practiced secrets management as part of the delivery path, alongside least-privilege IAM, Veracode scanning, and Artifactory, under SOX, PCI, and GDPR, so audit evidence came out of the pipeline rather than a quarterly exercise. Public notes describe this as a secrets-management practice; they do not name a specific secrets product.",
     "tags": [
       "skill",
       "secrets",
@@ -5624,7 +5624,7 @@
       "What does the note What skills does he use with SiteShield say?",
       "What about skill use siteshield first republic bank owned akamai?"
     ],
-    "answer": "Notes: What skills does he use with SiteShield. What skills does he use with SiteShield? At First Republic Bank I owned Akamai Kona edge delivery and security, including SiteShield, along with WAF, GTM, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
+    "answer": "Notes: What skills does he use with SiteShield. At First Republic Bank I owned Akamai Kona edge delivery and security, including SiteShield, along with WAF, GTM, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
     "tags": [
       "skill",
       "siteshield",
@@ -5643,7 +5643,7 @@
       "What does the note What skills does he use with SLOs & SLIs say?",
       "What about skill use slos slis jpmorgan chase defined tracked?"
     ],
-    "answer": "Notes: What skills does he use with SLOs & SLIs. What skills does he use with SLOs & SLIs? At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs for distributed microservices and for the private Kubernetes platform, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints, with an on-call owner on the serving path.",
+    "answer": "Notes: What skills does he use with SLOs & SLIs. At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs for distributed microservices and for the private Kubernetes platform, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints, with an on-call owner on the serving path.",
     "tags": [
       "skill",
       "slo",
@@ -5665,7 +5665,7 @@
       "What does the note What skills does he use with Software Architecture say?",
       "What about skill use software architecture software architecture one architecture?"
     ],
-    "answer": "Notes: What skills does he use with Software Architecture. What skills does he use with Software Architecture? Software architecture is one of the architecture skills I list publicly. At First Republic Bank, as Technical Lead for the Azure content platform, I drove architecture and information security reviews, including reviews across Sitecore, Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure. At Corsair I was the architecture and delivery lead for the global e-commerce platform and owned technology decisions across two platform migrations.",
+    "answer": "Notes: What skills does he use with Software Architecture. Software architecture is one of the architecture skills I list publicly. At First Republic Bank, as Technical Lead for the Azure content platform, I drove architecture and information security reviews, including reviews across Sitecore, Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure. At Corsair I was the architecture and delivery lead for the global e-commerce platform and owned technology decisions across two platform migrations.",
     "tags": [
       "skill",
       "software",
@@ -5684,7 +5684,7 @@
       "What does the note What skills does he use with Software Design say?",
       "What about skill use software design software design one architecture?"
     ],
-    "answer": "Notes: What skills does he use with Software Design. What skills does he use with Software Design? Software design is one of the architecture skills I list publicly. At ESP I designed and built the web framework, REST APIs, and single-page admin UI for the opsInfo product, and I re-platformed the reporting engine onto .NET to meet scalability demands and enable Unicode multi-language support. Later platform work at Corsair and First Republic continued that design ownership on commerce and content platforms.",
+    "answer": "Notes: What skills does he use with Software Design. Software design is one of the architecture skills I list publicly. At ESP I designed and built the web framework, REST APIs, and single-page admin UI for the opsInfo product, and I re-platformed the reporting engine onto .NET to meet scalability demands and enable Unicode multi-language support. Later platform work at Corsair and First Republic continued that design ownership on commerce and content platforms.",
     "tags": [
       "skill",
       "software",
@@ -5703,7 +5703,7 @@
       "What does the note What skills does he use with Software Observability say?",
       "What about skill use software observability software observability one architecture?"
     ],
-    "answer": "Notes: What skills does he use with Software Observability. What skills does he use with Software Observability? Software observability is one of the architecture skills I list publicly. At JPMorgan Chase I wrote the Dynatrace and Splunk software observability standard for the private Kubernetes platform — tracing, tagging, synthetics, and dashboards — as reusable assets, and I onboarded about 11 application teams. I also defined SLOs and SLIs with Grafana and Prometheus, and at First Republic I configured alerting in Azure Monitor, New Relic, and Splunk.",
+    "answer": "Notes: What skills does he use with Software Observability. Software observability is one of the architecture skills I list publicly. At JPMorgan Chase I wrote the Dynatrace and Splunk software observability standard for the private Kubernetes platform — tracing, tagging, synthetics, and dashboards — as reusable assets, and I onboarded about 11 application teams. I also defined SLOs and SLIs with Grafana and Prometheus, and at First Republic I configured alerting in Azure Monitor, New Relic, and Splunk.",
     "tags": [
       "skill",
       "software",
@@ -5722,7 +5722,7 @@
       "What does the note What skills does he use with Solr say?",
       "What about skill use solr first republic bank improved page?"
     ],
-    "answer": "Notes: What skills does he use with Solr. What skills does he use with Solr? At First Republic Bank I improved page load performance through custom Solr indexes and Sitecore and Akamai caching strategies on the Azure-hosted content platform, and Solr was part of the documented platform stack alongside Sitecore 10.2 and Azure SQL.",
+    "answer": "Notes: What skills does he use with Solr. At First Republic Bank I improved page load performance through custom Solr indexes and Sitecore and Akamai caching strategies on the Azure-hosted content platform, and Solr was part of the documented platform stack alongside Sitecore 10.2 and Azure SQL.",
     "tags": [
       "skill",
       "solr",
@@ -5742,7 +5742,7 @@
       "What does the note What skills does he use with SonarQube say?",
       "What about skill use sonarqube corsair lead commerce architect sonarqube?"
     ],
-    "answer": "Notes: What skills does he use with SonarQube. What skills does he use with SonarQube? At Corsair, as Lead Commerce Architect, SonarQube was part of the documented technology stack for the commerce platform, alongside Jenkins. I also used SonarQube as a code-quality gate on that earlier commerce platform, as described in my public Improving Secure CI/CD note.",
+    "answer": "Notes: What skills does he use with SonarQube. At Corsair, as Lead Commerce Architect, SonarQube was part of the documented technology stack for the commerce platform, alongside Jenkins. I also used SonarQube as a code-quality gate on that earlier commerce platform, as described in my public Improving Secure CI/CD note.",
     "tags": [
       "skill",
       "sonarqube",
@@ -5761,7 +5761,7 @@
       "What does the note What skills does he use with SOX say?",
       "What about skill use sox jpmorgan chase worked under sox?"
     ],
-    "answer": "Notes: What skills does he use with SOX. What skills does he use with SOX? At JPMorgan Chase I worked under SOX, PCI, and GDPR obligations in the Site Reliability and Platform role. I embedded Veracode scanning, Artifactory, least-privilege IAM, and secrets management in the delivery pipelines so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
+    "answer": "Notes: What skills does he use with SOX. At JPMorgan Chase I worked under SOX, PCI, and GDPR obligations in the Site Reliability and Platform role. I embedded Veracode scanning, Artifactory, least-privilege IAM, and secrets management in the delivery pipelines so SOX and PCI audit evidence came out of every deploy instead of a quarterly scramble.",
     "tags": [
       "skill",
       "sox",
@@ -5781,7 +5781,7 @@
       "What does the note What skills does he use with Stakeholder Management say?",
       "What about skill use stakeholder management corsair lead commerce architect?"
     ],
-    "answer": "Notes: What skills does he use with Stakeholder Management. What skills does he use with Stakeholder Management? At Corsair, as Lead Commerce Architect, I led the SAP Commerce Cloud V2 upgrade end to end in five months, managing scope, timeline, and stakeholder alignment. The public Career Overview describes that era as coordinating a remote contractor team and a marketing partner who owned the website, with me as the only on-site owner.",
+    "answer": "Notes: What skills does he use with Stakeholder Management. At Corsair, as Lead Commerce Architect, I led the SAP Commerce Cloud V2 upgrade end to end in five months, managing scope, timeline, and stakeholder alignment. The public Career Overview describes that era as coordinating a remote contractor team and a marketing partner who owned the website, with me as the only on-site owner.",
     "tags": [
       "skill",
       "stakeholder",
@@ -5800,7 +5800,7 @@
       "What does the note What skills does he use with Technical Leadership say?",
       "What about skill use technical leadership technical leadership one leadership?"
     ],
-    "answer": "Notes: What skills does he use with Technical Leadership. What skills does he use with Technical Leadership? Technical leadership is one of the leadership skills I list publicly. At First Republic Bank I was Technical Lead for the Azure-hosted content platform, owning it end to end. At Corsair I was Lead Commerce Architect, the on-site owner coordinating a remote contractor team, and I led two commerce platform migrations.",
+    "answer": "Notes: What skills does he use with Technical Leadership. Technical leadership is one of the leadership skills I list publicly. At First Republic Bank I was Technical Lead for the Azure-hosted content platform, owning it end to end. At Corsair I was Lead Commerce Architect, the on-site owner coordinating a remote contractor team, and I led two commerce platform migrations.",
     "tags": [
       "skill",
       "technical",
@@ -5819,7 +5819,7 @@
       "What does the note What skills does he use with Technical Project Leadership say?",
       "What about skill use technical project leadership led multi month?"
     ],
-    "answer": "Notes: What skills does he use with Technical Project Leadership. What skills does he use with Technical Project Leadership? I have led multi-month platform projects as the technical project lead. At First Republic I led the bank's content platform onto Azure in 8 months against a typical 12-month timeline, through a clean go-live with no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. At Corsair I led a 12-month Sitecore and Magento to SAP Hybris program with four contractors, then the SAP Commerce Cloud V2 upgrade in five months.",
+    "answer": "Notes: What skills does he use with Technical Project Leadership. I have led multi-month platform projects as the technical project lead. At First Republic I led the bank's content platform onto Azure in 8 months against a typical 12-month timeline, through a clean go-live with no loss of availability, plus the Sitecore 9.1 to 10.2 upgrade. At Corsair I led a 12-month Sitecore and Magento to SAP Hybris program with four contractors, then the SAP Commerce Cloud V2 upgrade in five months.",
     "tags": [
       "skill",
       "technical",
@@ -5839,7 +5839,7 @@
       "What does the note What skills does he use with Veracode say?",
       "What about skill use veracode first republic bank used veracode?"
     ],
-    "answer": "Notes: What skills does he use with Veracode. What skills does he use with Veracode? At First Republic Bank I used Veracode static analysis in architecture and information security reviews to validate secure coding practices on the Azure-hosted Sitecore platform. At JPMorgan Chase I integrated Veracode scanning into Jenkins and Spinnaker pipelines so findings surfaced while a change was still in review.",
+    "answer": "Notes: What skills does he use with Veracode. At First Republic Bank I used Veracode static analysis in architecture and information security reviews to validate secure coding practices on the Azure-hosted Sitecore platform. At JPMorgan Chase I integrated Veracode scanning into Jenkins and Spinnaker pipelines so findings surfaced while a change was still in review.",
     "tags": [
       "skill",
       "veracode",
@@ -5858,7 +5858,7 @@
       "What does the note What skills does he use with WAF say?",
       "What about skill use waf first republic bank owned akamai?"
     ],
-    "answer": "Notes: What skills does he use with WAF. What skills does he use with WAF? At First Republic Bank I owned Akamai Kona edge delivery and security, including the WAF, along with GTM, SiteShield, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
+    "answer": "Notes: What skills does he use with WAF. At First Republic Bank I owned Akamai Kona edge delivery and security, including the WAF, along with GTM, SiteShield, and Edge Redirector, and I integrated the Akamai NetStorage Usage and Purge APIs into platform tooling.",
     "tags": [
       "skill",
       "waf",
@@ -5877,7 +5877,7 @@
       "What does the note What skills does he use with Agile Methodologies say?",
       "What about skill use agile methodologies agile methodologies one architecture?"
     ],
-    "answer": "Notes: What skills does he use with Agile Methodologies. What skills does he use with Agile Methodologies? Agile Methodologies is one of the architecture skills I list publicly. In March 2023 I completed Introduction to Agile for teams, associated with First Republic. Public write-ups describe multi-month platform programs at Corsair and First Republic that ran through requirements, architecture, development, QA, and go-live, but they do not name a specific Agile practice such as Scrum or a sprint cadence.",
+    "answer": "Notes: What skills does he use with Agile Methodologies. Agile Methodologies is one of the architecture skills I list publicly. In March 2023 I completed Introduction to Agile for teams, associated with First Republic. Public write-ups describe multi-month platform programs at Corsair and First Republic that ran through requirements, architecture, development, QA, and go-live, but they do not name a specific Agile practice such as Scrum or a sprint cadence.",
     "tags": [
       "skill",
       "agile",
@@ -5896,7 +5896,7 @@
       "What does the note What skills does he use with Application Gateway say?",
       "What about skill use application gateway first republic bank technical?"
     ],
-    "answer": "Notes: What skills does he use with Application Gateway. What skills does he use with Application Gateway? At First Republic Bank, as Technical Lead for the Azure-hosted content platform, I ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure through a clean go-live with no loss of availability. Application Gateway is also listed among the skills for the public Azure content-platform migration work project.",
+    "answer": "Notes: What skills does he use with Application Gateway. At First Republic Bank, as Technical Lead for the Azure-hosted content platform, I ran architecture and information security reviews across Sitecore and Azure App Services, Application Gateway, and Virtual Networks, and I led the migration to Azure through a clean go-live with no loss of availability. Application Gateway is also listed among the skills for the public Azure content-platform migration work project.",
     "tags": [
       "skill",
       "application",
@@ -5916,7 +5916,7 @@
       "What does the note What skills does he use with ASP.NET MVC say?",
       "What about skill use asp net mvc esp asp net?"
     ],
-    "answer": "Notes: What skills does he use with ASP.NET MVC. What skills does he use with ASP.NET MVC? At ESP, ASP.NET MVC and C# were the documented web stack for opsInfo, and I designed and built the web framework, REST APIs, and single-page admin UI for that product, cutting page loads to under two seconds through advanced caching and query batching. At Corsair, as a Senior .NET Engineer, ASP.NET MVC is listed among the skills I used on the commerce platform, alongside ASP.NET Web API and C#. It also appears among First Republic Bank platform skills.",
+    "answer": "Notes: What skills does he use with ASP.NET MVC. At ESP, ASP.NET MVC and C# were the documented web stack for opsInfo, and I designed and built the web framework, REST APIs, and single-page admin UI for that product, cutting page loads to under two seconds through advanced caching and query batching. At Corsair, as a Senior .NET Engineer, ASP.NET MVC is listed among the skills I used on the commerce platform, alongside ASP.NET Web API and C#. It also appears among First Republic Bank platform skills.",
     "tags": [
       "skill",
       "aspnet",
@@ -5938,7 +5938,7 @@
       "What does the note What skills does he use with ASP.NET Web API say?",
       "What about skill use asp net web api first republic?"
     ],
-    "answer": "Notes: What skills does he use with ASP.NET Web API. What skills does he use with ASP.NET Web API? At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL, on the Azure-hosted Sitecore content platform. A public note also describes building .NET APIs from scratch on that platform, with Sitecore session authentication, used by internal teams over REST. ASP.NET Web API was part of the documented stack at ESP and is listed among the skills I used at Corsair as a Senior .NET Engineer.",
+    "answer": "Notes: What skills does he use with ASP.NET Web API. At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL, on the Azure-hosted Sitecore content platform. A public note also describes building .NET APIs from scratch on that platform, with Sitecore session authentication, used by internal teams over REST. ASP.NET Web API was part of the documented stack at ESP and is listed among the skills I used at Corsair as a Senior .NET Engineer.",
     "tags": [
       "skill",
       "aspnet",
@@ -5962,7 +5962,7 @@
       "What does the note What skills does he use with AWS SageMaker say?",
       "What about skill use aws sagemaker jpmorgan chase mlops platform?"
     ],
-    "answer": "Notes: What skills does he use with AWS SageMaker. What skills does he use with AWS SageMaker? At JPMorgan Chase, on the MLOps platform, I re-platformed production ML onto an internal AI/ML framework wrapper based on SageMaker for AWS, in newly built AWS accounts across every environment, without interrupting inference for downstream consumers. I standardized MLOps CI/CD model promotion for model-serving infrastructure, and I put availability, error-rate, and latency SLOs on inference endpoints, with Python validation gating promotion.",
+    "answer": "Notes: What skills does he use with AWS SageMaker. At JPMorgan Chase, on the MLOps platform, I re-platformed production ML onto an internal AI/ML framework wrapper based on SageMaker for AWS, in newly built AWS accounts across every environment, without interrupting inference for downstream consumers. I standardized MLOps CI/CD model promotion for model-serving infrastructure, and I put availability, error-rate, and latency SLOs on inference endpoints, with Python validation gating promotion.",
     "tags": [
       "skill",
       "sagemaker",
@@ -5982,7 +5982,7 @@
       "What does the note What skills does he use with Bash say?",
       "What about skill use bash jpmorgan chase site reliability platform?"
     ],
-    "answer": "Notes: What skills does he use with Bash. What skills does he use with Bash? At JPMorgan Chase, as a Site Reliability and Platform Engineer, I automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and the private cloud, and Bash was part of the documented automation stack alongside Terraform, CloudFormation, Kubernetes, Jenkins, and Spinnaker. A public SRE elevator-pitch note also states that I automated away toil in Python and Bash.",
+    "answer": "Notes: What skills does he use with Bash. At JPMorgan Chase, as a Site Reliability and Platform Engineer, I automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and the private cloud, and Bash was part of the documented automation stack alongside Terraform, CloudFormation, Kubernetes, Jenkins, and Spinnaker. A public SRE elevator-pitch note also states that I automated away toil in Python and Bash.",
     "tags": [
       "skill",
       "bash",
@@ -6000,7 +6000,7 @@
       "What does the note What skills does he use with CloudFormation say?",
       "What about skill use cloudformation jpmorgan chase authored maintained terraform?"
     ],
-    "answer": "Notes: What skills does he use with CloudFormation. What skills does he use with CloudFormation? At JPMorgan Chase I authored and maintained Terraform and CloudFormation modules provisioning AWS and private cloud infrastructure for compliance-driven migrations, eliminating configuration drift and manual deployment effort. CloudFormation was also part of the documented automation stack I used in that Site Reliability and Platform role.",
+    "answer": "Notes: What skills does he use with CloudFormation. At JPMorgan Chase I authored and maintained Terraform and CloudFormation modules provisioning AWS and private cloud infrastructure for compliance-driven migrations, eliminating configuration drift and manual deployment effort. CloudFormation was also part of the documented automation stack I used in that Site Reliability and Platform role.",
     "tags": [
       "skill",
       "cloudformation",
@@ -6020,7 +6020,7 @@
       "What does the note What skills does he use with Communication say?",
       "What about skill use communication communication one leadership skill list?"
     ],
-    "answer": "Notes: What skills does he use with Communication. What skills does he use with Communication? Communication is one of the leadership skills I list publicly. A public technical-leadership note says I combine ownership, clear communication, and enabling others — making risks and decisions understandable and giving teams reusable examples and documentation. At Corsair I led the SAP Commerce Cloud V2 upgrade in five months, managing scope, timeline, and stakeholder alignment, as the on-site owner coordinating a remote contractor team. At JPMorgan Chase I wrote observability standards and documentation and onboarded about 11 application teams.",
+    "answer": "Notes: What skills does he use with Communication. Communication is one of the leadership skills I list publicly. A public technical-leadership note says I combine ownership, clear communication, and enabling others — making risks and decisions understandable and giving teams reusable examples and documentation. At Corsair I led the SAP Commerce Cloud V2 upgrade in five months, managing scope, timeline, and stakeholder alignment, as the on-site owner coordinating a remote contractor team. At JPMorgan Chase I wrote observability standards and documentation and onboarded about 11 application teams.",
     "tags": [
       "skill",
       "communication",
@@ -6039,7 +6039,7 @@
       "What does the note What skills does he use with C# say?",
       "What about skill use c esp designed build web framework?"
     ],
-    "answer": "Notes: What skills does he use with C#. What skills does he use with C#? At ESP I designed and built the web framework, REST APIs, and single-page admin UI for the opsInfo product in the documented ASP.NET MVC and C# stack, cutting page loads to under two seconds, and I re-platformed the reporting engine onto .NET. At Corsair, as a Senior .NET Engineer, I built full-stack features and internal tooling in ASP.NET and C# — Sitecore content import/export, backup, and bulk operations. At First Republic Bank, C# was part of the documented Azure Sitecore platform stack alongside ASP.NET Web API.",
+    "answer": "Notes: What skills does he use with C#. At ESP I designed and built the web framework, REST APIs, and single-page admin UI for the opsInfo product in the documented ASP.NET MVC and C# stack, cutting page loads to under two seconds, and I re-platformed the reporting engine onto .NET. At Corsair, as a Senior .NET Engineer, I built full-stack features and internal tooling in ASP.NET and C# — Sitecore content import/export, backup, and bulk operations. At First Republic Bank, C# was part of the documented Azure Sitecore platform stack alongside ASP.NET Web API.",
     "tags": [
       "skill",
       "csharp",
@@ -6058,7 +6058,7 @@
       "What does the note What skills does he use with Docker say?",
       "What about skill use docker corsair senior net engineer led?"
     ],
-    "answer": "Notes: What skills does he use with Docker. What skills does he use with Docker? At Corsair, as a Senior .NET Engineer, I led the commerce platform migrations to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations. At JPMorgan Chase, Docker was part of the SRE and MLOps skill sets, and the public SRE write-up describes capacity planning that included tuning Docker deployments on the private Kubernetes platform. Docker also appears among First Republic Bank platform skills.",
+    "answer": "Notes: What skills does he use with Docker. At Corsair, as a Senior .NET Engineer, I led the commerce platform migrations to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations. At JPMorgan Chase, Docker was part of the SRE and MLOps skill sets, and the public SRE write-up describes capacity planning that included tuning Docker deployments on the private Kubernetes platform. Docker also appears among First Republic Bank platform skills.",
     "tags": [
       "skill",
       "docker",
@@ -6076,7 +6076,7 @@
       "What does the note What skills does he use with Dynatrace say?",
       "What about skill use dynatrace jpmorgan chase configured dynatrace distributed?"
     ],
-    "answer": "Notes: What skills does he use with Dynatrace. What skills does he use with Dynatrace? At JPMorgan Chase I configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and I authored the team's Dynatrace and Splunk observability standard for the private Kubernetes platform — including tracing, tagging, synthetics, and dashboards — packaged as reusable base assets with environment overlays. I onboarded about 11 application teams, and other teams adopted it from the documentation. I also tracked error budgets in Grafana and Prometheus alongside Dynatrace error-rate alerts.",
+    "answer": "Notes: What skills does he use with Dynatrace. At JPMorgan Chase I configured Dynatrace distributed tracing, custom tagging, and synthetic monitors, and I authored the team's Dynatrace and Splunk observability standard for the private Kubernetes platform — including tracing, tagging, synthetics, and dashboards — packaged as reusable base assets with environment overlays. I onboarded about 11 application teams, and other teams adopted it from the documentation. I also tracked error budgets in Grafana and Prometheus alongside Dynatrace error-rate alerts.",
     "tags": [
       "skill",
       "dynatrace",
@@ -6095,7 +6095,7 @@
       "What does the note What skills does he use with GitHub Copilot say?",
       "What about skill use github copilot jpmorgan chase mlops platform?"
     ],
-    "answer": "Notes: What skills does he use with GitHub Copilot. What skills does he use with GitHub Copilot? At JPMorgan Chase, on the MLOps platform, I championed AI-assisted development with GitHub Copilot across the team, accelerating infrastructure code, automation scripts, and test coverage, treating output as a draft and reviewing anything touching production like a colleague's pull request. In July 2023 I completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. A public note also describes using Copilot on Terraform modules, CloudFormation, Kubernetes manifests, Python automation, and test coverage.",
+    "answer": "Notes: What skills does he use with GitHub Copilot. At JPMorgan Chase, on the MLOps platform, I championed AI-assisted development with GitHub Copilot across the team, accelerating infrastructure code, automation scripts, and test coverage, treating output as a draft and reviewing anything touching production like a colleague's pull request. In July 2023 I completed GitHub Copilot training from Microsoft through the JPMorgan Chase internal programme. A public note also describes using Copilot on Terraform modules, CloudFormation, Kubernetes manifests, Python automation, and test coverage.",
     "tags": [
       "skill",
       "copilot",
@@ -6114,7 +6114,7 @@
       "What does the note What skills does he use with Grafana say?",
       "What about skill use grafana jpmorgan chase defined tracked availability?"
     ],
-    "answer": "Notes: What skills does he use with Grafana. What skills does he use with Grafana? At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and the private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints in Grafana and Prometheus. A personal OpenTelemetry project, still in progress and not public yet, routes traces and metrics into a Grafana and Tempo stack.",
+    "answer": "Notes: What skills does he use with Grafana. At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and the private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints in Grafana and Prometheus. A personal OpenTelemetry project, still in progress and not public yet, routes traces and metrics into a Grafana and Tempo stack.",
     "tags": [
       "skill",
       "grafana",
@@ -6133,7 +6133,7 @@
       "What does the note What skills does he use with GraphQL say?",
       "What about skill use graphql used graphql grafana dashboard customization?"
     ],
-    "answer": "Notes: What skills does he use with GraphQL. What skills does he use with GraphQL? I used GraphQL in Grafana for dashboard customization. GraphQL also appears in my public programming-language skill set and in the Core Skills list on my resume. Public employer write-ups describe Grafana at JPMorgan Chase for SLO and error-budget dashboards, but they do not describe the GraphQL customization in more detail.",
+    "answer": "Notes: What skills does he use with GraphQL. I used GraphQL in Grafana for dashboard customization. GraphQL also appears in my public programming-language skill set and in the Core Skills list on my resume. Public employer write-ups describe Grafana at JPMorgan Chase for SLO and error-budget dashboards, but they do not describe the GraphQL customization in more detail.",
     "tags": [
       "skill",
       "graphql",
@@ -6152,7 +6152,7 @@
       "What does the note What skills does he use with Groovy say?",
       "What about skill use groovy first republic bank used groovy?"
     ],
-    "answer": "Notes: What skills does he use with Groovy. What skills does he use with Groovy? At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform. Groovy and Jenkins are listed among the platform skills for that Technical Lead – Platform role. The public write-ups do not describe a specific Groovy task or outcome.",
+    "answer": "Notes: What skills does he use with Groovy. At First Republic Bank I used Groovy during my DevOps work on the Azure-hosted content platform. Groovy and Jenkins are listed among the platform skills for that Technical Lead – Platform role. The public write-ups do not describe a specific Groovy task or outcome.",
     "tags": [
       "skill",
       "groovy",
@@ -6171,7 +6171,7 @@
       "What does the note What skills does he use with Helm say?",
       "What about skill use helm helm appears public infrastructure containers?"
     ],
-    "answer": "Notes: What skills does he use with Helm. What skills does he use with Helm? Helm appears in my public Infrastructure and containers skill set and in the Core Skills list on my resume, alongside Terraform, CloudFormation, Kubernetes, and Docker, with no public description of a specific Helm chart, release, or outcome.",
+    "answer": "Notes: What skills does he use with Helm. Helm appears in my public Infrastructure and containers skill set and in the Core Skills list on my resume, alongside Terraform, CloudFormation, Kubernetes, and Docker, with no public description of a specific Helm chart, release, or outcome.",
     "tags": [
       "skill",
       "helm",
@@ -6190,7 +6190,7 @@
       "What does the note What skills does he use with Java say?",
       "What about skill use java corsair lead commerce architect java?"
     ],
-    "answer": "Notes: What skills does he use with Java. What skills does he use with Java? At Corsair, as Lead Commerce Architect, Java and Spring were part of the documented technology stack for the SAP Hybris / SAP Commerce Cloud platform, and Java is listed among the skills for the public commerce-platform migrations work project. At JPMorgan Chase, Java appears among the skills for both the SRE and MLOps roles; a public note describes supporting existing Java APIs with OAuth token-based authentication. The public materials do not describe a Java service I designed from scratch at JPMorgan.",
+    "answer": "Notes: What skills does he use with Java. At Corsair, as Lead Commerce Architect, Java and Spring were part of the documented technology stack for the SAP Hybris / SAP Commerce Cloud platform, and Java is listed among the skills for the public commerce-platform migrations work project. At JPMorgan Chase, Java appears among the skills for both the SRE and MLOps roles; a public note describes supporting existing Java APIs with OAuth token-based authentication. The public materials do not describe a Java service I designed from scratch at JPMorgan.",
     "tags": [
       "skill",
       "java",
@@ -6208,7 +6208,7 @@
       "What does the note What skills does he use with Jenkins say?",
       "What about skill use jenkins jpmorgan chase build operated jenkins?"
     ],
-    "answer": "Notes: What skills does he use with Jenkins. What skills does he use with Jenkins? At JPMorgan Chase I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud, and I integrated Veracode scanning and Artifactory into those Jenkins and Spinnaker pipelines. At Corsair, as Lead Commerce Architect, Jenkins (Groovy) was part of the documented commerce-platform stack. Jenkins is also listed among First Republic Bank platform skills.",
+    "answer": "Notes: What skills does he use with Jenkins. At JPMorgan Chase I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud, and I integrated Veracode scanning and Artifactory into those Jenkins and Spinnaker pipelines. At Corsair, as Lead Commerce Architect, Jenkins (Groovy) was part of the documented commerce-platform stack. Jenkins is also listed among First Republic Bank platform skills.",
     "tags": [
       "skill",
       "jenkins",
@@ -6227,7 +6227,7 @@
       "What does the note What skills does he use with Kubernetes say?",
       "What about skill use kubernetes jpmorgan chase defined availability latency?"
     ],
-    "answer": "Notes: What skills does he use with Kubernetes. What skills does he use with Kubernetes? At JPMorgan Chase I defined availability and latency SLOs and SLIs for the firm's private Kubernetes platform, planned capacity for those clusters — right-sizing resource requests and limits, and managing cluster setup and deployment manifests — and managed Control-M scheduled job workflows on Kubernetes. I also wrote the Dynatrace and Splunk observability standard for that platform and onboarded about 11 application teams. A personal GitOps project, still in progress, uses Argo CD on a k3s cluster, mirroring Spinnaker patterns I ran in production.",
+    "answer": "Notes: What skills does he use with Kubernetes. At JPMorgan Chase I defined availability and latency SLOs and SLIs for the firm's private Kubernetes platform, planned capacity for those clusters — right-sizing resource requests and limits, and managing cluster setup and deployment manifests — and managed Control-M scheduled job workflows on Kubernetes. I also wrote the Dynatrace and Splunk observability standard for that platform and onboarded about 11 application teams. A personal GitOps project, still in progress, uses Argo CD on a k3s cluster, mirroring Spinnaker patterns I ran in production.",
     "tags": [
       "skill",
       "kubernetes",
@@ -6245,7 +6245,7 @@
       "What does the note What skills does he use with New Relic say?",
       "What about skill use new relic first republic bank configured?"
     ],
-    "answer": "Notes: What skills does he use with New Relic. What skills does he use with New Relic? At First Republic Bank I configured real-time alerting in Azure Monitor, New Relic, and Splunk, and I validated Splunk and New Relic integrations in the upgraded Sitecore 10.2 environment. New Relic is also listed among the skills I used at Corsair, though the public Corsair write-ups do not describe a specific New Relic task.",
+    "answer": "Notes: What skills does he use with New Relic. At First Republic Bank I configured real-time alerting in Azure Monitor, New Relic, and Splunk, and I validated Splunk and New Relic integrations in the upgraded Sitecore 10.2 environment. New Relic is also listed among the skills I used at Corsair, though the public Corsair write-ups do not describe a specific New Relic task.",
     "tags": [
       "skill",
       "newrelic",
@@ -6266,7 +6266,7 @@
       "What does the note What skills does he use with Oracle say?",
       "What about skill use oracle corsair senior net engineer delivered?"
     ],
-    "answer": "Notes: What skills does he use with Oracle. What skills does he use with Oracle? At Corsair, as a Senior .NET Engineer, I delivered Oracle ERP and Salesforce CRM integrations on the commerce platform. As Lead Commerce Architect, Oracle was part of the documented SAP Commerce Cloud stack. At ESP, Oracle was part of the documented opsInfo stack alongside PL/SQL, and in March 2010 I completed Oracle 9i programming with PL/SQL, associated with ESP. Oracle Database is also listed among JPMorgan Chase SRE skills, with no public description of a specific Oracle task there.",
+    "answer": "Notes: What skills does he use with Oracle. At Corsair, as a Senior .NET Engineer, I delivered Oracle ERP and Salesforce CRM integrations on the commerce platform. As Lead Commerce Architect, Oracle was part of the documented SAP Commerce Cloud stack. At ESP, Oracle was part of the documented opsInfo stack alongside PL/SQL, and in March 2010 I completed Oracle 9i programming with PL/SQL, associated with ESP. Oracle Database is also listed among JPMorgan Chase SRE skills, with no public description of a specific Oracle task there.",
     "tags": [
       "skill",
       "oracle",
@@ -6284,7 +6284,7 @@
       "What does the note What skills does he use with PL/SQL say?",
       "What about skill use pl sql pl sql experience oracle?"
     ],
-    "answer": "Notes: What skills does he use with PL/SQL. What skills does he use with PL/SQL? My PL/SQL experience is the Oracle work in the public materials. At Corsair, as a Senior .NET Engineer, I delivered Oracle ERP and Salesforce CRM integrations on the commerce platform, and as Lead Commerce Architect, Oracle was part of the documented SAP Commerce Cloud stack. At ESP, Oracle and PL/SQL were part of the documented opsInfo stack, and in March 2010 I completed Oracle 9i programming with PL/SQL, associated with ESP. The public write-ups do not name a specific PL/SQL program or package.",
+    "answer": "Notes: What skills does he use with PL/SQL. My PL/SQL experience is the Oracle work in the public materials. At Corsair, as a Senior .NET Engineer, I delivered Oracle ERP and Salesforce CRM integrations on the commerce platform, and as Lead Commerce Architect, Oracle was part of the documented SAP Commerce Cloud stack. At ESP, Oracle and PL/SQL were part of the documented opsInfo stack, and in March 2010 I completed Oracle 9i programming with PL/SQL, associated with ESP. The public write-ups do not name a specific PL/SQL program or package.",
     "tags": [
       "skill",
       "plsql",
@@ -6305,7 +6305,7 @@
       "What does the note What skills does he use with PowerShell say?",
       "What about skill use powershell corsair senior net engineer led?"
     ],
-    "answer": "Notes: What skills does he use with PowerShell. What skills does he use with PowerShell? At Corsair, as a Senior .NET Engineer, I led the commerce platform migrations to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations. At JPMorgan Chase I automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and the private-cloud estates.",
+    "answer": "Notes: What skills does he use with PowerShell. At Corsair, as a Senior .NET Engineer, I led the commerce platform migrations to Sitecore 6 and Sitecore 8, moving custom tools, reports, and integrations with PowerShell automation and Docker containers, with no interruption to e-commerce operations. At JPMorgan Chase I automated environment validation, deployment verification, and operational toil reduction in Python, PowerShell, and Bash across AWS and the private-cloud estates.",
     "tags": [
       "skill",
       "powershell",
@@ -6323,7 +6323,7 @@
       "What does the note What skills does he use with Prometheus say?",
       "What about skill use prometheus jpmorgan chase defined tracked availability?"
     ],
-    "answer": "Notes: What skills does he use with Prometheus. What skills does he use with Prometheus? At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and the private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints in Grafana and Prometheus.",
+    "answer": "Notes: What skills does he use with Prometheus. At JPMorgan Chase I defined and tracked availability and latency SLOs and SLIs, using Grafana dashboards on Prometheus metrics to monitor error budgets, infrastructure health, and related signals across AWS and the private cloud. In the MLOps platform role I also put availability, error-rate, and p50, p95, and p99 latency SLOs on inference endpoints in Grafana and Prometheus.",
     "tags": [
       "skill",
       "prometheus",
@@ -6342,7 +6342,7 @@
       "What does the note What skills does he use with React say?",
       "What about skill use react jpmorgan chase mlops platform build?"
     ],
-    "answer": "Notes: What skills does he use with React. What skills does he use with React? At JPMorgan Chase, on the MLOps platform, I built React and TypeScript reliability tooling that surfaces SLO burn rate and deployment health to engineering stakeholders. React is also listed among the skills I used at First Republic Bank and at Corsair as Lead Commerce Architect, though the public role write-ups do not describe a specific React task there. Public materials describe this recent React work as internal tooling.",
+    "answer": "Notes: What skills does he use with React. At JPMorgan Chase, on the MLOps platform, I built React and TypeScript reliability tooling that surfaces SLO burn rate and deployment health to engineering stakeholders. React is also listed among the skills I used at First Republic Bank and at Corsair as Lead Commerce Architect, though the public role write-ups do not describe a specific React task there. Public materials describe this recent React work as internal tooling.",
     "tags": [
       "skill",
       "react",
@@ -6360,7 +6360,7 @@
       "What does the note What skills does he use with SageMaker say?",
       "What about skill use sagemaker jpmorgan chase mlops platform re?"
     ],
-    "answer": "Notes: What skills does he use with SageMaker. What skills does he use with SageMaker? At JPMorgan Chase, on the MLOps platform, I re-platformed production ML onto an internal AI/ML framework wrapper based on SageMaker for AWS, in newly built AWS accounts across every environment, without interrupting inference for downstream consumers. I standardized MLOps CI/CD model promotion for model-serving infrastructure, and I put availability, error-rate, and latency SLOs on inference endpoints, with Python validation gating promotion.",
+    "answer": "Notes: What skills does he use with SageMaker. At JPMorgan Chase, on the MLOps platform, I re-platformed production ML onto an internal AI/ML framework wrapper based on SageMaker for AWS, in newly built AWS accounts across every environment, without interrupting inference for downstream consumers. I standardized MLOps CI/CD model promotion for model-serving infrastructure, and I put availability, error-rate, and latency SLOs on inference endpoints, with Python validation gating promotion.",
     "tags": [
       "skill",
       "sagemaker",
@@ -6380,7 +6380,7 @@
       "What does the note What skills does he use with SAP Commerce Cloud say?",
       "What about skill use sap commerce cloud corsair lead commerce?"
     ],
-    "answer": "Notes: What skills does he use with SAP Commerce Cloud. What skills does he use with SAP Commerce Cloud? At Corsair, as Lead Commerce Architect, I ran the Sitecore and Magento to SAP Hybris Commerce Cloud migration as a 12-month program leading four contractors through requirements, architecture, development, QA, and training, then led the SAP Commerce Cloud V2 upgrade end to end in five months, from requirements gathering through go-live. In July 2017 I completed SAP Commerce Cloud Developer training, associated with Corsair.",
+    "answer": "Notes: What skills does he use with SAP Commerce Cloud. At Corsair, as Lead Commerce Architect, I ran the Sitecore and Magento to SAP Hybris Commerce Cloud migration as a 12-month program leading four contractors through requirements, architecture, development, QA, and training, then led the SAP Commerce Cloud V2 upgrade end to end in five months, from requirements gathering through go-live. In July 2017 I completed SAP Commerce Cloud Developer training, associated with Corsair.",
     "tags": [
       "skill",
       "sap",
@@ -6401,7 +6401,7 @@
       "What does the note What skills does he use with Spinnaker say?",
       "What about skill use spinnaker jpmorgan chase build operated jenkins?"
     ],
-    "answer": "Notes: What skills does he use with Spinnaker. What skills does he use with Spinnaker? At JPMorgan Chase I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud, and I integrated Veracode scanning and Artifactory into those pipelines so findings surfaced while a change was still in review. A personal GitOps project, still in progress, is designed to mirror Spinnaker deployment patterns I ran in production there.",
+    "answer": "Notes: What skills does he use with Spinnaker. At JPMorgan Chase I built and operated the Jenkins, Spinnaker, and Bitbucket pipelines that Line of Business teams shipped on, including blue-green and rolling deployments to AWS ECS and the private cloud, and I integrated Veracode scanning and Artifactory into those pipelines so findings surfaced while a change was still in review. A personal GitOps project, still in progress, is designed to mirror Spinnaker deployment patterns I ran in production there.",
     "tags": [
       "skill",
       "spinnaker",
@@ -6420,7 +6420,7 @@
       "What does the note What skills does he use with Splunk say?",
       "What about skill use splunk jpmorgan chase build splunk dashboard?"
     ],
-    "answer": "Notes: What skills does he use with Splunk. What skills does he use with Splunk? At JPMorgan Chase I built Splunk dashboards, reports, and alerts, wrote the Dynatrace and Splunk observability standard for the private Kubernetes platform, and used twice-daily Splunk error reporting alongside Grafana, Prometheus, and Dynatrace. At First Republic Bank I configured real-time alerting in Azure Monitor, New Relic, and Splunk, and I validated Splunk and New Relic integrations during the Sitecore 9.1 to 10.2 upgrade.",
+    "answer": "Notes: What skills does he use with Splunk. At JPMorgan Chase I built Splunk dashboards, reports, and alerts, wrote the Dynatrace and Splunk observability standard for the private Kubernetes platform, and used twice-daily Splunk error reporting alongside Grafana, Prometheus, and Dynatrace. At First Republic Bank I configured real-time alerting in Azure Monitor, New Relic, and Splunk, and I validated Splunk and New Relic integrations during the Sitecore 9.1 to 10.2 upgrade.",
     "tags": [
       "skill",
       "splunk",
@@ -6439,7 +6439,7 @@
       "What does the note What skills does he use with Spring say?",
       "What about skill use spring spring experience java work public?"
     ],
-    "answer": "Notes: What skills does he use with Spring. What skills does he use with Spring? My Spring experience is the Java work in the public materials, including Java APIs I supported at JPMorgan Chase that were hosted on AWS ECS. A public note describes supporting existing Java APIs there with OAuth token-based authentication. At Corsair, as Lead Commerce Architect, Java and Spring were part of the documented technology stack for the SAP Hybris / SAP Commerce Cloud platform, and both are listed among the skills for the public commerce-platform migrations work project. The public materials do not describe a specific Spring module or service.",
+    "answer": "Notes: What skills does he use with Spring. My Spring experience is the Java work in the public materials, including Java APIs I supported at JPMorgan Chase that were hosted on AWS ECS. A public note describes supporting existing Java APIs there with OAuth token-based authentication. At Corsair, as Lead Commerce Architect, Java and Spring were part of the documented technology stack for the SAP Hybris / SAP Commerce Cloud platform, and both are listed among the skills for the public commerce-platform migrations work project. The public materials do not describe a specific Spring module or service.",
     "tags": [
       "skill",
       "spring",
@@ -6458,7 +6458,7 @@
       "What does the note What skills does he use with SQL Server say?",
       "What about skill use sql server esp sql server part?"
     ],
-    "answer": "Notes: What skills does he use with SQL Server. What skills does he use with SQL Server? At ESP, SQL Server was part of the documented technology stack for the opsInfo product, alongside T-SQL, SSRS, and SSIS, on the product where I designed the web framework, REST APIs, and reporting engine. At Corsair, as a Senior .NET Engineer, I utilized MS SQL Server among the tools used to develop and maintain the commerce platform, and SQL Server is listed among that role's skills. The public write-ups do not describe a specific SQL Server schema, query, or outcome.",
+    "answer": "Notes: What skills does he use with SQL Server. At ESP, SQL Server was part of the documented technology stack for the opsInfo product, alongside T-SQL, SSRS, and SSIS, on the product where I designed the web framework, REST APIs, and reporting engine. At Corsair, as a Senior .NET Engineer, I utilized MS SQL Server among the tools used to develop and maintain the commerce platform, and SQL Server is listed among that role's skills. The public write-ups do not describe a specific SQL Server schema, query, or outcome.",
     "tags": [
       "skill",
       "sqlserver",
@@ -6478,7 +6478,7 @@
       "What does the note What skills does he use with T-SQL say?",
       "What about skill use t sql t sql experience sql?"
     ],
-    "answer": "Notes: What skills does he use with T-SQL. What skills does he use with T-SQL? My T-SQL experience is the SQL Server and Azure SQL work in the public materials. At ESP, T-SQL and SQL Server were part of the documented technology stack for the opsInfo product, alongside SSRS and SSIS. At Corsair, as a Senior .NET Engineer, I utilized MS SQL Server among the tools used to develop and maintain the commerce platform. At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL. The public write-ups do not name a specific T-SQL query, procedure, or outcome.",
+    "answer": "Notes: What skills does he use with T-SQL. My T-SQL experience is the SQL Server and Azure SQL work in the public materials. At ESP, T-SQL and SQL Server were part of the documented technology stack for the opsInfo product, alongside SSRS and SSIS. At Corsair, as a Senior .NET Engineer, I utilized MS SQL Server among the tools used to develop and maintain the commerce platform. At First Republic Bank I exposed platform diagnostics through ASP.NET Web API endpoints backed by Azure SQL. The public write-ups do not name a specific T-SQL query, procedure, or outcome.",
     "tags": [
       "skill",
       "tsql",
@@ -6497,7 +6497,7 @@
       "What does the note What skills does he use with TypeScript say?",
       "What about skill use typescript jpmorgan chase mlops platform build?"
     ],
-    "answer": "Notes: What skills does he use with TypeScript. What skills does he use with TypeScript? At JPMorgan Chase, on the MLOps platform, I built React and TypeScript reliability tooling that surfaces SLO burn rate and deployment health to engineering stakeholders. TypeScript is also listed among the skills I used at First Republic Bank and at Corsair as Lead Commerce Architect, though the public role write-ups do not describe a specific TypeScript task there. On the public Tasks API I use TypeScript with NestJS and PostgreSQL for a small REST API with JWT authentication, migrations, and containerized CI.",
+    "answer": "Notes: What skills does he use with TypeScript. At JPMorgan Chase, on the MLOps platform, I built React and TypeScript reliability tooling that surfaces SLO burn rate and deployment health to engineering stakeholders. TypeScript is also listed among the skills I used at First Republic Bank and at Corsair as Lead Commerce Architect, though the public role write-ups do not describe a specific TypeScript task there. On the public Tasks API I use TypeScript with NestJS and PostgreSQL for a small REST API with JWT authentication, migrations, and containerized CI.",
     "tags": [
       "skill",
       "typescript",

@@ -159,6 +159,24 @@ function toPlain(markdown) {
     .trim();
 }
 
+// Strip a leading copy of the note title/question plus trailing punctuation
+// and whitespace. Require punctuation after the title so a sentence that
+// merely starts with the topic word ("Karpenter is an…") is left alone.
+export function stripLeadingQuestion(text, title) {
+  const name = String(title ?? "").replace(/[.?!:]+$/g, "").trim();
+  const value = String(text ?? "");
+  if (!name || !value) return value;
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return value.replace(new RegExp(`^${escaped}[.?!]+\\s+`, "i"), "");
+}
+
+export function stripLeadingQuestionFromAnswer(answer, topic) {
+  const prefix = `${topic}. `;
+  if (!topic || !String(answer).startsWith(prefix)) return answer;
+  const title = String(topic).replace(/^Notes:\s*/i, "").replace(/[.?!:]+$/g, "").trim();
+  return prefix + stripLeadingQuestion(String(answer).slice(prefix.length), title);
+}
+
 function noteTitle(data, body, filename) {
   const fromMeta = typeof data.title === "string" ? data.title : "";
   const heading = [...body.matchAll(/^#{1,6}[ \t]+(.+)$/gm)].find((match) => !/^related(?:\s+notes)?$/i.test(match[1].trim()));
@@ -383,7 +401,7 @@ export function buildKnowledge({ vaultDir, baseEntries, denylistPath, maxBytes =
         tally(rawReasons);
         continue;
       }
-      const plains = splitLong(toPlain(raw), budget).filter((passage) => passage.length >= MIN_PASSAGE);
+      const plains = splitLong(stripLeadingQuestion(toPlain(raw), title), budget).filter((passage) => passage.length >= MIN_PASSAGE);
       if (!plains.length) {
         short += 1;
         continue;
