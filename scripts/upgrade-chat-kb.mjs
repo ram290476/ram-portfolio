@@ -3,10 +3,10 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 import { isExcludedKnowledge, validKnowledge } from "../assets/chat/chat.js";
-import { scrubReasons, splitLong } from "./vault-kb.mjs";
+import { scrubReasons, splitLong, stripTopicLabel } from "./vault-kb.mjs";
 
 const titleMap = JSON.parse(readFileSync(new URL("./chat-public-titles.json", import.meta.url), "utf8"));
-const bodyOf = (entry) => entry.answer.slice(entry.topic.length + 2);
+const bodyOf = (entry) => stripTopicLabel(entry.answer, entry.topic);
 
 export function upgradePublishedKnowledge(entries) {
   const original = new Map(entries.map((entry) => [entry.id, entry]));
@@ -21,17 +21,16 @@ export function upgradePublishedKnowledge(entries) {
     if (entry.topic === "Notes: Related" && titleMap[hash]) {
       const oldTopic = entry.topic;
       entry.topic = `Notes: ${titleMap[hash]}`;
-      entry.answer = entry.answer.replace(`${oldTopic}. `, `${entry.topic}. `);
+      entry.answer = stripTopicLabel(entry.answer, oldTopic);
       entry.questions = entry.questions.map((question) => question.replace("Related", titleMap[hash]));
       entry.tags = entry.tags.filter((tag) => tag !== "related").concat(titleMap[hash].toLowerCase().match(/[a-z0-9]+/g) || []);
     }
     if (entry.id.endsWith("a340f9-10")) entry.answer = entry.answer.split(" - Debugging:")[0];
-    if (entry.id.endsWith("a340f9-11")) entry.answer = "Notes: Kubernetes horizontal pod autoscaling. - Debugging: kubectl describe hpa payments-api shows current vs. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events.";
+    if (entry.id.endsWith("a340f9-11")) entry.answer = "- Debugging: kubectl describe hpa payments-api shows current vs. target values, conditions (AbleToScale, ScalingActive, ScalingLimited) and recent scaling events.";
     // The handwritten About entry must match the live About paragraph verbatim, even if it is longer than 649 characters.
     if (entry.id === "about" || entry.answer.length <= 649) { repaired.push(entry); continue; }
-    const prefix = `${entry.topic}. `;
-    for (const [index, passage] of splitLong(bodyOf(entry), 649 - prefix.length).entries()) {
-      repaired.push({ ...entry, id: entry.id + (index ? `-reflow${index + 1}` : ""), answer: prefix + passage });
+    for (const [index, passage] of splitLong(bodyOf(entry), 649).entries()) {
+      repaired.push({ ...entry, id: entry.id + (index ? `-reflow${index + 1}` : ""), answer: passage });
     }
   }
 
@@ -48,14 +47,13 @@ export function upgradePublishedKnowledge(entries) {
     return `${name}: ${cells[index + 1].trim()}` + (name === "LRU eviction" ? `; ${cells[index + 3].trim()}` : "");
   });
   const definitions = [
-    { key: "cache", aliases: ["Cache expiration strategies"], sources: [cacheSource.id], answer: `Notes: Cache expiration strategies. ${cacheFacts.join(". ")}.` },
-    { key: "sast", aliases: ["SAST DAST", "SAST vs DAST", "SAST and DAST"], sources: ["note-sast-and-dast-2276e1", "note-sast-and-dast-2276e1-3"], answer: get("note-sast-and-dast-2276e1").answer + " " + bodyOf(get("note-sast-and-dast-2276e1-3")) },
-    { key: "cri", aliases: ["CRI CNI CSI", "CRI CNI and CSI in Kubernetes"], sources: ["note-cri-cni-and-csi-in-kubernetes-163876-1"], answer: get("note-cri-cni-and-csi-in-kubernetes-163876-1").answer },
-    { key: "proxy", aliases: ["Forward proxy vs reverse proxy"], sources: ["note-forward-proxy-vs-reverse-proxy-1b1f09-1"], answer: get("note-forward-proxy-vs-reverse-proxy-1b1f09-1").answer },
-    { key: "consistency", aliases: ["Strong vs eventual consistency", "Strong consistency vs eventual consistency"], sources: ["note-strong-consistency-vs-eventual-consisten-21d86e"], answer: get("note-strong-consistency-vs-eventual-consisten-21d86e").answer }
+    { key: "cache", aliases: ["Cache expiration strategies"], sources: [cacheSource.id], topic: "Notes: Cache expiration strategies", answer: `${cacheFacts.join(". ")}.` },
+    { key: "sast", aliases: ["SAST DAST", "SAST vs DAST", "SAST and DAST"], sources: ["note-sast-and-dast-2276e1", "note-sast-and-dast-2276e1-3"], topic: get("note-sast-and-dast-2276e1").topic, answer: bodyOf(get("note-sast-and-dast-2276e1")) + " " + bodyOf(get("note-sast-and-dast-2276e1-3")) },
+    { key: "cri", aliases: ["CRI CNI CSI", "CRI CNI and CSI in Kubernetes"], sources: ["note-cri-cni-and-csi-in-kubernetes-163876-1"], topic: get("note-cri-cni-and-csi-in-kubernetes-163876-1").topic, answer: bodyOf(get("note-cri-cni-and-csi-in-kubernetes-163876-1")) },
+    { key: "proxy", aliases: ["Forward proxy vs reverse proxy"], sources: ["note-forward-proxy-vs-reverse-proxy-1b1f09-1"], topic: get("note-forward-proxy-vs-reverse-proxy-1b1f09-1").topic, answer: bodyOf(get("note-forward-proxy-vs-reverse-proxy-1b1f09-1")) },
+    { key: "consistency", aliases: ["Strong vs eventual consistency", "Strong consistency vs eventual consistency"], sources: ["note-strong-consistency-vs-eventual-consisten-21d86e"], topic: get("note-strong-consistency-vs-eventual-consisten-21d86e").topic, answer: bodyOf(get("note-strong-consistency-vs-eventual-consisten-21d86e")) }
   ];
-  for (const { key, aliases, sources, answer } of definitions) {
-    const topic = answer.slice(0, answer.indexOf(". "));
+  for (const { key, aliases, sources, topic, answer } of definitions) {
     repaired.push({ id: `public-summary-${key}`, topic, questions: [...aliases, `Tell me about ${topic.replace(/^Notes: /, "")}`], tags: ["notes", ...aliases], answer, link: "#skills", source: "vault", routeQuestions: aliases, publicSourceIds: sources });
   }
   if (!validKnowledge(repaired) || new Set(repaired.map((entry) => entry.id)).size !== repaired.length) throw new Error("Invalid repaired knowledge base.");
