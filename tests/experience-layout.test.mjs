@@ -223,8 +223,11 @@ const pressed = (page) => page.locator(".hm-sort-btn").evaluateAll((els) => els.
 
 test("heatmap groups and sorts by Most used, By category, A–Z and Most recent, with Show all", { timeout: 60_000 }, async () => {
   const { context, page, errors } = await openPage();
-  assert.deepEqual(await pressed(page), ["recent=false", "used=true", "category=false", "az=false"]);
+  assert.deepEqual(await pressed(page), ["recent=true", "used=false", "category=false", "az=false"]);
   assert.equal(await page.locator(".hm-sort").getAttribute("role"), "group");
+  const initial = await heatmapRows(page);
+  assert.equal(initial.length, 14);
+  for (let i = 1; i < initial.length; i++) assert.ok(initial[i - 1].last >= initial[i].last, `Most recent default order at ${initial[i].skill}`);
 
   for (const all of [false, true]) {
     if (all) await page.click("#heatmap-toggle");
@@ -290,11 +293,14 @@ test("the grouping control works from the keyboard and is remembered for the ses
   const first = await heatmapRows(page);
   assert.equal(first[0].skill, [...first.map((r) => r.skill)].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))[0]);
 
-  // A new session starts on Most used again.
+  // A new session starts on Most recent again.
   const fresh = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const other = await fresh.newPage();
   await other.goto(`${base}/`, { waitUntil: "networkidle" });
-  assert.deepEqual(await pressed(other), ["recent=false", "used=true", "category=false", "az=false"]);
+  assert.deepEqual(await pressed(other), ["recent=true", "used=false", "category=false", "az=false"]);
+  const freshRows = await heatmapRows(other);
+  assert.equal(freshRows.length, 14);
+  for (let i = 1; i < freshRows.length; i++) assert.ok(freshRows[i - 1].last >= freshRows[i].last, `fresh session Most recent order at ${freshRows[i].skill}`);
   await fresh.close();
   await context.close();
 });

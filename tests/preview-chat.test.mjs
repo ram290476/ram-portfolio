@@ -194,7 +194,7 @@ test("Skills section has Heatmap, Category and Word cloud tabs, with Heatmap fir
   assert.doesNotMatch(section, /id="heatmap-open"|id="wordcloud-open"|id="heatmap-dialog"|id="wordcloud-dialog"/);
   assert.match(page, /href="assets\/heatmap\.css"/);
   assert.match(page, /href="assets\/skills-tabs\.css"/);
-  assert.match(page, /<div class="hm-sort" role="group" aria-label="Group and sort skills">\s*<button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="false">Most recent<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="true">Most used<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z<\/button>/);
+  assert.match(page, /<div class="hm-sort" role="group" aria-label="Group and sort skills">\s*<button type="button" class="hm-sort-btn" data-sort="recent" aria-pressed="true">Most recent<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="used" aria-pressed="false">Most used<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="category" aria-pressed="false">By category<\/button>\s*<button type="button" class="hm-sort-btn" data-sort="az" aria-pressed="false">A–Z<\/button>/);
   assert.match(page, /<p class="wc-note">Each row is a skill and each column a year\. Built from the skills listed for each Experience role\. Darker cells/);
   assert.match(page, /The skill name opens Ask Ram/);
   assert.doesNotMatch(page, /skill chips on each Experience role/);
