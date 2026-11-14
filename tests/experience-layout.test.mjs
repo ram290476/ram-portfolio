@@ -223,7 +223,7 @@ const pressed = (page) => page.locator(".hm-sort-btn").evaluateAll((els) => els.
 
 test("heatmap groups and sorts by Most used, By category, A–Z and Most recent, with Show all", { timeout: 60_000 }, async () => {
   const { context, page, errors } = await openPage();
-  assert.deepEqual(await pressed(page), ["used=true", "category=false", "az=false", "recent=false"]);
+  assert.deepEqual(await pressed(page), ["recent=false", "used=true", "category=false", "az=false"]);
   assert.equal(await page.locator(".hm-sort").getAttribute("role"), "group");
 
   for (const all of [false, true]) {
@@ -238,7 +238,7 @@ test("heatmap groups and sorts by Most used, By category, A–Z and Most recent,
     const mostUsed = rows.map((r) => r.skill).sort();
 
     await page.click('.hm-sort-btn[data-sort="category"]');
-    assert.deepEqual(await pressed(page), ["used=false", "category=true", "az=false", "recent=false"]);
+    assert.deepEqual(await pressed(page), ["recent=false", "used=false", "category=true", "az=false"]);
     rows = await heatmapRows(page);
     assert.equal(rows.length, expected);
     assert.deepEqual(rows.map((r) => r.skill).sort(), mostUsed, "By category groups the same skills as Most used");
@@ -274,18 +274,19 @@ test("the grouping control works from the keyboard and is remembered for the ses
   await page.keyboard.press("ArrowRight");
   assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "category");
   await page.keyboard.press("End");
-  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "recent");
-  await page.keyboard.press("ArrowRight");
-  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "used");
-  await page.keyboard.press("ArrowLeft");
-  await page.keyboard.press("ArrowLeft");
   assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "az");
+  await page.keyboard.press("ArrowRight");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "recent");
+  await page.keyboard.press("ArrowLeft");
+  await page.keyboard.press("ArrowLeft");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.sort), "category");
+  await page.keyboard.press("ArrowRight");
   await page.keyboard.press("Enter");
-  assert.deepEqual(await pressed(page), ["used=false", "category=false", "az=true", "recent=false"]);
+  assert.deepEqual(await pressed(page), ["recent=false", "used=false", "category=false", "az=true"]);
   await page.keyboard.press("Escape");
 
   await page.reload({ waitUntil: "networkidle" });
-  assert.deepEqual(await pressed(page), ["used=false", "category=false", "az=true", "recent=false"]);
+  assert.deepEqual(await pressed(page), ["recent=false", "used=false", "category=false", "az=true"]);
   const first = await heatmapRows(page);
   assert.equal(first[0].skill, [...first.map((r) => r.skill)].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))[0]);
 
@@ -293,7 +294,7 @@ test("the grouping control works from the keyboard and is remembered for the ses
   const fresh = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const other = await fresh.newPage();
   await other.goto(`${base}/`, { waitUntil: "networkidle" });
-  assert.deepEqual(await pressed(other), ["used=true", "category=false", "az=false", "recent=false"]);
+  assert.deepEqual(await pressed(other), ["recent=false", "used=true", "category=false", "az=false"]);
   await fresh.close();
   await context.close();
 });
