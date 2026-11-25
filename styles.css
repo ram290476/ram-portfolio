@@ -357,6 +357,9 @@ h1 {
   border-left: 3px solid var(--accent);
   padding-left: 14px;
 }
+.hero-actions {
+  margin: 18px 0 0;
+}
 
 .section-h {
   font-family: var(--font-display);
