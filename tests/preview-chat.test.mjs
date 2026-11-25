@@ -506,15 +506,23 @@ test("Contact links open in a new tab, including the download links", () => {
   assert.match(contact[1], /href="https:\/\/www\.linkedin\.com\/in\/vellamsetti\/"/);
   assert.match(contact[1], /href="https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=San\+Ramon%2C\+CA"/);
   assert.match(contact[1], /href="https:\/\/cal\.com\/ramvellamsetti\/30min"/);
+  const headingAt = contact[1].indexOf('id="contact-heading"');
+  const downloadsAt = contact[1].indexOf('class="downloads-panel"');
+  const panelAt = contact[1].indexOf('class="contact-panel"');
+  assert.ok(headingAt !== -1 && downloadsAt > headingAt && panelAt > downloadsAt, "Downloads card sits under the Contact heading and above the tiles");
+  assert.match(contact[1], /<h3 class="downloads-heading">Downloads<\/h3>/);
   assert.match(
     contact[1],
-    /<a href="assets\/resume\.pdf" download="resume\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download latest resume\s*<\/a>/
+    /<a href="assets\/resume\.pdf" download="resume\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*<span class="dl-text">\s*<span class="dl-title">Download latest resume<\/span>\s*<span class="dl-meta">PDF · 103 KB<\/span>\s*<\/span>\s*<\/a>/
   );
   assert.match(
     contact[1],
-    /<a href="assets\/Ram_Career_Overview_Lite\.pdf" download="experience-overview\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Download experience overview\s*<\/a>/
+    /<a href="assets\/Ram_Career_Overview_Lite\.pdf" download="experience-overview\.pdf" target="_blank" rel="noopener noreferrer">\s*<svg class="contact-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*<span class="dl-text">\s*<span class="dl-title">Download experience overview<\/span>\s*<span class="dl-meta">PDF · 89 KB<\/span>\s*<\/span>\s*<\/a>/
   );
   assert.doesNotMatch(contact[1], /download="(?!resume\.pdf|experience-overview\.pdf)[^"]+"/);
+  const tiles = contact[1].match(/<ul class="contact-list">([\s\S]*?)<\/ul>/);
+  assert.ok(tiles, "contact list is missing");
+  assert.doesNotMatch(tiles[1], /resume\.pdf|Ram_Career_Overview_Lite\.pdf/);
 });
 
 test("Contact uses only the Split layout, with no layout switcher", () => {
@@ -524,7 +532,12 @@ test("Contact uses only the Split layout, with no layout switcher", () => {
   const list = contact[1].match(/<ul class="contact-list">([\s\S]*?)<\/ul>/);
   assert.ok(list, "contact list is missing");
   const items = [...list[1].matchAll(/<li>/g)];
-  assert.equal(items.length, 7, "Contact should keep all seven items");
+  assert.equal(items.length, 5, "Contact tiles keep Book a call, email, GitHub, LinkedIn, and the map");
+  assert.match(themes, /\.downloads-panel\s*\{/);
+  assert.match(themes, /\.downloads-panel \+ \.contact-panel\s*\{[^}]*margin-top:\s*24px/);
+  assert.match(themes, /\.downloads-list a:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--focus\)/);
+  assert.doesNotMatch(themes, /data-mock/);
+  assert.match(themes, /@media \(max-width:\s*860px\)\s*\{[\s\S]*?\.downloads-list\s*\{\s*grid-template-columns:\s*1fr/);
   assert.match(contact[1], /<div class="contact-panel">/);
   assert.doesNotMatch(contact[1], /contact-layout-switch|contact-layout-btn|data-contact-layout|aria-label="Contact layout"/);
   assert.doesNotMatch(page, /class="contact-layout-switch"|data-contact-layout=/);
