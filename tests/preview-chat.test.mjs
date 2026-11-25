@@ -87,6 +87,18 @@ test("the About section no longer has the solo platform owner thesis line", () =
   assert.doesNotMatch(about, /production first/);
 });
 
+test("the About hero Download resume link scrolls to Contact and does not download a file", () => {
+  const about = page.match(/<section id="about"[\s\S]*?<\/section>/)[0];
+  assert.match(
+    about,
+    /<p class="hero-meta">[\s\S]*?<\/p>\s*<p class="hero-actions"><a class="button" href="#contact">Download resume<\/a><\/p>\s*<\/section>/
+  );
+  assert.doesNotMatch(about, /\sdownload=/);
+  assert.doesNotMatch(about, /resume\.pdf/);
+  assert.doesNotMatch(about, /target=/);
+  assert.match(themes, /\.hero-actions\s*\{\s*margin:\s*18px 0 0;\s*\}/);
+});
+
 for (const [question, id] of [
   ["What is his background?", "about"],
   ["What projects has he built?", "projects"],
